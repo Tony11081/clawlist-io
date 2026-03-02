@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClawList.io
 
-## Getting Started
+一站式 OpenClaw 教程、Skills、岗位配置、模型与算力选择聚合站
 
-First, run the development server:
+## 功能特性
+
+- 📚 **Guides** - 从本地到云端的完整部署教程
+- 🔌 **Skills** - 可搜索、可筛选的插件库，标注风险等级
+- 🎯 **Recipes** - 岗位专属配置，开箱即用
+- 🤖 **Models** - 模型对比与选择器
+- 🔒 **Security** - 安全中心与防护清单
+
+## 技术栈
+
+- **框架**: Next.js 14 (App Router)
+- **语言**: TypeScript
+- **样式**: Tailwind CSS + shadcn/ui
+- **部署**: Vercel
+
+## 本地开发
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 访问 http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 部署
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Vercel (推荐)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Tony11081/clawlist-io)
 
-## Learn More
+### 手动部署
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# 构建
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 启动生产服务器
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## MVP 范围
 
-## Deploy on Vercel
+- [x] 首页（Hero + Trending + 安全公告）
+- [x] Skills 列表页 + 详情页
+- [x] Guides 列表页
+- [x] Recipes 列表页
+- [x] Models 指南页
+- [x] Security 中心页
+- [ ] 后台管理（V1）
+- [ ] Supabase 集成（V1）
+- [ ] 用户登录与收藏（V1）
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 路线图
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### V1
+- 用户登录与收藏
+- Supabase 数据库集成
+- 后台内容管理
+- 评论与 Upvote 功能
+
+### V2
+- 配方生成器
+- Skill 风险扫描
+- 团队版模板库
+
+## License
+
+MIT
+
+## 贡献
+
+欢迎提交 Issue 和 PR！
+
+## 相关链接
+
+- [OpenClaw 官网](https://openclaw.ai)
+- [OpenClaw 文档](https://docs.openclaw.ai)
+- [OpenClaw GitHub](https://github.com/openclaw/openclaw)
+- [Discord 社区](https://discord.com/invite/clawd)
