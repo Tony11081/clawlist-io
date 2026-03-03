@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#262626",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .recipe-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-neutral-900">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined text-3xl">layers</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight">ClawList.io</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary/60 transition-colors" href="#">Job Recipes</a>
+<a class="text-sm font-medium hover:text-primary/60 transition-colors" href="#">Resources</a>
+<a class="text-sm font-medium hover:text-primary/60 transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="relative flex items-center w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="form-input w-full pl-10 pr-4 py-2 rounded-xl border-none bg-slate-100 dark:bg-neutral-800 focus:ring-1 focus:ring-primary text-sm" placeholder="Search templates..." value=""/>
+</label>
+<button class="flex items-center justify-center rounded-xl h-10 px-6 bg-primary text-white text-sm font-bold tracking-tight hover:bg-black transition-all">
+                        Sign In
+                    </button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto w-full px-6 py-12">
+<!-- Hero Section -->
+<div class="mb-16 space-y-4">
+<h1 class="text-6xl font-black tracking-tighter text-slate-900 dark:text-white uppercase">Job Recipes</h1>
+<p class="text-xl text-slate-500 max-w-2xl font-light">
+                        Minimalist developer resource hub for OpenClaw. High-performance templates for modern engineering teams designed with precision and monochrome aesthetics.
+                    </p>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 mb-12">
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-white text-sm font-medium">
+                        All Recipes <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-200 dark:bg-neutral-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 transition-colors">
+                        DevOps <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-200 dark:bg-neutral-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 transition-colors">
+                        Frontend <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-200 dark:bg-neutral-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 transition-colors">
+                        Backend <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-slate-200 dark:bg-neutral-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 transition-colors">
+                        Security <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Abstract monochrome technological architectural structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGjugxsFFFc5-VpbYyc_20BiCDFzzcSsYN9TqWiGd4AANXrwuwgAF41PPKgrXaeRg49EVAxbKuv9LrJbSooGGCY-4hPW-bqv1fVgqVYmKYeSfs9EAWqp3vEEcwaX_fTP9piQyhZAPug5HWhw6lpzf9bAo2kcZ8SnaTXAxfA6ODgYofwZC8e_zLs25pXKCjLTCOkkQn8EijmJ3qmZpaGTBz7fUVpZQ8BvH7tMEuRXtOySLtdig_9-y1Sb4JxQuxybFRw0iY_LLSQ"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">DevOps</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-neutral-700 text-[10px] font-bold uppercase tracking-wider rounded">Intermediate</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">K8s High Availability</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Production-grade Kubernetes deployment template with multi-zone redundancy and auto-scaling.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">schema</span>
+<span class="text-xs">12 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">Low Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+<!-- Card 2 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Abstract hardware components in grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0fkzouy0kAY5Ebh5OC_nPz_KAMgN7_7HDN5ZMO9zJQMr6WqQPT6l8t-ULUUH1lDfLkicONW4JA5JG3LuZaS6XobMZVYxuhiFSHBjR_rRf0jxk97-_lXargkFAFpDqSIQ7c0Oe3EMeP_8ffABelOZPcqFF5C1mb5r4r02qeekcRR8wF3qtSw8jE7-kJnIrV9mf91Cb21VRMUCQS-iD4sQvJqTIK5Ym2oRxu7JHKcLhneI5GAVrKbcLLTvqXAQiXZZVWIomZor1pA"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Security</span>
+<span class="px-3 py-1 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">Zero-Trust Auth</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Implement identity-aware proxying and hardware-bound authentication for sensitive API gateways.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-xs">8 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">Medium Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+<!-- Card 3 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Minimal geometric wave pattern grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUFVPfzr68MRJ7OelPMrb8wavEf8YRpfQiVnrik6L0iossjLp92qE0DyQWhD_gtDuj6jHZl7GikV8qyjNmf4Um0MmzWhAxWy1I8WG1pKKEuYcNuL5svmA1beJ0DBfXyUzV_mI9KtGDrJRYfTJ33CxLNf9yO3bGo9lTqGgIKt0m5bqksMwf8-BXDmrPG2tbpThakS4HDFf4bB_6GVU1I502GrUwCzJQ3Zv1elytep4AUwN_H4ofME3cQTErtVwXmHTzHq6LI8ewow"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Frontend</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Beginner</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">Next.js Edge Boilerplate</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Lightweight edge-runtime ready template with optimized Tailwind configuration and minimal JS footprint.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">speed</span>
+<span class="text-xs">5 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">Minimal Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+<!-- Card 4 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Monochrome server racks in data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBedSGe3Vpb0OjZlT68jf_Ngv_SW_8lWqWDqf7ahXgX88cWP2iNomCqkSLemXU2VpaKylmL3ZqKGfjvfHesBIIF5JuloSweZVFmQDLcKYZyOs40iUIoY6N0LBhvfJjnY5n5WCclfL2HWElJPQ-z3JEqK-jcqzKg6Rll-GZbjNWF0iGzrFscyL8CDrFEu69eU3BSdCccGi_-fno1BAIpLsebciHnFqchiQ2bGonDeY2XYyvilgvdiWchr6FrY7BiBqFqjCW10PmtVQ"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Backend</span>
+<span class="px-3 py-1 bg-slate-200 dark:bg-neutral-700 text-[10px] font-bold uppercase tracking-wider rounded">Intermediate</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">Redis Caching Layer</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Plug-and-play distributed caching system for high-load PostgreSQL instances.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">database</span>
+<span class="text-xs">7 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">Low Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+<!-- Card 5 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Abstract data flow in grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbskt3wSuymDuqmDl6L_9WqGPvRDadmvPYef6X2iI5yQ6S2ufc6-pRk4Qe6UlXZjhYGjYywwJTFKSHqDpD395qhNqCHLzXuUZEWn5Kef3OjqCpsgOEhMlneDlQzJuqh-JCZt6su9dLdDcaFmDALcEmB00mjqPbIak6tP7q-u0uDlfZKpycanTn_Mmz0EcqtgShqmfGsdD3UZ3zy3IFTMXk8nfph3oen0X6oe56PISXB-2nCaBDp56-UegS4cfvc4yvqGAVyaL5Iw"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Data</span>
+<span class="px-3 py-1 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider rounded">Advanced</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">Real-time ETL Pipeline</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Streaming data architecture using Apache Kafka for high-throughput event processing.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">dynamic_feed</span>
+<span class="text-xs">15 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">High Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+<!-- Card 6 -->
+<div class="recipe-card group bg-white dark:bg-neutral-900 rounded-xl p-8 border border-slate-200 dark:border-neutral-800 transition-all duration-300 flex flex-col h-full">
+<div class="aspect-video w-full mb-6 rounded-lg bg-slate-100 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Global network nodes grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcQcDCNmgtC7Gy657G5QiRy9qjvXHwegHiyJUl0R-lrjyK_jVZMGORMxWb5HxeAz_Z2frsfORLRFgP6ualu4b9GziC7iZTohGoeXcGOTNmmZwiByuPkEc62aYeXim9FdVSW-bodMkYv6nQo2Zpl2_VwEzA62Hv-T13CENUbw4Lafg2TMncVHiKG2pu8Lc8eC-z3IFbF4ZGg_Z8LgHE0Dd-l8OZQosYE7f_fDc6u7lduclMFIjD2S9NDqjHK6OdyfKCF2iyc4SrqQ"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Backend</span>
+<span class="px-3 py-1 bg-slate-100 dark:bg-neutral-800 text-[10px] font-bold uppercase tracking-wider rounded">Beginner</span>
+</div>
+<h3 class="text-2xl font-bold mb-3 tracking-tight">REST API Standards</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            Comprehensive guide and boilerplate for building scalable, documented, and type-safe RESTful APIs.
+                        </p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">api</span>
+<span class="text-xs">4 Skills</span>
+</div>
+<div class="flex items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs">Minimal Risk</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-black transition-colors uppercase tracking-widest">
+                            View Recipe
+                        </button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center mt-20 gap-2">
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-neutral-800 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-primary text-white text-sm font-bold">1</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-neutral-800 text-sm font-medium transition-colors">2</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-neutral-800 text-sm font-medium transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-neutral-800 text-sm font-medium transition-colors">12</button>
+<button class="size-10 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-neutral-800 transition-colors">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-neutral-800 py-12 px-10 bg-white dark:bg-neutral-900">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl text-primary dark:text-white">layers</span>
+<span class="font-bold text-lg">ClawList.io</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">Github</a>
+</div>
+<div class="text-sm text-slate-400">
+                        © 2024 ClawList. All rights reserved.
+                    </div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

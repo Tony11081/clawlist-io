@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills Library Variant 2 - ClawList.io</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#262626",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                        "accent-gray": "#333333",
+                        "border-gray": "#444444"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-gray px-10 py-4 sticky top-0 bg-background-dark/80 backdrop-blur-md z-50">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3">
+<div class="size-8 text-slate-100">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-slate-100 text-xl font-bold leading-tight tracking-tight">ClawList.io</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors" href="#">Skills</a>
+<a class="text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors" href="#">Resources</a>
+<a class="text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors" href="#">Community</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg border border-border-gray bg-primary h-full">
+<div class="text-slate-400 flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-100 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-slate-500 pl-2 text-sm font-normal" placeholder="Quick Search" value=""/>
+</div>
+</label>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-100 text-background-dark text-sm font-bold transition-all hover:bg-white">
+<span class="truncate">Log In</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-border-gray" data-alt="User profile avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc44le04p67c4DD49cKVJlJGYqB2Zap01MoFc6qbrvUARW19WWPakid88MXs6G8esuvmchxzBC0jvIdkRguPw5ccRUoFtcnG2F9P7tznVylT7Jl5umBISmwztZKo_JUPuKxYn7bqxgRvdStsF-84wGZ23SEfgaHwdVa0ZVy--SF7ldsPOF5mX_evokGwBUXzPcp0IEXqWwnIja0iCEgVDarEzOKOHTlutieFbNLCAbiXn77s3Vgn0qVCXlK8cVwRoVQVmGT2orLQ");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 md:px-20 lg:px-40 py-12 flex flex-col gap-10">
+<section class="flex flex-col gap-4 border-l-4 border-slate-100 pl-6">
+<h1 class="text-slate-100 text-5xl font-black leading-tight tracking-tighter uppercase">Skills Library</h1>
+<p class="text-slate-400 text-lg font-normal max-w-2xl">
+                        A tech-focused, high-contrast monochrome resource hub for the <span class="text-slate-100 font-bold">OpenClaw</span> ecosystem. 
+                        Refined tools for the modern digital operative.
+                    </p>
+</section>
+<section class="flex flex-col gap-6">
+<div class="flex flex-col lg:flex-row gap-4 items-center">
+<label class="flex flex-col h-14 w-full flex-1">
+<div class="flex w-full flex-1 items-stretch rounded-lg border border-border-gray bg-primary h-full">
+<div class="text-slate-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-slate-100 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-slate-500 pl-3 text-lg font-normal" placeholder="Search skills, tools, or frameworks..." value=""/>
+</div>
+</label>
+<div class="flex gap-2 p-1 bg-primary rounded-lg border border-border-gray w-full lg:w-auto">
+<button class="px-6 py-2 rounded-md bg-slate-100 text-background-dark text-sm font-bold">All</button>
+<button class="px-6 py-2 rounded-md text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors">Code</button>
+<button class="px-6 py-2 rounded-md text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors">Automation</button>
+<button class="px-6 py-2 rounded-md text-slate-400 hover:text-slate-100 text-sm font-medium transition-colors">Marketing</button>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="Python code on a dark monitor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQpHo955VoBVd3tPL-9qlm7ldXVx4xFHfXRdfsVqzhOAdKFwi8w4MmyAhH-dSv32w5sEWMzQWXzN61ZR4LfZbGmno-3R9g9_tDuZCnC2fVEBSbK40xbwPuJ9r95wFTIowA1u1x0eIg5jrlsSN2yi_oBp3vT91ZJ4Qcp8oS4jAO9V1w5OVNNp5IF-85lb44p1Np8O_TXRsxRAB2SNPQpC9Uyutblq9T8kxTP4WhTwsJEcoQJ0srhFxRCTH6sL3sA4nwKQ43XDpUyA");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">Python Scripting</h3>
+<span class="px-2 py-1 rounded bg-accent-gray text-slate-400 text-[10px] font-bold uppercase tracking-widest border border-border-gray">Low Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Advanced automation scripts for data harvesting and process optimization within OpenClaw environments.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">1,204</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="Modern server rack with blue glowing lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqtK5PqIp8yH0SJmm2fhaFH3nsGs_i1F-x_KQikaoNBwrrmRI01R5R0Nxr9cLZQwmuyTy0_Y5XxBVyf2uE4_F-R6BFZwFeeE1AQcwDtImJq0GiXsBfbl-W2oovWs-AQt3FJrdSUKcX7Nu7RmLyfTR_ZQtr4GbtSTkcwd80Mg_SvVSZOcHCDUNAaLKlfjs3xx-WWIOzwKooK86Ee-kMApO9ym4MFe6YtkWXISLSJWHxMXCP51EH069tHnnW49KM4ebiWmGbwRiz0A");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">CI/CD Pipelines</h3>
+<span class="px-2 py-1 rounded bg-slate-800 text-slate-200 text-[10px] font-bold uppercase tracking-widest border border-slate-700">Med Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Architecting robust deployment workflows for distributed microservices and global scaling.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">892</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="Abstract neural network visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFPkYHI3hFpJM51ltmpT3DvVa22Dpkm5EYpb-gnbXNcvygQrcjFAJwCtKN_e27aK_gg2qlpryb1gHGBGFuCZZ1o9rzGIKKpnqhvT9PFo6O8JE9rsW0Tbfp94DWqAlKICeEorH7dbj1XE2r70XCDeOvMhBwL29HhB-XRfTus_TNS6tV8my-9OFyrUyTlmIx8mqVj3Re3jIXCiYtskdHBj7iLMQPUC8I9DM87fw1OXvoYdc7WhdGX8iiNNqD1nKEa8cCUrgkitdWdQ");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">Neural Networks</h3>
+<span class="px-2 py-1 rounded bg-slate-100 text-background-dark text-[10px] font-bold uppercase tracking-widest">High Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Deep learning models for predictive analysis and pattern recognition in complex dataset structures.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">2,506</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="JavaScript code on a high quality screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVbxXkaxE8-MjvOrkuGlEvxrFdp8NoqIrgwASlsr1FitwhLsbpkxkzkemlUOZ9ttWmkTSpVcbxt1N5K71UFFEeTpnfy6ufjBpZ_BnkbsfCMHbx54vlHcxbLuwlFadwMunhgK8asei2_el5UUze1qUomhU2bRJK1kIxqmnQE-M7jHK5CVBmMUqHOhAltN-FfjEb2xR2zlMv7v1-DtwRdmCML8MisMaenSwSjRxgtk94aPuFu-IJBcYxavCiosFrxk5Mzcrmfbwcgg");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">API Integration</h3>
+<span class="px-2 py-1 rounded bg-accent-gray text-slate-400 text-[10px] font-bold uppercase tracking-widest border border-border-gray">Low Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Mastery of REST and GraphQL interfaces for seamless cross-platform communication protocols.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">451</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="Global network nodes from space visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYD7lGboCd69ap6lj8twuphHMxPnF2Bgq3qzdTDgCYssCZfEsPVaZcJpihXvAtJ4eFjL2tKYmgBEx9PBVYyl67zf1YoYwL2AOAl9sy5WPU43H3HLIe9-VT0lYmLawOfvw9DOHkuv2g_oZ7_nysBs3dRzyaEfR8UUk2zv0dvxabQVwsJXyiroihpBvZyTGBtC1B2ie5Q0jwXqKJbpjN7JNPj3xZI07UdODt5q_a7N299oLnQw8xRs7X7rCJl1ieHcSWtGgsrz475g");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">Cloud Architecture</h3>
+<span class="px-2 py-1 rounded bg-slate-800 text-slate-200 text-[10px] font-bold uppercase tracking-widest border border-slate-700">Med Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Designing serverless and containerized environments for maximum resilience and efficiency.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">1,120</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-primary border border-border-gray rounded-xl overflow-hidden hover:border-slate-400 transition-all duration-300 hover:-translate-y-1">
+<div class="w-full aspect-video bg-center bg-no-repeat bg-cover border-b border-border-gray" data-alt="Complex lines of code in a terminal" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDC8wSRAhSqnKB2UVhwsX9i8NKsiC02dND7a13ua74tQ65hXd9M6cQBmYxyEUS5ZrtL2-ZyZ6kxSaEf-VyYsamf-YEUYS6Gxi5R8T-JNHM2yRyq6WmwbVArx3FkXHSP2U7mrdoUNJ8p0sLkwNr3MNeAhdjBsIsrbHHwNcNCrlKQcHfztJsxNGKq7Tqz9Gnuxq9niz4HA67_vkPZjgdlG3LcJkw50mw2jn_aQv9zfQ3gchI2MpqHPwolLR7VUnbSFu5_X6U7hdIakQ");'></div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-100 text-xl font-bold leading-none">Data Scraping</h3>
+<span class="px-2 py-1 rounded bg-accent-gray text-slate-400 text-[10px] font-bold uppercase tracking-widest border border-border-gray">Low Risk</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">High-speed web crawling and parsing techniques for real-time market intelligence gathering.</p>
+<div class="flex items-center justify-between pt-4 border-t border-border-gray/50">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="text-sm font-mono">674</span>
+</div>
+<button class="text-slate-100 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-center mt-8">
+<button class="flex items-center gap-3 px-8 py-4 bg-transparent border border-border-gray rounded-lg text-slate-100 font-bold hover:bg-primary transition-colors">
+                        LOAD MORE RESOURCES
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</main>
+<footer class="border-t border-border-gray bg-primary p-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="text-slate-100 font-bold">ClawList.io</span>
+<span class="text-slate-500 font-mono text-sm">© 2024 OPENCLAW_CORE</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-slate-100 transition-colors text-xs font-bold uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors text-xs font-bold uppercase tracking-widest" href="#">Terms</a>
+<a class="text-slate-500 hover:text-slate-100 transition-colors text-xs font-bold uppercase tracking-widest" href="#">Documentation</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

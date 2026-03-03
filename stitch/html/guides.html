@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#262626",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-primary/20 dark:border-primary/40 px-6 py-4 lg:px-20">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary dark:bg-slate-100 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-background-light dark:text-background-dark text-xl">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tighter uppercase italic">OpenClaw</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-white transition-colors" href="#">Docs</a>
+<a class="text-sm font-medium border-b-2 border-primary dark:border-slate-100" href="#">Guides</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-white transition-colors" href="#">API</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-white transition-colors" href="#">Showcase</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg">search</span>
+<input class="bg-primary/5 dark:bg-primary/30 border-none rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary" placeholder="Search resources..." type="text"/>
+</div>
+<button class="bg-primary dark:bg-slate-100 text-white dark:text-background-dark px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
+                    Join Community
+                </button>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-12 lg:px-20">
+<div class="mb-12">
+<div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">
+<a href="#">Home</a>
+<span class="material-symbols-outlined text-[10px]">arrow_forward_ios</span>
+<span class="text-primary dark:text-slate-300">Guides &amp; Tutorials</span>
+</div>
+<h1 class="text-5xl font-black mb-4 tracking-tighter">TECHNICAL <br/>RESOURCES.</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                    A curated collection of deep-dives, architectural overviews, and step-by-step implementations for the OpenClaw ecosystem.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+<div class="p-6 bg-primary/5 dark:bg-primary/20 border border-primary/10 dark:border-primary/40 rounded-xl hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-4 text-3xl group-hover:scale-110 transition-transform">auto_awesome</span>
+<h3 class="font-bold uppercase text-sm">Basics</h3>
+<p class="text-xs text-slate-500 mt-1">12 Tutorials</p>
+</div>
+<div class="p-6 bg-primary/5 dark:bg-primary/20 border border-primary/10 dark:border-primary/40 rounded-xl hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-4 text-3xl group-hover:scale-110 transition-transform">layers</span>
+<h3 class="font-bold uppercase text-sm">Advanced</h3>
+<p class="text-xs text-slate-500 mt-1">8 Tutorials</p>
+</div>
+<div class="p-6 bg-primary/5 dark:bg-primary/20 border border-primary/10 dark:border-primary/40 rounded-xl hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-4 text-3xl group-hover:scale-110 transition-transform">extension</span>
+<h3 class="font-bold uppercase text-sm">Integrations</h3>
+<p class="text-xs text-slate-500 mt-1">15 Tutorials</p>
+</div>
+<div class="p-6 bg-primary/5 dark:bg-primary/20 border border-primary/10 dark:border-primary/40 rounded-xl hover:bg-primary/10 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined mb-4 text-3xl group-hover:scale-110 transition-transform">security</span>
+<h3 class="font-bold uppercase text-sm">Security</h3>
+<p class="text-xs text-slate-500 mt-1">6 Tutorials</p>
+</div>
+</div>
+<div class="flex items-center justify-between mb-8 border-b border-primary/10 dark:border-primary/40 pb-4">
+<div class="flex gap-8">
+<button class="font-bold text-sm uppercase tracking-widest border-b-2 border-primary dark:border-slate-100 pb-4 -mb-[18px]">Latest</button>
+<button class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-primary dark:hover:text-slate-100 transition-colors">Popular</button>
+<button class="font-bold text-sm uppercase tracking-widest text-slate-500 hover:text-primary dark:hover:text-slate-100 transition-colors">Series</button>
+</div>
+<div class="flex items-center gap-2 text-xs font-mono">
+<span class="text-slate-500">SORT BY:</span>
+<button class="flex items-center gap-1 font-bold">DATE DESC <span class="material-symbols-outlined text-xs">expand_more</span></button>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-primary/10 border border-primary/10 dark:border-primary/30 rounded-xl hover:border-primary dark:hover:border-slate-500 transition-all">
+<div class="w-full md:w-72 h-48 shrink-0 bg-primary/20 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-slate-400/20 to-primary/40 mix-blend-multiply"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Monochrome abstract grid pattern representing system architecture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFx03MgLnb7mo1mjQo46FOEkozL0On0nSAD6C3FqXpgm08Z0jgEnyKrxV-G8cG4xSp3RfmVW9ovz_TTjhTzDKV-trdvFhJu-Ylza64jYl9MXce6YMZLq0rdh9GS9ZHA4H6Oj1oCE3WJ8yrTIN4NMjXyBTB1LNZ7hLDQ43m1QWq6-GPs1nPn9LJttNH8GjvVP6FMoTKsFJMGaG57WhlUlUQHd7gcaSMha6GzhPxV8lqJqy-zogtBQ_dXGqDdD4Fu-DYHUUBoGy75g')"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="px-2 py-1 bg-primary text-white dark:bg-slate-100 dark:text-background-dark text-[10px] font-bold uppercase tracking-tighter rounded">Advanced</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">12 Min Read • June 20, 2024</span>
+</div>
+<h2 class="text-2xl font-black mb-3 group-hover:underline underline-offset-4 decoration-2">Optimizing Parallel Processing with Core Engine V2</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">
+                                Explore how to maximize throughput and minimize latency using the redesigned scheduler in OpenClaw 2.0. This guide covers worker pools and async task orchestration.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden" data-alt="Small round user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdEyCEuvsLdLo8s3N0xbMZaePsOdu-a-18EbozmRx6MvPwJEUhYXIqztzHRbo2hevNMxILU_KV5ZBjDiofR2ovQ1ScGvQFER-VIjQ6CGj-_Zx37YEwJll_BhSe_OE71YVHICqxnRYk-oEibm-I2GX03JnwKah1ZPBOCPVXl2DzWLqXDfoWfxmi2iFXa4vaVJjaSrw0Xduhxd76h-a4mcbLwKKg3pNjFZBZN5CkO8UvPojZ-0zZwU0GCMQi03ftP6iCMkCMC58L1Q')"></div>
+<span class="text-xs font-medium">Alex Rivera</span>
+</div>
+<button class="flex items-center gap-2 bg-primary dark:bg-slate-100 text-white dark:text-background-dark px-6 py-2.5 rounded font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                                Read Tutorial
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-primary/10 border border-primary/10 dark:border-primary/30 rounded-xl hover:border-primary dark:hover:border-slate-500 transition-all">
+<div class="w-full md:w-72 h-48 shrink-0 bg-primary/20 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-slate-200/20 to-primary/60 mix-blend-multiply"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Geometric black and white data flow visualization" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArxz1ldIrI0cuQQAWKV2pBvPR55ldLuUJVDyDfSoihdxGp_dFCPdqaAV3VJpm-hkoZqF1jVo1YM4_rqLKEcRWelPaicXu-xHwspnS_eThJgyeqJZZf9DHGq0aDThNiNhxpkwlPuIIsowJyY7jXzpGzLFArE3GQSf2Cj8w-zz8TwVONWlmSVVsIl7C3KPkYZKcpxQHGWmtA8edXqVqPx3cLY9Ea8wsRDmu8SVDhrGNZRV9FD8-T6tm0eamVUm7nBrMH_g_1_r9Anw')"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="px-2 py-1 bg-slate-200 text-primary dark:bg-primary/40 dark:text-slate-300 text-[10px] font-bold uppercase tracking-tighter rounded">Intermediate</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">8 Min Read • June 15, 2024</span>
+</div>
+<h2 class="text-2xl font-black mb-3 group-hover:underline underline-offset-4 decoration-2">Custom Hook Implementation for State Management</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">
+                                A practical look at building reusable logic hooks that interface directly with the OpenClaw telemetry API for real-time monitoring components.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden" data-alt="Small round user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFu4zbV9tv6NmAh7dkD4aKhi4Rk01TuIeOc_IulEZ76E6zRT0YSJ7Fewam_nSEAs03MBYh6euFOaQgYISIGWjuTfKYinyK-sLQzQcm4o2Qixy0sZ4fhK4FPMnyNwDV9vInSPh_545qbVuttwEpGJsJMynlNMfOayN4OavfJyEXiK9lxM52rExCJ7yQZwZ3PyKWscV8tSmn0JxmyHbK8w5O3H8qItkpSU_zsmnoYB2F1RAcwDEevCBjaAhr7NGC8PxSMqX54cwF0A')"></div>
+<span class="text-xs font-medium">Sarah Chen</span>
+</div>
+<button class="flex items-center gap-2 bg-primary dark:bg-slate-100 text-white dark:text-background-dark px-6 py-2.5 rounded font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                                Read Tutorial
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-primary/10 border border-primary/10 dark:border-primary/30 rounded-xl hover:border-primary dark:hover:border-slate-500 transition-all">
+<div class="w-full md:w-72 h-48 shrink-0 bg-primary/20 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-slate-500/10 to-primary/50 mix-blend-multiply"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Abstract technical circuit board monochromatic pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBka9vK5OQOJbczPRRbOJ3laGWdvqbtmcqwdhd4UXua0HVPIkn2-afGXiS5R_VhhDBOwfamTgxfiPPCtCccVDZoZRy4rCEWONW3dsNi1NHq1xV04hzO40p60YadJ9VwSUQ-1Rrfg1xd2SAQcDh4T48TMuHmu7-_F_5MBqOLrXUlWEB3ZNWtAiOPJw1rRfvWd1wo4Ux1w2mUrmKKQzzyz5OVjyntpnxzkULHGO2x3oIAXb3L_zmmm0GSLYdjsbMxL3a0Eb_8o6QyAg')"></div>
+</div>
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="px-2 py-1 bg-slate-200 text-primary dark:bg-primary/40 dark:text-slate-300 text-[10px] font-bold uppercase tracking-tighter rounded">Beginner</span>
+<span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">5 Min Read • June 12, 2024</span>
+</div>
+<h2 class="text-2xl font-black mb-3 group-hover:underline underline-offset-4 decoration-2">Hello World: Your First OpenClaw Module</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">
+                                Everything you need to know to get started. From environment setup to deploying your first functional script in under 5 minutes.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden" data-alt="Small round user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6VlsKUtUsBLufDyJeah2Mp4pxI05UmttnW3mAasVe8jjeDoSKyMR84ZwYp43fdpwpKyrIWdqj2VkPzb0u20nTwA2DXCTcIT8ltOFtabvgdPaOkW2yayxrKT4fFl2NZZm3ZP_lCUMOiI7a9A7cGVNb76XDLJq9Chx3uUxXW4gs6rqgKbftyTW9TZ8BnWOe_a2jRoRN5dy8zo_yd9b-GnFuQlQOUVeinaDvJ8Apc9QjlwSRcMZupmEY3HKU08FUgKZe-xAnCi4j9Q')"></div>
+<span class="text-xs font-medium">Markus Weber</span>
+</div>
+<button class="flex items-center gap-2 bg-primary dark:bg-slate-100 text-white dark:text-background-dark px-6 py-2.5 rounded font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                                Read Tutorial
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center border border-primary/20 dark:border-primary/40 rounded-lg hover:bg-primary/5">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-10 flex items-center justify-center bg-primary dark:bg-slate-100 text-white dark:text-background-dark rounded-lg font-bold text-sm">1</button>
+<button class="size-10 flex items-center justify-center border border-primary/20 dark:border-primary/40 rounded-lg font-bold text-sm hover:bg-primary/5">2</button>
+<button class="size-10 flex items-center justify-center border border-primary/20 dark:border-primary/40 rounded-lg font-bold text-sm hover:bg-primary/5">3</button>
+<span class="px-2">...</span>
+<button class="size-10 flex items-center justify-center border border-primary/20 dark:border-primary/40 rounded-lg font-bold text-sm hover:bg-primary/5">12</button>
+<button class="size-10 flex items-center justify-center border border-primary/20 dark:border-primary/40 rounded-lg hover:bg-primary/5">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</nav>
+</div>
+</main>
+<footer class="border-t border-primary/10 dark:border-primary/40 py-12 px-6 lg:px-20 mt-20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="size-6 bg-primary dark:bg-slate-100 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-background-light dark:text-background-dark text-sm">terminal</span>
+</div>
+<h2 class="text-lg font-bold tracking-tighter uppercase italic">OpenClaw</h2>
+</div>
+<p class="text-xs text-slate-500 font-mono">© 2024 OPENCLAW PROJECT. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap gap-8 text-xs font-bold uppercase tracking-widest">
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Github</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Security</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Status</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

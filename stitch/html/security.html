@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Security Center Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#808080",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .mono-border {
+            border-color: rgba(128, 128, 128, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/20 bg-background-light dark:bg-background-dark px-6 py-4 lg:px-20">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="size-6 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined text-3xl">shield_lock</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">OpenClaw <span class="font-light">Security</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary underline underline-offset-8" href="#">Resources</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">API Keys</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary text-xl">search</span>
+<input class="bg-primary/10 border-none rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-primary" placeholder="Search resources..." type="text"/>
+</div>
+<button class="flex h-10 items-center justify-center rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-5 text-sm font-bold tracking-tight">
+                Log Out
+            </button>
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30" data-alt="User profile placeholder">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-7xl flex-col gap-12 px-6 py-12 lg:px-20">
+<!-- Hero Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-widest">
+<span class="size-2 bg-primary rounded-full"></span>
+                v2.0 Documentation
+            </div>
+<h2 class="text-5xl font-black leading-tight tracking-tighter sm:text-6xl">Security Center</h2>
+<p class="max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+                A minimalist hub for OpenClaw developers. Implement high-level security protocols and manage your API integrity with our technical guidelines.
+            </p>
+</section>
+<!-- Risk Assessment Grid -->
+<section>
+<div class="flex items-center justify-between mb-8 border-b border-primary/10 pb-4">
+<h3 class="text-2xl font-bold tracking-tight uppercase">Risk Assessment</h3>
+<span class="text-sm text-primary font-mono">UPDATED: JUST NOW</span>
+</div>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="flex flex-col gap-4 rounded-xl p-8 bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xl">
+<span class="text-xs font-bold uppercase tracking-widest opacity-70">Threat Level</span>
+<div class="text-4xl font-black italic">NONE</div>
+<div class="h-1 w-full bg-primary/30 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0"></div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-8 bg-slate-200 dark:bg-slate-800 border border-primary/10">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Active Keys</span>
+<div class="text-4xl font-black">12</div>
+<p class="text-xs opacity-60">Across 3 projects</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-8 bg-slate-100 dark:bg-slate-900 border border-primary/10">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Auth Success</span>
+<div class="text-4xl font-black">99.9<span class="text-xl">%</span></div>
+<p class="text-xs opacity-60">Last 24 hours</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-8 bg-white dark:bg-black border-2 border-slate-900 dark:border-white">
+<span class="text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white">Security Score</span>
+<div class="text-4xl font-black">98</div>
+<p class="text-xs opacity-60">Optimal configuration</p>
+</div>
+</div>
+</section>
+<!-- Main Content Split -->
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+<!-- Checklist & Best Practices -->
+<div class="lg:col-span-2 flex flex-col gap-12">
+<!-- Security Checklist -->
+<section>
+<h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined">fact_check</span> Security Checklist
+                    </h3>
+<div class="flex flex-col gap-3">
+<div class="group flex items-center justify-between rounded-xl border border-primary/20 p-5 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+<div class="flex items-center gap-4">
+<div class="size-6 border-2 border-slate-900 dark:border-white rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg scale-90">check</span>
+</div>
+<span class="font-medium">Enable Multi-Factor Authentication</span>
+</div>
+<span class="text-xs font-mono text-primary px-2 py-1 bg-primary/10 rounded">REQUIRED</span>
+</div>
+<div class="group flex items-center justify-between rounded-xl border border-primary/20 p-5 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+<div class="flex items-center gap-4">
+<div class="size-6 border-2 border-slate-900 dark:border-white rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg scale-90">check</span>
+</div>
+<span class="font-medium">Rotate API Keys every 90 days</span>
+</div>
+<span class="text-xs font-mono text-primary px-2 py-1 bg-primary/10 rounded">PENDING</span>
+</div>
+<div class="group flex items-center justify-between rounded-xl border border-primary/20 p-5 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all opacity-50">
+<div class="flex items-center gap-4">
+<div class="size-6 border-2 border-slate-300 dark:border-slate-700 rounded-sm"></div>
+<span class="font-medium">Set Request IP Whitelisting</span>
+</div>
+<span class="text-xs font-mono text-primary px-2 py-1 bg-primary/10 rounded">OPTIONAL</span>
+</div>
+</div>
+</section>
+<!-- Best Practices -->
+<section>
+<h3 class="text-xl font-bold mb-6">Best Practices</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex gap-6">
+<div class="text-5xl font-black text-primary/20">01</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-lg">Least Privilege Access</h4>
+<p class="text-sm text-slate-500">Only grant the minimum permissions required for each API key to function. Never use root keys for routine tasks.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-5xl font-black text-primary/20">02</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-lg">Environment Isolation</h4>
+<p class="text-sm text-slate-500">Use separate API keys for development, staging, and production environments to prevent cross-contamination.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-5xl font-black text-primary/20">03</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-lg">Secure Storage</h4>
+<p class="text-sm text-slate-500">Never hardcode API keys. Use environment variables or secret management tools like HashiCorp Vault.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="text-5xl font-black text-primary/20">04</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold text-lg">Payload Encryption</h4>
+<p class="text-sm text-slate-500">Always use TLS 1.3 for data in transit and consider client-side encryption for sensitive payloads.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- API Key Safety (Sidebar Style) -->
+<aside class="flex flex-col gap-6">
+<div class="rounded-xl bg-slate-100 dark:bg-slate-900 p-8 border border-primary/10">
+<h3 class="text-lg font-bold mb-6">API Key Safety</h3>
+<div class="flex flex-col gap-8">
+<div>
+<div class="flex items-center gap-2 mb-4 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+<span class="text-sm font-bold uppercase tracking-wider">The "Do's"</span>
+</div>
+<ul class="space-y-4 text-sm font-medium">
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>Store keys in .env files ignored by Git</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>Regularly monitor usage logs</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary mt-1">•</span>
+<span>Set hard usage quotas</span>
+</li>
+</ul>
+</div>
+<div class="h-px bg-primary/10"></div>
+<div>
+<div class="flex items-center gap-2 mb-4 text-slate-400">
+<span class="material-symbols-outlined text-xl">cancel</span>
+<span class="text-sm font-bold uppercase tracking-wider">The "Don'ts"</span>
+</div>
+<ul class="space-y-4 text-sm font-medium opacity-70">
+<li class="flex items-start gap-2 line-through decoration-primary">
+<span class="text-primary mt-1">•</span>
+<span>Embed keys in frontend JavaScript</span>
+</li>
+<li class="flex items-start gap-2 line-through decoration-primary">
+<span class="text-primary mt-1">•</span>
+<span>Send keys via Slack or Email</span>
+</li>
+<li class="flex items-start gap-2 line-through decoration-primary">
+<span class="text-primary mt-1">•</span>
+<span>Use the same key for all apps</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Documentation Card -->
+<div class="rounded-xl bg-primary text-white p-8 relative overflow-hidden group">
+<div class="relative z-10 flex flex-col gap-4">
+<h4 class="text-xl font-bold leading-tight">Need deep dive?</h4>
+<p class="text-sm text-slate-200">Read our full technical whitepaper on OpenClaw API security architecture.</p>
+<button class="mt-4 flex items-center justify-center w-full py-3 bg-white text-slate-900 rounded-lg font-bold text-sm">
+                            View Docs
+                        </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 transform group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px]">menu_book</span>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto border-t border-primary/10 py-10 px-6 lg:px-20 bg-slate-50 dark:bg-black">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 grayscale">
+<span class="material-symbols-outlined">shield_lock</span>
+<span class="font-bold">OpenClaw Security</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">System Status</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Security Team</a>
+</div>
+<div class="text-xs text-slate-400 font-mono">
+                © 2024 OPENCLAW LABS. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</div>
+</body></html>

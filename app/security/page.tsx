@@ -1,134 +1,169 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Shield, Key, Lock, AlertTriangle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { Shield, Key, Lock, AlertTriangle, ArrowRight, CheckCircle, XCircle } from 'lucide-react'
 
 export default function SecurityPage() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-4">安全Medium心</h1>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        Security guidelines and actionable protection checklist for high-privilege agents
-      </p>
+    <div className="min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
+      <main className="max-w-4xl mx-auto w-full px-6 py-12 lg:px-20">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">
+          <Link href="/" className="hover:text-slate-900 dark:hover:text-slate-100">Home</Link>
+          <ArrowRight className="h-3 w-3" />
+          <span className="text-slate-900 dark:text-slate-300">Security Center</span>
+        </div>
 
-      {/* API Key Security */}
-      <Card className="mb-8" id="api-keys">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Key className="h-5 w-5" />
-            <CardTitle>API Key Security</CardTitle>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h3 className="font-semibold mb-2">Storage Best Practices</h3>
-            <ul className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-              <li>✅ Store API keys in environment variables</li>
-              <li>✅ Never hardcode keys in code or config files</li>
-              <li>✅ Use .env.local and add to .gitignore</li>
-              <li>❌ 不要在日志Medium输出 Key</li>
-              <li>❌ 不要在截图Medium暴露 Key</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Rotation & Limits</h3>
-            <ul className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-              <li>• Rotate API keys regularly (every 90 days recommended)</li>
-              <li>• Set usage limits and alerts</li>
-              <li>• Use read-only keys when possible</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Permission Control */}
-      <Card className="mb-8">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Lock className="h-5 w-5" />
-            <CardTitle>Minimal Permissions</CardTitle>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-neutral-700 dark:text-neutral-300">
-            安装 Skill 前，仔细阅读权限说明：
+        {/* Header */}
+        <div className="mb-12">
+          <h1 className="text-5xl font-black mb-4 tracking-tighter">
+            SECURITY <br/>CENTER.
+          </h1>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+            Security guidelines and actionable protection checklist for high-privilege agents. Follow these best practices to keep your deployments secure.
           </p>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div>
-              <Badge variant="secondary" className="mb-2">Low Risk</Badge>
-              <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                <li>• 文件读取</li>
-                <li>• 网络请求</li>
-              </ul>
-            </div>
-            <div>
-              <Badge variant="default" className="mb-2">Medium Risk</Badge>
-              <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                <li>• 文件写入</li>
-                <li>• 系统命令</li>
-                <li>• 浏览器控制</li>
-              </ul>
-            </div>
-            <div>
-              <Badge variant="destructive" className="mb-2">High Risk</Badge>
-              <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
-                <li>• 支付操作</li>
-                <li>• 删除数据</li>
-                <li>• 发货/发布</li>
-              </ul>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Cloud Deployment */}
-      <Card className="mb-8">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5" />
-            <CardTitle>Cloud Deployment安全</CardTitle>
+        {/* Alert Banner */}
+        <div className="mb-12 bg-slate-900 dark:bg-white text-white dark:text-slate-900 p-6 rounded-2xl flex items-start gap-4 border border-slate-800 dark:border-slate-200">
+          <AlertTriangle className="h-6 w-6 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold mb-2 text-lg">Critical Security Notice</h3>
+            <p className="text-slate-300 dark:text-slate-600 text-sm leading-relaxed">
+              OpenClaw agents can execute code and access APIs. Always review permissions before deployment and never expose API keys in public repositories or screenshots.
+            </p>
           </div>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-            <li>✅ 使用 SSH Key 认证，禁用密码登录</li>
-            <li>✅ 配置防火墙，只开放必要端口</li>
-            <li>✅ 使用反向代理（Nginx/Caddy）</li>
-            <li>✅ 启用 HTTPS（Let's Encrypt）</li>
-            <li>✅ 定期更新系统和依赖</li>
-            <li>✅ 配置日志脱敏</li>
-          </ul>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Risk Cases */}
-      <Card className="border-red-200 dark:border-red-900">
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5 text-red-600 dark:text-red-400" />
-            <CardTitle className="text-red-900 dark:text-red-100">常见风险案例</CardTitle>
+        {/* API Key Security */}
+        <div className="mb-8 bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-2xl overflow-hidden" id="api-keys">
+          <div className="p-8 border-b border-[#262626]/10 dark:border-[#262626]/30">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="size-10 bg-slate-900 dark:bg-slate-100 rounded-full flex items-center justify-center">
+                <Key className="h-5 w-5 text-white dark:text-slate-900" />
+              </div>
+              <h2 className="text-2xl font-black uppercase tracking-tight">API Key Security</h2>
+            </div>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Protect your API credentials from unauthorized access</p>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h3 className="font-semibold mb-2 text-red-900 dark:text-red-100">案例 1：API Key 泄露</h3>
-            <p className="text-sm text-red-800 dark:text-red-200 mb-2">
-              Development者在 GitHub 提交了包含 OpenAI API Key 的配置文件，导致 Key 被爬虫抓取并滥用。
-            </p>
-            <p className="text-sm font-semibold text-red-900 dark:text-red-100">
-              防护：使用 .env.local + .gitignore，定期扫描仓库历史
-            </p>
+          <div className="p-8 space-y-6">
+            <div>
+              <h3 className="font-bold mb-4 text-sm uppercase tracking-widest text-slate-500">Storage Best Practices</h3>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Store API keys in environment variables (.env.local)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Never hardcode keys in code or config files</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Add .env files to .gitignore immediately</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Never output keys in logs or console</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <XCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Never expose keys in screenshots or screen recordings</span>
+                </div>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-[#262626]/10 dark:border-[#262626]/30">
+              <h3 className="font-bold mb-4 text-sm uppercase tracking-widest text-slate-500">Rotation & Limits</h3>
+              <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                <li>• Rotate API keys regularly (every 90 days recommended)</li>
+                <li>• Set usage limits and budget alerts on provider dashboards</li>
+                <li>• Use read-only keys when write access isn't required</li>
+                <li>• Monitor API usage for unusual patterns</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold mb-2 text-red-900 dark:text-red-100">案例 2：权限滥用</h3>
-            <p className="text-sm text-red-800 dark:text-red-200 mb-2">
-              某 Skill 声称"只读文件"，实际执行了删除操作。
-            </p>
-            <p className="text-sm font-semibold text-red-900 dark:text-red-100">
-              防护：审查 Skill 源码，使用沙箱环境测试
-            </p>
+        </div>
+
+        {/* Permission Control */}
+        <div className="mb-8 bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-2xl overflow-hidden">
+          <div className="p-8 border-b border-[#262626]/10 dark:border-[#262626]/30">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="size-10 bg-slate-900 dark:bg-slate-100 rounded-full flex items-center justify-center">
+                <Lock className="h-5 w-5 text-white dark:text-slate-900" />
+              </div>
+              <h2 className="text-2xl font-black uppercase tracking-tight">Minimal Permissions</h2>
+            </div>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Grant only the permissions required for each skill</p>
           </div>
-        </CardContent>
-      </Card>
+          <div className="p-8 space-y-4">
+            <div className="bg-[#262626]/5 dark:bg-[#262626]/20 p-4 rounded-lg border border-[#262626]/10 dark:border-[#262626]/30">
+              <h4 className="font-bold mb-2 text-sm">File System Access</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Restrict read/write to specific directories only</p>
+            </div>
+            <div className="bg-[#262626]/5 dark:bg-[#262626]/20 p-4 rounded-lg border border-[#262626]/10 dark:border-[#262626]/30">
+              <h4 className="font-bold mb-2 text-sm">Network Access</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Whitelist allowed domains and API endpoints</p>
+            </div>
+            <div className="bg-[#262626]/5 dark:bg-[#262626]/20 p-4 rounded-lg border border-[#262626]/10 dark:border-[#262626]/30">
+              <h4 className="font-bold mb-2 text-sm">Database Permissions</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Use separate credentials with limited scope</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cloud Deployment */}
+        <div className="mb-12 bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-2xl overflow-hidden">
+          <div className="p-8 border-b border-[#262626]/10 dark:border-[#262626]/30">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="size-10 bg-slate-900 dark:bg-slate-100 rounded-full flex items-center justify-center">
+                <Shield className="h-5 w-5 text-white dark:text-slate-900" />
+              </div>
+              <h2 className="text-2xl font-black uppercase tracking-tight">Cloud Hardening</h2>
+            </div>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Secure your cloud deployments with these practices</p>
+          </div>
+          <div className="p-8 space-y-4">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold mb-1 text-sm">SSH Key Authentication</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Disable password auth, use SSH keys only</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold mb-1 text-sm">Firewall Configuration</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Close all ports except required services</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold mb-1 text-sm">Regular Updates</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Keep system packages and dependencies updated</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold mb-1 text-sm">Monitoring & Alerts</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Set up intrusion detection and log monitoring</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button className="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-8 py-6 rounded-xl font-bold uppercase tracking-widest hover:opacity-90" asChild>
+            <Link href="/guides">
+              View Deployment Guides
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </main>
     </div>
   )
 }

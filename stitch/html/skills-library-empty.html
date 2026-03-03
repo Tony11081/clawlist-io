@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#262626",
+              "background-light": "#f7f7f7",
+              "background-dark": "#191919",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>OpenClaw | Skills Library</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 dark:border-primary/50 px-6 py-4 lg:px-20">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+<div class="size-8 bg-primary dark:bg-slate-100 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-background-light dark:text-background-dark text-xl">polyline</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">OpenClaw</h2>
+</div>
+<div class="hidden md:flex items-center gap-6 ml-4">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary dark:text-white text-sm font-bold border-b-2 border-primary dark:border-white pb-1" href="#">Skills Library</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Resources</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 dark:bg-primary/40 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-slate-300 dark:bg-primary border border-primary/20" data-alt="User profile avatar placeholder"></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<div class="w-full max-w-5xl px-6 py-12 lg:py-20">
+<div class="flex flex-col gap-2 mb-10 text-center md:text-left">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-2 justify-center md:justify-start">
+<a href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Skills Library</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-slate-100">Skills Library</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Master advanced technical modules for the OpenClaw ecosystem.</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-12 rounded-xl bg-slate-200/50 dark:bg-primary/30 border-none focus:ring-2 focus:ring-primary dark:focus:ring-slate-500 text-slate-900 dark:text-slate-100 placeholder:text-slate-400" type="text" value="quantum threading optimization"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<button class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">cancel</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white dark:bg-slate-100 dark:text-background-dark text-sm font-medium">
+                                All Skills
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/40 text-slate-900 dark:text-slate-100 text-sm font-medium">
+                                Backend
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/40 text-slate-900 dark:text-slate-100 text-sm font-medium">
+                                Frontend
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200 dark:bg-primary/40 text-slate-900 dark:text-slate-100 text-sm font-medium">
+                                DevOps
+                                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<div class="mt-20 flex flex-col items-center text-center max-w-lg mx-auto">
+<div class="relative mb-8">
+<div class="absolute -inset-4 bg-primary/5 dark:bg-primary/20 blur-2xl rounded-full"></div>
+<div class="relative size-40 rounded-xl bg-slate-100 dark:bg-primary/20 flex items-center justify-center border border-slate-200 dark:border-primary/40">
+<span class="material-symbols-outlined text-6xl text-slate-300 dark:text-primary/60">search_off</span>
+<div class="absolute bottom-4 right-4 size-10 rounded-full bg-white dark:bg-background-dark border border-slate-200 dark:border-primary/40 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-xl text-slate-400">filter_list_off</span>
+</div>
+</div>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-3">No skills found</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8">
+                            We couldn't find any skills matching <span class="text-primary dark:text-slate-200 font-semibold italic">"quantum threading optimization"</span>. 
+                            Try broadening your search or clearing active filters to see more results.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="px-8 py-3 rounded-xl bg-primary dark:bg-slate-100 text-white dark:text-background-dark font-bold text-sm transition-transform active:scale-95">
+                                Clear search
+                            </button>
+<button class="px-8 py-3 rounded-xl border border-slate-300 dark:border-primary/60 text-slate-700 dark:text-slate-300 font-bold text-sm hover:bg-slate-50 dark:hover:bg-primary/20 transition-colors">
+                                Browse documentation
+                            </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-10 px-6 border-t border-primary/10 dark:border-primary/40">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 dark:text-slate-500 text-sm">© 2024 OpenClaw. Built for efficiency.</p>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary dark:hover:text-slate-300 text-sm transition-colors" href="#">API Status</a>
+<a class="text-slate-500 hover:text-primary dark:hover:text-slate-300 text-sm transition-colors" href="#">Changelog</a>
+<a class="text-slate-500 hover:text-primary dark:hover:text-slate-300 text-sm transition-colors" href="#">Security</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

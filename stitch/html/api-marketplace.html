@@ -1,0 +1,293 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#262626",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .mesh-gradient {
+            background-color: #111111;
+            background-image: radial-gradient(at 0% 0%, #1a1a1a 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, #222222 0, transparent 50%), 
+                              radial-gradient(at 100% 0%, #1a1a1a 0, transparent 50%);
+        }
+        .code-block {
+            background: #141414;
+            border: 1px solid #262626;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between border-b border-primary/20 dark:border-primary px-8 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-slate-900 dark:bg-slate-100 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white dark:text-black">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CLAWLIST<span class="text-primary/50">.IO</span></h2>
+</div>
+<div class="hidden lg:flex items-center gap-8 border-l border-primary/20 dark:border-primary pl-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Marketplace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+<input class="bg-primary/10 dark:bg-primary/40 border-none rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:ring-1 focus:ring-slate-400" placeholder="Search resources..." type="text"/>
+</div>
+<button class="px-4 py-2 text-sm font-bold bg-slate-900 dark:bg-slate-100 text-white dark:text-black rounded-lg hover:opacity-90 transition-opacity">
+                    Connect
+                </button>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-7xl mx-auto w-full px-8 py-12">
+<!-- Hero Section -->
+<div class="flex flex-col gap-6 mb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-primary/30 rounded-full w-fit">
+<span class="size-2 bg-green-500 rounded-full"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Network Status: Operational</span>
+</div>
+<h1 class="text-6xl font-black leading-tight tracking-tighter max-w-3xl uppercase">
+                    Developer Resource Hub <br/>
+<span class="text-slate-500">for OpenClaw</span>
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl font-light">
+                    High-performance API endpoints, distributed compute, and secure data storage for modern engineering stacks. Built for speed.
+                </p>
+</div>
+<!-- Categories Tabs -->
+<div class="flex gap-4 border-b border-primary/20 dark:border-primary mb-8 overflow-x-auto pb-px">
+<button class="pb-4 px-2 border-b-2 border-slate-900 dark:border-slate-100 text-sm font-bold uppercase tracking-wider">All APIs</button>
+<button class="pb-4 px-2 border-b-2 border-transparent text-slate-500 text-sm font-bold uppercase tracking-wider hover:text-slate-900 dark:hover:text-slate-100">AI / ML</button>
+<button class="pb-4 px-2 border-b-2 border-transparent text-slate-500 text-sm font-bold uppercase tracking-wider hover:text-slate-900 dark:hover:text-slate-100">Computing</button>
+<button class="pb-4 px-2 border-b-2 border-transparent text-slate-500 text-sm font-bold uppercase tracking-wider hover:text-slate-900 dark:hover:text-slate-100">Storage</button>
+<button class="pb-4 px-2 border-b-2 border-transparent text-slate-500 text-sm font-bold uppercase tracking-wider hover:text-slate-900 dark:hover:text-slate-100">Security</button>
+</div>
+<!-- Main Provider Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-primary/20 border border-primary/10 dark:border-primary p-8 rounded-xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">memory</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-900 text-white rounded uppercase">v1.2.0</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">OpenClaw Core</h3>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed">Standardized compute interface for distributed workloads with sub-30ms latency.</p>
+</div>
+<button class="w-full py-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-black font-bold text-sm uppercase tracking-widest rounded-lg hover:scale-[1.02] transition-transform">
+                        Configure
+                    </button>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-primary/20 border border-primary/10 dark:border-primary p-8 rounded-xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">neurology</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-900 text-white rounded uppercase">Beta</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">NeuralGate</h3>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed">Low-latency inference gateway for LLMs and custom transformer models.</p>
+</div>
+<button class="w-full py-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-black font-bold text-sm uppercase tracking-widest rounded-lg hover:scale-[1.02] transition-transform">
+                        Configure
+                    </button>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-primary/20 border border-primary/10 dark:border-primary p-8 rounded-xl flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-4xl">database</span>
+<span class="text-[10px] font-bold px-2 py-1 bg-slate-900 text-white rounded uppercase">v0.9.4</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">DataScythe</h3>
+<p class="text-slate-500 text-sm mb-6 leading-relaxed">Object storage with automated sharding and globally consistent state.</p>
+</div>
+<button class="w-full py-4 bg-slate-900 dark:bg-slate-100 text-white dark:text-black font-bold text-sm uppercase tracking-widest rounded-lg hover:scale-[1.02] transition-transform">
+                        Configure
+                    </button>
+</div>
+</div>
+<!-- Comparison Table -->
+<div class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-3xl font-black uppercase tracking-tighter italic">Endpoint Benchmarks</h2>
+<div class="flex gap-2">
+<button class="p-2 border border-primary/20 dark:border-primary rounded hover:bg-primary/10"><span class="material-symbols-outlined text-sm">refresh</span></button>
+<button class="p-2 border border-primary/20 dark:border-primary rounded hover:bg-primary/10"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+<div class="overflow-x-auto border border-primary/20 dark:border-primary rounded-lg bg-white dark:bg-primary/10">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-900 text-white">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest">Provider</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest">Endpoint</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest">Avg Latency</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest">Uptime</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-widest">Load</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10 dark:divide-primary">
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/30 transition-colors">
+<td class="px-6 py-6 font-bold">OpenClaw Core</td>
+<td class="px-6 py-6 font-mono text-sm text-slate-500">/v1/compute/main</td>
+<td class="px-6 py-6"><span class="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs font-bold">24.2ms</span></td>
+<td class="px-6 py-6 text-sm">99.99%</td>
+<td class="px-6 py-6"><div class="w-24 h-1.5 bg-primary/20 rounded-full overflow-hidden"><div class="w-1/3 h-full bg-slate-900 dark:bg-white"></div></div></td>
+</tr>
+<tr class="bg-slate-50 dark:bg-primary/20 hover:bg-primary/5 dark:hover:bg-primary/30 transition-colors">
+<td class="px-6 py-6 font-bold">NeuralGate</td>
+<td class="px-6 py-6 font-mono text-sm text-slate-500">/v1/inference/gate</td>
+<td class="px-6 py-6"><span class="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs font-bold">41.8ms</span></td>
+<td class="px-6 py-6 text-sm">99.85%</td>
+<td class="px-6 py-6"><div class="w-24 h-1.5 bg-primary/20 rounded-full overflow-hidden"><div class="w-2/3 h-full bg-slate-900 dark:bg-white"></div></div></td>
+</tr>
+<tr class="hover:bg-primary/5 dark:hover:bg-primary/30 transition-colors">
+<td class="px-6 py-6 font-bold">DataScythe</td>
+<td class="px-6 py-6 font-mono text-sm text-slate-500">/v1/store/objects</td>
+<td class="px-6 py-6"><span class="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs font-bold">18.5ms</span></td>
+<td class="px-6 py-6 text-sm">100%</td>
+<td class="px-6 py-6"><div class="w-24 h-1.5 bg-primary/20 rounded-full overflow-hidden"><div class="w-1/5 h-full bg-slate-900 dark:bg-white"></div></div></td>
+</tr>
+<tr class="bg-slate-50 dark:bg-primary/20 hover:bg-primary/5 dark:hover:bg-primary/30 transition-colors">
+<td class="px-6 py-6 font-bold">SecureVault</td>
+<td class="px-6 py-6 font-mono text-sm text-slate-500">/v2/auth/verify</td>
+<td class="px-6 py-6"><span class="px-2 py-1 bg-yellow-500/10 text-yellow-600 rounded text-xs font-bold">88.1ms</span></td>
+<td class="px-6 py-6 text-sm">99.99%</td>
+<td class="px-6 py-6"><div class="w-24 h-1.5 bg-primary/20 rounded-full overflow-hidden"><div class="w-4/5 h-full bg-slate-900 dark:bg-white"></div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Coming Soon Calculator -->
+<div class="mesh-gradient rounded-xl p-12 mb-16 border border-primary relative overflow-hidden group">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-md">
+<span class="text-xs font-bold tracking-[0.3em] uppercase text-slate-400 mb-4 block">Coming Q4 2024</span>
+<h2 class="text-4xl font-bold text-white mb-4">Smart Cost Predictor</h2>
+<p class="text-slate-400">Calculate your infrastructure overhead before you deploy. Dynamic pricing based on request volume and regional availability.</p>
+</div>
+<div class="flex gap-4">
+<input class="bg-white/5 border-white/10 rounded-lg text-white px-6 py-4 w-64 focus:ring-white/20" placeholder="Enter estimated requests/mo" type="text"/>
+<button class="bg-white text-black px-8 py-4 font-bold rounded-lg uppercase text-sm tracking-wider hover:bg-slate-200 transition-colors">Get Notified</button>
+</div>
+</div>
+<!-- Abstract pattern overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+</div>
+<!-- Integration Guide -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<div class="space-y-12">
+<h2 class="text-4xl font-black uppercase italic tracking-tighter">Fast Integration</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="text-6xl font-black text-primary/20 dark:text-primary">01</span>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase">Generate Access Key</h4>
+<p class="text-slate-500 leading-relaxed">Head to your dashboard and create a scoped API token with 'read:core' permissions.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-6xl font-black text-primary/20 dark:text-primary">02</span>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase">Install SDK</h4>
+<p class="text-slate-500 leading-relaxed">Integrate the OpenClaw SDK into your project using npm, pip, or go get.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-6xl font-black text-primary/20 dark:text-primary">03</span>
+<div>
+<h4 class="text-xl font-bold mb-2 uppercase">Fire Requests</h4>
+<p class="text-slate-500 leading-relaxed">Start interacting with the endpoints using our type-safe clients.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="code-block rounded-xl p-1 shadow-2xl">
+<div class="flex items-center gap-2 px-4 py-3 border-b border-primary/20 dark:border-primary">
+<div class="size-3 rounded-full bg-red-500/20"></div>
+<div class="size-3 rounded-full bg-yellow-500/20"></div>
+<div class="size-3 rounded-full bg-green-500/20"></div>
+<span class="text-xs font-mono text-slate-500 ml-4">example_implementation.ts</span>
+</div>
+<div class="p-8 font-mono text-sm leading-relaxed overflow-x-auto text-slate-300">
+<p><span class="text-purple-400">import</span> { OpenClaw } <span class="text-purple-400">from</span> <span class="text-green-400">'@openclaw/sdk'</span>;</p>
+<br/>
+<p><span class="text-slate-500">// Initialize client</span></p>
+<p><span class="text-blue-400">const</span> client = <span class="text-blue-400">new</span> <span class="text-yellow-400">OpenClaw</span>({</p>
+<p class="pl-4">apiKey: <span class="text-green-400">'cl_test_51...2a'</span>,</p>
+<p class="pl-4">region: <span class="text-green-400">'us-east-1'</span></p>
+<p>});</p>
+<br/>
+<p><span class="text-slate-500">// Process workload</span></p>
+<p><span class="text-blue-400">async function</span> <span class="text-yellow-400">process</span>() {</p>
+<p class="pl-4"><span class="text-blue-400">const</span> res = <span class="text-purple-400">await</span> client.<span class="text-yellow-400">compute</span>({</p>
+<p class="pl-8">units: <span class="text-orange-400">1024</span>,</p>
+<p class="pl-8">priority: <span class="text-green-400">'high'</span></p>
+<p class="pl-4">});</p>
+<p class="pl-4">console.<span class="text-yellow-400">log</span>(res.<span class="text-blue-400">latency</span>);</p>
+<p>}</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-primary/20 dark:border-primary px-8 py-12 bg-background-light dark:bg-background-dark mt-24">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-xl font-bold tracking-tighter uppercase">CLAWLIST.IO</h2>
+<p class="text-xs text-slate-500 font-mono">EST. 2024 / BUILD_7122 / GLOBAL_V2</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold uppercase text-slate-400">Network</span>
+<a class="text-sm font-medium hover:underline" href="#">Status</a>
+<a class="text-sm font-medium hover:underline" href="#">Regions</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold uppercase text-slate-400">Legal</span>
+<a class="text-sm font-medium hover:underline" href="#">Terms</a>
+<a class="text-sm font-medium hover:underline" href="#">Privacy</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold uppercase text-slate-400">Social</span>
+<a class="text-sm font-medium hover:underline" href="#">X / Twitter</a>
+<a class="text-sm font-medium hover:underline" href="#">Github</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

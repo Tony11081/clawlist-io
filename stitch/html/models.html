@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Model Guide Variant 2 | ClawList.io</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#262626",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-primary/40 px-6 md:px-20 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3">
+<div class="size-6 text-slate-900 dark:text-slate-100">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">ClawList.io</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-slate-400 transition-colors" href="#">Models</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-slate-400 transition-colors" href="#">API</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-slate-400 transition-colors" href="#">Docs</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-slate-400 transition-colors" href="#">Pricing</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-64 h-10 pl-10 pr-4 rounded-lg bg-slate-100 dark:bg-primary/30 border-none focus:ring-1 focus:ring-slate-400 text-sm" placeholder="Search resources..." type="text"/>
+</div>
+<button class="bg-primary dark:bg-slate-100 text-white dark:text-primary px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
+                Get Started
+            </button>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-primary/50 overflow-hidden border border-slate-300 dark:border-primary">
+<img class="w-full h-full object-cover" data-alt="User profile avatar monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6v1FN_u6DvPzQK5zdyuFSh5u8BFpe_1xHshh07xdekX7F6VquMqEmEOIZ27rx5ryZyAwLkRO-9MY40Nr-BWfs8OxMpA0cJZQzrhrUBbm91UIv0AvTkXeNjgxqLsTegOJJPHDX-soM-AhXW8bT8JBVosZIGKTS4gmsiZLnnBCHI4OB-b8bwXMPQvIKF9wzR_nquJ0znE8qgcAtRFudXDG6srI9_eSqQ2rtKbe1gnJ5510IuwIQeZkoOrW7GFGYEVhY61yZOPf_QQ"/>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-6xl mx-auto w-full px-6 md:px-10 py-10">
+<!-- Breadcrumb & Header -->
+<div class="mb-12">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-4">
+<span>Home</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Model Guide</span>
+</div>
+<h1 class="text-5xl font-black tracking-tighter mb-4">Model Guide <span class="text-slate-400 dark:text-slate-600">v2.0</span></h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+                The definitive technical resource for OpenClaw model selection, capability mapping, and API integration. Designed for high-performance engineering teams.
+            </p>
+</div>
+<!-- Capability Selector -->
+<section class="mb-16">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">Capabilities</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-slate-200 dark:border-primary/50 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-primary transition-all duration-300 group">
+<span class="material-symbols-outlined mb-2 text-3xl">terminal</span>
+<span class="font-bold">Text Gen</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-slate-200 dark:border-primary/50 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-primary transition-all duration-300 group">
+<span class="material-symbols-outlined mb-2 text-3xl">draw</span>
+<span class="font-bold">Synthesis</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-slate-200 dark:border-primary/50 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-primary transition-all duration-300 group">
+<span class="material-symbols-outlined mb-2 text-3xl">monitoring</span>
+<span class="font-bold">Analysis</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 rounded-lg border-2 border-slate-200 dark:border-primary/50 hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-primary transition-all duration-300 group">
+<span class="material-symbols-outlined mb-2 text-3xl">layers</span>
+<span class="font-bold">Embeddings</span>
+</button>
+</div>
+</section>
+<!-- Recommendation Card (Dark Theme Highlight) -->
+<section class="mb-16">
+<div class="bg-slate-900 dark:bg-black rounded-xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-10 border border-slate-800">
+<div class="flex-1">
+<div class="inline-block px-3 py-1 rounded-full bg-slate-800 text-xs font-bold uppercase tracking-widest mb-6">Recommended for scaling</div>
+<h2 class="text-3xl font-bold mb-4">Claw-70B Turbo</h2>
+<p class="text-slate-400 mb-8 leading-relaxed">
+                        Optimized for large-scale production deployments. Combines 98th percentile reasoning capabilities with a 40% reduction in latency compared to the legacy Claw-Series.
+                    </p>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-white text-black rounded-lg font-bold text-sm hover:bg-slate-200 transition-colors">Deploy Model</button>
+<button class="px-6 py-3 border border-slate-700 rounded-lg font-bold text-sm hover:bg-slate-800 transition-colors">Benchmarks</button>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-slate-800 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Abstract monochrome technical visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYIk8hd9HCJh4ztbyid9p9oXn1gt60D8vkL_UYredID5CaTBY-SXccdTKcihVz3G-JMJNcq4RLpeRL076n0Kj4wBg5VVGHlu6rVgigf8FF0cpComUqMmG1YphxDiiaLSwcFqkv6rEUe-3x8z16FIZeZQAUCb9tgNZeJXGyY4g7nZdOU7u7Ljv_SoI5-0XxrxFiy_84zYtFowcG-ikr2EOp0pdouaMc8OSUDS1D9We7Dp2R6DGRZQ9JsnPeklHb82bFA_ExSHtklA"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-white/20">rocket_launch</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Model Comparison Table -->
+<section class="mb-16 overflow-hidden">
+<h3 class="text-xl font-bold mb-6">Performance Comparison</h3>
+<div class="border border-slate-200 dark:border-primary/40 rounded-lg overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-primary/20">
+<th class="px-6 py-4 text-sm font-bold uppercase tracking-wider border-b border-slate-200 dark:border-primary/40">Model Name</th>
+<th class="px-6 py-4 text-sm font-bold uppercase tracking-wider border-b border-slate-200 dark:border-primary/40">Parameters</th>
+<th class="px-6 py-4 text-sm font-bold uppercase tracking-wider border-b border-slate-200 dark:border-primary/40">Latency</th>
+<th class="px-6 py-4 text-sm font-bold uppercase tracking-wider border-b border-slate-200 dark:border-primary/40">Pricing /1k Tok</th>
+<th class="px-6 py-4 text-sm font-bold uppercase tracking-wider border-b border-slate-200 dark:border-primary/40 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-primary/20">
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<td class="px-6 py-5 font-bold">Claw-70B Pro</td>
+<td class="px-6 py-5 text-slate-500">70 Billion</td>
+<td class="px-6 py-5 text-slate-500">450ms</td>
+<td class="px-6 py-5 text-slate-500">$0.012</td>
+<td class="px-6 py-5 text-right"><button class="text-primary dark:text-white font-bold text-sm underline underline-offset-4">Select</button></td>
+</tr>
+<tr class="bg-slate-50/50 dark:bg-primary/5 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<td class="px-6 py-5 font-bold">Claw-13B Swift</td>
+<td class="px-6 py-5 text-slate-500">13 Billion</td>
+<td class="px-6 py-5 text-slate-500">120ms</td>
+<td class="px-6 py-5 text-slate-500">$0.002</td>
+<td class="px-6 py-5 text-right"><button class="text-primary dark:text-white font-bold text-sm underline underline-offset-4">Select</button></td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<td class="px-6 py-5 font-bold">Claw-8B Edge</td>
+<td class="px-6 py-5 text-slate-500">8 Billion</td>
+<td class="px-6 py-5 text-slate-500">45ms</td>
+<td class="px-6 py-5 text-slate-500">$0.0008</td>
+<td class="px-6 py-5 text-right"><button class="text-primary dark:text-white font-bold text-sm underline underline-offset-4">Select</button></td>
+</tr>
+<tr class="bg-slate-50/50 dark:bg-primary/5 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<td class="px-6 py-5 font-bold">Claw-Vision X</td>
+<td class="px-6 py-5 text-slate-500">Multimodal</td>
+<td class="px-6 py-5 text-slate-500">800ms</td>
+<td class="px-6 py-5 text-slate-500">$0.025</td>
+<td class="px-6 py-5 text-right"><button class="text-primary dark:text-white font-bold text-sm underline underline-offset-4">Select</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- API Key Setup -->
+<section class="mb-20">
+<h3 class="text-xl font-bold mb-6">API Key Setup</h3>
+<div class="grid md:grid-cols-3 gap-8 items-start">
+<div class="md:col-span-2 space-y-4">
+<div class="p-6 bg-slate-100 dark:bg-primary/20 rounded-lg border border-slate-200 dark:border-primary/40">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-mono font-bold text-slate-400">cURL / BASH</span>
+<button class="material-symbols-outlined text-sm hover:text-primary dark:hover:text-white">content_copy</button>
+</div>
+<code class="code-block text-sm block leading-relaxed text-slate-700 dark:text-slate-300">
+                            curl https://api.openclaw.io/v1/models \<br/>
+                              -H "Authorization: Bearer <span class="text-primary dark:text-white font-bold">$OPENCLAW_API_KEY</span>" \<br/>
+                              -H "Content-Type: application/json"
+                        </code>
+</div>
+<div class="p-4 rounded-lg bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-900/30 flex gap-3">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500">security</span>
+<div class="text-sm">
+<p class="font-bold text-yellow-800 dark:text-yellow-500">Security Notice</p>
+<p class="text-yellow-700 dark:text-yellow-600/80">Never share your API keys or commit them to public repositories. Use environment variables for production environments.</p>
+</div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-primary/10 border border-slate-200 dark:border-primary/40 rounded-lg p-6">
+<h4 class="font-bold mb-4">Key Management</h4>
+<ul class="space-y-4 text-sm text-slate-600 dark:text-slate-400">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                            Rotate keys every 90 days
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                            Scope keys to specific projects
+                        </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                            Monitor usage in dashboard
+                        </li>
+</ul>
+<button class="w-full mt-6 py-2 bg-slate-200 dark:bg-primary/40 hover:bg-slate-300 dark:hover:bg-primary/60 rounded-lg text-sm font-bold transition-colors">
+                        Generate New Key
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 dark:border-primary/40 py-10 px-6 md:px-20 bg-slate-50 dark:bg-background-dark/50">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 opacity-50">
+<div class="size-5">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"></path>
+</svg>
+</div>
+<span class="text-sm font-bold">ClawList.io</span>
+</div>
+<div class="flex gap-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Status</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<p class="text-xs text-slate-500">© 2024 OpenClaw Research Inc.</p>
+</div>
+</footer>
+</div>
+</body></html>
