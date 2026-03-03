@@ -14,6 +14,7 @@ export function Navigation() {
     { href: '/guides', label: 'Guides' },
     { href: '/skills', label: 'Skills' },
     { href: '/recipes', label: 'Recipes' },
+    { href: '/api-marketplace', label: 'API Market' },
     { href: '/models', label: 'Models' },
     { href: '/security', label: 'Security' },
   ]
