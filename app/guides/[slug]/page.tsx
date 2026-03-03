@@ -10,8 +10,9 @@ export function generateStaticParams() {
   return guides.map((guide) => ({ slug: guide.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const guide = guides.find((item) => item.slug === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const guide = guides.find((item) => item.slug === slug)
   if (!guide) {
     return { title: 'Guide Not Found' }
   }
@@ -25,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function GuideDetailPage({ params }: { params: { slug: string } }) {
-  const guide = guides.find((item) => item.slug === params.slug)
+export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const guide = guides.find((item) => item.slug === slug)
 
   if (!guide) {
     notFound()

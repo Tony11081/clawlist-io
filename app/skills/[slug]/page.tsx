@@ -34,8 +34,9 @@ async function getSkill(slug: string) {
   return data
 }
 
-export default async function SkillDetailPage({ params }: { params: { slug: string } }) {
-  const skill = await getSkill(params.slug)
+export default async function SkillDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const skill = await getSkill(slug)
   
   if (!skill) {
     notFound()

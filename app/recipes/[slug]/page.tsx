@@ -10,8 +10,9 @@ export function generateStaticParams() {
   return recipes.map((recipe) => ({ slug: recipe.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const recipe = recipes.find((item) => item.slug === params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const recipe = recipes.find((item) => item.slug === slug)
   if (!recipe) {
     return { title: 'Recipe Not Found' }
   }
@@ -25,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function RecipeDetailPage({ params }: { params: { slug: string } }) {
-  const recipe = recipes.find((item) => item.slug === params.slug)
+export default async function RecipeDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const recipe = recipes.find((item) => item.slug === slug)
 
   if (!recipe) {
     notFound()
