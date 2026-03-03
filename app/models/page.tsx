@@ -1,150 +1,142 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Check } from 'lucide-react'
-
 export default function ModelsPage() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <h1 className="text-4xl font-bold mb-4">Model Guide</h1>
-      <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        Choose the right model, understand costs, integrate correctly
-      </p>
+    <div className="min-h-screen bg-[#f7f7f7]">
+      <div className="container mx-auto px-6 py-16 max-w-6xl">
+        {/* Header */}
+        <div className="mb-16">
+          <h1 className="text-5xl font-bold mb-4 text-[#191919]">Model Guide</h1>
+          <p className="text-lg text-[#666666]">
+            Choose the right model, understand costs, integrate correctly
+          </p>
+        </div>
 
-      {/* Model Comparison */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Model Comparison</CardTitle>
-        </CardHeader>
-        <CardContent>
+        {/* Model Comparison Table */}
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Model Comparison</h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full">
               <thead>
-                <tr className="border-b">
-                  <th className="text-left py-3 px-4">Model</th>
-                  <th className="text-left py-3 px-4">Speed</th>
-                  <th className="text-left py-3 px-4">Cost</th>
-                  <th className="text-left py-3 px-4">Context</th>
-                  <th className="text-left py-3 px-4">Use Cases</th>
+                <tr className="border-b border-[#e5e5e5]">
+                  <th className="text-left py-4 px-4 font-semibold text-[#191919]">Model</th>
+                  <th className="text-left py-4 px-4 font-semibold text-[#191919]">Speed</th>
+                  <th className="text-left py-4 px-4 font-semibold text-[#191919]">Cost</th>
+                  <th className="text-left py-4 px-4 font-semibold text-[#191919]">Context</th>
+                  <th className="text-left py-4 px-4 font-semibold text-[#191919]">Use Cases</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b">
-                  <td className="py-3 px-4 font-medium">GPT-5.3 Codex</td>
-                  <td className="py-3 px-4">
-                    <Badge variant="secondary">Fast</Badge>
+                <tr className="border-b border-[#e5e5e5]">
+                  <td className="py-4 px-4 font-medium text-[#191919]">GPT-5.3 Codex</td>
+                  <td className="py-4 px-4">
+                    <span className="px-3 py-1 bg-[#f0f0f0] text-[#191919] rounded-full text-sm">Fast</span>
                   </td>
-                  <td className="py-3 px-4">$$</td>
-                  <td className="py-3 px-4">128K</td>
-                  <td className="py-3 px-4">Code generation, technical tasks</td>
+                  <td className="py-4 px-4 text-[#666666]">$$</td>
+                  <td className="py-4 px-4 text-[#666666]">128K</td>
+                  <td className="py-4 px-4 text-[#666666]">Code generation, technical tasks</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="py-3 px-4 font-medium">Claude Opus 4.6</td>
-                  <td className="py-3 px-4">
-                    <Badge>Medium</Badge>
+                <tr className="border-b border-[#e5e5e5]">
+                  <td className="py-4 px-4 font-medium text-[#191919]">Claude Opus 4.6</td>
+                  <td className="py-4 px-4">
+                    <span className="px-3 py-1 bg-[#262626] text-white rounded-full text-sm">Medium</span>
                   </td>
-                  <td className="py-3 px-4">$$$</td>
-                  <td className="py-3 px-4">200K</td>
-                  <td className="py-3 px-4">Complex reasoning, long documents</td>
+                  <td className="py-4 px-4 text-[#666666]">$$$</td>
+                  <td className="py-4 px-4 text-[#666666]">200K</td>
+                  <td className="py-4 px-4 text-[#666666]">Complex reasoning, long documents</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="py-3 px-4 font-medium">Claude Sonnet 4.6</td>
-                  <td className="py-3 px-4">
-                    <Badge variant="secondary">Fast</Badge>
+                <tr className="border-b border-[#e5e5e5]">
+                  <td className="py-4 px-4 font-medium text-[#191919]">Claude Sonnet 4.6</td>
+                  <td className="py-4 px-4">
+                    <span className="px-3 py-1 bg-[#f0f0f0] text-[#191919] rounded-full text-sm">Fast</span>
                   </td>
-                  <td className="py-3 px-4">$$</td>
-                  <td className="py-3 px-4">200K</td>
-                  <td className="py-3 px-4">日常对话、通用任务</td>
+                  <td className="py-4 px-4 text-[#666666]">$$</td>
+                  <td className="py-4 px-4 text-[#666666]">200K</td>
+                  <td className="py-4 px-4 text-[#666666]">Daily conversations, general tasks</td>
                 </tr>
                 <tr>
-                  <td className="py-3 px-4 font-medium">Gemini 3.1 Pro</td>
-                  <td className="py-3 px-4">
-                    <Badge variant="secondary">Fast</Badge>
+                  <td className="py-4 px-4 font-medium text-[#191919]">Gemini 3.1 Pro</td>
+                  <td className="py-4 px-4">
+                    <span className="px-3 py-1 bg-[#f0f0f0] text-[#191919] rounded-full text-sm">Fast</span>
                   </td>
-                  <td className="py-3 px-4">$</td>
-                  <td className="py-3 px-4">2M</td>
-                  <td className="py-3 px-4">超长Context、多模态</td>
+                  <td className="py-4 px-4 text-[#666666]">$</td>
+                  <td className="py-4 px-4 text-[#666666]">2M</td>
+                  <td className="py-4 px-4 text-[#666666]">Long context, multimodal</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Model Selector */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Model选择器</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
+        {/* Model Selector */}
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Model Selector</h2>
+          <div className="space-y-6">
             <div>
-              <h3 className="font-semibold mb-2">你的需求是？</h3>
-              <div className="grid md:grid-cols-2 gap-3">
-                <Button variant="outline" className="justify-start">
-                  💻 代码生成与审查
-                </Button>
-                <Button variant="outline" className="justify-start">
-                  ✍️ 内容创作与编辑
-                </Button>
-                <Button variant="outline" className="justify-start">
-                  🤖 自动化任务执行
-                </Button>
-                <Button variant="outline" className="justify-start">
-                  📊 数据分析与报告
-                </Button>
+              <h3 className="font-semibold mb-4 text-[#191919]">What do you need?</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
+                  <span className="text-2xl mb-2 block">💻</span>
+                  <span className="text-[#191919] font-medium">Code generation & review</span>
+                </button>
+                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
+                  <span className="text-2xl mb-2 block">✍️</span>
+                  <span className="text-[#191919] font-medium">Content creation & editing</span>
+                </button>
+                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
+                  <span className="text-2xl mb-2 block">🤖</span>
+                  <span className="text-[#191919] font-medium">Automated task execution</span>
+                </button>
+                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
+                  <span className="text-2xl mb-2 block">📊</span>
+                  <span className="text-[#191919] font-medium">Data analysis & reporting</span>
+                </button>
               </div>
             </div>
-            <div className="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg">
-              <p className="text-sm font-semibold mb-2">推荐：GPT-5.3 Codex</p>
-              <ul className="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+            <div className="bg-[#f7f7f7] p-6 rounded-2xl">
+              <p className="font-semibold mb-3 text-[#191919]">Recommended: GPT-5.3 Codex</p>
+              <ul className="space-y-2 text-[#666666]">
                 <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-600" />
-                  SpeedFast，适合实时交互
+                  <span className="text-[#191919]">✓</span>
+                  Fast speed, suitable for real-time interaction
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-600" />
-                  代码能力强
+                  <span className="text-[#191919]">✓</span>
+                  Strong code capabilities
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-green-600" />
-                  Cost适Medium
+                  <span className="text-[#191919]">✓</span>
+                  Moderate cost
                 </li>
               </ul>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* API Key Setup */}
-      <Card>
-        <CardHeader>
-          <CardTitle>API Key 接入</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
+        {/* API Key Setup */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">API Key Setup</h2>
+          <div className="space-y-6">
             <div>
-              <h3 className="font-semibold mb-2">环境变量配置（推荐）</h3>
-              <div className="bg-neutral-100 dark:bg-neutral-900 p-4 rounded-lg font-mono text-sm">
+              <h3 className="font-semibold mb-3 text-[#191919]">Environment Variables (Recommended)</h3>
+              <div className="bg-[#191919] p-6 rounded-2xl font-mono text-sm text-white overflow-x-auto">
                 <code>
                   export OPENAI_API_KEY=&quot;sk-...&quot;<br />
                   export ANTHROPIC_API_KEY=&quot;sk-ant-...&quot;
                 </code>
               </div>
             </div>
-            <div className="bg-yellow-50 dark:bg-yellow-950 p-4 rounded-lg">
-              <p className="text-sm font-semibold text-yellow-900 dark:text-yellow-100 mb-2">
-                ⚠️ 安全提示
+            <div className="bg-[#fff9e6] border border-[#ffd700] p-6 rounded-2xl">
+              <p className="font-semibold text-[#191919] mb-3">
+                ⚠️ Security Tips
               </p>
-              <ul className="text-sm space-y-1 text-yellow-800 dark:text-yellow-200">
+              <ul className="space-y-2 text-[#666666] text-sm">
                 <li>• Never hardcode keys in code or config files</li>
                 <li>• Use .env.local and add to .gitignore</li>
-                <li>• 定期轮换 API Key</li>
+                <li>• Rotate API keys regularly</li>
               </ul>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-03-03T08:57:20.413Z",
+  "rootUrl": "https://clawlist.io/",
+  "stats": {
+    "total": 1,
+    "htmlPages": 0,
+    "broken": 1,
+    "redirected": 0,
+    "externalRedirects": 0,
+    "maxDepth": 0,
+    "limitReached": false
+  },
+  "links": [
+    {
+      "url": "https://clawlist.io/",
+      "depth": 0,
+      "status": null,
+      "ok": false,
+      "redirected": false,
+      "finalUrl": null,
+      "finalOriginMatches": true,
+      "contentType": null,
+      "crawlable": false,
+      "outboundCount": 0,
+      "error": "fetch failed (ENOTFOUND: getaddrinfo ENOTFOUND clawlist.io)",
+      "discoveredFrom": []
+    }
+  ]
+}

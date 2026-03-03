@@ -1,7 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+
 import { Button } from '@/components/ui/button'
+import type { AnalyticsPayload } from '@/lib/analytics'
+import { sendAnalyticsEvent } from '@/lib/analytics/client'
 import { Check, Copy } from 'lucide-react'
 
 interface CopyButtonProps {
@@ -9,14 +12,24 @@ interface CopyButtonProps {
   label?: string
   variant?: 'default' | 'outline' | 'ghost'
   size?: 'default' | 'sm' | 'lg'
+  analyticsPayload?: AnalyticsPayload
 }
 
-export function CopyButton({ text, label = 'Copy', variant = 'default', size = 'sm' }: CopyButtonProps) {
+export function CopyButton({
+  text,
+  label = 'Copy',
+  variant = 'default',
+  size = 'sm',
+  analyticsPayload,
+}: CopyButtonProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(text)
+      if (analyticsPayload) {
+        void sendAnalyticsEvent(analyticsPayload)
+      }
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {

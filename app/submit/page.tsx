@@ -1,11 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Textarea } from '@/components/ui/textarea'
 import { Send } from 'lucide-react'
 
 export default function SubmitPage() {
@@ -25,10 +20,10 @@ export default function SubmitPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
-    
+
     // TODO: Submit to Supabase
     console.log('Submitting:', formData)
-    
+
     setTimeout(() => {
       setSubmitting(false)
       alert('Skill submitted for review! We\'ll notify you once it\'s approved.')
@@ -36,103 +31,112 @@ export default function SubmitPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Submit a Skill</h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
-          Share your OpenClaw skill with the community. All submissions are reviewed before publishing.
-        </p>
-      </div>
+    <div className="min-h-screen bg-[#f7f7f7]">
+      <div className="container mx-auto px-6 py-16 max-w-3xl">
+        {/* Header */}
+        <div className="mb-16">
+          <h1 className="text-5xl font-bold mb-4 text-[#191919]">Submit a Skill</h1>
+          <p className="text-lg text-[#666666]">
+            Share your OpenClaw skill with the community. All submissions are reviewed before publishing.
+          </p>
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Skill Information</CardTitle>
-          <CardDescription>
+        {/* Form */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm mb-8">
+          <h2 className="text-2xl font-bold mb-2 text-[#191919]">Skill Information</h2>
+          <p className="text-[#666666] mb-8">
             Provide details about your skill. Fields marked with * are required.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+          </p>
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Skill Name *
               </label>
-              <Input
+              <input
+                type="text"
                 placeholder="e.g., GitHub Issues Handler"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
             </div>
 
             {/* Summary */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Short Summary * (max 100 chars)
               </label>
-              <Input
+              <input
+                type="text"
                 placeholder="One-line description of what your skill does"
                 value={formData.summary}
                 onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
                 maxLength={100}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
-              <p className="text-xs text-neutral-500 mt-1">
+              <p className="text-xs text-[#999999] mt-1">
                 {formData.summary.length}/100 characters
               </p>
             </div>
 
             {/* Description */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Detailed Description *
               </label>
-              <Textarea
+              <textarea
                 placeholder="Explain what your skill does, how it works, and what problems it solves..."
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 rows={6}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919] resize-none"
               />
             </div>
 
             {/* GitHub URL */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 GitHub Repository URL
               </label>
-              <Input
+              <input
                 type="url"
                 placeholder="https://github.com/username/repo"
                 value={formData.githubUrl}
                 onChange={(e) => setFormData({ ...formData, githubUrl: e.target.value })}
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
             </div>
 
             {/* Install Command */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Install Command *
               </label>
-              <Input
+              <input
+                type="text"
                 placeholder="npx skills add your-skill"
                 value={formData.installCmd}
                 onChange={(e) => setFormData({ ...formData, installCmd: e.target.value })}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
             </div>
 
             {/* Category */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Category *
               </label>
               <select
-                className="w-full border rounded-md px-3 py-2 bg-white dark:bg-neutral-950"
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919] bg-white"
               >
                 <option value="">Select a category</option>
                 <option value="Development">Development</option>
@@ -150,16 +154,16 @@ export default function SubmitPage() {
 
             {/* Risk Level */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Risk Level *
               </label>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {[
                   { value: 'low', label: 'Low', desc: 'Read-only or minimal permissions' },
                   { value: 'medium', label: 'Medium', desc: 'Writes data or accesses APIs' },
                   { value: 'high', label: 'High', desc: 'System-level access or destructive actions' },
                 ].map((risk) => (
-                  <label key={risk.value} className="flex items-start gap-3 cursor-pointer">
+                  <label key={risk.value} className="flex items-start gap-3 cursor-pointer p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
                     <input
                       type="radio"
                       name="riskLevel"
@@ -169,10 +173,12 @@ export default function SubmitPage() {
                       className="mt-1"
                     />
                     <div>
-                      <Badge variant={risk.value === 'low' ? 'secondary' : 'default'}>
+                      <span className={`inline-block px-3 py-1 rounded-full text-xs ${
+                        risk.value === 'low' ? 'bg-[#f0f0f0] text-[#191919]' : 'bg-[#262626] text-white'
+                      }`}>
                         {risk.label} Risk
-                      </Badge>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+                      </span>
+                      <p className="text-sm text-[#666666] mt-2">
                         {risk.desc}
                       </p>
                     </div>
@@ -183,53 +189,75 @@ export default function SubmitPage() {
 
             {/* Tags */}
             <div>
-              <label className="block text-sm font-medium mb-2">
+              <label className="block text-sm font-medium mb-2 text-[#191919]">
                 Tags (comma-separated)
               </label>
-              <Input
+              <input
+                type="text"
                 placeholder="automation, github, code"
                 value={formData.tags}
                 onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
-              <p className="text-xs text-neutral-500 mt-1">
+              <p className="text-xs text-[#999999] mt-1">
                 Add relevant tags to help users find your skill
               </p>
             </div>
 
             {/* Submit Button */}
             <div className="pt-4">
-              <Button type="submit" className="w-full" disabled={submitting}>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full py-4 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+              >
                 {submitting ? (
                   'Submitting...'
                 ) : (
                   <>
-                    <Send className="mr-2 h-4 w-4" />
+                    <Send className="h-4 w-4" />
                     Submit for Review
                   </>
                 )}
-              </Button>
-              <p className="text-xs text-center text-neutral-500 mt-2">
+              </button>
+              <p className="text-xs text-center text-[#999999] mt-3">
                 Your submission will be reviewed within 24-48 hours
               </p>
             </div>
           </form>
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* Guidelines */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Submission Guidelines</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <p>✅ Provide clear, accurate descriptions</p>
-          <p>✅ Test your skill before submitting</p>
-          <p>✅ Include installation instructions</p>
-          <p>✅ Disclose all required permissions</p>
-          <p>❌ Don't submit malicious or harmful skills</p>
-          <p>❌ Don't plagiarize others' work</p>
-        </CardContent>
-      </Card>
+        {/* Guidelines */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Submission Guidelines</h2>
+          <div className="space-y-3 text-sm text-[#666666]">
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✓</span>
+              Provide clear, accurate descriptions
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✓</span>
+              Test your skill before submitting
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✓</span>
+              Include installation instructions
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✓</span>
+              Disclose all required permissions
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✗</span>
+              Don't submit malicious or harmful skills
+            </p>
+            <p className="flex items-center gap-2">
+              <span className="text-[#191919]">✗</span>
+              Don't plagiarize others' work
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

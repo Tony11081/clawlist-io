@@ -1,9 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 import { Github, Mail } from 'lucide-react'
 
@@ -25,68 +22,70 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-16 max-w-md">
-      <Card>
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Welcome to ClawList</CardTitle>
-          <CardDescription>Sign in to save favorites and submit skills</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {/* OAuth Buttons */}
-          <div className="space-y-2">
-            <Button
-              variant="outline"
-              className="w-full"
+    <div className="min-h-screen bg-[#f7f7f7] flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-md">
+        <div className="bg-white rounded-3xl p-8 shadow-sm">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold mb-2 text-[#191919]">Welcome to ClawList</h1>
+            <p className="text-[#666666]">Sign in to save favorites and submit skills</p>
+          </div>
+
+          <div className="space-y-4">
+            {/* OAuth Buttons */}
+            <button
               onClick={() => handleOAuthLogin('google')}
+              className="w-full py-3 px-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors flex items-center justify-center gap-2 text-[#191919]"
             >
-              <Mail className="mr-2 h-4 w-4" />
+              <Mail className="h-5 w-5" />
               Continue with Google
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full"
+            </button>
+            <button
               onClick={() => handleOAuthLogin('github')}
+              className="w-full py-3 px-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors flex items-center justify-center gap-2 text-[#191919]"
             >
-              <Github className="mr-2 h-4 w-4" />
+              <Github className="h-5 w-5" />
               Continue with GitHub
-            </Button>
-          </div>
+            </button>
 
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
+            <div className="relative my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-[#e5e5e5]"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white px-3 text-[#999999]">
+                  Or continue with email
+                </span>
+              </div>
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white dark:bg-neutral-950 px-2 text-neutral-500">
-                Or continue with email
-              </span>
-            </div>
-          </div>
 
-          {/* Email Form */}
-          <form onSubmit={handleEmailLogin} className="space-y-4">
-            <div>
-              <Input
+            {/* Email Form */}
+            <form onSubmit={handleEmailLogin} className="space-y-4">
+              <input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="w-full px-4 py-3 border border-[#e5e5e5] rounded-2xl focus:outline-none focus:border-[#191919]"
               />
-            </div>
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Magic Link'}
-            </Button>
-          </form>
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full py-3 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors disabled:opacity-50"
+              >
+                {loading ? 'Sending...' : 'Send Magic Link'}
+              </button>
+            </form>
 
-          <p className="text-xs text-center text-neutral-500">
-            By continuing, you agree to our{' '}
-            <Link href="/terms" className="underline">Terms</Link>
-            {' '}and{' '}
-            <Link href="/privacy" className="underline">Privacy Policy</Link>
-          </p>
-        </CardContent>
-      </Card>
+            <p className="text-xs text-center text-[#999999] mt-6">
+              By continuing, you agree to our{' '}
+              <Link href="/terms" className="text-[#191919] underline">Terms</Link>
+              {' '}and{' '}
+              <Link href="/privacy" className="text-[#191919] underline">Privacy Policy</Link>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

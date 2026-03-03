@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-03-03T09:03:44.581Z",
+  "source": "reports/link-audit/broken.json",
+  "totals": {
+    "brokenRecords": 1,
+    "http404": 0,
+    "staticPagesCreated": 0,
+    "catalogEntriesAdded": 0,
+    "ignored": 1
+  },
+  "applied": [],
+  "skipped": [
+    {
+      "url": "https://clawlist.io/",
+      "reason": "transport-or-fetch-error",
+      "status": null,
+      "error": "fetch failed (ENOTFOUND: getaddrinfo ENOTFOUND clawlist.io)"
+    }
+  ]
+}
