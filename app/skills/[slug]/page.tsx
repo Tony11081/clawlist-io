@@ -10,6 +10,12 @@ import { notFound } from 'next/navigation'
 export const revalidate = 60
 
 async function getSkill(slug: string) {
+  // Return null if Supabase is not configured
+  if (!supabase) {
+    console.warn('Supabase not configured')
+    return null
+  }
+
   const { data, error } = await supabase
     .from('skills')
     .select('*')

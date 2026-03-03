@@ -9,6 +9,12 @@ import { Search } from 'lucide-react'
 export const revalidate = 60 // Revalidate every 60 seconds
 
 async function getSkills() {
+  // Return empty array if Supabase is not configured
+  if (!supabase) {
+    console.warn('Supabase not configured, returning mock data')
+    return []
+  }
+
   const { data, error } = await supabase
     .from('skills')
     .select('*')
