@@ -1,19 +1,24 @@
 import { supabase } from '@/lib/supabase'
+import { AnalyticsTracker } from '@/components/analytics-tracker'
+import { CopyButton } from '@/components/copy-button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { Shield, Copy, Check } from 'lucide-react'
+import { Shield, Check } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { fallbackSkills } from '@/lib/catalog'
 
 export const revalidate = 60
 
 async function getSkill(slug: string) {
-  // Return null if Supabase is not configured
+  const fallback = fallbackSkills.find((item) => item.slug === slug)
+
+  // Return fallback data if Supabase is not configured
   if (!supabase) {
-    console.warn('Supabase not configured')
-    return null
+    console.warn('Supabase not configured, using fallback skill when available')
+    return fallback ?? null
   }
 
   const { data, error } = await supabase
@@ -21,11 +26,11 @@ async function getSkill(slug: string) {
     .select('*')
     .eq('slug', slug)
     .single()
-  
+
   if (error || !data) {
-    return null
+    return fallback ?? null
   }
-  
+
   return data
 }
 
@@ -38,6 +43,19 @@ export default async function SkillDetailPage({ params }: { params: { slug: stri
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <AnalyticsTracker
+        payload={{
+          eventType: 'skill_view',
+          pagePath: `/skills/${skill.slug}`,
+          skillId: skill.id,
+          skillSlug: skill.slug,
+          metadata: {
+            category: skill.category,
+            riskLevel: skill.risk_level,
+          },
+        }}
+      />
+
       {/* Breadcrumb */}
       <div className="mb-6 text-sm text-neutral-600 dark:text-neutral-400">
         <Link href="/skills" className="hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link>
@@ -72,9 +90,20 @@ export default async function SkillDetailPage({ params }: { params: { slug: stri
           <CardContent>
             <div className="bg-neutral-100 dark:bg-neutral-900 p-4 rounded-lg font-mono text-sm flex justify-between items-center">
               <code>{skill.install_cmd}</code>
-              <Button size="sm" variant="ghost">
-                <Copy className="h-4 w-4" />
-              </Button>
+              <CopyButton
+                text={skill.install_cmd}
+                label="Copy"
+                variant="ghost"
+                analyticsPayload={{
+                  eventType: 'install_copy',
+                  pagePath: `/skills/${skill.slug}`,
+                  skillId: skill.id,
+                  skillSlug: skill.slug,
+                  metadata: {
+                    category: skill.category,
+                  },
+                }}
+              />
             </div>
             {skill.openclaw_version_range && (
               <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">

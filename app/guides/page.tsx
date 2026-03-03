@@ -3,36 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { BookOpen, Server, MessageSquare } from 'lucide-react'
-
-const guides = [
-  {
-    id: 1,
-    slug: 'macos-local-deploy',
-    title: 'macOS Local Deployment',
-    description: 'Quick OpenClaw deployment on macOS',
-    category: 'Local Deployment',
-    difficulty: 'beginner',
-    readTime: '15 min',
-  },
-  {
-    id: 2,
-    slug: 'vps-cloud-deploy',
-    title: 'VPS Cloud Deployment',
-    description: 'Deploy OpenClaw on cloud servers with security',
-    category: 'Cloud Deployment',
-    difficulty: 'intermediate',
-    readTime: '30 min',
-  },
-  {
-    id: 3,
-    slug: 'telegram-integration',
-    title: 'Telegram Integration',
-    description: 'Connect OpenClaw to Telegram Bot',
-    category: 'Integration',
-    difficulty: 'beginner',
-    readTime: '10 min',
-  },
-]
+import { guides } from '@/lib/catalog'
 
 export default function GuidesPage() {
   return (

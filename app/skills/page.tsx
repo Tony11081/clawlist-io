@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { supabase } from '@/lib/supabase'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -7,6 +8,15 @@ import Link from 'next/link'
 import { Search } from 'lucide-react'
 
 export const revalidate = 60 // Revalidate every 60 seconds
+
+export const metadata: Metadata = {
+  title: 'Skills Library',
+  description:
+    'Discover, install, and compare OpenClaw skills with risk labels and required permissions.',
+  alternates: {
+    canonical: '/skills',
+  },
+}
 
 async function getSkills() {
   // Return empty array if Supabase is not configured

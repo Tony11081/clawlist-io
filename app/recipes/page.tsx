@@ -2,39 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-
-const recipes = [
-  {
-    id: 1,
-    slug: 'programmer',
-    title: 'Developer Assistant',
-    summary: 'Code review, bug fixes, documentation',
-    role_type: 'Development',
-    difficulty: 'intermediate',
-    skills_count: 5,
-    risk_level: 'medium',
-  },
-  {
-    id: 2,
-    slug: 'marketing-ops',
-    title: 'Marketing Ops',
-    summary: 'Content creation, email marketing, analytics',
-    role_type: 'Operations',
-    difficulty: 'beginner',
-    skills_count: 4,
-    risk_level: 'low',
-  },
-  {
-    id: 3,
-    slug: 'ecommerce-assistant',
-    title: 'E-commerce Assistant',
-    summary: 'Product optimization, customer service, orders',
-    role_type: 'E-commerce',
-    difficulty: 'intermediate',
-    skills_count: 6,
-    risk_level: 'medium',
-  },
-]
+import { recipes } from '@/lib/catalog'
 
 export default function RecipesPage() {
   return (
