@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { CopyButton } from '@/components/copy-button'
 import { ArrowRight, Shield, Zap, BookOpen } from 'lucide-react'
 
 export default function Home() {
@@ -96,9 +97,9 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: 'GitHub Issues', desc: 'Auto-handle GitHub issues and submit PRs', risk: 'low' },
-              { name: 'Browser Agent', desc: 'Browser automation for testing and scraping', risk: 'medium' },
-              { name: 'Email Marketing', desc: 'Automated email campaigns and CRM', risk: 'low' },
+              { name: 'GitHub Issues', desc: 'Auto-handle GitHub issues and submit PRs', risk: 'low', install: 'npx skills add gh-issues' },
+              { name: 'Browser Agent', desc: 'Browser automation for testing and scraping', risk: 'medium', install: 'npx skills add agent-browser' },
+              { name: 'Email Marketing', desc: 'Automated email campaigns and CRM', risk: 'low', install: 'npx skills add email-marketing' },
             ].map((skill) => (
               <Card key={skill.name} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -117,7 +118,7 @@ export default function Home() {
                         View Details
                       </Link>
                     </Button>
-                    <Button size="sm">Copy Install</Button>
+                    <CopyButton text={skill.install} label="Copy Install" />
                   </div>
                 </CardContent>
               </Card>
