@@ -8,38 +8,38 @@ const guides = [
   {
     id: 1,
     slug: 'macos-local-deploy',
-    title: 'macOS 本地部署',
-    description: '在 macOS 上快速部署 OpenClaw',
-    category: '本地部署',
+    title: 'macOS Local Deployment',
+    description: 'Quick OpenClaw deployment on macOS',
+    category: 'Local Deployment',
     difficulty: 'beginner',
-    readTime: '15 分钟',
+    readTime: '15 min',
   },
   {
     id: 2,
     slug: 'vps-cloud-deploy',
-    title: 'VPS 云端部署',
-    description: '在云服务器上部署 OpenClaw 并配置安全',
-    category: '云端部署',
+    title: 'VPS Cloud Deployment',
+    description: 'Deploy OpenClaw on cloud servers with security',
+    category: 'Cloud Deployment',
     difficulty: 'intermediate',
-    readTime: '30 分钟',
+    readTime: '30 min',
   },
   {
     id: 3,
     slug: 'telegram-integration',
-    title: 'Telegram 接入',
-    description: '将 OpenClaw 接入 Telegram Bot',
-    category: '接入渠道',
+    title: 'Telegram Integration',
+    description: 'Connect OpenClaw to Telegram Bot',
+    category: 'Integration',
     difficulty: 'beginner',
-    readTime: '10 分钟',
+    readTime: '10 min',
   },
 ]
 
 export default function GuidesPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <h1 className="text-4xl font-bold mb-4">Guides 教程中心</h1>
+      <h1 className="text-4xl font-bold mb-4">Guides & Tutorials</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        从部署到接入，从本地到云端的完整指南
+        Complete guides from deployment to integration, local to cloud
       </p>
 
       {/* Categories */}
@@ -47,21 +47,21 @@ export default function GuidesPage() {
         <Card>
           <CardHeader>
             <BookOpen className="h-8 w-8 mb-2 text-blue-600 dark:text-blue-400" />
-            <CardTitle>本地部署</CardTitle>
+            <CardTitle>Local Deployment</CardTitle>
             <CardDescription>Windows / macOS / Linux</CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
             <Server className="h-8 w-8 mb-2 text-green-600 dark:text-green-400" />
-            <CardTitle>云端部署</CardTitle>
+            <CardTitle>Cloud Deployment</CardTitle>
             <CardDescription>VPS / Docker / 安全加固</CardDescription>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader>
             <MessageSquare className="h-8 w-8 mb-2 text-purple-600 dark:text-purple-400" />
-            <CardTitle>接入渠道</CardTitle>
+            <CardTitle>Integration</CardTitle>
             <CardDescription>Telegram / Discord / WhatsApp</CardDescription>
           </CardHeader>
         </Card>

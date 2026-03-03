@@ -44,7 +44,7 @@ export default async function SkillDetailPage({ params }: { params: { slug: stri
         <div className="flex justify-between items-start mb-4">
           <h1 className="text-4xl font-bold">{skill.name}</h1>
           <Badge variant={skill.risk_level === 'low' ? 'secondary' : 'default'}>
-            {skill.risk_level === 'low' ? '低风险' : skill.risk_level === 'medium' ? '中风险' : '高风险'}
+            {skill.risk_level === 'low' ? 'Low Risk' : skill.risk_level === 'medium' ? 'Medium Risk' : 'High Risk'}
           </Badge>
         </div>
         <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-4">

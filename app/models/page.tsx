@@ -6,51 +6,51 @@ import { Check } from 'lucide-react'
 export default function ModelsPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <h1 className="text-4xl font-bold mb-4">Models 模型指南</h1>
+      <h1 className="text-4xl font-bold mb-4">Model Guide</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        选择合适的模型、理解成本、正确接入
+        Choose the right model, understand costs, integrate correctly
       </p>
 
       {/* Model Comparison */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>主流模型对比</CardTitle>
+          <CardTitle>Model Comparison</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left py-3 px-4">模型</th>
-                  <th className="text-left py-3 px-4">速度</th>
-                  <th className="text-left py-3 px-4">成本</th>
-                  <th className="text-left py-3 px-4">上下文</th>
-                  <th className="text-left py-3 px-4">适用场景</th>
+                  <th className="text-left py-3 px-4">Model</th>
+                  <th className="text-left py-3 px-4">Speed</th>
+                  <th className="text-left py-3 px-4">Cost</th>
+                  <th className="text-left py-3 px-4">Context</th>
+                  <th className="text-left py-3 px-4">Use Cases</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
                   <td className="py-3 px-4 font-medium">GPT-5.3 Codex</td>
                   <td className="py-3 px-4">
-                    <Badge variant="secondary">快</Badge>
+                    <Badge variant="secondary">Fast</Badge>
                   </td>
                   <td className="py-3 px-4">$$</td>
                   <td className="py-3 px-4">128K</td>
-                  <td className="py-3 px-4">代码生成、技术任务</td>
+                  <td className="py-3 px-4">Code generation, technical tasks</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3 px-4 font-medium">Claude Opus 4.6</td>
                   <td className="py-3 px-4">
-                    <Badge>中</Badge>
+                    <Badge>Medium</Badge>
                   </td>
                   <td className="py-3 px-4">$$$</td>
                   <td className="py-3 px-4">200K</td>
-                  <td className="py-3 px-4">复杂推理、长文档</td>
+                  <td className="py-3 px-4">Complex reasoning, long documents</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3 px-4 font-medium">Claude Sonnet 4.6</td>
                   <td className="py-3 px-4">
-                    <Badge variant="secondary">快</Badge>
+                    <Badge variant="secondary">Fast</Badge>
                   </td>
                   <td className="py-3 px-4">$$</td>
                   <td className="py-3 px-4">200K</td>
@@ -59,11 +59,11 @@ export default function ModelsPage() {
                 <tr>
                   <td className="py-3 px-4 font-medium">Gemini 3.1 Pro</td>
                   <td className="py-3 px-4">
-                    <Badge variant="secondary">快</Badge>
+                    <Badge variant="secondary">Fast</Badge>
                   </td>
                   <td className="py-3 px-4">$</td>
                   <td className="py-3 px-4">2M</td>
-                  <td className="py-3 px-4">超长上下文、多模态</td>
+                  <td className="py-3 px-4">超长Context、多模态</td>
                 </tr>
               </tbody>
             </table>
@@ -74,7 +74,7 @@ export default function ModelsPage() {
       {/* Model Selector */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>模型选择器</CardTitle>
+          <CardTitle>Model选择器</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -100,7 +100,7 @@ export default function ModelsPage() {
               <ul className="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-green-600" />
-                  速度快，适合实时交互
+                  SpeedFast，适合实时交互
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-green-600" />
@@ -108,7 +108,7 @@ export default function ModelsPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-green-600" />
-                  成本适中
+                  Cost适Medium
                 </li>
               </ul>
             </div>
@@ -137,8 +137,8 @@ export default function ModelsPage() {
                 ⚠️ 安全提示
               </p>
               <ul className="text-sm space-y-1 text-yellow-800 dark:text-yellow-200">
-                <li>• 不要将 Key 写入代码或配置文件</li>
-                <li>• 使用 .env.local 并加入 .gitignore</li>
+                <li>• Never hardcode keys in code or config files</li>
+                <li>• Use .env.local and add to .gitignore</li>
                 <li>• 定期轮换 API Key</li>
               </ul>
             </div>

@@ -7,9 +7,9 @@ const recipes = [
   {
     id: 1,
     slug: 'programmer',
-    title: '程序员助手',
-    summary: '代码审查、Bug 修复、文档生成',
-    role_type: '开发',
+    title: 'Developer Assistant',
+    summary: 'Code review, bug fixes, documentation',
+    role_type: 'Development',
     difficulty: 'intermediate',
     skills_count: 5,
     risk_level: 'medium',
@@ -17,9 +17,9 @@ const recipes = [
   {
     id: 2,
     slug: 'marketing-ops',
-    title: '营销运营',
-    summary: '内容创作、邮件营销、数据分析',
-    role_type: '运营',
+    title: 'Marketing Ops',
+    summary: 'Content creation, email marketing, analytics',
+    role_type: 'Operations',
     difficulty: 'beginner',
     skills_count: 4,
     risk_level: 'low',
@@ -27,9 +27,9 @@ const recipes = [
   {
     id: 3,
     slug: 'ecommerce-assistant',
-    title: '电商助理',
-    summary: '商品优化、客服自动化、订单管理',
-    role_type: '电商',
+    title: 'E-commerce Assistant',
+    summary: 'Product optimization, customer service, orders',
+    role_type: 'E-commerce',
     difficulty: 'intermediate',
     skills_count: 6,
     risk_level: 'medium',
@@ -39,9 +39,9 @@ const recipes = [
 export default function RecipesPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <h1 className="text-4xl font-bold mb-4">Recipes 岗位配方</h1>
+      <h1 className="text-4xl font-bold mb-4">Job Recipes</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        一键导入岗位专属配置，开箱即用的 AI 员工
+        One-click job configurations for ready-to-use AI agents
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -51,7 +51,7 @@ export default function RecipesPage() {
               <div className="flex justify-between items-start mb-2">
                 <CardTitle className="text-lg">{recipe.title}</CardTitle>
                 <Badge variant={recipe.risk_level === 'low' ? 'secondary' : 'default'}>
-                  {recipe.risk_level === 'low' ? '低风险' : '中风险'}
+                  {recipe.risk_level === 'low' ? 'Low Risk' : 'Medium Risk'}
                 </Badge>
               </div>
               <CardDescription>{recipe.summary}</CardDescription>

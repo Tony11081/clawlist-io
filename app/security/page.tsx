@@ -5,9 +5,9 @@ import { Shield, Key, Lock, AlertTriangle } from 'lucide-react'
 export default function SecurityPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-4xl font-bold mb-4">安全中心</h1>
+      <h1 className="text-4xl font-bold mb-4">安全Medium心</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-        高权限 Agent 的安全教育与可执行防护清单
+        Security guidelines and actionable protection checklist for high-privilege agents
       </p>
 
       {/* API Key Security */}
@@ -15,26 +15,26 @@ export default function SecurityPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Key className="h-5 w-5" />
-            <CardTitle>API Key 安全</CardTitle>
+            <CardTitle>API Key Security</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <h3 className="font-semibold mb-2">存储建议</h3>
+            <h3 className="font-semibold mb-2">Storage Best Practices</h3>
             <ul className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-              <li>✅ 使用环境变量存储 API Key</li>
-              <li>✅ 不要将 Key 写入代码或配置文件</li>
-              <li>✅ 使用 .env.local 并加入 .gitignore</li>
-              <li>❌ 不要在日志中输出 Key</li>
-              <li>❌ 不要在截图中暴露 Key</li>
+              <li>✅ Store API keys in environment variables</li>
+              <li>✅ Never hardcode keys in code or config files</li>
+              <li>✅ Use .env.local and add to .gitignore</li>
+              <li>❌ 不要在日志Medium输出 Key</li>
+              <li>❌ 不要在截图Medium暴露 Key</li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">轮换与限额</h3>
+            <h3 className="font-semibold mb-2">Rotation & Limits</h3>
             <ul className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-              <li>• 定期轮换 API Key（建议每 90 天）</li>
-              <li>• 设置使用限额和告警</li>
-              <li>• 使用只读 Key（如果可能）</li>
+              <li>• Rotate API keys regularly (every 90 days recommended)</li>
+              <li>• Set usage limits and alerts</li>
+              <li>• Use read-only keys when possible</li>
             </ul>
           </div>
         </CardContent>
@@ -45,7 +45,7 @@ export default function SecurityPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Lock className="h-5 w-5" />
-            <CardTitle>权限最小化</CardTitle>
+            <CardTitle>Minimal Permissions</CardTitle>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -54,14 +54,14 @@ export default function SecurityPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div>
-              <Badge variant="secondary" className="mb-2">低风险</Badge>
+              <Badge variant="secondary" className="mb-2">Low Risk</Badge>
               <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
                 <li>• 文件读取</li>
                 <li>• 网络请求</li>
               </ul>
             </div>
             <div>
-              <Badge variant="default" className="mb-2">中风险</Badge>
+              <Badge variant="default" className="mb-2">Medium Risk</Badge>
               <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
                 <li>• 文件写入</li>
                 <li>• 系统命令</li>
@@ -69,7 +69,7 @@ export default function SecurityPage() {
               </ul>
             </div>
             <div>
-              <Badge variant="destructive" className="mb-2">高风险</Badge>
+              <Badge variant="destructive" className="mb-2">High Risk</Badge>
               <ul className="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
                 <li>• 支付操作</li>
                 <li>• 删除数据</li>
@@ -85,7 +85,7 @@ export default function SecurityPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5" />
-            <CardTitle>云端部署安全</CardTitle>
+            <CardTitle>Cloud Deployment安全</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
@@ -112,7 +112,7 @@ export default function SecurityPage() {
           <div>
             <h3 className="font-semibold mb-2 text-red-900 dark:text-red-100">案例 1：API Key 泄露</h3>
             <p className="text-sm text-red-800 dark:text-red-200 mb-2">
-              开发者在 GitHub 提交了包含 OpenAI API Key 的配置文件，导致 Key 被爬虫抓取并滥用。
+              Development者在 GitHub 提交了包含 OpenAI API Key 的配置文件，导致 Key 被爬虫抓取并滥用。
             </p>
             <p className="text-sm font-semibold text-red-900 dark:text-red-100">
               防护：使用 .env.local + .gitignore，定期扫描仓库历史

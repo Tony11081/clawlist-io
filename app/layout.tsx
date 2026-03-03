@@ -7,8 +7,8 @@ import { Footer } from '@/components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ClawList.io - OpenClaw 资源导航',
-  description: '一站式 OpenClaw 教程、Skills、岗位配置、模型与算力选择聚合站',
+  title: 'ClawList.io - OpenClaw Resource Hub',
+  description: 'Comprehensive OpenClaw tutorials, skills library, job recipes, and model selection guide for AI automation',
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body className={inter.className}>
         <Navigation />
         <main className="min-h-screen">{children}</main>
