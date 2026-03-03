@@ -1,3 +1,5 @@
+import catalogExtensionsData from '@/data/catalog-extensions.json'
+
 export type GuideItem = {
   id: number
   slug: string
@@ -14,12 +16,48 @@ export type RecipeItem = {
   title: string
   summary: string
   role_type: string
-  difficulty: 'beginner' | 'intermediate'
+  difficulty: 'beginner' | 'intermediate' | 'advanced'
   skills_count: number
   risk_level: 'low' | 'medium' | 'high'
+  estimatedTime?: string
 }
 
-export const guides: GuideItem[] = [
+export type FallbackSkill = {
+  id: string
+  name: string
+  slug: string
+  summary: string
+  description: string
+  risk_level: 'low' | 'medium' | 'high'
+  install_cmd: string
+  permissions: string[]
+  tags: string[]
+  upvotes: number
+}
+
+type CatalogExtensions = {
+  guides: GuideItem[]
+  recipes: RecipeItem[]
+  skills: FallbackSkill[]
+}
+
+const catalogExtensions = catalogExtensionsData as CatalogExtensions
+
+function mergeBySlug<T extends { slug: string }>(baseItems: T[], extensionItems: T[]) {
+  const items = new Map<string, T>()
+
+  for (const item of baseItems) {
+    items.set(item.slug, item)
+  }
+
+  for (const item of extensionItems) {
+    items.set(item.slug, item)
+  }
+
+  return Array.from(items.values())
+}
+
+const baseGuides: GuideItem[] = [
   {
     id: 1,
     slug: 'macos-local-deploy',
@@ -49,7 +87,7 @@ export const guides: GuideItem[] = [
   },
 ]
 
-export const recipes: RecipeItem[] = [
+const baseRecipes: RecipeItem[] = [
   {
     id: 1,
     slug: 'programmer',
@@ -82,7 +120,7 @@ export const recipes: RecipeItem[] = [
   },
 ]
 
-export const fallbackSkills = [
+const baseFallbackSkills: FallbackSkill[] = [
   {
     id: 'gh-issues',
     name: 'GitHub Issues',
@@ -120,3 +158,21 @@ export const fallbackSkills = [
     upvotes: 76,
   },
 ]
+
+export const guides = mergeBySlug(baseGuides, catalogExtensions.guides)
+
+export const recipes = mergeBySlug(baseRecipes, catalogExtensions.recipes)
+
+export const fallbackSkills = mergeBySlug(baseFallbackSkills, catalogExtensions.skills)
+
+export function getGuideBySlug(slug: string) {
+  return guides.find((guide) => guide.slug === slug)
+}
+
+export function getRecipeBySlug(slug: string) {
+  return recipes.find((recipe) => recipe.slug === slug)
+}
+
+export function getFallbackSkillBySlug(slug: string) {
+  return fallbackSkills.find((skill) => skill.slug === slug)
+}
