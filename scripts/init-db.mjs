@@ -1,37 +1,38 @@
+#!/usr/bin/env node
+
+/**
+ * 初始化数据库字段
+ * 为 skills 和 blog_posts 表添加 source_url 和 source_type 字段
+ */
+
 import { createClient } from '@supabase/supabase-js'
-import { readFileSync } from 'fs'
 
-const supabase = createClient(
-  'https://ygnbikloljpjzkxxcoar.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnbmJpa2xvbGpwanpreHhjb2FyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjQ5OTA5NSwiZXhwIjoyMDg4MDc1MDk1fQ.h6X6UBVjEQjzs0kmJea-xwfOWvCxsbtUkihlAbb2r60'
-)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ygnbikloljpjzkxxcoar.supabase.co'
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnbmJpa2xvbGpwanpreHhjb2FyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjQ5OTA5NSwiZXhwIjoyMDg4MDc1MDk1fQ.h6X6UBVjEQjzs0kmJea-xwfOWvCxsbtUkihlAbb2r60'
 
-async function init() {
-  console.log('🔄 读取 SQL 文件...')
-  const sql = readFileSync('./scripts/init-db.sql', 'utf-8')
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function initDatabase() {
+  console.log('🔧 检查数据库字段...\n')
+
+  // 测试 skills 表是否有 source_type 字段
+  const { error: testError } = await supabase.from('skills').select('source_url, source_type').limit(1)
   
-  console.log('🔄 执行 SQL...')
-  const { data, error } = await supabase.rpc('exec', { sql })
-  
-  if (error) {
-    console.error('❌ 错误:', error)
-  } else {
-    console.log('✅ 数据库初始化完成！')
-    console.log('📊 数据:', data)
+  if (testError && testError.message.includes('column')) {
+    console.error('❌ skills 表缺少 source_url/source_type 字段')
+    console.log('\n📝 请在 Supabase Dashboard (SQL Editor) 执行：\n')
+    console.log('ALTER TABLE skills')
+    console.log('  ADD COLUMN IF NOT EXISTS source_url TEXT,')
+    console.log('  ADD COLUMN IF NOT EXISTS source_type TEXT DEFAULT \'manual\';')
+    console.log('')
+    console.log('ALTER TABLE blog_posts')
+    console.log('  ADD COLUMN IF NOT EXISTS source_url TEXT,')
+    console.log('  ADD COLUMN IF NOT EXISTS source_type TEXT DEFAULT \'manual\';')
+    console.log('')
+    process.exit(1)
   }
-  
-  // 验证数据
-  const { data: skills, error: skillsError } = await supabase
-    .from('skills')
-    .select('*')
-    .limit(5)
-  
-  if (skillsError) {
-    console.error('❌ 查询失败:', skillsError)
-  } else {
-    console.log(`✅ 已插入 ${skills?.length || 0} 条示例数据`)
-    console.log(skills)
-  }
+
+  console.log('✅ 数据库字段已就绪\n')
 }
 
-init().catch(console.error)
+initDatabase().catch(console.error)

@@ -10,9 +10,11 @@
     "test": "node --import tsx --test tests/**/*.test.ts",
     "db:migrate": "node --env-file=.env.local scripts/apply-migrations.mjs",
     "audit:links": "node scripts/link-audit.mjs",
-    "fix:404": "node scripts/fix-404.mjs"
+    "fix:404": "node scripts/fix-404.mjs",
+    "sync:bookmarks": "node --env-file=.env.local scripts/sync-x-bookmarks.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@supabase/supabase-js": "^2.98.0",
