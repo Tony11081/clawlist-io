@@ -1,50 +1,62 @@
-import type { MetadataRoute } from 'next'
-import { guides, recipes, fallbackSkills } from '@/lib/catalog'
+import { supabase } from '@/lib/supabase'
 
-const baseUrl = 'https://clawlist.io'
+export default async function sitemap() {
+  const baseUrl = 'https://clawlist.io'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
+  // Static pages
+  const staticPages = [
     '',
     '/guides',
     '/skills',
     '/recipes',
+    '/blog',
     '/api-marketplace',
     '/models',
     '/security',
-    '/terms',
-    '/privacy',
-  ]
-
-  const now = new Date()
-
-  const baseEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
-    url: `${baseUrl}${route || '/'}`,
-    lastModified: now,
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1 : 0.7,
+    '/compare',
+    '/submit',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'daily' as const,
+    priority: route === '' ? 1 : 0.8,
   }))
 
-  const guideEntries = guides.map((guide) => ({
-    url: `${baseUrl}/guides/${guide.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  // Dynamic skills
+  let skillPages: any[] = []
+  if (supabase) {
+    const { data: skills } = await supabase
+      .from('skills')
+      .select('slug, created_at')
+      .order('created_at', { ascending: false })
 
-  const recipeEntries = recipes.map((recipe) => ({
-    url: `${baseUrl}/recipes/${recipe.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+    if (skills) {
+      skillPages = skills.map((skill) => ({
+        url: `${baseUrl}/skills/${skill.slug}`,
+        lastModified: skill.created_at,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
+      }))
+    }
+  }
 
-  const fallbackSkillEntries = fallbackSkills.map((skill) => ({
-    url: `${baseUrl}/skills/${skill.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.65,
-  }))
+  // Dynamic blog posts
+  let blogPages: any[] = []
+  if (supabase) {
+    const { data: posts } = await supabase
+      .from('blog_posts')
+      .select('slug, published_at, updated_at')
+      .order('published_at', { ascending: false })
 
-  return [...baseEntries, ...guideEntries, ...recipeEntries, ...fallbackSkillEntries]
+    if (posts) {
+      blogPages = posts.map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: post.updated_at || post.published_at,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      }))
+    }
+  }
+
+  return [...staticPages, ...skillPages, ...blogPages]
 }

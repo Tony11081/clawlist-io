@@ -145,22 +145,81 @@ async function insertSkill(entry, analysis) {
 }
 
 /**
+ * 用 Claude Sonnet 4.6 生成完整的英文博客文章
+ */
+async function generateBlogContent(entry, analysis) {
+  const prompt = `You are a professional tech blogger writing for ClawList.io, a developer resource hub for AI automation and OpenClaw skills.
+
+Based on the following content from an X/Twitter bookmark, write a comprehensive, SEO-optimized English blog post:
+
+**Original Content:**
+${entry.body.substring(0, 1500)}
+
+**Topic:** ${analysis.title}
+**Category:** ${analysis.category}
+**Summary:** ${analysis.summary}
+
+**Requirements:**
+1. Write in clear, professional English
+2. Target audience: developers, AI engineers, automation enthusiasts
+3. Length: 800-1200 words
+4. Structure: Introduction → Main Content (2-3 sections) → Conclusion
+5. Include practical examples or use cases
+6. SEO-friendly: use keywords naturally
+7. Engaging and informative tone
+8. Add relevant technical details
+
+**Format as Markdown:**
+- Use ## for section headings
+- Use code blocks with \`\`\` for code examples
+- Use bullet points for lists
+- Use **bold** for emphasis
+
+Write the complete blog post now:`
+
+  try {
+    console.log('    📝 生成博客内容（Claude Sonnet 4.6）...')
+    const response = await anthropic.messages.create({
+      model: 'claude-sonnet-4-6', // 使用 Sonnet 4.6 生成高质量博客
+      max_tokens: 4096,
+      messages: [{ role: 'user', content: prompt }]
+    })
+
+    const content = response.content[0].text
+
+    // 计算阅读时间（按 200 字/分钟）
+    const wordCount = content.split(/\s+/).length
+    const readingTime = Math.ceil(wordCount / 200)
+
+    return { content, readingTime }
+  } catch (err) {
+    console.error('    ❌ 生成博客失败:', err.message)
+    return { content: entry.body, readingTime: 5 }
+  }
+}
+
+/**
  * 插入博客到 Supabase
  */
 async function insertBlogPost(entry, analysis) {
   const slug = analysis.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+  // 生成完整博客内容
+  const { content, readingTime } = await generateBlogContent(entry, analysis)
+
   const { error } = await supabase.from('blog_posts').insert([{
     title: analysis.title,
     slug,
     summary: analysis.summary,
-    content: entry.body,
+    content,
     category: analysis.category,
     tags: analysis.tags,
+    reading_time: readingTime,
     published_at: entry.timestamp ? new Date(entry.timestamp).toISOString() : new Date().toISOString(),
     created_at: new Date().toISOString()
   }])
-  if (error) console.error('❌ 插入博客失败:', error.message)
-  else console.log(`  ✅ 博客已录入: ${analysis.title}`)
+  if (error) console.error('  ❌ 插入博客失败:', error.message)
+  else console.log(`  ✅ 博客已录入: ${analysis.title} (${readingTime} min read)`)
 }
 
 /**

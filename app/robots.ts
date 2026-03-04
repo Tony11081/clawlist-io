@@ -1,13 +1,12 @@
-import type { MetadataRoute } from 'next'
-
-export default function robots(): MetadataRoute.Robots {
+export default function robots() {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/compare', '/submit'],
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/test-db/'],
+      },
+    ],
     sitemap: 'https://clawlist.io/sitemap.xml',
-    host: 'https://clawlist.io',
   }
 }
