@@ -20,9 +20,11 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ygnbikloljp
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnbmJpa2xvbGpwanpreHhjb2FyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjQ5OTA5NSwiZXhwIjoyMDg4MDc1MDk1fQ.h6X6UBVjEQjzs0kmJea-xwfOWvCxsbtUkihlAbb2r60'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-// Kuai API（Claude Haiku 4.5 - 最便宜）
+// Kuai API（Claude Haiku 4.5 - 筛选，Claude Sonnet 4.6 - 博客）
+// 如果配额用完，请在 .env.local 设置 KUAI_API_KEY
+const kuaiApiKey = process.env.KUAI_API_KEY || 'sk-ZaIcZLX7px5gq4nq8Y2FT7Gx4xokndLdhgjpln0sXFvwjSPh'
 const anthropic = new Anthropic({
-  apiKey: 'sk-ZaIcZLX7px5gq4nq8Y2FT7Gx4xokndLdhgjpln0sXFvwjSPh',
+  apiKey: kuaiApiKey,
   baseURL: 'https://api.kuai.host'
 })
 
@@ -83,29 +85,44 @@ function saveState(state) {
  * AI 分析条目，判断是否适合作为 skill 或博客
  */
 async function analyzeEntry(entry) {
-  const prompt = `分析以下从 X/Twitter 书签同步的技术内容，判断是否适合录入 ClawList（一个 AI agent skills 目录网站）。
+  const prompt = `Analyze the following technical content from X/Twitter bookmarks to determine if it's suitable for ClawList (an AI agent skills directory website).
 
-内容：
-标签：${entry.tags.join(', ')}
-正文：${entry.body.substring(0, 800)}
+Content:
+Tags: ${entry.tags.join(', ')}
+Body: ${entry.body.substring(0, 800)}
+Source URL: ${entry.sourceUrl || 'N/A'}
 
-请以 JSON 格式返回：
+Return JSON format:
 {
   "is_relevant": true/false,
   "type": "skill" | "blog" | "none",
   "category": "Development" | "DevOps" | "Marketing" | "Automation" | "AI" | "Other",
-  "title": "简洁的英文标题",
-  "summary": "一句话摘要（中文）",
+  "title": "Concise English title (max 60 chars)",
+  "summary": "One-sentence English summary (max 150 chars)",
   "tags": ["tag1", "tag2", "tag3"],
-  "reason": "判断原因"
+  "github_url": "https://github.com/user/repo or null",
+  "install_cmd": "npm install package-name or npx command or null",
+  "reason": "Why relevant/not relevant"
 }
 
-判断标准：
-- skill: 介绍具体工具、自动化脚本、API 集成、开发技巧，可以做成可安装的 skill
-- blog: 技术教程、最佳实践、架构思路、经验分享
-- none: 纯观点、新闻、非技术内容、太短或太模糊
+**CRITICAL REQUIREMENTS:**
+1. **ALL content MUST be in English** (title, summary, tags)
+2. **For skills**: MUST have a valid GitHub repository URL
+3. **For skills**: MUST have correct install command (npm/npx/pip/etc)
+4. **GitHub URL validation**: Only include if explicitly mentioned in the content
+5. **Install command**: Extract from content or infer from GitHub repo name
 
-只返回 JSON，不要其他文字。`
+Classification criteria:
+- **skill**: Specific tools, automation scripts, API integrations, dev utilities that can be installed
+  - MUST have GitHub URL
+  - MUST have install command
+  - Examples: CLI tools, libraries, frameworks, automation scripts
+- **blog**: Technical tutorials, best practices, architecture insights, experience sharing
+  - Can be without GitHub URL
+  - Focus on knowledge/insights rather than installable tools
+- **none**: Pure opinions, news, non-technical content, too vague, or missing required info
+
+Return ONLY JSON, no other text.`
 
   try {
     const response = await anthropic.messages.create({
@@ -127,7 +144,25 @@ async function analyzeEntry(entry) {
  * 插入 skill 到 Supabase
  */
 async function insertSkill(entry, analysis) {
+  // 验证必需字段
+  if (!analysis.github_url || !analysis.install_cmd) {
+    console.error('  ❌ Skill 缺少 GitHub URL 或安装命令，跳过')
+    return
+  }
+
+  // 验证 GitHub URL 格式
+  if (!analysis.github_url.startsWith('https://github.com/')) {
+    console.error('  ❌ 无效的 GitHub URL，跳过')
+    return
+  }
+
   const slug = analysis.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+  // 提取 GitHub 仓库信息
+  const repoMatch = analysis.github_url.match(/github\.com\/([^\/]+)\/([^\/\?#]+)/)
+  const githubUser = repoMatch ? repoMatch[1] : null
+  const githubRepo = repoMatch ? repoMatch[2] : null
+
   const { error } = await supabase.from('skills').insert([{
     name: analysis.title,
     slug,
@@ -135,13 +170,20 @@ async function insertSkill(entry, analysis) {
     description: entry.body.substring(0, 1000),
     category: analysis.category,
     risk_level: 'low',
-    install_cmd: `npx skills add ${slug}`,
+    install_cmd: analysis.install_cmd,
     permissions: [],
     tags: analysis.tags,
+    github_url: analysis.github_url,
     created_at: new Date().toISOString()
   }])
-  if (error) console.error('❌ 插入 skill 失败:', error.message)
-  else console.log(`  ✅ Skill 已录入: ${analysis.title}`)
+
+  if (error) {
+    console.error('  ❌ 插入 skill 失败:', error.message)
+  } else {
+    console.log(`  ✅ Skill 已录入: ${analysis.title}`)
+    console.log(`     GitHub: ${analysis.github_url}`)
+    console.log(`     Install: ${analysis.install_cmd}`)
+  }
 }
 
 /**

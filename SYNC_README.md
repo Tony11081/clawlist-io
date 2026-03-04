@@ -6,8 +6,9 @@
 
 ### 1. Skills 自动录入
 - 使用 **Claude Haiku 4.5**（Kuai 最低成本）分析内容
-- 自动判断是否适合作为 OpenClaw skill
-- 提取标题、摘要、分类、标签
+- **严格验证**：必须有 GitHub 仓库 URL 和正确的安装命令
+- **全英文内容**：标题、摘要、标签都是英文
+- 自动提取 GitHub 信息和安装命令
 
 ### 2. 博客自动生成
 - 使用 **Claude Sonnet 4.6**（Kuai 高质量模型）生成完整英文博客
@@ -16,7 +17,17 @@
 - 自动计算阅读时间
 - SEO 优化
 
-### 3. SEO 优化
+### 3. 内容质量保证
+- ✅ **Skills 必需条件**：
+  - 有效的 GitHub 仓库链接（https://github.com/user/repo）
+  - 正确的安装命令（npm/npx/pip/cargo 等）
+  - 英文标题和摘要
+- ✅ **博客内容**：
+  - 完整的英文技术文章
+  - 实用的代码示例
+  - 清晰的结构和排版
+
+### 4. SEO 优化
 - 动态 sitemap.xml（包含所有 skills 和博客）
 - robots.txt 配置
 - JSON-LD 结构化数据
