@@ -1,10 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { CopyButton } from '@/components/copy-button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
 import { Shield, Check } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -37,13 +33,13 @@ async function getSkill(slug: string) {
 export default async function SkillDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const skill = await getSkill(slug)
-  
+
   if (!skill) {
     notFound()
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="min-h-screen bg-[#f7f7f7]">
       <AnalyticsTracker
         payload={{
           eventType: 'skill_view',
@@ -57,40 +53,44 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
         }}
       />
 
-      {/* Breadcrumb */}
-      <div className="mb-6 text-sm text-neutral-600 dark:text-neutral-400">
-        <Link href="/skills" className="hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link>
-        {' / '}
-        <span>{skill.name}</span>
-      </div>
-
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex justify-between items-start mb-4">
-          <h1 className="text-4xl font-bold">{skill.name}</h1>
-          <Badge variant={skill.risk_level === 'low' ? 'secondary' : 'default'}>
-            {skill.risk_level === 'low' ? 'Low Risk' : skill.risk_level === 'medium' ? 'Medium Risk' : 'High Risk'}
-          </Badge>
+      <div className="container mx-auto px-6 py-16 max-w-4xl">
+        {/* Breadcrumb */}
+        <div className="mb-8 text-sm text-[#666666]">
+          <Link href="/skills" className="hover:text-[#191919] transition-colors">
+            Skills
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-[#191919]">{skill.name}</span>
         </div>
-        <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-4">
-          {skill.summary}
-        </p>
-        <div className="flex gap-4 text-sm text-neutral-600 dark:text-neutral-400">
-          {skill.stars && <span>⭐ {skill.stars} stars</span>}
-          <span>👍 {skill.upvotes || 0} upvotes</span>
-          {skill.views && <span>👁️ {skill.views} views</span>}
-        </div>
-      </div>
 
-      {/* Install Command */}
-      {skill.install_cmd && (
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>安装命令</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="bg-neutral-100 dark:bg-neutral-900 p-4 rounded-lg font-mono text-sm flex justify-between items-center">
-              <code>{skill.install_cmd}</code>
+        {/* Header */}
+        <div className="mb-12">
+          <div className="flex justify-between items-start mb-4">
+            <h1 className="text-5xl font-bold text-[#191919]">{skill.name}</h1>
+            <span className={`px-4 py-2 rounded-full text-sm ${
+              skill.risk_level === 'low'
+                ? 'bg-[#f0f0f0] text-[#191919]'
+                : 'bg-[#262626] text-white'
+            }`}>
+              {skill.risk_level === 'low' ? 'Low Risk' : skill.risk_level === 'medium' ? 'Medium Risk' : 'High Risk'}
+            </span>
+          </div>
+          <p className="text-xl text-[#666666] mb-6">
+            {skill.summary}
+          </p>
+          <div className="flex gap-6 text-sm text-[#666666]">
+            {skill.stars && <span>⭐ {skill.stars} stars</span>}
+            <span>👍 {skill.upvotes || 0} upvotes</span>
+            {skill.views && <span>👁️ {skill.views} views</span>}
+          </div>
+        </div>
+
+        {/* Install Command */}
+        {skill.install_cmd && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+            <h2 className="text-2xl font-bold mb-4 text-[#191919]">Install Command</h2>
+            <div className="bg-[#191919] p-4 rounded-2xl font-mono text-sm flex justify-between items-center">
+              <code className="text-white">{skill.install_cmd}</code>
               <CopyButton
                 text={skill.install_cmd}
                 label="Copy"
@@ -107,63 +107,61 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
               />
             </div>
             {skill.openclaw_version_range && (
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
-                要求 OpenClaw {skill.openclaw_version_range}
+              <p className="text-sm text-[#666666] mt-3">
+                Requires OpenClaw {skill.openclaw_version_range}
               </p>
             )}
-          </CardContent>
-        </Card>
-      )}
+          </div>
+        )}
 
-      {/* Description */}
-      {skill.description && (
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>功能说明</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-neutral-700 dark:text-neutral-300">{skill.description}</p>
-          </CardContent>
-        </Card>
-      )}
+        {/* Description */}
+        {skill.description && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+            <h2 className="text-2xl font-bold mb-4 text-[#191919]">Description</h2>
+            <p className="text-[#666666] leading-relaxed">{skill.description}</p>
+          </div>
+        )}
 
-      {/* Security & Permissions */}
-      {skill.permissions && skill.permissions.length > 0 && (
-        <Card className="mb-8 border-yellow-200 dark:border-yellow-900">
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-yellow-600 dark:text-yellow-400" />
-              <CardTitle>安全与权限</CardTitle>
+        {/* Security & Permissions */}
+        {skill.permissions && skill.permissions.length > 0 && (
+          <div className="bg-[#fff9e6] border border-[#ffd700] rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <Shield className="h-6 w-6 text-[#191919]" />
+              <h2 className="text-2xl font-bold text-[#191919]">Security & Permissions</h2>
             </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm mb-4">此 Skill 需要以下权限：</p>
-            <ul className="space-y-2">
+            <p className="text-sm mb-4 text-[#666666]">This skill requires the following permissions:</p>
+            <ul className="space-y-3 mb-6">
               {skill.permissions.map((perm: string) => (
-                <li key={perm} className="flex items-center gap-2 text-sm">
-                  <Check className="h-4 w-4 text-green-600 dark:text-green-400" />
+                <li key={perm} className="flex items-center gap-3 text-sm text-[#666666]">
+                  <Check className="h-5 w-5 text-[#191919]" />
                   {perm}
                 </li>
               ))}
             </ul>
-            <Separator className="my-4" />
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              建议：使用最小权限原则，定期审查 Skill 行为。
-            </p>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Actions */}
-      <div className="flex gap-4">
-        {skill.github_url && (
-          <Button asChild>
-            <a href={skill.github_url} target="_blank" rel="noopener noreferrer">
-              查看源码
-            </a>
-          </Button>
+            <div className="border-t border-[#ffd700] pt-4">
+              <p className="text-sm text-[#666666]">
+                Recommendation: Use the principle of least privilege and regularly review skill behavior.
+              </p>
+            </div>
+          </div>
         )}
-        <Button variant="outline">👍 Upvote</Button>
+
+        {/* Actions */}
+        <div className="flex gap-4">
+          {skill.github_url && (
+            <a
+              href={skill.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors"
+            >
+              View Source Code
+            </a>
+          )}
+          <button className="px-6 py-3 border border-[#e5e5e5] text-[#191919] rounded-2xl hover:bg-[#f7f7f7] transition-colors">
+            👍 Upvote
+          </button>
+        </div>
       </div>
     </div>
   )

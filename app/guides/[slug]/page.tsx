@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import { guides } from '@/lib/catalog'
 
 export function generateStaticParams() {
@@ -35,49 +32,79 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   }
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-8">
-      <div className="mb-6 text-sm text-neutral-600 dark:text-neutral-400">
-        <Link href="/guides" className="hover:underline">
-          Guides
-        </Link>{' '}
-        / <span>{guide.title}</span>
-      </div>
+    <div className="min-h-screen bg-[#f7f7f7]">
+      <div className="container mx-auto max-w-4xl px-6 py-16">
+        {/* Breadcrumb */}
+        <div className="mb-8 text-sm text-[#666666]">
+          <Link href="/guides" className="hover:text-[#191919] transition-colors">
+            Guides
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-[#191919]">{guide.title}</span>
+        </div>
 
-      <h1 className="mb-3 text-4xl font-bold">{guide.title}</h1>
-      <p className="mb-6 text-neutral-600 dark:text-neutral-400">{guide.description}</p>
+        {/* Header */}
+        <h1 className="text-5xl font-bold mb-4 text-[#191919]">{guide.title}</h1>
+        <p className="text-lg text-[#666666] mb-8">{guide.description}</p>
 
-      <div className="mb-8 flex gap-2">
-        <Badge variant="outline">{guide.category}</Badge>
-        <Badge variant="secondary">{guide.difficulty === 'beginner' ? 'Beginner' : 'Intermediate'}</Badge>
-        <Badge variant="outline">{guide.readTime}</Badge>
-      </div>
+        {/* Badges */}
+        <div className="flex flex-wrap gap-3 mb-12">
+          <span className="px-4 py-2 bg-white border border-[#e5e5e5] rounded-full text-sm text-[#191919]">
+            {guide.category}
+          </span>
+          <span className="px-4 py-2 bg-[#f0f0f0] text-[#191919] rounded-full text-sm">
+            {guide.difficulty === 'beginner' ? 'Beginner' : 'Intermediate'}
+          </span>
+          <span className="px-4 py-2 bg-white border border-[#e5e5e5] rounded-full text-sm text-[#191919]">
+            📖 {guide.readTime}
+          </span>
+        </div>
 
-      <Card className="mb-6">
-        <CardHeader>
-          <CardTitle>What you will learn</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-          <p>• Environment and prerequisite checklist</p>
-          <p>• Step-by-step setup instructions</p>
-          <p>• Common pitfalls and troubleshooting</p>
-        </CardContent>
-      </Card>
+        {/* What You Will Learn */}
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">What You Will Learn</h2>
+          <div className="space-y-3 text-[#666666]">
+            <p className="flex items-center gap-3">
+              <span className="text-[#191919]">✓</span>
+              Environment and prerequisite checklist
+            </p>
+            <p className="flex items-center gap-3">
+              <span className="text-[#191919]">✓</span>
+              Step-by-step setup instructions
+            </p>
+            <p className="flex items-center gap-3">
+              <span className="text-[#191919]">✓</span>
+              Common pitfalls and troubleshooting
+            </p>
+          </div>
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Execution checklist</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-          <p>1. Confirm prerequisites are installed.</p>
-          <p>2. Run setup commands in order and verify outputs.</p>
-          <p>3. Validate with a smoke test before production use.</p>
-        </CardContent>
-      </Card>
+        {/* Execution Checklist */}
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Execution Checklist</h2>
+          <div className="space-y-4 text-[#666666]">
+            <div className="flex gap-4">
+              <span className="flex-shrink-0 w-8 h-8 bg-[#191919] text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+              <p className="pt-1">Confirm prerequisites are installed</p>
+            </div>
+            <div className="flex gap-4">
+              <span className="flex-shrink-0 w-8 h-8 bg-[#191919] text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+              <p className="pt-1">Run setup commands in order and verify outputs</p>
+            </div>
+            <div className="flex gap-4">
+              <span className="flex-shrink-0 w-8 h-8 bg-[#191919] text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+              <p className="pt-1">Validate with a smoke test before production use</p>
+            </div>
+          </div>
+        </div>
 
-      <div className="mt-8">
-        <Button asChild>
-          <Link href="/guides">Back to Guides</Link>
-        </Button>
+        {/* Back Button */}
+        <Link
+          href="/guides"
+          className="inline-block px-6 py-3 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors"
+        >
+          Back to Guides
+        </Link>
       </div>
     </div>
   )
