@@ -33,6 +33,13 @@ export type FallbackSkill = {
   permissions: string[]
   tags: string[]
   upvotes: number
+  github_url?: string
+  stars?: number
+  views?: number
+  category?: string
+  openclaw_version_range?: string
+  features?: string[]
+  use_cases?: string[]
 }
 
 type CatalogExtensions = {
@@ -126,108 +133,244 @@ const baseFallbackSkills: FallbackSkill[] = [
     name: 'GitHub Issues',
     slug: 'github-issues',
     summary: 'Auto-handle GitHub issues and submit PRs',
-    description: 'Automatically triage issues, generate fixes, and open pull requests.',
+    description: 'Automatically triage issues, generate fixes, and open pull requests. Integrates with GitHub API to monitor issues, analyze code, and submit automated fixes.',
     risk_level: 'low',
     install_cmd: 'npx skills add gh-issues',
     permissions: ['GitHub repository access', 'Read/write local workspace'],
     tags: ['github', 'automation', 'coding'],
     upvotes: 128,
+    github_url: 'https://github.com/openclaw/skill-github-issues',
+    stars: 342,
+    category: 'Development',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'Automatic issue triage and labeling',
+      'Smart PR generation with fixes',
+      'Code analysis and suggestions',
+      'Integration with CI/CD pipelines'
+    ],
+    use_cases: [
+      'Automate bug fix workflows',
+      'Reduce manual issue management',
+      'Speed up code review process'
+    ]
   },
   {
     id: 'gh-automation',
     name: 'GitHub Automation',
     slug: 'github-automation',
     summary: 'Complete GitHub workflow automation',
-    description: 'Automate GitHub workflows including issue management, PR reviews, release notes, and repository maintenance. Supports custom actions and integrations.',
+    description: 'Automate GitHub workflows including issue management, PR reviews, release notes, and repository maintenance. Supports custom actions and integrations with full GitHub API coverage.',
     risk_level: 'medium',
     install_cmd: 'npx skills add github-automation',
     permissions: ['GitHub API access', 'Repository write access', 'Actions workflow'],
     tags: ['github', 'automation', 'devops', 'ci-cd'],
     upvotes: 245,
+    github_url: 'https://github.com/openclaw/skill-github-automation',
+    stars: 567,
+    category: 'DevOps',
+    openclaw_version_range: '>=2026.2.0',
+    features: [
+      'Automated PR reviews and approvals',
+      'Release note generation',
+      'Repository health monitoring',
+      'Custom GitHub Actions integration',
+      'Branch protection automation'
+    ],
+    use_cases: [
+      'Streamline release management',
+      'Enforce code quality standards',
+      'Automate repository maintenance'
+    ]
   },
   {
     id: 'agent-browser',
     name: 'Browser Agent',
     slug: 'browser-agent',
     summary: 'Browser automation for testing and scraping',
-    description: 'Navigate websites, fill forms, capture screenshots, and extract page data.',
+    description: 'Navigate websites, fill forms, capture screenshots, and extract page data. Built on Playwright for reliable cross-browser automation.',
     risk_level: 'medium',
     install_cmd: 'npx skills add agent-browser',
     permissions: ['Browser control', 'Network access'],
     tags: ['browser', 'automation', 'testing'],
     upvotes: 97,
+    github_url: 'https://github.com/openclaw/skill-browser-agent',
+    stars: 423,
+    category: 'Testing',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'Cross-browser support (Chrome, Firefox, Safari)',
+      'Screenshot and PDF generation',
+      'Form filling and interaction',
+      'Data extraction with selectors'
+    ],
+    use_cases: [
+      'E2E testing automation',
+      'Web scraping and monitoring',
+      'Automated form submissions'
+    ]
   },
   {
     id: 'email-marketing',
     name: 'Email Marketing',
     slug: 'email-marketing',
     summary: 'Automated email campaigns and CRM workflows',
-    description: 'Build email sequences, segment users, and automate campaign operations.',
+    description: 'Build email sequences, segment users, and automate campaign operations. Integrates with major email providers and CRM platforms.',
     risk_level: 'low',
     install_cmd: 'npx skills add email-marketing',
     permissions: ['Email provider API access'],
     tags: ['marketing', 'crm', 'automation'],
     upvotes: 76,
+    github_url: 'https://github.com/openclaw/skill-email-marketing',
+    stars: 189,
+    category: 'Marketing',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'Email sequence automation',
+      'User segmentation and targeting',
+      'A/B testing support',
+      'Analytics and reporting'
+    ],
+    use_cases: [
+      'Drip campaign automation',
+      'Lead nurturing workflows',
+      'Customer onboarding emails'
+    ]
   },
   {
     id: 'slack-bot',
     name: 'Slack Bot',
     slug: 'slack-bot',
     summary: 'Intelligent Slack bot for team automation',
-    description: 'Create custom Slack bots that respond to messages, automate workflows, and integrate with external services.',
+    description: 'Create custom Slack bots that respond to messages, automate workflows, and integrate with external services. Supports slash commands, interactive messages, and event subscriptions.',
     risk_level: 'low',
     install_cmd: 'npx skills add slack-bot',
     permissions: ['Slack API access', 'Channel read/write'],
     tags: ['slack', 'communication', 'automation'],
     upvotes: 189,
+    github_url: 'https://github.com/openclaw/skill-slack-bot',
+    stars: 512,
+    category: 'Communication',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'Custom slash commands',
+      'Interactive message buttons',
+      'Event-driven automation',
+      'External service integrations'
+    ],
+    use_cases: [
+      'Team standup automation',
+      'Incident response workflows',
+      'Knowledge base queries'
+    ]
   },
   {
     id: 'data-scraper',
     name: 'Data Scraper',
     slug: 'data-scraper',
     summary: 'Extract structured data from websites',
-    description: 'Scrape data from websites with custom selectors, handle pagination, and export to various formats.',
+    description: 'Scrape data from websites with custom selectors, handle pagination, and export to various formats. Supports JavaScript-rendered pages and rate limiting.',
     risk_level: 'medium',
     install_cmd: 'npx skills add data-scraper',
     permissions: ['Network access', 'File system write'],
     tags: ['scraping', 'data', 'automation'],
     upvotes: 156,
+    github_url: 'https://github.com/openclaw/skill-data-scraper',
+    stars: 378,
+    category: 'Data',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'CSS and XPath selectors',
+      'Pagination handling',
+      'Export to JSON, CSV, Excel',
+      'Proxy and rate limiting support'
+    ],
+    use_cases: [
+      'Competitive analysis',
+      'Price monitoring',
+      'Content aggregation'
+    ]
   },
   {
     id: 'twitter-bot',
     name: 'Twitter Bot',
     slug: 'twitter-bot',
     summary: 'Automated Twitter posting and engagement',
-    description: 'Schedule tweets, auto-reply to mentions, track keywords, and analyze engagement metrics.',
+    description: 'Schedule tweets, auto-reply to mentions, track keywords, and analyze engagement metrics. Full Twitter API v2 support.',
     risk_level: 'medium',
     install_cmd: 'npx skills add twitter-bot',
     permissions: ['Twitter API access', 'Tweet read/write'],
     tags: ['twitter', 'social-media', 'automation'],
     upvotes: 203,
+    github_url: 'https://github.com/openclaw/skill-twitter-bot',
+    stars: 445,
+    category: 'Social Media',
+    openclaw_version_range: '>=2026.2.0',
+    features: [
+      'Scheduled tweet posting',
+      'Auto-reply to mentions',
+      'Keyword tracking and alerts',
+      'Engagement analytics'
+    ],
+    use_cases: [
+      'Brand monitoring',
+      'Customer support automation',
+      'Content distribution'
+    ]
   },
   {
     id: 'code-reviewer',
     name: 'Code Reviewer',
     slug: 'code-reviewer',
     summary: 'Automated code review and quality checks',
-    description: 'Review pull requests, check code quality, suggest improvements, and enforce coding standards.',
+    description: 'Review pull requests, check code quality, suggest improvements, and enforce coding standards. Integrates with GitHub, GitLab, and Bitbucket.',
     risk_level: 'low',
     install_cmd: 'npx skills add code-reviewer',
     permissions: ['Repository read access', 'PR comment access'],
     tags: ['code-review', 'quality', 'development'],
     upvotes: 312,
+    github_url: 'https://github.com/openclaw/skill-code-reviewer',
+    stars: 689,
+    category: 'Development',
+    openclaw_version_range: '>=2026.2.0',
+    features: [
+      'Automated PR reviews',
+      'Code quality scoring',
+      'Security vulnerability detection',
+      'Style guide enforcement'
+    ],
+    use_cases: [
+      'Maintain code quality standards',
+      'Reduce manual review time',
+      'Catch bugs early'
+    ]
   },
   {
     id: 'seo-optimizer',
     name: 'SEO Optimizer',
     slug: 'seo-optimizer',
     summary: 'Automated SEO analysis and optimization',
-    description: 'Analyze website SEO, generate meta tags, optimize content, and track rankings.',
+    description: 'Analyze website SEO, generate meta tags, optimize content, and track rankings. Supports Google Search Console and Analytics integration.',
     risk_level: 'low',
     install_cmd: 'npx skills add seo-optimizer',
     permissions: ['Website access', 'Analytics API'],
     tags: ['seo', 'marketing', 'analytics'],
     upvotes: 134,
+    github_url: 'https://github.com/openclaw/skill-seo-optimizer',
+    stars: 267,
+    category: 'Marketing',
+    openclaw_version_range: '>=2026.1.0',
+    features: [
+      'On-page SEO analysis',
+      'Meta tag generation',
+      'Keyword research',
+      'Ranking tracking'
+    ],
+    use_cases: [
+      'Improve search rankings',
+      'Content optimization',
+      'Competitor analysis'
+    ]
   },
 ]
 

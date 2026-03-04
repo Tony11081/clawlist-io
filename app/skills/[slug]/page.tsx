@@ -122,6 +122,38 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
           </div>
         )}
 
+        {/* Features */}
+        {skill.features && skill.features.length > 0 && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+            <h2 className="text-2xl font-bold mb-6 text-[#191919]">Key Features</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {skill.features.map((feature: string, index: number) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 bg-[#191919] text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    {index + 1}
+                  </span>
+                  <p className="text-[#666666] pt-0.5">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Use Cases */}
+        {skill.use_cases && skill.use_cases.length > 0 && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+            <h2 className="text-2xl font-bold mb-6 text-[#191919]">Use Cases</h2>
+            <div className="space-y-3">
+              {skill.use_cases.map((useCase: string, index: number) => (
+                <div key={index} className="flex items-center gap-3 p-4 bg-[#f7f7f7] rounded-2xl">
+                  <span className="text-2xl">💡</span>
+                  <p className="text-[#666666]">{useCase}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Security & Permissions */}
         {skill.permissions && skill.permissions.length > 0 && (
           <div className="bg-[#fff9e6] border border-[#ffd700] rounded-3xl p-8 mb-8">
