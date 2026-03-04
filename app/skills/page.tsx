@@ -6,7 +6,8 @@ import { Input } from '@/components/ui/input'
 import Link from 'next/link'
 import { Search, ArrowRight, Star, Download, Shield } from 'lucide-react'
 
-export const revalidate = 60
+export const revalidate = 0 // 实时更新，不缓存
+export const dynamic = 'force-dynamic' // 强制动态渲染
 
 export const metadata: Metadata = {
   title: 'Skills Library',

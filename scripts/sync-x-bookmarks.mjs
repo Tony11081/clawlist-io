@@ -117,10 +117,14 @@ Classification criteria:
   - MUST have GitHub URL
   - MUST have install command
   - Examples: CLI tools, libraries, frameworks, automation scripts
-- **blog**: Technical tutorials, best practices, architecture insights, experience sharing
+- **blog**: Technical tutorials, best practices, architecture insights, experience sharing, tool reviews
+  - Any technical content that doesn't qualify as a skill
   - Can be without GitHub URL
   - Focus on knowledge/insights rather than installable tools
-- **none**: Pure opinions, news, non-technical content, too vague, or missing required info
+  - **DEFAULT**: If content is technical but lacks GitHub/install info, classify as "blog"
+- **none**: Pure opinions, news, non-technical content, too vague
+
+**IMPORTANT**: Prefer "blog" over "none" for any technical content. Only use "none" for completely irrelevant content.
 
 Return ONLY JSON, no other text.`
 
@@ -142,18 +146,19 @@ Return ONLY JSON, no other text.`
 
 /**
  * 插入 skill 到 Supabase
+ * @returns {boolean} 是否成功插入
  */
 async function insertSkill(entry, analysis) {
   // 验证必需字段
   if (!analysis.github_url || !analysis.install_cmd) {
-    console.error('  ❌ Skill 缺少 GitHub URL 或安装命令，跳过')
-    return
+    console.error('  ❌ Skill 缺少 GitHub URL 或安装命令')
+    return false
   }
 
   // 验证 GitHub URL 格式
   if (!analysis.github_url.startsWith('https://github.com/')) {
-    console.error('  ❌ 无效的 GitHub URL，跳过')
-    return
+    console.error('  ❌ 无效的 GitHub URL')
+    return false
   }
 
   const slug = analysis.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -179,10 +184,12 @@ async function insertSkill(entry, analysis) {
 
   if (error) {
     console.error('  ❌ 插入 skill 失败:', error.message)
+    return false
   } else {
     console.log(`  ✅ Skill 已录入: ${analysis.title}`)
     console.log(`     GitHub: ${analysis.github_url}`)
     console.log(`     Install: ${analysis.install_cmd}`)
+    return true
   }
 }
 
@@ -288,29 +295,41 @@ async function main() {
 
   let skillCount = 0, blogCount = 0, skipCount = 0
 
-  // 3. 逐条 AI 分析
+  // 3. 逐条 AI 分析（流水线模式）
   for (const entry of newEntries) {
     const preview = entry.body.substring(0, 60).replace(/\n/g, ' ')
-    console.log(`📝 分析: ${preview}...`)
+    console.log(`\n📝 分析: ${preview}...`)
 
     const analysis = await analyzeEntry(entry)
 
-    if (!analysis.is_relevant) {
-      console.log(`  ⏭️  跳过 (${analysis.reason || 'not relevant'})`)
-      skipCount++
-    } else if (analysis.type === 'skill') {
-      await insertSkill(entry, analysis)
-      skillCount++
+    // 流水线逻辑：skill → blog → skip
+    if (analysis.type === 'skill') {
+      // 尝试作为 skill 录入
+      const skillInserted = await insertSkill(entry, analysis)
+      if (skillInserted) {
+        skillCount++
+      } else {
+        // Skill 验证失败，降级为 blog
+        console.log('  ⚠️  Skill 验证失败，转为博客处理...')
+        analysis.type = 'blog'
+        await insertBlogPost(entry, analysis)
+        blogCount++
+      }
     } else if (analysis.type === 'blog') {
+      // 直接作为博客录入
       await insertBlogPost(entry, analysis)
       blogCount++
+    } else {
+      // 完全跳过
+      console.log(`  ⏭️  跳过 (${analysis.reason || 'not relevant'})`)
+      skipCount++
     }
 
     // 标记已处理
     state.processedIds.push(entry.id)
 
     // 避免 API 限流
-    await new Promise(r => setTimeout(r, 800))
+    await new Promise(r => setTimeout(r, 1000))
   }
 
   // 4. 保存状态

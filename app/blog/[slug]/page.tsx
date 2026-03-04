@@ -6,7 +6,8 @@ import { ArrowRight, Clock, Calendar, Share2 } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
-export const revalidate = 300
+export const revalidate = 0 // 实时更新，不缓存
+export const dynamic = 'force-dynamic' // 强制动态渲染
 
 type Props = {
   params: Promise<{ slug: string }>
