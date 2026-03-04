@@ -132,16 +132,27 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         {/* Content */}
-        <div className="prose prose-slate dark:prose-invert max-w-none
+        <div className="prose prose-lg prose-slate dark:prose-invert max-w-none
           prose-headings:font-bold prose-headings:tracking-tight
-          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
-          prose-a:text-slate-900 dark:prose-a:text-slate-100 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-          prose-code:bg-slate-100 dark:prose-code:bg-[#262626] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono
-          prose-pre:bg-slate-900 dark:prose-pre:bg-[#191919] prose-pre:border prose-pre:border-slate-700
-          prose-ul:my-6 prose-li:my-2
+          prose-h1:text-4xl prose-h1:mt-12 prose-h1:mb-8
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-slate-200 dark:prose-h2:border-[#262626] prose-h2:pb-3
+          prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-5
+          prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4
+          prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-[1.8] prose-p:mb-6 prose-p:text-[17px]
+          prose-a:text-slate-900 dark:prose-a:text-slate-100 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-a:underline-offset-4
           prose-strong:text-slate-900 dark:prose-strong:text-slate-100 prose-strong:font-bold
+          prose-code:bg-slate-100 dark:prose-code:bg-[#262626] prose-code:px-2 prose-code:py-1 prose-code:rounded-md prose-code:text-[15px] prose-code:font-mono prose-code:text-slate-900 dark:prose-code:text-slate-100 prose-code:before:content-none prose-code:after:content-none
+          prose-pre:bg-[#1e1e1e] dark:prose-pre:bg-[#0d0d0d] prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-2xl prose-pre:p-6 prose-pre:my-8 prose-pre:overflow-x-auto
+          prose-pre:shadow-xl
+          prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+          prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+          prose-li:my-3 prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:leading-relaxed
+          prose-blockquote:border-l-4 prose-blockquote:border-slate-300 dark:prose-blockquote:border-slate-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-600 dark:prose-blockquote:text-slate-400 prose-blockquote:my-8
+          prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8
+          prose-hr:border-slate-200 dark:prose-hr:border-[#262626] prose-hr:my-12
+          prose-table:my-8
+          prose-th:bg-slate-100 dark:prose-th:bg-[#262626] prose-th:p-3 prose-th:font-bold
+          prose-td:p-3 prose-td:border prose-td:border-slate-200 dark:prose-td:border-[#262626]
         ">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>

@@ -116,23 +116,25 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
         {/* Description */}
         {skill.description && (
-          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
-            <h2 className="text-2xl font-bold mb-4 text-[#191919]">Description</h2>
-            <p className="text-[#666666] leading-relaxed">{skill.description}</p>
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+            <h2 className="text-2xl font-bold mb-6 text-[#191919]">About</h2>
+            <div className="prose prose-slate max-w-none">
+              <p className="text-[#666666] leading-relaxed text-lg whitespace-pre-wrap">{skill.description}</p>
+            </div>
           </div>
         )}
 
         {/* Features */}
         {skill.features && skill.features.length > 0 && (
-          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
             <h2 className="text-2xl font-bold mb-6 text-[#191919]">Key Features</h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-6">
               {skill.features.map((feature: string, index: number) => (
-                <div key={index} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-[#191919] text-white rounded-full flex items-center justify-center text-xs font-bold">
+                <div key={index} className="flex items-start gap-4 p-4 bg-[#f7f7f7] rounded-2xl hover:bg-slate-100 transition-colors">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#191919] text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {index + 1}
                   </span>
-                  <p className="text-[#666666] pt-0.5">{feature}</p>
+                  <p className="text-[#666666] pt-1 leading-relaxed">{feature}</p>
                 </div>
               ))}
             </div>
@@ -141,13 +143,13 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
         {/* Use Cases */}
         {skill.use_cases && skill.use_cases.length > 0 && (
-          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
             <h2 className="text-2xl font-bold mb-6 text-[#191919]">Use Cases</h2>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {skill.use_cases.map((useCase: string, index: number) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-[#f7f7f7] rounded-2xl">
-                  <span className="text-2xl">💡</span>
-                  <p className="text-[#666666]">{useCase}</p>
+                <div key={index} className="flex items-start gap-4 p-5 bg-[#f7f7f7] rounded-2xl hover:bg-slate-100 transition-colors">
+                  <span className="text-3xl flex-shrink-0">💡</span>
+                  <p className="text-[#666666] leading-relaxed pt-1">{useCase}</p>
                 </div>
               ))}
             </div>

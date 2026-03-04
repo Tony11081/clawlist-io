@@ -72,35 +72,35 @@ export default async function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-2xl overflow-hidden hover:border-slate-900 dark:hover:border-slate-500 transition-all hover:shadow-xl"
+                className="group bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-3xl overflow-hidden hover:border-slate-900 dark:hover:border-slate-500 transition-all hover:shadow-2xl hover:-translate-y-1"
               >
-                <div className="p-6">
+                <div className="p-8">
                   {/* Category Badge */}
                   {post.category && (
-                    <Badge className="mb-4 px-3 py-1 bg-slate-200 text-slate-900 dark:bg-[#262626]/40 dark:text-slate-300 border-0 text-[10px] font-bold uppercase tracking-wider">
+                    <Badge className="mb-4 px-3 py-1.5 bg-slate-200 text-slate-900 dark:bg-[#262626]/40 dark:text-slate-300 border-0 text-[10px] font-bold uppercase tracking-wider">
                       {post.category}
                     </Badge>
                   )}
 
                   {/* Title */}
-                  <h2 className="text-xl font-bold mb-3 group-hover:underline underline-offset-4 line-clamp-2">
+                  <h2 className="text-xl font-bold mb-4 group-hover:underline underline-offset-4 line-clamp-2 leading-tight">
                     {post.title}
                   </h2>
 
                   {/* Summary */}
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">
+                  <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-6 line-clamp-3 leading-relaxed">
                     {post.summary}
                   </p>
 
                   {/* Meta */}
-                  <div className="flex items-center gap-4 text-xs text-slate-500">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
+                  <div className="flex items-center gap-4 text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100 dark:border-[#262626]/40">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="h-3.5 w-3.5" />
                       <span>{new Date(post.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                     </div>
                     {post.reading_time && (
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
+                      <div className="flex items-center gap-1.5">
+                        <Clock className="h-3.5 w-3.5" />
                         <span>{post.reading_time} min read</span>
                       </div>
                     )}
@@ -108,11 +108,11 @@ export default async function BlogPage() {
 
                   {/* Tags */}
                   {post.tags && post.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <div className="flex flex-wrap gap-2">
                       {post.tags.slice(0, 3).map((tag: string) => (
                         <span
                           key={tag}
-                          className="text-[10px] px-2 py-1 bg-slate-100 dark:bg-[#262626]/20 text-slate-600 dark:text-slate-400 rounded-full font-mono uppercase tracking-wider"
+                          className="text-[10px] px-2.5 py-1 bg-slate-100 dark:bg-[#262626]/20 text-slate-600 dark:text-slate-400 rounded-full font-mono uppercase tracking-wider"
                         >
                           {tag}
                         </span>
