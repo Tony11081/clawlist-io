@@ -33,15 +33,23 @@ export async function GET(request: NextRequest) {
   const limit = parseInt(searchParams.get('limit') || '100')
 
   try {
-    let query = supabase.from('blog_posts').select('*')
-
     if (slug) {
-      query = query.eq('slug', slug).single()
-    } else {
-      query = query.order('published_at', { ascending: false }).limit(limit)
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('slug', slug)
+        .single()
+
+      if (error) throw error
+
+      return NextResponse.json({ success: true, data })
     }
 
-    const { data, error } = await query
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('*')
+      .order('published_at', { ascending: false })
+      .limit(limit)
 
     if (error) throw error
 
