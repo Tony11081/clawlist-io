@@ -17,26 +17,33 @@ export function Footer() {
               <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
               <li><Link href="/skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link></li>
               <li><Link href="/recipes" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Recipes</Link></li>
+              <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Blog</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Community</h4>
+            <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">GitHub</a></li>
-              <li><a href="https://discord.com/invite/clawd" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Discord</a></li>
-              <li><a href="https://docs.openclaw.ai" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Docs</a></li>
+              <li><Link href="/about" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">About Us</Link></li>
+              <li><Link href="/contact" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Contact</Link></li>
+              <li><Link href="/security" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Security</Link></li>
+              <li><a href="https://github.com/Tony11081/clawlist-io" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">GitHub</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Security</h4>
+            <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/security" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Security Center</Link></li>
-              <li><Link href="/security#api-keys" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">API Key Safety</Link></li>
+              <li><Link href="/terms" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Terms of Service</Link></li>
+              <li><Link href="/privacy" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-neutral-600 dark:text-neutral-400">
-          © 2026 ClawList.io. All rights reserved.
+          <p>© 2026 ClawList.io. All rights reserved.</p>
+          <p className="mt-2">
+            <Link href="/rss.xml" className="hover:text-neutral-900 dark:hover:text-neutral-100">RSS Feed</Link>
+            {' • '}
+            <Link href="/sitemap.xml" className="hover:text-neutral-900 dark:hover:text-neutral-100">Sitemap</Link>
+          </p>
         </div>
       </div>
     </footer>

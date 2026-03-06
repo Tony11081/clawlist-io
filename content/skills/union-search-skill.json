@@ -1,0 +1,83 @@
+{
+  "id": "union-search-skill",
+  "name": "Union Search",
+  "slug": "union-search-skill",
+  "summary": "Unified multi-platform search solution — one command to reach 30+ platforms including GitHub, Twitter, Bilibili, Xiaohongshu, Douyin, and more",
+  "description": "Union Search is a production-ready CLI tool that aggregates search results from 30+ platforms with a single unified interface. It supports developer communities (GitHub, Reddit, Zhihu), social media (Twitter, Xiaohongshu, Douyin, Bilibili), search engines (Google, Bing, DuckDuckGo, Brave), AI-powered search (Tavily, Metaso), and 18 image search platforms. Features include automatic fallback channels, concurrent search, result filtering, and multiple output formats (JSON/Markdown/Text).",
+  "risk_level": "low",
+  "upvotes": 0,
+  "downloads": "New",
+  "tags": ["search", "automation", "multi-platform", "cli", "python"],
+  "install": "git clone https://github.com/runningZ1/union-search-skill && cd union-search-skill && pip install -r requirements.txt",
+  "github": "https://github.com/runningZ1/union-search-skill",
+  "author": "runningZ1",
+  "category": "Productivity",
+  "platforms": [
+    "GitHub", "Reddit", "Zhihu", "Twitter/X", "Xiaohongshu", "Douyin", 
+    "Bilibili", "YouTube", "Weibo", "Google", "Bing", "DuckDuckGo", 
+    "Brave", "Yahoo", "Baidu", "Yandex", "Tavily", "Metaso", 
+    "Volcengine", "Jina", "Wikipedia", "RSS", "Xiaoyuzhou FM"
+  ],
+  "features": [
+    "30+ search platforms with unified CLI interface",
+    "Automatic fallback when primary channels fail",
+    "18 image search platforms with batch download",
+    "Concurrent search with rate limiting",
+    "Multiple output formats (JSON/Markdown/Text)",
+    "Search logging and result caching",
+    "Platform grouping (dev/social/video/search/ai)",
+    "Health check and environment validation"
+  ],
+  "requirements": {
+    "python": "3.9+",
+    "dependencies": ["requests", "python-dotenv", "lxml"],
+    "optional": ["pyimagedl", "curl_cffi", "tavily-python", "feedparser"]
+  },
+  "usage_examples": [
+    {
+      "title": "Multi-platform aggregated search",
+      "command": "python union_search_cli.py search \"AI Agent\" --group dev --limit 5 --pretty"
+    },
+    {
+      "title": "Single platform search",
+      "command": "python union_search_cli.py github \"machine learning\" --limit 10"
+    },
+    {
+      "title": "Image search and download",
+      "command": "python union_search_cli.py image \"landscape\" --platforms google bing pixabay --limit 20 --output-dir ./images"
+    },
+    {
+      "title": "Health check",
+      "command": "python union_search_cli.py doctor --env-file .env"
+    }
+  ],
+  "api_keys": {
+    "required": [],
+    "optional": [
+      "GITHUB_TOKEN",
+      "TIKHUB_TOKEN",
+      "SERPAPI_KEY",
+      "GOOGLE_API_KEY",
+      "YOUTUBE_API_KEY",
+      "TAVILY_API_KEY",
+      "METASO_API_KEY",
+      "VOLCENGINE_API_KEY"
+    ]
+  },
+  "highlights": [
+    "🌐 Most comprehensive platform coverage (30+) compared to other open-source projects",
+    "🔄 Multi-channel redundancy with automatic fallback",
+    "⚡ Standardized output format across all platforms",
+    "🛡️ Production-ready with error handling and rate limiting",
+    "📦 Minimal dependencies, optional advanced features"
+  ],
+  "use_cases": [
+    "Cross-platform content discovery and monitoring",
+    "Competitive intelligence and trend analysis",
+    "Research and data collection automation",
+    "Social media listening and brand monitoring",
+    "Developer community engagement tracking"
+  ],
+  "created_at": "2026-03-07",
+  "updated_at": "2026-03-07"
+}
