@@ -128,6 +128,15 @@ const baseGuides: GuideItem[] = [
     difficulty: 'intermediate',
     readTime: '15 min',
   },
+  {
+    id: 8,
+    slug: 'claude-code-beginner-guide',
+    title: 'Claude Code for Complete Beginners: Install in 3 Minutes, No Coding Required',
+    description: 'A step-by-step guide to installing Claude Code on Mac, Windows, and Linux. No programming background needed — just copy, paste, and follow along.',
+    category: 'Getting Started',
+    difficulty: 'beginner',
+    readTime: '8 min',
+  },
 ]
 
 const baseRecipes: RecipeItem[] = [
