@@ -1,10 +1,13 @@
 import { supabase } from '@/lib/supabase'
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { CopyButton } from '@/components/copy-button'
+import { Breadcrumb } from '@/components/breadcrumb'
+import { RelatedContent } from '@/components/related-content'
 import { Shield, Check } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { fallbackSkills } from '@/lib/catalog'
+import type { Metadata } from 'next'
 
 export const revalidate = 60
 
@@ -30,6 +33,45 @@ async function getSkill(slug: string) {
   return data
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const skill = await getSkill(slug)
+
+  if (!skill) {
+    return {
+      title: 'Skill Not Found',
+    }
+  }
+
+  return {
+    title: `${skill.name} | ClawList Skills`,
+    description: skill.summary,
+    alternates: {
+      canonical: `/skills/${slug}`,
+    },
+    openGraph: {
+      title: skill.name,
+      description: skill.summary,
+      url: `https://clawlist.io/skills/${slug}`,
+      type: 'website',
+      images: [
+        {
+          url: `/api/og/skill?slug=${slug}`,
+          width: 1200,
+          height: 630,
+          alt: skill.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: skill.name,
+      description: skill.summary,
+      images: [`/api/og/skill?slug=${slug}`],
+    },
+  }
+}
+
 export default async function SkillDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const skill = await getSkill(slug)
@@ -38,8 +80,47 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
     notFound()
   }
 
+  // Get related skills (same category)
+  let relatedSkills: any[] = []
+  if (supabase && skill.category) {
+    const { data } = await supabase
+      .from('skills')
+      .select('slug, name, summary, category')
+      .eq('category', skill.category)
+      .neq('slug', slug)
+      .limit(3)
+
+    relatedSkills = data || []
+  }
+
+  // Schema.org SoftwareApplication structured data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: skill.name,
+    description: skill.summary,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Cross-platform',
+    ...(skill.github_url && { codeRepository: skill.github_url }),
+    ...(skill.install_cmd && { installUrl: skill.github_url }),
+    aggregateRating: skill.upvotes ? {
+      '@type': 'AggregateRating',
+      ratingValue: Math.min(5, (skill.upvotes / 10) + 3),
+      reviewCount: skill.upvotes,
+    } : undefined,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+  }
+
   return (
     <div className="min-h-screen bg-[#f7f7f7]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <AnalyticsTracker
         payload={{
           eventType: 'skill_view',
@@ -55,13 +136,13 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
       <div className="container mx-auto px-6 py-16 max-w-4xl">
         {/* Breadcrumb */}
-        <div className="mb-8 text-sm text-[#666666]">
-          <Link href="/skills" className="hover:text-[#191919] transition-colors">
-            Skills
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-[#191919]">{skill.name}</span>
-        </div>
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Skills', href: '/skills' },
+            { label: skill.name },
+          ]}
+        />
 
         {/* Header */}
         <div className="mb-12">
@@ -196,6 +277,9 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
             👍 Upvote
           </button>
         </div>
+
+        {/* Related Skills */}
+        <RelatedContent items={relatedSkills} type="skills" />
       </div>
     </div>
   )

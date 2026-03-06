@@ -4,9 +4,33 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { CopyButton } from '@/components/copy-button'
+import { FAQ } from '@/components/faq'
 import { Shield, Layers } from 'lucide-react'
 
 export default function Home() {
+  const faqItems = [
+    {
+      question: 'What is OpenClaw?',
+      answer: 'OpenClaw is a powerful automation framework that enables developers to build intelligent workflows, integrate AI models, and automate complex tasks with minimal code.',
+    },
+    {
+      question: 'How do I install OpenClaw skills?',
+      answer: 'Skills can be installed using the command line with `npx skills add <skill-name>`. Each skill page provides the exact installation command you need.',
+    },
+    {
+      question: 'Are OpenClaw skills safe to use?',
+      answer: 'All skills in our library are reviewed for security. Each skill displays its required permissions and risk level. We recommend reviewing permissions before installation and following the principle of least privilege.',
+    },
+    {
+      question: 'Can I contribute my own skills?',
+      answer: 'Yes! We welcome community contributions. Visit our GitHub repository to submit your skills or check our contribution guidelines on the documentation page.',
+    },
+    {
+      question: 'Which AI models does OpenClaw support?',
+      answer: 'OpenClaw supports multiple AI providers including OpenAI, Anthropic Claude, Google Gemini, and local models. Check our Models page for a complete comparison and selection guide.',
+    },
+  ]
+
   return (
     <div className="flex flex-col min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
       {/* Hero Section */}
@@ -134,6 +158,12 @@ export default function Home() {
           </Button>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ
+        items={faqItems}
+        description="Everything you need to know about OpenClaw and ClawList."
+      />
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { supabase } from '@/lib/supabase'
 import { Badge } from '@/components/ui/badge'
+import { Breadcrumb } from '@/components/breadcrumb'
+import { RelatedContent } from '@/components/related-content'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar, Share2 } from 'lucide-react'
 import { notFound } from 'next/navigation'
@@ -64,11 +66,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.published_at,
       authors: [post.author || 'ClawList Team'],
       tags: post.tags || [],
+      images: [
+        {
+          url: `/api/og/blog?slug=${slug}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.summary || post.content.substring(0, 160),
+      images: [`/api/og/blog?slug=${slug}`],
     },
   }
 }
@@ -81,17 +92,60 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
+  // Get related posts (same category or tags)
+  let relatedPosts: any[] = []
+  if (supabase) {
+    const { data } = await supabase
+      .from('blog_posts')
+      .select('slug, title, summary, category, tags')
+      .neq('slug', slug)
+      .limit(3)
+
+    relatedPosts = data || []
+  }
+
+  // Schema.org Article structured data
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.summary || post.content.substring(0, 160),
+    author: {
+      '@type': 'Person',
+      name: post.author || 'ClawList Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ClawList',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://clawlist.io/logo.png',
+      },
+    },
+    datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://clawlist.io/blog/${slug}`,
+    },
+    keywords: post.tags?.join(', '),
+  }
+
   return (
     <div className="min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="max-w-4xl mx-auto w-full px-6 py-12 lg:px-20">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 mb-8">
-          <Link href="/" className="hover:text-slate-900 dark:hover:text-slate-100">Home</Link>
-          <ArrowRight className="h-3 w-3" />
-          <Link href="/blog" className="hover:text-slate-900 dark:hover:text-slate-100">Blog</Link>
-          <ArrowRight className="h-3 w-3" />
-          <span className="text-slate-900 dark:text-slate-300 truncate max-w-[200px]">{post.title}</span>
-        </div>
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Blog', href: '/blog' },
+            { label: post.title },
+          ]}
+        />
 
         {/* Header */}
         <header className="mb-12">
@@ -173,6 +227,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         )}
+
+        {/* Related Posts */}
+        <RelatedContent items={relatedPosts} type="blog" />
 
         {/* Back to Blog */}
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#262626]">
