@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Sparkles, Layers, Puzzle, Shield, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 import { guides } from '@/lib/catalog'
 
@@ -15,7 +16,8 @@ export default function GuidesPage() {
       readTime: '12 Min Read',
       date: 'June 20, 2024',
       author: 'Alex Rivera',
-      slug: 'parallel-processing-v2'
+      slug: 'parallel-processing-v2',
+      image: '/images/guides/parallel-processing.png'
     },
     {
       id: 2,
@@ -25,7 +27,8 @@ export default function GuidesPage() {
       readTime: '8 Min Read',
       date: 'June 15, 2024',
       author: 'Sarah Chen',
-      slug: 'custom-hooks-state'
+      slug: 'custom-hooks-state',
+      image: '/images/guides/custom-hooks.png'
     },
     {
       id: 3,
@@ -35,7 +38,8 @@ export default function GuidesPage() {
       readTime: '5 Min Read',
       date: 'June 12, 2024',
       author: 'Markus Weber',
-      slug: 'hello-world-module'
+      slug: 'hello-world-module',
+      image: '/images/guides/hello-world.png'
     }
   ]
 
@@ -108,8 +112,13 @@ export default function GuidesPage() {
         <div className="flex flex-col gap-6">
           {tutorials.map((tutorial) => (
             <div key={tutorial.id} className="group flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-xl hover:border-slate-900 dark:hover:border-slate-500 transition-all">
-              <div className="w-full md:w-72 h-48 shrink-0 bg-[#262626]/20 rounded-lg overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-400/20 to-[#262626]/40 mix-blend-multiply"></div>
+              <div className="w-full md:w-72 h-48 shrink-0 rounded-lg overflow-hidden relative">
+                <Image
+                  src={tutorial.image}
+                  alt={tutorial.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col justify-between flex-1 py-1">
                 <div>

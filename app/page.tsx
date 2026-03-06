@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -32,21 +33,14 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-square bg-slate-200 dark:bg-[#262626] rounded-xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-400/20 to-transparent"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-3/4 h-3/4 bg-white/5 dark:bg-white/5 backdrop-blur-3xl rounded-lg border border-white/10 shadow-inner flex flex-col p-8 font-mono text-xs opacity-50">
-                <div className="flex gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-slate-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-400"></div>
-                </div>
-                <p className="text-slate-400">$ claw install @openclaw/core</p>
-                <p className="text-slate-500">Checking compatibility...</p>
-                <p className="text-white">Success: environment verified.</p>
-                <p className="text-slate-400">$ claw deploy --production</p>
-              </div>
-            </div>
+          <div className="relative aspect-square rounded-xl overflow-hidden shadow-2xl">
+            <Image
+              src="/images/homepage/hero.png"
+              alt="ClawList Developer Workspace"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -95,12 +89,18 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { name: 'Kernel Optimization', desc: 'Direct memory access and register tuning for ultra-low latency execution paths.', risk: 'High Risk', slug: 'kernel-optimization', install: 'npx skills add kernel-opt', bg: 'bg-slate-300 dark:bg-[#262626]' },
-            { name: 'Interface Synthesis', desc: 'Automated UI generation based on system schemas and user behavior patterns.', risk: 'Stable', slug: 'interface-synthesis', install: 'npx skills add ui-synthesis', bg: 'bg-slate-400 dark:bg-[#262626]/80' },
-            { name: 'Neural Pipelines', desc: 'Integration of on-device inference for real-time data classification and sorting.', risk: 'Experimental', slug: 'neural-pipelines', install: 'npx skills add neural-pipe', bg: 'bg-slate-200 dark:bg-[#262626]/10' },
+            { name: 'Kernel Optimization', desc: 'Direct memory access and register tuning for ultra-low latency execution paths.', risk: 'High Risk', slug: 'kernel-optimization', install: 'npx skills add kernel-opt', image: '/images/homepage/skill-kernel.png' },
+            { name: 'Interface Synthesis', desc: 'Automated UI generation based on system schemas and user behavior patterns.', risk: 'Stable', slug: 'interface-synthesis', install: 'npx skills add ui-synthesis', image: '/images/homepage/skill-interface.png' },
+            { name: 'Neural Pipelines', desc: 'Integration of on-device inference for real-time data classification and sorting.', risk: 'Experimental', slug: 'neural-pipelines', install: 'npx skills add neural-pipe', image: '/images/homepage/skill-neural.png' },
           ].map((skill) => (
             <div key={skill.name} className="flex flex-col bg-slate-100 dark:bg-[#262626]/20 rounded-2xl overflow-hidden border border-slate-200 dark:border-[#262626] shadow-sm">
-              <div className={`h-48 ${skill.bg} relative`}>
+              <div className="h-48 relative">
+                <Image
+                  src={skill.image}
+                  alt={skill.name}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute top-4 right-4 bg-black text-white dark:bg-white dark:text-black px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
                   {skill.risk}
                 </div>
