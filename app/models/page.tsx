@@ -1,3 +1,5 @@
+import { Code2, FileText, Bot, BarChart3, Check } from 'lucide-react'
+
 export default function ModelsPage() {
   return (
     <div className="min-h-screen bg-[#f7f7f7]">
@@ -73,21 +75,29 @@ export default function ModelsPage() {
             <div>
               <h3 className="font-semibold mb-4 text-[#191919]">What do you need?</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
-                  <span className="text-2xl mb-2 block">💻</span>
-                  <span className="text-[#191919] font-medium">Code generation & review</span>
+                <button className="text-left p-6 border-2 border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-all group">
+                  <div className="size-12 rounded-full bg-[#f7f7f7] flex items-center justify-center mb-4 group-hover:bg-[#191919] transition-colors">
+                    <Code2 className="h-6 w-6 text-[#191919] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-[#191919] font-semibold block">Code generation & review</span>
                 </button>
-                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
-                  <span className="text-2xl mb-2 block">✍️</span>
-                  <span className="text-[#191919] font-medium">Content creation & editing</span>
+                <button className="text-left p-6 border-2 border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-all group">
+                  <div className="size-12 rounded-full bg-[#f7f7f7] flex items-center justify-center mb-4 group-hover:bg-[#191919] transition-colors">
+                    <FileText className="h-6 w-6 text-[#191919] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-[#191919] font-semibold block">Content creation & editing</span>
                 </button>
-                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
-                  <span className="text-2xl mb-2 block">🤖</span>
-                  <span className="text-[#191919] font-medium">Automated task execution</span>
+                <button className="text-left p-6 border-2 border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-all group">
+                  <div className="size-12 rounded-full bg-[#f7f7f7] flex items-center justify-center mb-4 group-hover:bg-[#191919] transition-colors">
+                    <Bot className="h-6 w-6 text-[#191919] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-[#191919] font-semibold block">Automated task execution</span>
                 </button>
-                <button className="text-left p-4 border border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-colors">
-                  <span className="text-2xl mb-2 block">📊</span>
-                  <span className="text-[#191919] font-medium">Data analysis & reporting</span>
+                <button className="text-left p-6 border-2 border-[#e5e5e5] rounded-2xl hover:border-[#191919] transition-all group">
+                  <div className="size-12 rounded-full bg-[#f7f7f7] flex items-center justify-center mb-4 group-hover:bg-[#191919] transition-colors">
+                    <BarChart3 className="h-6 w-6 text-[#191919] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="text-[#191919] font-semibold block">Data analysis & reporting</span>
                 </button>
               </div>
             </div>
@@ -95,15 +105,15 @@ export default function ModelsPage() {
               <p className="font-semibold mb-3 text-[#191919]">Recommended: GPT-5.3 Codex</p>
               <ul className="space-y-2 text-[#666666]">
                 <li className="flex items-center gap-2">
-                  <span className="text-[#191919]">✓</span>
+                  <Check className="h-4 w-4 text-[#191919]" />
                   Fast speed, suitable for real-time interaction
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#191919]">✓</span>
+                  <Check className="h-4 w-4 text-[#191919]" />
                   Strong code capabilities
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-[#191919]">✓</span>
+                  <Check className="h-4 w-4 text-[#191919]" />
                   Moderate cost
                 </li>
               </ul>
@@ -124,9 +134,9 @@ export default function ModelsPage() {
                 </code>
               </div>
             </div>
-            <div className="bg-[#fff9e6] border border-[#ffd700] p-6 rounded-2xl">
-              <p className="font-semibold text-[#191919] mb-3">
-                ⚠️ Security Tips
+            <div className="bg-[#fff9e6] border-2 border-[#ffd700] p-6 rounded-2xl">
+              <p className="font-semibold text-[#191919] mb-3 flex items-center gap-2">
+                <span className="text-xl">⚠️</span> Security Tips
               </p>
               <ul className="space-y-2 text-[#666666] text-sm">
                 <li>• Never hardcode keys in code or config files</li>
