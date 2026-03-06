@@ -119,6 +119,15 @@ const baseGuides: GuideItem[] = [
     difficulty: 'beginner',
     readTime: '10 min',
   },
+  {
+    id: 7,
+    slug: 'ai-personal-podcast-pipeline',
+    title: 'Build Your Own AI-Powered Personal Podcast',
+    description: 'Create a fully automated daily podcast in your own cloned voice. Three AI agents collect, fact-check, and narrate the news you care about — delivered every morning without any manual work.',
+    category: 'Automation',
+    difficulty: 'intermediate',
+    readTime: '15 min',
+  },
 ]
 
 const baseRecipes: RecipeItem[] = [
