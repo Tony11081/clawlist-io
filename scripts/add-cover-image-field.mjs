@@ -17,21 +17,28 @@ if (!supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function addCoverImageField() {
-  console.log('🔧 Adding cover_image field to blog_posts table...')
+  console.log('🔧 Adding cover_image field to blog_posts table...\n')
 
-  // 使用 Supabase SQL 执行
-  const { data, error } = await supabase.rpc('exec_sql', {
-    sql: 'ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS cover_image TEXT;'
-  })
+  // 直接使用 SQL 查询
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('id')
+    .limit(1)
 
   if (error) {
-    console.error('❌ Error:', error.message)
-    console.log('ℹ️  Please run this SQL manually in Supabase dashboard:')
-    console.log('   ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS cover_image TEXT;')
+    console.error('❌ Error connecting to database:', error.message)
     process.exit(1)
   }
 
-  console.log('✅ cover_image field added successfully')
+  console.log('✅ Connected to database')
+  console.log('\n📝 Please run this SQL in Supabase Dashboard:')
+  console.log('   https://supabase.com/dashboard/project/ygnbikloljpjzkxxcoar/editor\n')
+  console.log('SQL Command:')
+  console.log('─'.repeat(60))
+  console.log('ALTER TABLE blog_posts ADD COLUMN IF NOT EXISTS cover_image TEXT;')
+  console.log('─'.repeat(60))
+  console.log('\nAfter running the SQL, you can add cover images with:')
+  console.log('UPDATE blog_posts SET cover_image = \'URL\' WHERE slug = \'your-slug\';')
 }
 
 addCoverImageField()
