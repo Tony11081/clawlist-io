@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Badge } from '@/components/ui/badge'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 
 interface TagFilterProps {
   tags: string[]
@@ -11,13 +12,18 @@ interface TagFilterProps {
 }
 
 export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFilterProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   if (!tags || tags.length === 0) return null
+
+  const displayTags = isExpanded ? tags : tags.slice(0, 10)
+  const hasMore = tags.length > 10
 
   return (
     <div className="mb-8 p-6 bg-white dark:bg-[#262626]/40 border border-slate-200 dark:border-[#262626] rounded-2xl">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">
-          Filter by Tags
+          Filter by Tags {tags.length > 0 && `(${tags.length})`}
         </h3>
         {selectedTags.length > 0 && (
           <button
@@ -29,7 +35,7 @@ export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFi
         )}
       </div>
       <div className="flex flex-wrap gap-2">
-        {tags.map((tag) => {
+        {displayTags.map((tag) => {
           const isSelected = selectedTags.includes(tag)
           return (
             <button
@@ -46,6 +52,24 @@ export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFi
           )
         })}
       </div>
+      {hasMore && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="mt-4 flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+        >
+          {isExpanded ? (
+            <>
+              <ChevronUp className="h-4 w-4" />
+              Show less
+            </>
+          ) : (
+            <>
+              <ChevronDown className="h-4 w-4" />
+              Show {tags.length - 10} more tags
+            </>
+          )}
+        </button>
+      )}
     </div>
   )
 }
