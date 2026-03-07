@@ -72,6 +72,36 @@ export default async function GuidesPage() {
                 href={`/guides/${guide.slug}`}
                 className="group flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-xl hover:border-slate-900 dark:hover:border-slate-500 transition-all"
               >
+                {/* Cover Image */}
+                <div className="w-full md:w-72 h-48 shrink-0 rounded-lg overflow-hidden relative bg-slate-200 dark:bg-slate-700">
+                  {guide.cover_image ? (
+                    <Image
+                      src={guide.cover_image}
+                      alt={guide.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                        <circle cx="9" cy="9" r="2" />
+                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+
                 <div className="flex flex-col justify-between flex-1 py-1">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
