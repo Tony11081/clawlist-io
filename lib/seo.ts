@@ -39,6 +39,41 @@ const blogSeoOverrides: Record<string, SeoOverride> = {
     description:
       'A practical comparison of SimilarWeb and Semrush integrations for AI workflows, including strengths, limits, and use cases.',
   },
+  'ai-short-video-factory': {
+    title: 'AI Short Video Factory: Shorts Automation Workflow',
+    description:
+      'Automate short video production from scriptwriting to final export with batch workflows for AI-generated shorts.',
+  },
+  'using-linear-as-ai-task-management-hub': {
+    title: 'Linear as an AI Task Hub for Agent Workflows',
+    description:
+      'How to use Linear as a central task hub for AI agents, PR workflows, status tracking, and execution handoffs.',
+  },
+  'claude-code-ai-can-now-work-independently': {
+    title: 'Claude Code Can Now Work Independently',
+    description:
+      'What changed in Claude Code, how independent execution works, and where autonomous workflows fit best.',
+  },
+  'codex-monitor-agent-orchestration-demo': {
+    title: 'Codex Monitor Multi-Agent Orchestration Demo',
+    description:
+      'See how Codex Monitor coordinates multiple agents with prompt-based orchestration and parallel task execution.',
+  },
+  'building-workany-a-week-of-vibe-coding-with-claude-agent-sdk': {
+    title: 'Building WorkAny with Claude Agent SDK in 1 Week',
+    description:
+      'A rapid build story showing how Claude Agent SDK and Tauri were used to ship WorkAny in a single week.',
+  },
+  'manus-integration-enables-long-task-capability-in-claude-code': {
+    title: 'Claude Code + Manus for Long-Running Tasks',
+    description:
+      'How Manus extends Claude Code with longer-running task execution and more durable agent workflows.',
+  },
+  'obsidian-ceo-creates-claude-skills': {
+    title: 'Obsidian CEO Builds Claude Skills',
+    description:
+      'Why the Obsidian CEO built Claude Skills directly, and what it reveals about real-world skill design.',
+  },
 }
 
 const skillSeoOverrides: Record<string, SeoOverride> = {
@@ -46,6 +81,11 @@ const skillSeoOverrides: Record<string, SeoOverride> = {
     title: 'Union Search for OpenClaw: Search 30+ Sources',
     description:
       'Search Xiaohongshu, Douyin, Bilibili, YouTube, X, and 30+ sources from one OpenClaw skill.',
+  },
+  'rtk': {
+    title: 'RTK for OpenClaw: Brew Install & Token Compression',
+    description:
+      'Install RTK with Homebrew and compress noisy CLI output to save 60-90% of tokens in AI coding workflows.',
   },
 }
 
