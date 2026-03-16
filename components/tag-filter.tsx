@@ -1,23 +1,44 @@
 'use client'
 
 import { useState } from 'react'
-import { Badge } from '@/components/ui/badge'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 interface TagFilterProps {
   tags: string[]
-  selectedTags: string[]
-  onTagToggle: (tag: string) => void
-  onClearAll: () => void
+  selectedTag?: string | null
+  collapsedCount?: number
 }
 
-export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFilterProps) {
+export function TagFilter({
+  tags,
+  selectedTag = null,
+  collapsedCount = 8,
+}: TagFilterProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+  const searchParams = useSearchParams()
 
   if (!tags || tags.length === 0) return null
 
-  const displayTags = isExpanded ? tags : tags.slice(0, 10)
-  const hasMore = tags.length > 10
+  const displayTags = isExpanded ? tags : tags.slice(0, collapsedCount)
+  const hasMore = tags.length > collapsedCount
+
+  const updateRoute = (tag: string | null) => {
+    const params = new URLSearchParams(searchParams.toString())
+
+    if (tag) {
+      params.set('tag', tag)
+      params.set('page', '1')
+    } else {
+      params.delete('tag')
+      params.delete('page')
+    }
+
+    const nextUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname
+    router.push(nextUrl)
+  }
 
   return (
     <div className="mb-8 p-6 bg-white dark:bg-[#262626]/40 border border-slate-200 dark:border-[#262626] rounded-2xl">
@@ -25,22 +46,22 @@ export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFi
         <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">
           Filter by Tags {tags.length > 0 && `(${tags.length})`}
         </h3>
-        {selectedTags.length > 0 && (
+        {selectedTag && (
           <button
-            onClick={onClearAll}
+            onClick={() => updateRoute(null)}
             className="text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4"
           >
-            Clear all
+            Clear filter
           </button>
         )}
       </div>
       <div className="flex flex-wrap gap-2">
         {displayTags.map((tag) => {
-          const isSelected = selectedTags.includes(tag)
+          const isSelected = selectedTag === tag
           return (
             <button
               key={tag}
-              onClick={() => onTagToggle(tag)}
+              onClick={() => updateRoute(isSelected ? null : tag)}
               className={`px-3 py-1.5 rounded-full text-sm font-mono transition-all ${
                 isSelected
                   ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900'
@@ -65,7 +86,7 @@ export function TagFilter({ tags, selectedTags, onTagToggle, onClearAll }: TagFi
           ) : (
             <>
               <ChevronDown className="h-4 w-4" />
-              Show {tags.length - 10} more tags
+              Show {tags.length - collapsedCount} more tags
             </>
           )}
         </button>
