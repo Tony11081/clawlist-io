@@ -3,6 +3,7 @@ import { supabase } from '@/lib/supabase'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import { resolveGuideSeo } from '@/lib/seo'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
@@ -55,15 +56,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Guide Not Found' }
   }
 
+  const seo = resolveGuideSeo(
+    guide.title,
+    guide.summary || guide.content.substring(0, 160),
+  )
+
   return {
-    title: `${guide.title} | ClawList Guides`,
-    description: guide.summary || guide.content.substring(0, 160),
+    title: seo.title,
+    description: seo.description,
     alternates: {
       canonical: `/guides/${guide.slug}`,
     },
     openGraph: {
-      title: guide.title,
-      description: guide.summary || guide.content.substring(0, 160),
+      title: seo.title,
+      description: seo.description,
       url: `https://clawlist.io/guides/${guide.slug}`,
       type: 'article',
       publishedTime: guide.published_at,

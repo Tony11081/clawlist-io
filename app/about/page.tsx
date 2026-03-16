@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { Mail, Github, Twitter, MessageSquare } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About Us - ClawList.io',
+  title: 'About Us',
   description: 'Learn about ClawList.io, the comprehensive resource hub for OpenClaw developers and AI automation enthusiasts.',
   alternates: { canonical: '/about' },
   openGraph: {

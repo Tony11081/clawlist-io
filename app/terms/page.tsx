@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - ClawList.io',
+  title: 'Terms of Service',
   description: 'Terms and conditions for using ClawList.io.',
   alternates: { canonical: '/terms' },
 }
@@ -31,7 +31,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              By accessing and using ClawList.io ("the Service"), you accept and agree to be bound by the terms
+              By accessing and using ClawList.io (&quot;the Service&quot;), you accept and agree to be bound by the terms
               and provision of this agreement. If you do not agree to these terms, please do not use the Service.
             </p>
 
@@ -77,7 +77,7 @@ export default function TermsPage() {
               5. Disclaimer of Warranties
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              The Service is provided "as is" without warranties of any kind, either express or implied.
+              The Service is provided &quot;as is&quot; without warranties of any kind, either express or implied.
               ClawList.io does not warrant that:
             </p>
             <ul className="text-slate-700 dark:text-slate-300 space-y-2">

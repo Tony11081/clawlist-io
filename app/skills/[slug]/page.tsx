@@ -7,6 +7,7 @@ import { SocialShareButtons } from '@/components/social-share-buttons'
 import { Shield, Check } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { fallbackSkills } from '@/lib/catalog'
+import { resolveSkillSeo } from '@/lib/seo'
 import type { Metadata } from 'next'
 
 export const revalidate = 60
@@ -43,15 +44,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
+  const seo = resolveSkillSeo(
+    slug,
+    skill.name,
+    skill.summary,
+  )
+
   return {
-    title: `${skill.name} | ClawList Skills`,
-    description: skill.summary,
+    title: seo.title,
+    description: seo.description,
     alternates: {
       canonical: `/skills/${slug}`,
     },
     openGraph: {
-      title: skill.name,
-      description: skill.summary,
+      title: seo.title,
+      description: seo.description,
       url: `https://clawlist.io/skills/${slug}`,
       type: 'website',
       images: [
@@ -65,8 +72,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: skill.name,
-      description: skill.summary,
+      title: seo.title,
+      description: seo.description,
       images: [`/api/og/skill?slug=${slug}`],
     },
   }

@@ -3,16 +3,15 @@ import { supabase } from '@/lib/supabase'
 import { extractFirstImage } from '@/lib/extract-image'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Sparkles, Layers, Puzzle, Shield, ChevronLeft, ChevronRight, ArrowRight, Clock, Calendar } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export const revalidate = 0 // 实时更新
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Guides & Tutorials - ClawList.io',
+  title: 'Guides & Tutorials',
   description: 'A curated collection of deep-dives, architectural overviews, and step-by-step implementations for the OpenClaw ecosystem.',
   alternates: { canonical: '/guides' },
 }

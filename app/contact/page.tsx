@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { Mail, Github, Twitter, MessageSquare, Send } from 'lucide-react'
+import { Mail, Github, Twitter, Send } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - ClawList.io',
+  title: 'Contact Us',
   description: 'Get in touch with the ClawList team. We\'re here to help with questions, feedback, and collaboration opportunities.',
   alternates: { canonical: '/contact' },
   openGraph: {
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-12">
-            Have questions, feedback, or want to collaborate? We'd love to hear from you.
+            Have questions, feedback, or want to collaborate? We&apos;d love to hear from you.
           </p>
 
           {/* Contact Methods */}
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   Visit our <a href="/submit" className="underline underline-offset-4 hover:text-slate-900 dark:hover:text-slate-100">Submit page</a> and
-                  fill out the form with your skill's GitHub URL and details. Our team will review it within 48 hours.
+                  fill out the form with your skill&apos;s GitHub URL and details. Our team will review it within 48 hours.
                 </p>
               </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - ClawList.io',
+  title: 'Privacy Policy',
   description: 'Privacy policy for ClawList.io.',
   alternates: { canonical: '/privacy' },
 }
@@ -76,7 +76,7 @@ export default function PrivacyPage() {
               <li>To respond to your inquiries and support requests</li>
               <li>To detect and prevent fraud or abuse</li>
               <li>To comply with legal obligations</li>
-              <li>To send important updates about the Service (if you've opted in)</li>
+              <li>To send important updates about the Service (if you&apos;ve opted in)</li>
             </ul>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
               <li>Anonymized and aggregated</li>
               <li>Not sold to third parties</li>
               <li>Used solely for improving the Service</li>
-              <li>Stored securely on Vercel's infrastructure</li>
+              <li>Stored securely on Vercel&apos;s infrastructure</li>
             </ul>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
@@ -150,7 +150,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              8. Children's Privacy
+              8. Children&apos;s Privacy
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               ClawList.io is not intended for children under 13. We do not knowingly collect personal
@@ -199,7 +199,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               We may update this Privacy Policy from time to time. Changes will be posted on this page
-              with an updated "Last updated" date. Continued use of the Service after changes constitutes
+              with an updated &quot;Last updated&quot; date. Continued use of the Service after changes constitutes
               acceptance of the updated policy.
             </p>
 

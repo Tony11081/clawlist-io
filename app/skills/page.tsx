@@ -5,7 +5,7 @@ import { getSkillsList } from '@/lib/skills'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Skills Library - ClawList.io',
+  title: 'Skills Library',
   description:
     'Browse OpenClaw skills with working install paths, risk labels, and practical summaries.',
   alternates: {

@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent, type RelatedItem } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import { resolveBlogSeo } from '@/lib/seo'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import { notFound } from 'next/navigation'
@@ -53,15 +54,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  const seo = resolveBlogSeo(
+    slug,
+    post.title,
+    post.summary || post.content.substring(0, 160),
+  )
+
   return {
-    title: `${post.title} | ClawList Blog`,
-    description: post.summary || post.content.substring(0, 160),
+    title: seo.title,
+    description: seo.description,
     alternates: {
       canonical: `/blog/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.summary || post.content.substring(0, 160),
+      title: seo.title,
+      description: seo.description,
       url: `https://clawlist.io/blog/${slug}`,
       type: 'article',
       publishedTime: post.published_at,
@@ -78,8 +85,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.summary || post.content.substring(0, 160),
+      title: seo.title,
+      description: seo.description,
       images: [`/api/og/blog?slug=${slug}`],
     },
   }
