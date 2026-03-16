@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-interface RelatedItem {
+export interface RelatedItem {
   slug: string
   name?: string
   title?: string

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { supabase } from '@/lib/supabase'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { RelatedContent } from '@/components/related-content'
+import { RelatedContent, type RelatedItem } from '@/components/related-content'
+import { SocialShareButtons } from '@/components/social-share-buttons'
 import Link from 'next/link'
-import { ArrowRight, Clock, Calendar, Share2 } from 'lucide-react'
+import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
@@ -93,7 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   // Get related posts (same category or tags)
-  let relatedPosts: any[] = []
+  let relatedPosts: RelatedItem[] = []
   if (supabase) {
     const { data } = await supabase
       .from('blog_posts')
@@ -210,6 +211,11 @@ export default async function BlogPostPage({ params }: Props) {
         ">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
+
+        <SocialShareButtons
+          title={post.title}
+          url={`https://clawlist.io/blog/${post.slug}`}
+        />
 
         {/* Tags */}
         {post.tags && post.tags.length > 0 && (

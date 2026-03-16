@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { supabase } from '@/lib/supabase'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent } from '@/components/related-content'
+import { SocialShareButtons } from '@/components/social-share-buttons'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
@@ -160,6 +161,11 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
         ">
           <ReactMarkdown>{guide.content}</ReactMarkdown>
         </div>
+
+        <SocialShareButtons
+          title={guide.title}
+          url={`https://clawlist.io/guides/${guide.slug}`}
+        />
 
         {/* Tags */}
         {guide.tags && guide.tags.length > 0 && (

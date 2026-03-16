@@ -2,9 +2,9 @@ import { supabase } from '@/lib/supabase'
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { CopyButton } from '@/components/copy-button'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { RelatedContent } from '@/components/related-content'
+import { RelatedContent, type RelatedItem } from '@/components/related-content'
+import { SocialShareButtons } from '@/components/social-share-buttons'
 import { Shield, Check } from 'lucide-react'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { fallbackSkills } from '@/lib/catalog'
 import type { Metadata } from 'next'
@@ -81,7 +81,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
   }
 
   // Get related skills (same category)
-  let relatedSkills: any[] = []
+  let relatedSkills: RelatedItem[] = []
   if (supabase && skill.category) {
     const { data } = await supabase
       .from('skills')
@@ -262,7 +262,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
         )}
 
         {/* Actions */}
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {skill.github_url && (
             <a
               href={skill.github_url}
@@ -277,6 +277,12 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
             👍 Upvote
           </button>
         </div>
+
+        <SocialShareButtons
+          title={skill.name}
+          url={`https://clawlist.io/skills/${skill.slug}`}
+          className="mb-10"
+        />
 
         {/* Related Skills */}
         <RelatedContent items={relatedSkills} type="skills" />
