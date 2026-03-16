@@ -1,13 +1,24 @@
 import { supabase } from '@/lib/supabase'
 
+type RssPost = {
+  title: string
+  slug: string
+  summary?: string | null
+  content: string
+  published_at: string
+  author?: string | null
+  tags?: string[] | null
+}
+
 export async function GET() {
   const baseUrl = 'https://clawlist.io'
 
-  let posts: any[] = []
+  let posts: RssPost[] = []
   if (supabase) {
     const { data } = await supabase
       .from('blog_posts')
       .select('*')
+      .or('category.is.null,category.neq.guides')
       .order('published_at', { ascending: false })
       .limit(50)
 

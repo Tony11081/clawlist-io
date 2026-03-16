@@ -1,8 +1,13 @@
 export const ANALYTICS_EVENT_TYPES = [
   'page_view',
+  'blog_view',
+  'guide_view',
   'skill_view',
   'search',
   'install_copy',
+  'content_share',
+  'cta_click',
+  'recommendation_click',
   'recommendation_impression',
   'affiliate_click',
   'affiliate_conversion',

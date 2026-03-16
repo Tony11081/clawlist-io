@@ -23,7 +23,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-12">
-            Last updated: March 6, 2026
+            Last updated: March 16, 2026
           </p>
 
           <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
@@ -82,35 +82,57 @@ export default function PrivacyPage() {
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
               3. Analytics and Tracking
             </h2>
-            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              We use Vercel Analytics and Speed Insights to collect anonymous usage data. These services
-              help us understand how users interact with our site and identify performance issues. This
-              data is:
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              We currently use several measurement and monetization tools to understand site usage,
+              improve content quality, and fund the site:
             </p>
             <ul className="text-slate-700 dark:text-slate-300 space-y-2">
-              <li>Anonymized and aggregated</li>
-              <li>Not sold to third parties</li>
-              <li>Used solely for improving the Service</li>
-              <li>Stored securely on Vercel&apos;s infrastructure</li>
+              <li>Our own first-party analytics endpoint for events such as skill views, install-copy actions, shares, and recommendation clicks</li>
+              <li>Vercel Analytics and Speed Insights for traffic and performance monitoring</li>
+              <li>Google Analytics 4 for page and engagement measurement</li>
+              <li>Google AdSense for ad delivery, measurement, and reporting</li>
             </ul>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
+              We use these services to understand which pages are useful, improve the product experience,
+              and measure whether content changes are helping visitors find what they need.
+            </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
               4. Cookies and Local Storage
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              ClawList.io uses minimal cookies and local storage for:
+              ClawList.io uses cookies, local storage, and similar technologies for:
             </p>
             <ul className="text-slate-700 dark:text-slate-300 space-y-2">
               <li>Remembering your preferences (e.g., dark mode)</li>
-              <li>Analytics (as described above)</li>
+              <li>First-party analytics identifiers such as `clawlist_vid` and `clawlist_sid` so we can measure usage without requiring an account</li>
+              <li>Google Analytics and Google AdSense measurement and reporting</li>
               <li>Essential site functionality</li>
             </ul>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
               You can disable cookies in your browser settings, but this may affect site functionality.
             </p>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
+              For Google services, you can also manage ad personalization and related controls through your
+              Google Ad Settings. We surface an on-site privacy notice so visitors can quickly review this
+              policy before continuing.
+            </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              5. Data Sharing and Disclosure
+              5. Advertising and Consent
+            </h2>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              We may display ads through Google AdSense. Google may use cookies or local storage to measure
+              ad performance and, depending on your Google and browser settings, tailor ads to your interests.
+            </p>
+            <ul className="text-slate-700 dark:text-slate-300 space-y-2">
+              <li>We do not sell personal information directly to advertisers</li>
+              <li>We try to keep our own event tracking focused on product and content improvement, not sensitive profiling</li>
+              <li>Visitors can manage browser cookie settings and Google ad settings to limit or reset tracking preferences</li>
+            </ul>
+
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
+              6. Data Sharing and Disclosure
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
               We do not sell, trade, or rent your personal information. We may share information only in
@@ -124,7 +146,7 @@ export default function PrivacyPage() {
             </ul>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              6. Data Security
+              7. Data Security
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               We implement industry-standard security measures to protect your information:
@@ -141,7 +163,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              7. Third-Party Links
+              8. Third-Party Links
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               ClawList.io contains links to third-party websites (e.g., GitHub repositories). We are not
@@ -150,7 +172,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              8. Children&apos;s Privacy
+              9. Children&apos;s Privacy
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               ClawList.io is not intended for children under 13. We do not knowingly collect personal
@@ -159,7 +181,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              9. Your Rights
+              10. Your Rights
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
               Depending on your location, you may have the following rights:
@@ -179,15 +201,16 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              10. Data Retention
+              11. Data Retention
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               We retain your information only as long as necessary to provide the Service and comply with
-              legal obligations. Analytics data is typically retained for 90 days.
+              legal obligations. Internal event analytics is typically retained for around 90 days unless a
+              longer window is needed for debugging, abuse prevention, or reporting.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              11. International Data Transfers
+              12. International Data Transfers
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               Your information may be transferred to and processed in countries other than your own.
@@ -195,7 +218,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              12. Changes to This Policy
+              13. Changes to This Policy
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               We may update this Privacy Policy from time to time. Changes will be posted on this page
@@ -204,7 +227,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
-              13. Contact Us
+              14. Contact Us
             </h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
               If you have questions about this Privacy Policy, please contact us at:

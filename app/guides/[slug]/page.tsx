@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
-import { supabase } from '@/lib/supabase'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent } from '@/components/related-content'
+import { ContentViewTracker } from '@/components/content-view-tracker'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import {
+  getGuidePost,
+  getGuideSlugs,
+  getRelatedBlogPosts,
+  getRelatedSkillsForPost,
+} from '@/lib/blog'
 import { resolveGuideSeo } from '@/lib/seo'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -10,47 +16,17 @@ import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import ReactMarkdown from 'react-markdown'
 
-export const revalidate = 0 // 实时更新
-export const dynamic = 'force-dynamic'
+export const revalidate = 300
 
-async function getGuide(slug: string) {
-  if (!supabase) {
-    return null
-  }
+export async function generateStaticParams() {
+  const slugs = await getGuideSlugs()
 
-  const { data, error } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('slug', slug)
-    .eq('category', 'guides')
-    .single()
-
-  if (error) {
-    console.error('Error fetching guide:', error)
-    return null
-  }
-
-  return data
-}
-
-async function getRelatedGuides(slug: string, tags: string[]) {
-  if (!supabase || !tags || tags.length === 0) {
-    return []
-  }
-
-  const { data } = await supabase
-    .from('blog_posts')
-    .select('slug, title, summary, category, tags')
-    .eq('category', 'guides')
-    .neq('slug', slug)
-    .limit(3)
-
-  return data || []
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const guide = await getGuide(slug)
+  const guide = await getGuidePost(slug)
 
   if (!guide) {
     return { title: 'Guide Not Found' }
@@ -81,17 +57,31 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const guide = await getGuide(slug)
+  const guide = await getGuidePost(slug)
 
   if (!guide) {
     notFound()
   }
 
-  // Get related guides
-  const relatedGuides = await getRelatedGuides(slug, guide.tags || [])
+  const [relatedGuides, relatedSkills] = await Promise.all([
+    getRelatedBlogPosts(guide, {
+      limit: 3,
+      category: 'guides',
+    }),
+    getRelatedSkillsForPost(guide, 3),
+  ])
 
   return (
     <div className="min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
+      <ContentViewTracker
+        contentType="guide"
+        slug={guide.slug}
+        pagePath={`/guides/${guide.slug}`}
+        metadata={{
+          category: guide.category,
+          tags: guide.tags,
+        }}
+      />
       <article className="max-w-4xl mx-auto w-full px-6 py-12 lg:px-20">
         {/* Breadcrumb */}
         <Breadcrumb
@@ -171,6 +161,9 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
         <SocialShareButtons
           title={guide.title}
           url={`https://clawlist.io/guides/${guide.slug}`}
+          pagePath={`/guides/${guide.slug}`}
+          contentType="guide"
+          contentSlug={guide.slug}
         />
 
         {/* Tags */}
@@ -190,8 +183,28 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
           </div>
         )}
 
+        <RelatedContent
+          items={relatedSkills}
+          type="skills"
+          title="Related Skills"
+          analyticsContext={{
+            pagePath: `/guides/${guide.slug}`,
+            sourceSlug: guide.slug,
+            sourceType: 'guide',
+          }}
+        />
+
         {/* Related Guides */}
-        <RelatedContent items={relatedGuides} type="blog" title="Related Guides" />
+        <RelatedContent
+          items={relatedGuides}
+          type="blog"
+          title="Related Guides"
+          analyticsContext={{
+            pagePath: `/guides/${guide.slug}`,
+            sourceSlug: guide.slug,
+            sourceType: 'guide',
+          }}
+        />
 
         {/* Back Button */}
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#262626]">

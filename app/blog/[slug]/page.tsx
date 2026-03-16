@@ -1,47 +1,31 @@
 import type { Metadata } from 'next'
-import { supabase } from '@/lib/supabase'
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { RelatedContent, type RelatedItem } from '@/components/related-content'
+import { ContentViewTracker } from '@/components/content-view-tracker'
+import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import {
+  getBlogPost,
+  getBlogSlugs,
+  getRelatedBlogPosts,
+  getRelatedSkillsForPost,
+} from '@/lib/blog'
 import { resolveBlogSeo } from '@/lib/seo'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
-export const revalidate = 0 // 实时更新，不缓存
-export const dynamic = 'force-dynamic' // 强制动态渲染
+export const revalidate = 300
 
 type Props = {
   params: Promise<{ slug: string }>
 }
 
-async function getBlogPost(slug: string) {
-  if (!supabase) {
-    return null
-  }
+export async function generateStaticParams() {
+  const slugs = await getBlogSlugs()
 
-  const { data, error } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('slug', slug)
-    .single()
-
-  if (error) {
-    console.error('Error fetching blog post:', error)
-    return null
-  }
-
-  // Increment view count
-  if (data) {
-    await supabase
-      .from('blog_posts')
-      .update({ views: (data.views || 0) + 1 })
-      .eq('id', data.id)
-  }
-
-  return data
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -59,17 +43,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.title,
     post.summary || post.content.substring(0, 160),
   )
+  const canonicalPath = post.category === 'guides'
+    ? `/guides/${slug}`
+    : seo.canonicalPath ?? `/blog/${slug}`
 
   return {
     title: seo.title,
     description: seo.description,
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: canonicalPath,
     },
     openGraph: {
       title: seo.title,
       description: seo.description,
-      url: `https://clawlist.io/blog/${slug}`,
+      url: `https://clawlist.io${canonicalPath}`,
       type: 'article',
       publishedTime: post.published_at,
       authors: [post.author || 'ClawList Team'],
@@ -89,6 +76,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: seo.description,
       images: [`/api/og/blog?slug=${slug}`],
     },
+    ...(seo.canonicalPath && {
+      robots: {
+        index: false,
+        follow: true,
+      },
+    }),
   }
 }
 
@@ -100,24 +93,27 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
-  // Get related posts (same category or tags)
-  let relatedPosts: RelatedItem[] = []
-  if (supabase) {
-    const { data } = await supabase
-      .from('blog_posts')
-      .select('slug, title, summary, category, tags')
-      .neq('slug', slug)
-      .limit(3)
-
-    relatedPosts = data || []
+  if (post.category === 'guides') {
+    permanentRedirect(`/guides/${post.slug}`)
   }
+
+  const seo = resolveBlogSeo(
+    slug,
+    post.title,
+    post.summary || post.content.substring(0, 160),
+  )
+  const canonicalPath = seo.canonicalPath ?? `/blog/${post.slug}`
+  const [relatedPosts, relatedSkills] = await Promise.all([
+    getRelatedBlogPosts(post, { limit: 3 }),
+    getRelatedSkillsForPost(post, 3),
+  ])
 
   // Schema.org Article structured data
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.summary || post.content.substring(0, 160),
+    headline: seo.title,
+    description: seo.description,
     author: {
       '@type': 'Person',
       name: post.author || 'ClawList Team',
@@ -134,7 +130,7 @@ export default async function BlogPostPage({ params }: Props) {
     dateModified: post.updated_at || post.published_at,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://clawlist.io/blog/${slug}`,
+      '@id': `https://clawlist.io${canonicalPath}`,
     },
     keywords: post.tags?.join(', '),
   }
@@ -145,6 +141,15 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ContentViewTracker
+        contentType="blog"
+        slug={post.slug}
+        pagePath={`/blog/${post.slug}`}
+        metadata={{
+          category: post.category,
+          tags: post.tags,
+        }}
+      />
       <article className="max-w-4xl mx-auto w-full px-6 py-12 lg:px-20">
         {/* Breadcrumb */}
         <Breadcrumb
@@ -154,6 +159,24 @@ export default async function BlogPostPage({ params }: Props) {
             { label: post.title },
           ]}
         />
+
+        {seo.note && (
+          <div className="mb-8 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-amber-950 shadow-sm dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-100">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-700 dark:text-amber-300">
+              {seo.note.title}
+            </p>
+            <p className="mt-2 text-sm leading-6">
+              {seo.note.description}
+            </p>
+            <Link
+              href={seo.note.href}
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4"
+            >
+              {seo.note.label}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
 
         {/* Header */}
         <header className="mb-12">
@@ -220,8 +243,11 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         <SocialShareButtons
-          title={post.title}
-          url={`https://clawlist.io/blog/${post.slug}`}
+          title={seo.title}
+          url={`https://clawlist.io${canonicalPath}`}
+          pagePath={`/blog/${post.slug}`}
+          contentType="blog"
+          contentSlug={post.slug}
         />
 
         {/* Tags */}
@@ -241,8 +267,27 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
+        <RelatedContent
+          items={relatedSkills}
+          type="skills"
+          title="Related Skills"
+          analyticsContext={{
+            pagePath: `/blog/${post.slug}`,
+            sourceSlug: post.slug,
+            sourceType: 'blog',
+          }}
+        />
+
         {/* Related Posts */}
-        <RelatedContent items={relatedPosts} type="blog" />
+        <RelatedContent
+          items={relatedPosts}
+          type="blog"
+          analyticsContext={{
+            pagePath: `/blog/${post.slug}`,
+            sourceSlug: post.slug,
+            sourceType: 'blog',
+          }}
+        />
 
         {/* Back to Blog */}
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#262626]">

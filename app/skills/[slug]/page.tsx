@@ -4,10 +4,12 @@ import { CopyButton } from '@/components/copy-button'
 import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent, type RelatedItem } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import { TrackedExternalLink } from '@/components/tracked-external-link'
 import { Shield, Check } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { fallbackSkills } from '@/lib/catalog'
 import { resolveSkillSeo } from '@/lib/seo'
+import { getSkillIntentModule } from '@/lib/skill-intent'
 import type { Metadata } from 'next'
 
 export const revalidate = 60
@@ -87,6 +89,12 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
     notFound()
   }
 
+  const seo = resolveSkillSeo(
+    slug,
+    skill.name,
+    skill.summary,
+  )
+
   // Get related skills (same category)
   let relatedSkills: RelatedItem[] = []
   if (supabase && skill.category) {
@@ -121,6 +129,21 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
       priceCurrency: 'USD',
     },
   }
+  const skillIntent = getSkillIntentModule(skill.slug)
+  const faqJsonLd = skillIntent
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: skillIntent.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null
 
   return (
     <div className="min-h-screen bg-[#f7f7f7]">
@@ -128,6 +151,12 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <AnalyticsTracker
         payload={{
           eventType: 'skill_view',
@@ -172,6 +201,57 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
             {skill.views && <span>👁️ {skill.views} views</span>}
           </div>
         </div>
+
+        {skillIntent && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+              {skillIntent.eyebrow}
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-[#191919]">
+              {skillIntent.heading}
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-[#666666]">
+              {skillIntent.summary}
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {skillIntent.highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl bg-[#f7f7f7] p-5">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+                    {item.label}
+                  </p>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-[#191919]">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-slate-200 p-6">
+              <h3 className="text-lg font-bold text-[#191919]">Common setup checks</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-[#666666]">
+                {skillIntent.troubleshooting.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-[#191919]">FAQ</h3>
+              <div className="mt-4 space-y-4">
+                {skillIntent.faq.map((item) => (
+                  <div key={item.question} className="rounded-2xl bg-[#f7f7f7] p-5">
+                    <p className="font-semibold text-[#191919]">{item.question}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#666666]">{item.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Install Command */}
         {skill.install_cmd && (
@@ -271,14 +351,22 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
         {/* Actions */}
         <div className="flex flex-wrap gap-4">
           {skill.github_url && (
-            <a
+            <TrackedExternalLink
               href={skill.github_url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="px-6 py-3 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors"
+              analyticsPayload={{
+                eventType: 'cta_click',
+                pagePath: `/skills/${skill.slug}`,
+                skillId: skill.id,
+                skillSlug: skill.slug,
+                metadata: {
+                  cta: 'view_source_code',
+                  category: skill.category,
+                },
+              }}
             >
               View Source Code
-            </a>
+            </TrackedExternalLink>
           )}
           <button className="px-6 py-3 border border-[#e5e5e5] text-[#191919] rounded-2xl hover:bg-[#f7f7f7] transition-colors">
             👍 Upvote
@@ -286,13 +374,24 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
         </div>
 
         <SocialShareButtons
-          title={skill.name}
+          title={seo.title}
           url={`https://clawlist.io/skills/${skill.slug}`}
           className="mb-10"
+          pagePath={`/skills/${skill.slug}`}
+          contentType="skill"
+          contentSlug={skill.slug}
         />
 
         {/* Related Skills */}
-        <RelatedContent items={relatedSkills} type="skills" />
+        <RelatedContent
+          items={relatedSkills}
+          type="skills"
+          analyticsContext={{
+            pagePath: `/skills/${skill.slug}`,
+            sourceSlug: skill.slug,
+            sourceType: 'skill',
+          }}
+        />
       </div>
     </div>
   )

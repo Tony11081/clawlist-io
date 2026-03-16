@@ -4,18 +4,25 @@ import { useMemo, useState } from 'react'
 import { Check, Copy, Facebook, Linkedin, Share2, Twitter } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
+import { sendAnalyticsEvent } from '@/lib/analytics/client'
 import { cn } from '@/lib/utils'
 
 interface SocialShareButtonsProps {
   title: string
   url: string
   className?: string
+  pagePath?: string
+  contentType?: 'blog' | 'guide' | 'skill'
+  contentSlug?: string
 }
 
 export function SocialShareButtons({
   title,
   url,
   className,
+  pagePath,
+  contentType,
+  contentSlug,
 }: SocialShareButtonsProps) {
   const [copied, setCopied] = useState(false)
 
@@ -26,16 +33,19 @@ export function SocialShareButtons({
     return [
       {
         label: 'Share on X',
+        channel: 'x',
         href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
         icon: Twitter,
       },
       {
         label: 'Share on LinkedIn',
+        channel: 'linkedin',
         href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
         icon: Linkedin,
       },
       {
         label: 'Share on Facebook',
+        channel: 'facebook',
         href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
         icon: Facebook,
       },
@@ -45,6 +55,15 @@ export function SocialShareButtons({
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(url)
+      void sendAnalyticsEvent({
+        eventType: 'content_share',
+        pagePath,
+        metadata: {
+          channel: 'copy',
+          contentType,
+          contentSlug,
+        },
+      })
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (error) {
@@ -72,13 +91,24 @@ export function SocialShareButtons({
         </div>
 
         <div className="flex flex-wrap gap-3">
-          {shareLinks.map(({ label, href, icon: Icon }) => (
+          {shareLinks.map(({ label, channel, href, icon: Icon }) => (
             <Button key={label} asChild size="sm" variant="outline">
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
+                onClick={() => {
+                  void sendAnalyticsEvent({
+                    eventType: 'content_share',
+                    pagePath,
+                    metadata: {
+                      channel,
+                      contentType,
+                      contentSlug,
+                    },
+                  })
+                }}
               >
                 <Icon className="h-4 w-4" />
                 {label.replace('Share on ', '')}

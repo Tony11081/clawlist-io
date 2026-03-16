@@ -1,6 +1,13 @@
 interface SeoOverride {
   title: string
   description: string
+  canonicalPath?: string
+  note?: {
+    title: string
+    description: string
+    href: string
+    label: string
+  }
 }
 
 const blogSeoOverrides: Record<string, SeoOverride> = {
@@ -28,6 +35,14 @@ const blogSeoOverrides: Record<string, SeoOverride> = {
     title: "Inside OpenClaw's 9-Layer System Prompt",
     description:
       "A practical breakdown of OpenClaw's 9-layer system prompt, including core instructions, tools, and dynamic context.",
+    canonicalPath: '/blog/openclaw-agent-system-prompt-architecture-9-layers',
+    note: {
+      title: 'Primary reference page',
+      description:
+        'We keep one main article for the full 9-layer architecture so rankings and internal links stay focused.',
+      href: '/blog/openclaw-agent-system-prompt-architecture-9-layers',
+      label: 'Read the main architecture breakdown',
+    },
   },
   'building-image-generation-skills-for-ai-agents': {
     title: 'How to Build Image Generation Skills for AI Agents',
@@ -112,6 +127,8 @@ export function resolveBlogSeo(slug: string, title: string, description: string)
   return {
     title: override?.title ?? title,
     description: normalizeDescription(override?.description ?? description),
+    canonicalPath: override?.canonicalPath,
+    note: override?.note,
   }
 }
 

@@ -1,5 +1,24 @@
 import { supabase } from '@/lib/supabase'
 
+type SitemapEntry = {
+  url: string
+  lastModified: string
+  changeFrequency: 'daily' | 'weekly' | 'monthly'
+  priority: number
+}
+
+type SitemapSkillRow = {
+  slug: string
+  created_at?: string | null
+}
+
+type SitemapPostRow = {
+  slug: string
+  category?: string | null
+  published_at?: string | null
+  updated_at?: string | null
+}
+
 export default async function sitemap() {
   const baseUrl = 'https://clawlist.io'
 
@@ -27,7 +46,7 @@ export default async function sitemap() {
   }))
 
   // Dynamic skills
-  let skillPages: any[] = []
+  let skillPages: SitemapEntry[] = []
   if (supabase) {
     const { data: skills } = await supabase
       .from('skills')
@@ -35,32 +54,44 @@ export default async function sitemap() {
       .order('created_at', { ascending: false })
 
     if (skills) {
-      skillPages = skills.map((skill) => ({
+      skillPages = (skills as SitemapSkillRow[]).map((skill) => ({
         url: `${baseUrl}/skills/${skill.slug}`,
-        lastModified: skill.created_at,
+        lastModified: skill.created_at || new Date().toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.7,
       }))
     }
   }
 
-  // Dynamic blog posts
-  let blogPages: any[] = []
+  // Dynamic blog posts and guides
+  let blogPages: SitemapEntry[] = []
+  let guidePages: SitemapEntry[] = []
   if (supabase) {
     const { data: posts } = await supabase
       .from('blog_posts')
-      .select('slug, published_at, updated_at')
+      .select('slug, category, published_at, updated_at')
       .order('published_at', { ascending: false })
 
     if (posts) {
-      blogPages = posts.map((post) => ({
+      blogPages = (posts as SitemapPostRow[])
+        .filter((post) => post.category !== 'guides')
+        .map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: post.updated_at || post.published_at,
+        lastModified: post.updated_at || post.published_at || new Date().toISOString(),
         changeFrequency: 'monthly' as const,
         priority: 0.6,
-      }))
+        }))
+
+      guidePages = (posts as SitemapPostRow[])
+        .filter((post) => post.category === 'guides')
+        .map((post) => ({
+          url: `${baseUrl}/guides/${post.slug}`,
+          lastModified: post.updated_at || post.published_at || new Date().toISOString(),
+          changeFrequency: 'monthly' as const,
+          priority: 0.65,
+        }))
     }
   }
 
-  return [...staticPages, ...skillPages, ...blogPages]
+  return [...staticPages, ...skillPages, ...blogPages, ...guidePages]
 }

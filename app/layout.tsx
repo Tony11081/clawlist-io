@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { TrackingNotice } from '@/components/tracking-notice'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -91,6 +92,7 @@ gtag('config', '${googleTagId}');`,
         <Navigation />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <TrackingNotice />
         <Analytics />
         <SpeedInsights />
       </body>
