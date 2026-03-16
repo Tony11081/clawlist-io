@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { CookiePreferencesButton } from '@/components/cookie-preferences-button'
+
 export function Footer() {
   return (
     <footer className="border-t bg-neutral-50 dark:bg-neutral-900 py-12 px-4">
@@ -16,6 +18,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
               <li><Link href="/skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link></li>
+              <li><Link href="/topics" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Topics</Link></li>
               <li><Link href="/recipes" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Recipes</Link></li>
               <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Blog</Link></li>
             </ul>
@@ -34,6 +37,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/terms" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Terms of Service</Link></li>
               <li><Link href="/privacy" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Privacy Policy</Link></li>
+              <li><CookiePreferencesButton className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100" /></li>
             </ul>
           </div>
         </div>

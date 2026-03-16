@@ -1,8 +1,10 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
+import { useAnalyticsConsent } from '@/components/use-analytics-consent'
 import { sendAnalyticsEvent } from '@/lib/analytics/client'
 
 export interface RelatedItem {
@@ -26,11 +28,65 @@ interface RelatedContentProps {
 }
 
 export function RelatedContent({ items, type, title, analyticsContext }: RelatedContentProps) {
-  if (!items || items.length === 0) return null
-
   const displayTitle = title || (type === 'skills' ? 'Related Skills' : 'Related Articles')
   const basePath = type === 'skills' ? '/skills' : '/blog'
   const actionLabel = type === 'skills' ? 'View skill' : 'Read article'
+  const visibleItems = items.slice(0, 3)
+  const itemRefs = useRef<Record<string, HTMLAnchorElement | null>>({})
+  const seenItems = useRef<Set<string>>(new Set())
+  const analyticsEnabled = useAnalyticsConsent()
+
+  useEffect(() => {
+    if (!analyticsContext || !analyticsEnabled) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          const slug = entry.target.getAttribute('data-recommendation-slug')
+
+          if (!slug || seenItems.current.has(slug)) {
+            return
+          }
+
+          seenItems.current.add(slug)
+          observer.unobserve(entry.target)
+
+          void sendAnalyticsEvent({
+            eventType: 'recommendation_impression',
+            pagePath: analyticsContext.pagePath,
+            metadata: {
+              sourceSlug: analyticsContext.sourceSlug,
+              sourceType: analyticsContext.sourceType,
+              targetSlug: slug,
+              targetType: type,
+            },
+          })
+        })
+      },
+      {
+        threshold: 0.4,
+      },
+    )
+
+    visibleItems.forEach((item) => {
+      const element = itemRefs.current[item.slug]
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [analyticsContext, analyticsEnabled, type, visibleItems])
+
+  if (visibleItems.length === 0) {
+    return null
+  }
 
   return (
     <section className="mt-16 pt-12 border-t border-slate-200 dark:border-[#262626]">
@@ -38,10 +94,14 @@ export function RelatedContent({ items, type, title, analyticsContext }: Related
         {displayTitle}
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.slice(0, 3).map((item) => (
+        {visibleItems.map((item) => (
           <Link
             key={item.slug}
             href={`${basePath}/${item.slug}`}
+            ref={(element) => {
+              itemRefs.current[item.slug] = element
+            }}
+            data-recommendation-slug={item.slug}
             className="group p-6 bg-white dark:bg-[#262626]/40 border border-slate-200 dark:border-[#262626] rounded-2xl hover:border-slate-400 dark:hover:border-slate-400 transition-all"
             onClick={() => {
               if (!analyticsContext) {

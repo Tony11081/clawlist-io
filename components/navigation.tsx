@@ -13,6 +13,7 @@ export function Navigation() {
   const links = [
     { href: '/guides', label: 'Guides' },
     { href: '/skills', label: 'Skills' },
+    { href: '/topics', label: 'Topics' },
     { href: '/recipes', label: 'Recipes' },
     { href: '/blog', label: 'Blog' },
     { href: '/api-marketplace', label: 'API Market' },

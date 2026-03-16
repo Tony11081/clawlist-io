@@ -3,12 +3,12 @@ import Script from 'next/script'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { OptionalAnalytics } from '@/components/optional-analytics'
 import { TrackingNotice } from '@/components/tracking-notice'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const siteUrl = 'https://clawlist.io'
 const googleTagId = 'G-20JC1B76MD'
+const adSenseClient = 'ca-pub-2357915943973678'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -62,27 +62,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${googleTagId}');`,
-          }}
-        />
+        <Script id="google-consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Script
-          async
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2357915943973678"
-          strategy="afterInteractive"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -92,9 +84,8 @@ gtag('config', '${googleTagId}');`,
         <Navigation />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        <TrackingNotice />
-        <Analytics />
-        <SpeedInsights />
+        <TrackingNotice adSenseClient={adSenseClient} googleTagId={googleTagId} />
+        <OptionalAnalytics />
       </body>
     </html>
   )

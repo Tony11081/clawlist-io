@@ -1,4 +1,3 @@
-import { supabase } from '@/lib/supabase'
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { CopyButton } from '@/components/copy-button'
 import { Breadcrumb } from '@/components/breadcrumb'
@@ -7,38 +6,26 @@ import { SocialShareButtons } from '@/components/social-share-buttons'
 import { TrackedExternalLink } from '@/components/tracked-external-link'
 import { Shield, Check } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { fallbackSkills } from '@/lib/catalog'
 import { resolveSkillSeo } from '@/lib/seo'
 import { getSkillIntentModule } from '@/lib/skill-intent'
+import {
+  getRelatedSkills,
+  getSkillDetail,
+  getSkillSlugs,
+} from '@/lib/skills'
 import type { Metadata } from 'next'
 
-export const revalidate = 60
+export const revalidate = 300
 
-async function getSkill(slug: string) {
-  const fallback = fallbackSkills.find((item) => item.slug === slug)
+export async function generateStaticParams() {
+  const slugs = await getSkillSlugs()
 
-  // Return fallback data if Supabase is not configured
-  if (!supabase) {
-    console.warn('Supabase not configured, using fallback skill when available')
-    return fallback ?? null
-  }
-
-  const { data, error } = await supabase
-    .from('skills')
-    .select('*')
-    .eq('slug', slug)
-    .single()
-
-  if (error || !data) {
-    return fallback ?? null
-  }
-
-  return data
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const skill = await getSkill(slug)
+  const skill = await getSkillDetail(slug)
 
   if (!skill) {
     return {
@@ -83,7 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function SkillDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const skill = await getSkill(slug)
+  const skill = await getSkillDetail(slug)
 
   if (!skill) {
     notFound()
@@ -95,18 +82,8 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
     skill.summary,
   )
 
-  // Get related skills (same category)
-  let relatedSkills: RelatedItem[] = []
-  if (supabase && skill.category) {
-    const { data } = await supabase
-      .from('skills')
-      .select('slug, name, summary, category')
-      .eq('category', skill.category)
-      .neq('slug', slug)
-      .limit(3)
-
-    relatedSkills = data || []
-  }
+  const pagePath = `/skills/${skill.slug}`
+  const relatedSkills: RelatedItem[] = await getRelatedSkills(skill, 3)
 
   // Schema.org SoftwareApplication structured data
   const jsonLd = {
@@ -160,7 +137,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
       <AnalyticsTracker
         payload={{
           eventType: 'skill_view',
-          pagePath: `/skills/${skill.slug}`,
+          pagePath,
           skillId: skill.id,
           skillSlug: skill.slug,
           metadata: {
@@ -265,7 +242,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                 variant="ghost"
                 analyticsPayload={{
                   eventType: 'install_copy',
-                  pagePath: `/skills/${skill.slug}`,
+                  pagePath,
                   skillId: skill.id,
                   skillSlug: skill.slug,
                   metadata: {
@@ -356,7 +333,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
               className="px-6 py-3 bg-[#191919] text-white rounded-2xl hover:bg-[#262626] transition-colors"
               analyticsPayload={{
                 eventType: 'cta_click',
-                pagePath: `/skills/${skill.slug}`,
+                pagePath,
                 skillId: skill.id,
                 skillSlug: skill.slug,
                 metadata: {
@@ -375,9 +352,9 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
         <SocialShareButtons
           title={seo.title}
-          url={`https://clawlist.io/skills/${skill.slug}`}
+          url={`https://clawlist.io${pagePath}`}
           className="mb-10"
-          pagePath={`/skills/${skill.slug}`}
+          pagePath={pagePath}
           contentType="skill"
           contentSlug={skill.slug}
         />
@@ -387,7 +364,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
           items={relatedSkills}
           type="skills"
           analyticsContext={{
-            pagePath: `/skills/${skill.slug}`,
+            pagePath,
             sourceSlug: skill.slug,
             sourceType: 'skill',
           }}

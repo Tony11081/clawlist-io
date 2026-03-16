@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { sendAnalyticsEvent } from '@/lib/analytics/client'
 import type { AnalyticsPayload } from '@/lib/analytics'
+import { useAnalyticsConsent } from '@/components/use-analytics-consent'
 
 interface ContentViewTrackerProps {
   contentType: 'blog' | 'guide'
@@ -18,7 +19,14 @@ export function ContentViewTracker({
   pagePath,
   metadata,
 }: ContentViewTrackerProps) {
+  const sentRef = useRef(false)
+  const analyticsEnabled = useAnalyticsConsent()
+
   useEffect(() => {
+    if (sentRef.current || !analyticsEnabled) {
+      return
+    }
+
     const storageKey = `clawlist:view:${contentType}:${slug}`
 
     try {
@@ -30,6 +38,8 @@ export function ContentViewTracker({
     } catch {
       // Session storage can fail in private browsing; tracking remains best-effort.
     }
+
+    sentRef.current = true
 
     void sendAnalyticsEvent({
       eventType: contentType === 'blog' ? 'blog_view' : 'guide_view',
@@ -52,7 +62,7 @@ export function ContentViewTracker({
       }),
       keepalive: true,
     })
-  }, [contentType, slug, pagePath, metadata])
+  }, [analyticsEnabled, contentType, slug, pagePath, metadata])
 
   return null
 }

@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/components/breadcrumb'
 import { ContentViewTracker } from '@/components/content-view-tracker'
 import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import { TopicHubCta } from '@/components/topic-hub-cta'
 import {
   getBlogPost,
   getBlogSlugs,
@@ -11,6 +12,7 @@ import {
   getRelatedSkillsForPost,
 } from '@/lib/blog'
 import { resolveBlogSeo } from '@/lib/seo'
+import { getTopicHubByBlogSlug } from '@/lib/topic-hubs'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 import { notFound, permanentRedirect } from 'next/navigation'
@@ -103,6 +105,8 @@ export default async function BlogPostPage({ params }: Props) {
     post.summary || post.content.substring(0, 160),
   )
   const canonicalPath = seo.canonicalPath ?? `/blog/${post.slug}`
+  const pagePath = `/blog/${post.slug}`
+  const topicHub = getTopicHubByBlogSlug(post.slug)
   const [relatedPosts, relatedSkills] = await Promise.all([
     getRelatedBlogPosts(post, { limit: 3 }),
     getRelatedSkillsForPost(post, 3),
@@ -144,7 +148,7 @@ export default async function BlogPostPage({ params }: Props) {
       <ContentViewTracker
         contentType="blog"
         slug={post.slug}
-        pagePath={`/blog/${post.slug}`}
+        pagePath={pagePath}
         metadata={{
           category: post.category,
           tags: post.tags,
@@ -242,10 +246,18 @@ export default async function BlogPostPage({ params }: Props) {
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
 
+        {topicHub && (
+          <TopicHubCta
+            hub={topicHub}
+            pagePath={pagePath}
+            sourceSlug={post.slug}
+          />
+        )}
+
         <SocialShareButtons
           title={seo.title}
           url={`https://clawlist.io${canonicalPath}`}
-          pagePath={`/blog/${post.slug}`}
+          pagePath={pagePath}
           contentType="blog"
           contentSlug={post.slug}
         />
@@ -272,7 +284,7 @@ export default async function BlogPostPage({ params }: Props) {
           type="skills"
           title="Related Skills"
           analyticsContext={{
-            pagePath: `/blog/${post.slug}`,
+            pagePath,
             sourceSlug: post.slug,
             sourceType: 'blog',
           }}
@@ -283,7 +295,7 @@ export default async function BlogPostPage({ params }: Props) {
           items={relatedPosts}
           type="blog"
           analyticsContext={{
-            pagePath: `/blog/${post.slug}`,
+            pagePath,
             sourceSlug: post.slug,
             sourceType: 'blog',
           }}

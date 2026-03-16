@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/components/breadcrumb'
+import { CookiePreferencesButton } from '@/components/cookie-preferences-button'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -25,6 +26,16 @@ export default function PrivacyPage() {
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-12">
             Last updated: March 16, 2026
           </p>
+
+          <div className="mb-10 rounded-3xl border border-slate-200 bg-slate-50 p-6 dark:border-[#262626] dark:bg-[#191919]">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+              Manage your consent choices at any time.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+              ClawList now asks for consent before loading optional analytics and advertising tools.
+            </p>
+            <CookiePreferencesButton className="mt-4 text-sm font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100" />
+          </div>
 
           <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
             <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
@@ -87,7 +98,7 @@ export default function PrivacyPage() {
               improve content quality, and fund the site:
             </p>
             <ul className="text-slate-700 dark:text-slate-300 space-y-2">
-              <li>Our own first-party analytics endpoint for events such as skill views, install-copy actions, shares, and recommendation clicks</li>
+              <li>Our own first-party analytics endpoint for events such as page views, content views, shares, recommendation impressions, recommendation clicks, and CTA clicks</li>
               <li>Vercel Analytics and Speed Insights for traffic and performance monitoring</li>
               <li>Google Analytics 4 for page and engagement measurement</li>
               <li>Google AdSense for ad delivery, measurement, and reporting</li>
@@ -95,6 +106,11 @@ export default function PrivacyPage() {
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
               We use these services to understand which pages are useful, improve the product experience,
               and measure whether content changes are helping visitors find what they need.
+            </p>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
+              Optional analytics and advertising tools load only after consent. If you reject non-essential
+              tracking, ClawList does not load Google Analytics, AdSense, Vercel Analytics, or our own optional
+              engagement events for that browser session unless you later opt in.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
@@ -114,8 +130,8 @@ export default function PrivacyPage() {
             </p>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
               For Google services, you can also manage ad personalization and related controls through your
-              Google Ad Settings. We surface an on-site privacy notice so visitors can quickly review this
-              policy before continuing.
+              Google Ad Settings. On ClawList, the on-site consent manager lets you accept all optional tracking,
+              reject non-essential tracking, or enable analytics and advertising separately.
             </p>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">
@@ -128,7 +144,14 @@ export default function PrivacyPage() {
             <ul className="text-slate-700 dark:text-slate-300 space-y-2">
               <li>We do not sell personal information directly to advertisers</li>
               <li>We try to keep our own event tracking focused on product and content improvement, not sensitive profiling</li>
-              <li>Visitors can manage browser cookie settings and Google ad settings to limit or reset tracking preferences</li>
+              <li>Visitors can manage browser cookie settings, Google ad settings, and our on-site consent manager to limit or reset tracking preferences</li>
+            </ul>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
+              Our consent categories are:
+            </p>
+            <ul className="text-slate-700 dark:text-slate-300 space-y-2">
+              <li>Analytics: first-party analytics, Vercel Analytics, Speed Insights, and Google Analytics 4</li>
+              <li>Advertising: Google AdSense and its measurement / personalization controls</li>
             </ul>
 
             <h2 className="text-3xl font-bold mt-12 mb-4 text-slate-900 dark:text-slate-100">

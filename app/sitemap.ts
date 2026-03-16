@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase'
+import { topicHubs } from '@/lib/topic-hubs'
 
 type SitemapEntry = {
   url: string
@@ -27,6 +28,7 @@ export default async function sitemap() {
     '',
     '/guides',
     '/skills',
+    '/topics',
     '/recipes',
     '/blog',
     '/api-marketplace',
@@ -66,6 +68,12 @@ export default async function sitemap() {
   // Dynamic blog posts and guides
   let blogPages: SitemapEntry[] = []
   let guidePages: SitemapEntry[] = []
+  const topicPages: SitemapEntry[] = topicHubs.map((hub) => ({
+    url: `${baseUrl}/topics/${hub.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }))
   if (supabase) {
     const { data: posts } = await supabase
       .from('blog_posts')
@@ -93,5 +101,5 @@ export default async function sitemap() {
     }
   }
 
-  return [...staticPages, ...skillPages, ...blogPages, ...guidePages]
+  return [...staticPages, ...topicPages, ...skillPages, ...blogPages, ...guidePages]
 }
