@@ -11,14 +11,10 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const links = [
-    { href: '/guides', label: 'Guides' },
     { href: '/skills', label: 'Skills' },
+    { href: '/guides', label: 'Guides' },
     { href: '/topics', label: 'Topics' },
-    { href: '/recipes', label: 'Recipes' },
     { href: '/blog', label: 'Blog' },
-    { href: '/api-marketplace', label: 'API Market' },
-    { href: '/models', label: 'Models' },
-    { href: '/security', label: 'Security' },
   ]
 
   return (
@@ -44,9 +40,6 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" asChild>
-              <Link href="/submit">Submit</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,9 +66,6 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Button size="sm" className="w-full" asChild>
-              <Link href="/submit">Submit</Link>
-            </Button>
           </div>
         )}
       </div>

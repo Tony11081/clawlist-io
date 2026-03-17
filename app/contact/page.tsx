@@ -94,7 +94,9 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="/submit"
+              href="https://github.com/Tony11081/clawlist-io"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-6 bg-slate-50 dark:bg-[#262626]/20 rounded-2xl border border-slate-200 dark:border-[#262626] hover:border-slate-400 dark:hover:border-slate-400 transition-all"
             >
               <div className="flex items-center gap-4 mb-3">
@@ -102,12 +104,12 @@ export default function ContactPage() {
                   <Send className="w-6 h-6 text-white dark:text-slate-900" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Submit a Skill</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Share your work</p>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Share a Skill</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Open an issue or pull request</p>
                 </div>
               </div>
               <p className="text-slate-700 dark:text-slate-300 text-sm">
-                Submit your OpenClaw skill for review
+                Send us the repo, install flow, and docs through GitHub so we can review a real contribution package.
               </p>
             </a>
           </div>
@@ -124,8 +126,7 @@ export default function ContactPage() {
                   How do I submit a skill?
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Visit our <a href="/submit" className="underline underline-offset-4 hover:text-slate-900 dark:hover:text-slate-100">Submit page</a> and
-                  fill out the form with your skill&apos;s GitHub URL and details. Our team will review it within 48 hours.
+                  Open an issue or pull request in our <a href="https://github.com/Tony11081/clawlist-io" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-slate-900 dark:hover:text-slate-100">GitHub repository</a> with your skill&apos;s repo, install command, and supporting docs. We&apos;ll review from there.
                 </p>
               </div>
 

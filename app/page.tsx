@@ -29,10 +29,10 @@ const quickLinks = [
   },
   {
     eyebrow: '3',
-    title: 'Use Recipes',
+    title: 'Explore Topics',
     description:
-      'Start from ready-made workflows when you want a faster path to a working setup.',
-    href: '/recipes',
+      'Follow clustered topic hubs that connect high-intent articles, installable skills, and the next best step.',
+    href: '/topics',
   },
 ]
 
@@ -53,7 +53,7 @@ export default async function Home() {
     },
     {
       question: 'Can I contribute my own skills?',
-      answer: 'Yes! We welcome community contributions. Visit our GitHub repository to submit your skills or check our contribution guidelines on the documentation page.',
+      answer: 'Yes. Open an issue or pull request in our GitHub repository so we can review the skill details, docs, and installation flow together.',
     },
     {
       question: 'Which AI models does OpenClaw support?',
@@ -75,8 +75,9 @@ export default async function Home() {
                 Find the best OpenClaw skills faster.
               </h1>
               <p className="text-lg lg:text-xl text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
-                Discover trusted skills, step-by-step guides, and ready-to-use
-                recipes in one fast, searchable library.
+                Discover trusted skills, step-by-step guides, and topic-driven
+                paths through the OpenClaw ecosystem in one fast, searchable
+                library.
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -185,15 +186,15 @@ export default async function Home() {
             <Shield className="h-8 w-8" />
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-2">Compare Faster, Install Safer</h3>
+            <h3 className="text-2xl font-bold mb-2">Find Faster, Install Safer</h3>
             <p className="text-slate-300 dark:text-slate-600 leading-relaxed max-w-2xl">
-              ClawList is built to help you evaluate tools before you install
-              them. Start with skills, jump into related guides, and use recipes
-              when you want a working workflow instead of a blank slate.
+              ClawList is built to help you validate skills before you install
+              them. Start with the skills library, move into related guides,
+              then follow topic hubs when you want the bigger workflow picture.
             </p>
           </div>
           <Button variant="outline" className="hidden lg:block border border-white dark:border-slate-900 px-6 py-2 rounded-full font-bold hover:bg-white hover:text-slate-900 dark:hover:bg-slate-900 dark:hover:text-white transition-all" asChild>
-            <Link href="/compare">Compare Tools</Link>
+            <Link href="/skills">Browse Skills</Link>
           </Button>
         </div>
       </section>

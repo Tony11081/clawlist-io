@@ -13,6 +13,34 @@ type SkillsLibraryClientProps = {
   skills: SkillListItem[]
 }
 
+const categoryAliases: Record<string, string> = {
+  ai: 'AI',
+  'customer service': 'Customer Service',
+  customerservice: 'Customer Service',
+  creative: 'Creative',
+  data: 'Data',
+  development: 'Development',
+  devops: 'DevOps',
+  marketing: 'Marketing',
+  operations: 'Operations',
+  productivity: 'Productivity',
+  'social media': 'Social Media',
+  'social-media': 'Social Media',
+  support: 'Support',
+  testing: 'Testing',
+  utilities: 'Utilities',
+  automation: 'Automation',
+}
+
+function normalizeCategory(category?: string) {
+  if (!category) {
+    return undefined
+  }
+
+  const normalizedKey = category.trim().toLowerCase()
+  return categoryAliases[normalizedKey] ?? category.trim()
+}
+
 export function SkillsLibraryClient({
   skills,
 }: SkillsLibraryClientProps) {
@@ -24,7 +52,7 @@ export function SkillsLibraryClient({
     ...Array.from(
       new Set(
         skills
-          .map((skill) => skill.category)
+          .map((skill) => normalizeCategory(skill.category))
           .filter((category): category is string => Boolean(category))
       )
     ),
@@ -39,9 +67,18 @@ export function SkillsLibraryClient({
       skill.tags.some((tag) => tag.toLowerCase().includes(normalizedSearch))
 
     const matchesCategory =
-      selectedCategory === 'All' || skill.category === selectedCategory
+      selectedCategory === 'All' ||
+      normalizeCategory(skill.category) === selectedCategory
 
     return matchesSearch && matchesCategory
+  })
+  const sortedSkills = [...filteredSkills].sort((left, right) => {
+    const installDelta = Number(Boolean(right.install_cmd)) - Number(Boolean(left.install_cmd))
+    if (installDelta !== 0) {
+      return installDelta
+    }
+
+    return right.upvotes - left.upvotes
   })
 
   return (
@@ -107,7 +144,7 @@ export function SkillsLibraryClient({
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredSkills.map((skill) => (
+            {sortedSkills.map((skill) => (
               <div
                 key={skill.id}
                 className="group bg-white dark:bg-[#262626]/10 border border-[#262626]/10 dark:border-[#262626]/30 rounded-2xl overflow-hidden hover:border-slate-900 dark:hover:border-slate-500 transition-all hover:shadow-xl"
@@ -120,7 +157,7 @@ export function SkillsLibraryClient({
                       </h3>
                       {skill.category && (
                         <p className="mt-2 text-xs font-mono uppercase tracking-widest text-slate-500">
-                          {skill.category}
+                          {normalizeCategory(skill.category)}
                         </p>
                       )}
                     </div>

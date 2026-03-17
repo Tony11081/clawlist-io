@@ -29,13 +29,8 @@ export default async function sitemap() {
     '/guides',
     '/skills',
     '/topics',
-    '/recipes',
     '/blog',
-    '/api-marketplace',
-    '/models',
     '/security',
-    '/compare',
-    '/submit',
     '/about',
     '/contact',
     '/terms',
@@ -44,7 +39,16 @@ export default async function sitemap() {
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'daily' as const,
-    priority: route === '' ? 1 : route === '/about' || route === '/contact' ? 0.7 : 0.8,
+    priority:
+      route === ''
+        ? 1
+        : route === '/skills' || route === '/guides' || route === '/topics' || route === '/blog'
+          ? 0.8
+          : route === '/security'
+            ? 0.55
+            : route === '/about' || route === '/contact'
+              ? 0.5
+              : 0.3,
   }))
 
   // Dynamic skills

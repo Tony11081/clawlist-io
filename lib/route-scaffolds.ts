@@ -39,8 +39,8 @@ const sectionMap: Record<string, SectionConfig> = {
   },
   compare: {
     label: 'Skill Comparison',
-    ctaHref: '/compare',
-    ctaLabel: 'Compare more skills',
+    ctaHref: '/skills',
+    ctaLabel: 'Browse the skills library',
   },
   guides: {
     label: 'Guides',
@@ -74,8 +74,8 @@ const sectionMap: Record<string, SectionConfig> = {
   },
   submit: {
     label: 'Submission',
-    ctaHref: '/submit',
-    ctaLabel: 'Submit a skill',
+    ctaHref: '/contact',
+    ctaLabel: 'Open the contact page',
   },
   terms: {
     label: 'Legal',

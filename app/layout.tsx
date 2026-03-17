@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     template: '%s | ClawList.io',
   },
   description:
-    'Comprehensive OpenClaw tutorials, skills library, job recipes, and model selection guide for AI automation.',
+    'Browse OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'ClawList.io - OpenClaw Resource Hub',
     description:
-      'OpenClaw tutorials, skills library, recipes, and model guide for AI automation.',
+      'OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
     url: siteUrl,
     siteName: 'ClawList.io',
     type: 'website',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ClawList.io - OpenClaw Resource Hub',
     description:
-      'OpenClaw tutorials, skills library, recipes, and model guide for AI automation.',
+      'OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
   },
 }
 
@@ -47,7 +47,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'ClawList.io',
-    description: 'Comprehensive OpenClaw tutorials, skills library, job recipes, and model selection guide for AI automation.',
+    description: 'Browse OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',

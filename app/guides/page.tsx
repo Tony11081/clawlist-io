@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
+import { topicHubs } from '@/lib/topic-hubs'
 
 export const revalidate = 300
 
@@ -60,8 +61,34 @@ export default async function GuidesPage() {
 
         {/* Tutorial Cards */}
         {guides.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-slate-600 dark:text-slate-400 text-lg">No guides available yet</p>
+          <div className="py-8">
+            <div className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-700 bg-white dark:bg-[#262626]/10 p-8 mb-8">
+              <h2 className="text-2xl font-bold mb-3 text-slate-900 dark:text-slate-100">
+                Start with our topic hubs while the next guide batch is publishing.
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
+                We could not load the full guide archive right now, so here are the strongest topic clusters to keep you on real, maintained content.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {topicHubs.slice(0, 4).map((topic) => (
+                <Link
+                  key={topic.slug}
+                  href={`/topics/${topic.slug}`}
+                  className="group rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-900 dark:border-[#262626]/30 dark:bg-[#262626]/10 dark:hover:border-slate-500"
+                >
+                  <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-3">
+                    {topic.eyebrow}
+                  </p>
+                  <h3 className="text-xl font-bold mb-3 group-hover:underline underline-offset-4">
+                    {topic.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    {topic.summary}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="flex flex-col gap-6">
