@@ -20,6 +20,7 @@ export function Footer() {
               <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
               <li><Link href="/topics" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Topics</Link></li>
               <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Blog</Link></li>
+              <li><Link href="/apps" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Apps</Link></li>
               <li><Link href="/recipes" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Recipes</Link></li>
               <li><Link href="/models" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Models</Link></li>
               <li><Link href="/api-marketplace" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">API Market</Link></li>

@@ -26,6 +26,7 @@ export default async function sitemap() {
   // Static pages
   const staticPages = [
     '',
+    '/apps',
     '/guides',
     '/skills',
     '/topics',
@@ -44,7 +45,7 @@ export default async function sitemap() {
         ? 1
         : route === '/skills' || route === '/guides' || route === '/topics' || route === '/blog'
           ? 0.8
-          : route === '/security'
+          : route === '/apps' || route === '/security'
             ? 0.55
             : route === '/about' || route === '/contact'
               ? 0.5

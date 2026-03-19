@@ -27,6 +27,11 @@ type SectionConfig = {
 const generatedPages = (generatedPagesData as GeneratedPagesDocument).pages
 
 const sectionMap: Record<string, SectionConfig> = {
+  apps: {
+    label: 'Apps & Agents',
+    ctaHref: '/apps',
+    ctaLabel: 'Open the apps board',
+  },
   'api-marketplace': {
     label: 'API Marketplace',
     ctaHref: '/api-marketplace',
