@@ -28,7 +28,7 @@ export type SkillDetail = SkillListItem & {
 
 const SKILL_LIST_COLUMNS =
   'id, name, slug, summary, risk_level, tags, upvotes, stars, views, category, install_cmd'
-const SKILL_DETAIL_COLUMNS = `${SKILL_LIST_COLUMNS}, description, permissions, github_url, openclaw_version_range, features, use_cases`
+const SKILL_DETAIL_COLUMNS = `${SKILL_LIST_COLUMNS}, description, permissions, github_url, openclaw_version_range`
 
 type RawSkill = {
   id?: string | number
