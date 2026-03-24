@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -5,6 +6,18 @@ import { Badge } from '@/components/ui/badge'
 import { FAQ } from '@/components/faq'
 import { Shield } from 'lucide-react'
 import { getFeaturedSkills } from '@/lib/skills'
+
+export const metadata: Metadata = {
+  title: 'ClawList — The Skills Marketplace for AI Agents',
+  description: 'Discover, share, and install Skills for OpenClaw and other AI agent frameworks. Browse 50+ ready-to-use skills for Claude Code, Manus, and more.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'ClawList — The Skills Marketplace for AI Agents',
+    description: 'Discover, share, and install Skills for OpenClaw and other AI agent frameworks. Browse 50+ ready-to-use skills for Claude Code, Manus, and more.',
+    url: 'https://clawlist.io',
+    type: 'website',
+  },
+}
 
 const featuredSkillImages = [
   '/images/homepage/skill-kernel.png',
@@ -63,6 +76,20 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'ClawList',
+            url: 'https://clawlist.io',
+            logo: 'https://clawlist.io/logo.png',
+            description: 'The Skills Marketplace for AI Agents',
+            sameAs: ['https://github.com/Tony11081/clawlist-images'],
+          }),
+        }}
+      />
       {/* Hero Section */}
       <section className="w-full max-w-[1200px] mx-auto py-20 lg:py-32 px-8 lg:px-40">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

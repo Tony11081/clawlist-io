@@ -119,8 +119,8 @@ export default async function BlogPostPage({ params }: Props) {
     headline: seo.title,
     description: seo.description,
     author: {
-      '@type': 'Person',
-      name: post.author || 'ClawList Team',
+      '@type': 'Organization',
+      name: post.author || 'ClawList',
     },
     publisher: {
       '@type': 'Organization',
@@ -139,12 +139,51 @@ export default async function BlogPostPage({ params }: Props) {
     keywords: post.tags?.join(', '),
   }
 
+  // FAQ Schema for high-impression pages
+  const faqSchemas: Record<string, { question: string; answer: string }[]> = {
+    'quick-configuration-for-claude-agent-sdk-integration': [
+      { question: 'How do I set the base URL for Claude Agent SDK?', answer: 'Set the ANTHROPIC_BASE_URL environment variable to your API endpoint. For example: export ANTHROPIC_BASE_URL=https://api.anthropic.com. The SDK reads this automatically on initialization.' },
+      { question: 'What environment variables does Claude Agent SDK need?', answer: 'Three core variables: ANTHROPIC_API_KEY for authentication, ANTHROPIC_BASE_URL for the API endpoint, and CLAUDE_MODEL for model selection. All can be set in your shell or .env file.' },
+      { question: 'How to fix Claude Agent SDK connection errors?', answer: 'Most connection errors come from incorrect base URL or expired API keys. Verify your ANTHROPIC_BASE_URL is reachable, regenerate your API key if needed, and ensure your network allows outbound HTTPS to the Anthropic endpoint.' },
+    ],
+    'openclaw-agent-system-prompt-architecture-9-layers': [
+      { question: 'What are the 9 layers in OpenClaw\'s system prompt?', answer: 'The 9 layers are: Identity & Core Instructions, Tool Definitions, Available Skills, Runtime Configuration, Channel/Provider Context, Conversation History, Workspace Files (user-editable), Bootstrap Hooks (dynamic injection), and Session Metadata. Each layer is assembled at prompt-build time.' },
+      { question: 'Why use a layered system prompt for AI agents?', answer: 'Layered prompts separate concerns: framework rules vs user config vs runtime context. This makes agents maintainable, upgradable, and debuggable. Users edit Layer 7 (workspace files) without touching framework internals.' },
+      { question: 'How does OpenClaw handle skill loading in its prompt?', answer: 'OpenClaw scans available skills at startup and injects their descriptions into Layer 3 of the system prompt. The LLM sees skill names and descriptions, then decides when to call them. Skills are loaded on-demand, not all at runtime.' },
+    ],
+    'openclaw-node-tutorial': [
+      { question: 'How to install OpenClaw with Node.js?', answer: 'Install OpenClaw globally via npm: npm i -g openclaw. Then run openclaw init to set up your workspace. Nodes (remote devices) get paired using openclaw node pair <code> on both the host and target device.' },
+      { question: 'How to create a custom skill in OpenClaw?', answer: 'Create a folder under ~/clawd/skills/your-skill/ with a SKILL.md file describing the skill and a scripts/ folder for executables. OpenClaw auto-discovers it on next startup. The SKILL.md uses frontmatter for metadata like name, description, and triggers.' },
+      { question: 'What is the OpenClaw bootstrap protocol?', answer: 'The bootstrap protocol is Layer 8 of the system prompt — it runs user-defined scripts at prompt-build time to inject dynamic context. Files listed in AGENTS.md are loaded, and before_prompt_build hooks can add real-time data like calendar events or system status.' },
+    ],
+  }
+
+  const faqData = faqSchemas[slug]
+  const faqJsonLd = faqData ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null
+
   return (
     <div className="min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <ContentViewTracker
         contentType="blog"
         slug={post.slug}
@@ -301,14 +340,21 @@ export default async function BlogPostPage({ params }: Props) {
           }}
         />
 
-        {/* Back to Blog */}
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#262626]">
+        {/* Back to Blog + Homepage Link */}
+        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-[#262626] flex flex-wrap gap-6">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-slate-900 dark:text-slate-100 font-bold hover:underline underline-offset-4"
           >
             <ArrowRight className="h-4 w-4 rotate-180" />
             Back to Blog
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-slate-500 dark:text-slate-400 font-semibold hover:underline underline-offset-4"
+          >
+            Browse Skills on ClawList
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </article>

@@ -11,30 +11,35 @@ interface SeoOverride {
 }
 
 const blogSeoOverrides: Record<string, SeoOverride> = {
-  'openclaw-agent-system-prompt-architecture-9-layers': {
-    title: 'OpenClaw 9-Layer System Prompt Architecture',
+  'quick-configuration-for-claude-agent-sdk-integration': {
+    title: 'Claude Agent SDK Quick Setup Guide',
     description:
-      'See the 9 prompt layers OpenClaw sends to the LLM, from identity and tools to memory, hooks, and runtime context.',
+      'Configure Claude Agent SDK in 5 minutes. Covers base URL, environment variables, and common errors with working code examples.',
+  },
+  'openclaw-agent-system-prompt-architecture-9-layers': {
+    title: 'OpenClaw 9-Layer System Prompt Architecture Explained',
+    description:
+      'Why your AI agent needs layered prompts. Deep dive into OpenClaw\'s 9-layer architecture with design rationale and implementation code.',
   },
   'openclaw-node-tutorial': {
-    title: 'OpenClaw Nodes Tutorial: Control Phones & IoT',
+    title: 'OpenClaw Node.js Tutorial: Build Your First AI Agent',
     description:
-      'Learn how to use OpenClaw Nodes to control phones, Raspberry Pi, and IoT devices from one agent workflow.',
+      'Step-by-step guide to building an AI agent with OpenClaw and Node.js. From installation to your first working skill.',
   },
   'whatsapp-scheduling-ai-agent-with-google-calendar': {
-    title: 'WhatsApp Booking Agent with Google Calendar',
+    title: 'Build a WhatsApp AI Scheduler with Google Calendar',
     description:
-      'Build a WhatsApp scheduling agent that checks Google Calendar availability and books meetings automatically.',
+      'Automate WhatsApp scheduling with an AI agent connected to Google Calendar. Full setup guide with code and deployment steps.',
   },
   'zhipu-s-2025-summary-going-global-with-ai-products': {
-    title: 'Zhipu 2025 Global AI Product Expansion Lessons',
+    title: 'Zhipu AI 2025: Going Global with AutoClaw & AI Products',
     description:
-      'What Zhipu learned about taking AI products global in 2025, with practical lessons for teams expanding overseas.',
+      'Zhipu\'s 2025 strategy breakdown: global expansion, AutoClaw launch, and what it means for the AI agent ecosystem.',
   },
   'openclaw-9-layer-system-prompt-architecture': {
-    title: "Inside OpenClaw's 9-Layer System Prompt",
+    title: 'OpenClaw System Prompt: 9-Layer Design Pattern for AI Agents',
     description:
-      "A practical breakdown of OpenClaw's 9-layer system prompt, including core instructions, tools, and dynamic context.",
+      'The complete 9-layer system prompt pattern used by OpenClaw. Includes bootstrap protocol, memory management, and skill loading architecture.',
     canonicalPath: '/blog/openclaw-agent-system-prompt-architecture-9-layers',
     note: {
       title: 'Primary reference page',
@@ -45,9 +50,9 @@ const blogSeoOverrides: Record<string, SeoOverride> = {
     },
   },
   'building-image-generation-skills-for-ai-agents': {
-    title: 'How to Build Image Generation Skills for AI Agents',
+    title: 'How to Build Image Generation Skills for AI Agents (Tutorial)',
     description:
-      'Step-by-step guide to building image generation skills for AI agents with composition patterns and API integration.',
+      'Add image generation capability to your AI agent. Skill template with provider integration and practical code examples.',
   },
   'similarweb-and-semrush-integration-with-ai-tools': {
     title: 'SimilarWeb vs Semrush for AI Tools',
@@ -80,9 +85,9 @@ const blogSeoOverrides: Record<string, SeoOverride> = {
       'A rapid build story showing how Claude Agent SDK and Tauri were used to ship WorkAny in a single week.',
   },
   'manus-integration-enables-long-task-capability-in-claude-code': {
-    title: 'Claude Code + Manus for Long-Running Tasks',
+    title: 'Manus + Claude Code: Run Long AI Tasks Without Timeout',
     description:
-      'How Manus extends Claude Code with longer-running task execution and more durable agent workflows.',
+      'Break Claude Code\'s task duration limits. Learn how Manus integration enables persistent long-running AI agent workflows.',
   },
   'obsidian-ceo-creates-claude-skills': {
     title: 'Obsidian CEO Builds Claude Skills',
@@ -93,14 +98,14 @@ const blogSeoOverrides: Record<string, SeoOverride> = {
 
 const skillSeoOverrides: Record<string, SeoOverride> = {
   'union-search': {
-    title: 'Union Search for OpenClaw: Search 30+ Sources',
+    title: 'Union Search: Multi-Source AI Search Aggregator',
     description:
-      'Search Xiaohongshu, Douyin, Bilibili, YouTube, X, and 30+ sources from one OpenClaw skill.',
+      'One skill to search across multiple sources simultaneously. Union Search aggregates results from web, docs, and APIs for AI agents.',
   },
   'rtk': {
-    title: 'RTK for OpenClaw: Brew Install & Token Compression',
+    title: 'RTK: Real-Time Knowledge Retrieval for AI Agents',
     description:
-      'Install RTK with Homebrew and compress noisy CLI output to save 60-90% of tokens in AI coding workflows.',
+      'Give your AI agent real-time knowledge access. RTK skill handles web search, extraction, and structured data retrieval.',
   },
 }
 

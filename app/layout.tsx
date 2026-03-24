@@ -13,28 +13,28 @@ const adSenseClient = 'ca-pub-2357915943973678'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ClawList.io - OpenClaw Resource Hub',
-    template: '%s | ClawList.io',
+    default: 'ClawList — The Skills Marketplace for AI Agents',
+    template: '%s | ClawList',
   },
   description:
-    'Browse OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
+    'Discover, share, and install Skills for OpenClaw and other AI agent frameworks. Browse 50+ ready-to-use skills for Claude Code, Manus, and more.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'ClawList.io - OpenClaw Resource Hub',
+    title: 'ClawList — The Skills Marketplace for AI Agents',
     description:
-      'OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
+      'Discover, share, and install Skills for OpenClaw and other AI agent frameworks.',
     url: siteUrl,
-    siteName: 'ClawList.io',
+    siteName: 'ClawList',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ClawList.io - OpenClaw Resource Hub',
+    title: 'ClawList — The Skills Marketplace for AI Agents',
     description:
-      'OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
+      'Discover, share, and install Skills for OpenClaw and other AI agent frameworks.',
   },
 }
 
@@ -46,8 +46,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'ClawList.io',
-    description: 'Browse OpenClaw skills, technical guides, topic hubs, and workflow write-ups in one searchable resource hub.',
+    name: 'ClawList',
+    description: 'The Skills Marketplace for AI Agents. Discover, share, and install skills for OpenClaw, Claude Code, and more.',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',
