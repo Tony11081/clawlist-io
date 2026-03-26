@@ -1,0 +1,17 @@
+# ClawList.io
+> The Skills Marketplace for AI Agents. Discover, share, and install skills for OpenClaw, Claude Code, and other AI agent frameworks.
+
+## About
+ClawList is a curated directory of skills (plugins) for OpenClaw and other AI agent frameworks. Browse 50+ ready-to-use skills with install commands, risk labels, and documentation.
+
+## Sections
+- Skills: https://clawlist.io/skills - Browse all available skills
+- Guides: https://clawlist.io/guides - Step-by-step tutorials and walkthroughs
+- Topics: https://clawlist.io/topics - Topic hubs connecting related skills and guides
+- Blog: https://clawlist.io/blog - Latest articles and updates
+- Apps: https://clawlist.io/apps - Standalone AI agent applications
+- Security: https://clawlist.io/security - Security review information
+
+## Contact
+- Website: https://clawlist.io
+- GitHub: https://github.com/Tony11081/clawlist-io

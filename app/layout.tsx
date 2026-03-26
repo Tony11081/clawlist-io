@@ -58,6 +58,33 @@ export default function RootLayout({
       'query-input': 'required name=search_term_string',
     },
   }
+  const featuredSkillsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Featured OpenClaw Skills',
+    description: 'Top-rated skills for OpenClaw AI agent framework',
+    numberOfItems: 3,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        url: 'https://clawlist.io/skills/image-gen',
+        name: 'Image Generator',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        url: 'https://clawlist.io/skills/data-scraper',
+        name: 'Data Scraper',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        url: 'https://clawlist.io/skills/github-issues',
+        name: 'GitHub Issues',
+      },
+    ],
+  }
 
   return (
     <html lang="en">
@@ -75,6 +102,10 @@ gtag('consent', 'default', {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(featuredSkillsJsonLd) }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

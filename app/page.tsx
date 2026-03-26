@@ -49,6 +49,25 @@ const quickLinks = [
   },
 ]
 
+const ecosystemStats = [
+  {
+    value: '50+',
+    label: 'Skills Available',
+  },
+  {
+    value: '10+',
+    label: 'Frameworks Supported',
+  },
+  {
+    value: '1,000+',
+    label: 'Monthly Installs',
+  },
+  {
+    value: '100%',
+    label: 'Open Source',
+  },
+]
+
 export default async function Home() {
   const featuredSkills = await getFeaturedSkills(3)
   const faqItems = [
@@ -87,6 +106,29 @@ export default async function Home() {
             logo: 'https://clawlist.io/logo.png',
             description: 'The Skills Marketplace for AI Agents',
             sameAs: ['https://github.com/Tony11081/clawlist-images'],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://clawlist.io',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Skills',
+                item: 'https://clawlist.io/skills',
+              },
+            ],
           }),
         }}
       />
@@ -223,6 +265,32 @@ export default async function Home() {
           <Button variant="outline" className="hidden lg:block border border-white dark:border-slate-900 px-6 py-2 rounded-full font-bold hover:bg-white hover:text-slate-900 dark:hover:bg-slate-900 dark:hover:text-white transition-all" asChild>
             <Link href="/skills">Browse Skills</Link>
           </Button>
+        </div>
+      </section>
+
+      {/* Ecosystem Stats */}
+      <section className="w-full max-w-[1200px] mx-auto py-16 px-8 lg:px-40">
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight mb-2">The OpenClaw Ecosystem in Numbers</h2>
+            <p className="text-slate-500 dark:text-slate-400">A quick snapshot of the catalog, coverage, and community activity around ClawList.</p>
+          </div>
+          <div className="h-[1px] flex-1 mx-8 bg-slate-200 dark:bg-[#262626] hidden lg:block"></div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          {ecosystemStats.map((item) => (
+            <div
+              key={item.label}
+              className="p-8 bg-white dark:bg-[#262626]/40 border border-slate-200 dark:border-[#262626] rounded-3xl"
+            >
+              <p className="text-4xl lg:text-5xl font-black tracking-tighter mb-3">
+                {item.value}
+              </p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                {item.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
