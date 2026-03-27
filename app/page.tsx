@@ -4,10 +4,10 @@ import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { HomeDirectoryClient } from '@/components/home-directory-client'
 import { getRecentBlogPosts, getRecentGuidePosts } from '@/lib/blog'
 import {
-  claw123DirectorySections,
-  getClaw123DirectoryStats,
-  getFeaturedClaw123Sections,
-} from '@/lib/claw123-directory'
+  ecosystemDirectorySections,
+  getEcosystemDirectoryStats,
+  getFeaturedEcosystemSections,
+} from '@/lib/ecosystem-directory'
 import { getFeaturedSkills } from '@/lib/skills'
 import { topicHubs } from '@/lib/topic-hubs'
 
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const { totalCategories, totalResources } = getClaw123DirectoryStats()
-  const featuredSections = getFeaturedClaw123Sections()
+  const { totalCategories, totalResources } = getEcosystemDirectoryStats()
+  const featuredSections = getFeaturedEcosystemSections()
   const [latestPosts, featuredGuides, featuredSkills] = await Promise.all([
     getRecentBlogPosts(3),
     getRecentGuidePosts(3),
@@ -62,7 +62,7 @@ export default async function Home() {
         featuredSkills={featuredSkills}
         featuredTopics={featuredTopics}
         latestPosts={latestPosts}
-        sections={claw123DirectorySections}
+        sections={ecosystemDirectorySections}
         totalCategories={totalCategories}
         totalResources={totalResources}
       />

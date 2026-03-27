@@ -1,10 +1,11 @@
-import rawSections from '@/data/claw123-directory.json'
+import rawSections from '@/data/ecosystem-directory.json'
 
 type RawDirectoryItem = {
   id: string
   name: string
   url: string
   hostname: string
+  logo?: string
 }
 
 type RawDirectorySection = {
@@ -14,18 +15,19 @@ type RawDirectorySection = {
   items: RawDirectoryItem[]
 }
 
-export type Claw123DirectoryItem = {
+export type EcosystemDirectoryItem = {
   id: string
   name: string
   url: string
   hostname: string
+  logo?: string
 }
 
-export type Claw123DirectorySection = {
+export type EcosystemDirectorySection = {
   key: string
   category: string
   summary: string
-  items: Claw123DirectoryItem[]
+  items: EcosystemDirectoryItem[]
   cardLabel: string
 }
 
@@ -79,6 +81,7 @@ const sections = (rawSections as RawDirectorySection[]).map((section) => {
     name: nameOverrides[item.name] ?? item.name,
     url: item.url,
     hostname: item.hostname,
+    logo: item.logo,
   }))
 
   return {
@@ -90,16 +93,16 @@ const sections = (rawSections as RawDirectorySection[]).map((section) => {
   }
 })
 
-export const claw123DirectorySections: Claw123DirectorySection[] = sections
+export const ecosystemDirectorySections: EcosystemDirectorySection[] = sections
 
-export function getClaw123DirectoryStats() {
+export function getEcosystemDirectoryStats() {
   return {
     totalCategories: sections.length,
     totalResources: sections.reduce((sum, section) => sum + section.items.length, 0),
   }
 }
 
-export function getFeaturedClaw123Sections(limit = 4) {
+export function getFeaturedEcosystemSections(limit = 4) {
   return [...sections]
     .sort((left, right) => right.items.length - left.items.length)
     .slice(0, limit)

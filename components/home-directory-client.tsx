@@ -16,7 +16,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import type { BlogListItem } from '@/lib/blog'
-import type { Claw123DirectorySection } from '@/lib/claw123-directory'
+import type { EcosystemDirectorySection } from '@/lib/ecosystem-directory'
 import type { SkillListItem } from '@/lib/skills'
 
 type FeaturedTopic = {
@@ -28,11 +28,11 @@ type FeaturedTopic = {
 
 type HomeDirectoryClientProps = {
   featuredGuides: BlogListItem[]
-  featuredSections: Claw123DirectorySection[]
+  featuredSections: EcosystemDirectorySection[]
   featuredSkills: SkillListItem[]
   featuredTopics: FeaturedTopic[]
   latestPosts: BlogListItem[]
-  sections: Claw123DirectorySection[]
+  sections: EcosystemDirectorySection[]
   totalCategories: number
   totalResources: number
 }
@@ -61,6 +61,44 @@ function formatDate(value: string) {
     day: 'numeric',
     year: 'numeric',
   })
+}
+
+function getResourceInitials(name: string) {
+  const initials = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? '')
+    .join('')
+
+  return initials || name.slice(0, 2).toUpperCase()
+}
+
+function ResourceLogo({ logo, name }: { logo?: string; name: string }) {
+  const [hasError, setHasError] = useState(false)
+
+  if (!logo || hasError) {
+    return (
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white text-sm font-black uppercase tracking-[0.18em] text-slate-700 dark:border-[#303030] dark:bg-[#121212] dark:text-slate-200">
+        {getResourceInitials(name)}
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-white p-2 dark:border-[#303030] dark:bg-[#121212]">
+      {/* These third-party logos include remote SVGs, so a plain img keeps the directory resilient. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={logo}
+        alt={`${name} logo`}
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-contain"
+        onError={() => setHasError(true)}
+      />
+    </div>
+  )
 }
 
 export function HomeDirectoryClient({
@@ -534,17 +572,20 @@ export function HomeDirectoryClient({
                           className="group rounded-3xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-slate-400 dark:border-[#2d2d2d] dark:bg-[#191919]"
                         >
                           <div className="flex items-start justify-between gap-4">
-                            <div>
-                              <p className="text-[10px] font-mono uppercase tracking-[0.24em] text-slate-500">
-                                {section.cardLabel}
-                              </p>
-                              <h4 className="mt-3 text-xl font-black tracking-tight text-slate-900 dark:text-slate-100">
-                                {item.name}
-                              </h4>
+                            <div className="flex min-w-0 items-start gap-4">
+                              <ResourceLogo logo={item.logo} name={item.name} />
+                              <div className="min-w-0">
+                                <p className="text-[10px] font-mono uppercase tracking-[0.24em] text-slate-500">
+                                  {section.cardLabel}
+                                </p>
+                                <h4 className="mt-3 text-xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+                                  {item.name}
+                                </h4>
+                              </div>
                             </div>
                             <Badge
                               variant="outline"
-                              className="rounded-full border-slate-200 px-2 py-1 text-[10px] font-mono uppercase tracking-[0.18em] dark:border-[#303030]"
+                              className="max-w-[45%] rounded-full border-slate-200 px-2 py-1 text-[10px] font-mono uppercase tracking-[0.18em] dark:border-[#303030]"
                             >
                               {item.hostname}
                             </Badge>
@@ -597,7 +638,7 @@ export function HomeDirectoryClient({
                 Source and editorial policy
               </p>
               <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600 dark:text-slate-400">
-                The ecosystem directory is based on the public resource list at Claw123, but the homepage structure, copy, and browsing logic have been rebuilt for ClawList. We use the directory as source material, not as a visual template.
+                The ecosystem directory is built from publicly available industry resources, then reorganized through ClawList&apos;s own editorial structure, browsing logic, and design system. We use source material for research, not as a visual template.
               </p>
             </div>
             <div className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">

@@ -8,217 +8,253 @@
         "id": "openclaw-landscape-1",
         "name": "OpenClaw official website",
         "url": "https://openclaw.ai/",
-        "hostname": "openclaw.ai"
+        "hostname": "openclaw.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278524964393_openclaw.webp"
       },
       {
         "id": "openclaw-landscape-2",
         "name": "Official GitHub",
         "url": "https://github.com/openclaw/openclaw",
-        "hostname": "github.com"
+        "hostname": "github.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773303159817218_github.svg"
       },
       {
         "id": "openclaw-landscape-3",
         "name": "Kimi Claw",
         "url": "https://www.kimi.com/bot",
-        "hostname": "kimi.com"
+        "hostname": "kimi.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278888123419_kimilogo.webp"
       },
       {
         "id": "openclaw-landscape-4",
         "name": "MaxClaw",
         "url": "https://agent.minimaxi.com/max-claw",
-        "hostname": "agent.minimaxi.com"
+        "hostname": "agent.minimaxi.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278888123419_maxclaw.webp"
       },
       {
         "id": "openclaw-landscape-5",
         "name": "Feishu OpenClaw",
         "url": "https://openclaw.feishu.cn/home",
-        "hostname": "openclaw.feishu.cn"
+        "hostname": "openclaw.feishu.cn",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773833209692802_feishu.webp"
       },
       {
         "id": "openclaw-landscape-6",
         "name": "ArkClaw",
         "url": "https://www.volcengine.com/experience/ark?mode=claw",
-        "hostname": "volcengine.com"
+        "hostname": "volcengine.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279137409178_%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9F.webp"
       },
       {
         "id": "openclaw-landscape-7",
         "name": "Button Coze",
         "url": "https://code.coze.cn/home",
-        "hostname": "code.coze.cn"
+        "hostname": "code.coze.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773623874923554_%E6%89%A3%E5%AD%90.webp"
       },
       {
         "id": "openclaw-landscape-8",
         "name": "DuClaw",
         "url": "https://cloud.baidu.com/product/duclaw.html",
-        "hostname": "cloud.baidu.com"
+        "hostname": "cloud.baidu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773282118879175_duclaw.webp"
       },
       {
         "id": "openclaw-landscape-9",
         "name": "Xiaomi MiMo Claw",
         "url": "https://aistudio.xiaomimimo.com/",
-        "hostname": "aistudio.xiaomimimo.com"
+        "hostname": "aistudio.xiaomimimo.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773866034487264_xiaomi.webp"
       },
       {
         "id": "openclaw-landscape-10",
         "name": "StepClaw",
         "url": "https://www.stepfun.com/openclaw",
-        "hostname": "stepfun.com"
+        "hostname": "stepfun.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773624299335798_%E9%98%B6%E8%B7%83ai.webp"
       },
       {
         "id": "openclaw-landscape-11",
         "name": "AstronClaw",
         "url": "https://agent.xfyun.cn/astron-claw",
-        "hostname": "agent.xfyun.cn"
+        "hostname": "agent.xfyun.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773624483640741_%E8%AE%AF%E9%A3%9E%E6%98%9F%E8%BE%B0.webp"
       },
       {
         "id": "openclaw-landscape-12",
         "name": "Happycapy",
         "url": "https://happycapy.ai/",
-        "hostname": "happycapy.ai"
+        "hostname": "happycapy.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774033437393432_happycapyai.webp"
       },
       {
         "id": "openclaw-landscape-13",
         "name": "Qclaw",
         "url": "https://claw.guanjia.qq.com/",
-        "hostname": "claw.guanjia.qq.com"
+        "hostname": "claw.guanjia.qq.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279832355274_Qclaw.webp"
       },
       {
         "id": "openclaw-landscape-14",
         "name": "DuMate",
         "url": "https://cloud.baidu.com/product/dumate.html",
-        "hostname": "cloud.baidu.com"
+        "hostname": "cloud.baidu.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774247939313813_baidu.webp"
       },
       {
         "id": "openclaw-landscape-15",
         "name": "LobsterAI Youdao Lobster",
         "url": "https://lobsterai.youdao.com/",
-        "hostname": "lobsterai.youdao.com"
+        "hostname": "lobsterai.youdao.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279439273241_%E6%9C%89%E9%81%93%E9%BE%99%E8%99%BE.webp"
       },
       {
         "id": "openclaw-landscape-16",
         "name": "WorkBuddy",
         "url": "https://www.codebuddy.cn/work/",
-        "hostname": "codebuddy.cn"
+        "hostname": "codebuddy.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279652266326_workbuddy.webp"
       },
       {
         "id": "openclaw-landscape-17",
         "name": "AutoClaw",
         "url": "https://autoglm.zhipuai.cn/autoclaw/",
-        "hostname": "autoglm.zhipuai.cn"
+        "hostname": "autoglm.zhipuai.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279213060866_autoclaw.webp"
       },
       {
         "id": "openclaw-landscape-18",
         "name": "Wukong",
         "url": "https://www.dingtalk.com/wukong",
-        "hostname": "dingtalk.com"
+        "hostname": "dingtalk.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773717990892112_%E6%82%9F%E7%A9%BA.webp"
       },
       {
         "id": "openclaw-landscape-19",
         "name": "360 safe lobster",
         "url": "https://claw.360.cn/",
-        "hostname": "claw.360.cn"
+        "hostname": "claw.360.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773624855626719_360%E5%AE%89%E5%85%A8%E9%BE%99%E8%99%BE.webp"
       },
       {
         "id": "openclaw-landscape-20",
         "name": "QoderWork",
         "url": "https://qoder.com/qoderwork",
-        "hostname": "qoder.com"
+        "hostname": "qoder.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773284803963173_QoderWork.webp"
       },
       {
         "id": "openclaw-landscape-21",
         "name": "Step Desktop Partner",
         "url": "https://www.stepfun.com/download",
-        "hostname": "stepfun.com"
+        "hostname": "stepfun.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773624299335798_%E9%98%B6%E8%B7%83ai.webp"
       },
       {
         "id": "openclaw-landscape-22",
         "name": "JVS Claw",
         "url": "https://jvs.wuying.aliyun.com/",
-        "hostname": "jvs.wuying.aliyun.com"
+        "hostname": "jvs.wuying.aliyun.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773305796424241_jvsclaw.webp"
       },
       {
         "id": "openclaw-landscape-23",
         "name": "EasyClaw",
         "url": "https://easyclaw.com/zh-cn/",
-        "hostname": "easyclaw.com"
+        "hostname": "easyclaw.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773282694363315_easylaw.webp"
       },
       {
         "id": "openclaw-landscape-24",
         "name": "CoPaw",
         "url": "https://copaw.agentscope.io/",
-        "hostname": "copaw.agentscope.io"
+        "hostname": "copaw.agentscope.io",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773304116989274_copaw.webp"
       },
       {
         "id": "openclaw-landscape-25",
         "name": "nexu",
         "url": "https://www.xcrawl.com/zh/?keyword=2ozjddoq",
-        "hostname": "xcrawl.com"
+        "hostname": "xcrawl.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774512472840329_nexu.webp"
       },
       {
         "id": "openclaw-landscape-26",
         "name": "Manus",
         "url": "https://manus.im/",
-        "hostname": "manus.im"
+        "hostname": "manus.im",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773283713605806_manus.webp"
       },
       {
         "id": "openclaw-landscape-27",
         "name": "Cow Horse AI",
         "url": "https://niuma.limyai.com/",
-        "hostname": "niuma.limyai.com"
+        "hostname": "niuma.limyai.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773284626434432_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260312110300_246_65.webp"
       },
       {
         "id": "openclaw-landscape-28",
         "name": "MuleRun",
         "url": "https://mulerun.com/",
-        "hostname": "mulerun.com"
+        "hostname": "mulerun.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773718336217407_MuleRun.webp"
       },
       {
         "id": "openclaw-landscape-29",
         "name": "LobeHub",
         "url": "https://lobehub.com/zh",
-        "hostname": "lobehub.com"
+        "hostname": "lobehub.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774032599251525_LobeHub.webp"
       },
       {
         "id": "openclaw-landscape-30",
         "name": "Tabbit browser",
         "url": "https://tabbitbrowser.com/",
-        "hostname": "tabbitbrowser.com"
+        "hostname": "tabbitbrowser.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773284883314259_tabbit.webp"
       },
       {
         "id": "openclaw-landscape-31",
         "name": "Linkfox Claw",
         "url": "https://agent.linkfox.com/claw",
-        "hostname": "agent.linkfox.com"
+        "hostname": "agent.linkfox.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773803517429579_linkfox.webp"
       },
       {
         "id": "openclaw-landscape-32",
         "name": "PoorClaw poor shrimp",
         "url": "https://www.poorclaw.com/",
-        "hostname": "poorclaw.com"
+        "hostname": "poorclaw.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773895189787395_poorclaw.webp"
       },
       {
         "id": "openclaw-landscape-33",
         "name": "HiClaw",
         "url": "https://higress.ai/hiclaw",
-        "hostname": "higress.ai"
+        "hostname": "higress.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773364357873862_hiclaw.webp"
       },
       {
         "id": "openclaw-landscape-34",
         "name": "KiloClaw",
         "url": "https://kilo.ai/kiloclaw",
-        "hostname": "kilo.ai"
+        "hostname": "kilo.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773866747716322_kilo.webp"
       },
       {
         "id": "openclaw-landscape-35",
         "name": "NemoClaw",
         "url": "https://www.nvidia.com/en-us/ai/nemoclaw/",
-        "hostname": "nvidia.com"
+        "hostname": "nvidia.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773718114998901_NemoClaw.webp"
       },
       {
         "id": "openclaw-landscape-36",
         "name": "Loomy",
         "url": "https://loomy.xunfei.cn/",
-        "hostname": "loomy.xunfei.cn"
+        "hostname": "loomy.xunfei.cn",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773847691225330_loomy.webp"
       }
     ]
   },
@@ -231,49 +267,57 @@
         "id": "cloud-deployment-1",
         "name": "Alibaba Cloud",
         "url": "https://www.aliyun.com/benefit/scene/moltbot",
-        "hostname": "aliyun.com"
+        "hostname": "aliyun.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294613467_%E9%98%BF%E9%87%8C%E4%BA%91.jpg"
       },
       {
         "id": "cloud-deployment-2",
         "name": "Tencent Cloud",
         "url": "https://cloud.tencent.com/act/pro/openclaw",
-        "hostname": "cloud.tencent.com"
+        "hostname": "cloud.tencent.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294670308_%E8%85%BE%E8%AE%AF%E4%BA%91.jpg"
       },
       {
         "id": "cloud-deployment-3",
         "name": "volcano engine",
         "url": "https://www.volcengine.com/activity/clawdbot",
-        "hostname": "volcengine.com"
+        "hostname": "volcengine.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279137409178_%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9F.webp"
       },
       {
         "id": "cloud-deployment-4",
         "name": "Baidu Smart Cloud",
         "url": "https://cloud.baidu.com/product/BCC/moltbot.html",
-        "hostname": "cloud.baidu.com"
+        "hostname": "cloud.baidu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773367115912467_%E7%99%BE%E5%BA%A6%E4%BA%91.webp"
       },
       {
         "id": "cloud-deployment-5",
         "name": "Huawei Cloud",
         "url": "https://activity.huaweicloud.com/openclaw.html",
-        "hostname": "activity.huaweicloud.com"
+        "hostname": "activity.huaweicloud.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294754434_%E5%8D%8E%E4%B8%BA%E4%BA%91.png"
       },
       {
         "id": "cloud-deployment-6",
         "name": "JD Cloud",
         "url": "https://www.jdcloud.com/cn/pages/openclaw",
-        "hostname": "jdcloud.com"
+        "hostname": "jdcloud.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773385946397971_%E4%BA%AC%E4%B8%9C%E4%BA%91.webp"
       },
       {
         "id": "cloud-deployment-7",
         "name": "National Supercomputing Internet",
         "url": "https://www.scnet.cn/ui/chatbot/openclaw",
-        "hostname": "scnet.cn"
+        "hostname": "scnet.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773385844046259_scnet.webp"
       },
       {
         "id": "cloud-deployment-8",
         "name": "Tianyi Cloud",
         "url": "https://www.ctyun.cn/act/OpenClaw",
-        "hostname": "ctyun.cn"
+        "hostname": "ctyun.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773385094493579_%E5%A4%A9%E7%BF%BC%E4%BA%91.webp"
       }
     ]
   },
@@ -286,73 +330,85 @@
         "id": "tutorial-collections-1",
         "name": "Official documentation",
         "url": "https://docs.openclaw.ai/zh-CN",
-        "hostname": "docs.openclaw.ai"
+        "hostname": "docs.openclaw.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773302932045105_openclaw-logo%281%29.svg"
       },
       {
         "id": "tutorial-collections-2",
         "name": "OpenClaw Orange Book",
         "url": "https://my.feishu.cn/wiki/H27Iw9ussiaYbokymhncExtjnAh",
-        "hostname": "my.feishu.cn"
+        "hostname": "my.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773629103050314_%E6%A9%99%E7%9A%AE%E4%B9%A6.webp"
       },
       {
         "id": "tutorial-collections-3",
         "name": "Vientiane AI Lab​",
         "url": "https://yunyinghui.feishu.cn/wiki/Ru7PwG82qiDGo1kGMFZcxqpGnnf",
-        "hostname": "yunyinghui.feishu.cn"
+        "hostname": "yunyinghui.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773629163162292_%E4%B8%87%E8%B1%A1AI%E5%AE%9E%E9%AA%8C%E5%AE%A4%E2%80%8B.webp"
       },
       {
         "id": "tutorial-collections-4",
         "name": "WaytoAGI",
         "url": "https://waytoagi.feishu.cn/wiki/CCR4wl3upi6dF9kVE5YcAcGcnlU",
-        "hostname": "waytoagi.feishu.cn"
+        "hostname": "waytoagi.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773631058673439_%E9%9D%9E%E5%87%A1.webp"
       },
       {
         "id": "tutorial-collections-5",
         "name": "Extraordinary Industry and Research",
         "url": "https://uniquecapital.feishu.cn/wiki/Nwwiwh6PNiesZqkWNw7cWegjn2c",
-        "hostname": "uniquecapital.feishu.cn"
+        "hostname": "uniquecapital.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "tutorial-collections-6",
         "name": "OpenClaw Chinese Learning Manual",
         "url": "https://my.feishu.cn/wiki/NzvOwzHdKiwSe2kPLx0cs1jlncg",
-        "hostname": "my.feishu.cn"
+        "hostname": "my.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773631336916473_%E4%B8%AD%E6%96%87%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C.webp"
       },
       {
         "id": "tutorial-collections-7",
         "name": "OpenClaw from Beginner to Master",
         "url": "https://my.feishu.cn/docx/P6zsdsgYco6i4XxLeIccvlpvnQe",
-        "hostname": "my.feishu.cn"
+        "hostname": "my.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "tutorial-collections-8",
         "name": "Hello Claw Tutorial",
         "url": "https://datawhalechina.github.io/hello-claw/cn/adopt/intro/",
-        "hostname": "datawhalechina.github.io"
+        "hostname": "datawhalechina.github.io",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773847436049114_helloclaw.webp"
       },
       {
         "id": "tutorial-collections-9",
         "name": "Awesome Tutorial",
         "url": "https://awesome.tryopenclaw.asia/",
-        "hostname": "awesome.tryopenclaw.asia"
+        "hostname": "awesome.tryopenclaw.asia",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773857685050582_awesome.webp"
       },
       {
         "id": "tutorial-collections-10",
         "name": "Feishu Official Cultivation Guide",
         "url": "https://larkcommunity.feishu.cn/wiki/GGJPwJ2IfiTynVk2Vy4cZbRvn2f",
-        "hostname": "larkcommunity.feishu.cn"
+        "hostname": "larkcommunity.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "tutorial-collections-11",
         "name": "Ma Xiao’s guide to playing with shrimps",
         "url": "https://t0woxppdywz.feishu.cn/wiki/Oxf0wcTECie8KkkwkIlc6psanNe",
-        "hostname": "t0woxppdywz.feishu.cn"
+        "hostname": "t0woxppdywz.feishu.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773631172293325_%E9%BA%BB%E5%B0%8F.webp"
       },
       {
         "id": "tutorial-collections-12",
         "name": "Complete collection of Chinese use cases",
         "url": "https://github.com/AlexAnys/awesome-openclaw-usecases-zh",
-        "hostname": "github.com"
+        "hostname": "github.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773858216878506_github.webp"
       }
     ]
   },
@@ -365,55 +421,64 @@
         "id": "popular-ai-tools-1",
         "name": "Qianwen",
         "url": "https://www.qianwen.com/",
-        "hostname": "qianwen.com"
+        "hostname": "qianwen.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_%E5%8D%83%E9%97%AE.webp"
       },
       {
         "id": "popular-ai-tools-2",
         "name": "bean bag",
         "url": "https://www.doubao.com/",
-        "hostname": "doubao.com"
+        "hostname": "doubao.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_%E8%B1%86%E5%8C%85.webp"
       },
       {
         "id": "popular-ai-tools-3",
         "name": "Kimi",
         "url": "https://www.kimi.com/",
-        "hostname": "kimi.com"
+        "hostname": "kimi.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_kimi.webp"
       },
       {
         "id": "popular-ai-tools-4",
         "name": "Tencent Yuanbao",
         "url": "https://yuanbao.tencent.com/",
-        "hostname": "yuanbao.tencent.com"
+        "hostname": "yuanbao.tencent.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_%E8%85%BE%E8%AE%AF%E5%85%83%E5%AE%9D.webp"
       },
       {
         "id": "popular-ai-tools-5",
         "name": "DeepSeek",
         "url": "https://chat.deepseek.com/",
-        "hostname": "chat.deepseek.com"
+        "hostname": "chat.deepseek.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_deepseek.webp"
       },
       {
         "id": "popular-ai-tools-6",
         "name": "ChatGPT",
         "url": "https://chat.openai.com",
-        "hostname": "chat.openai.com"
+        "hostname": "chat.openai.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_chatgpt.webp"
       },
       {
         "id": "popular-ai-tools-7",
         "name": "Gemini",
         "url": "https://gemini.google.com/",
-        "hostname": "gemini.google.com"
+        "hostname": "gemini.google.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_gemini.webp"
       },
       {
         "id": "popular-ai-tools-8",
         "name": "Grok",
         "url": "https://grok.com/",
-        "hostname": "grok.com"
+        "hostname": "grok.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_grok.webp"
       },
       {
         "id": "popular-ai-tools-9",
         "name": "Dream AI",
         "url": "https://jimeng.jianying.com/ai-tool/home",
-        "hostname": "jimeng.jianying.com"
+        "hostname": "jimeng.jianying.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773806237995049_%E5%8D%B3%E6%A2%A6ai.webp"
       }
     ]
   },
@@ -426,49 +491,57 @@
         "id": "coding-plans-1",
         "name": "Kimi",
         "url": "https://www.kimi.com/code",
-        "hostname": "kimi.com"
+        "hostname": "kimi.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278888123419_kimilogo.webp"
       },
       {
         "id": "coding-plans-2",
         "name": "MiniMax Token Plan",
         "url": "https://platform.minimaxi.com/subscribe/token-plan",
-        "hostname": "platform.minimaxi.com"
+        "hostname": "platform.minimaxi.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773302663477298_minimax.webp"
       },
       {
         "id": "coding-plans-3",
         "name": "Coding Plan",
         "url": "https://bigmodel.cn/glm-coding",
-        "hostname": "bigmodel.cn"
+        "hostname": "bigmodel.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773390617568290_bigmodel.webp"
       },
       {
         "id": "coding-plans-4",
         "name": "Tencent Cloud Coding Plan",
         "url": "https://cloud.tencent.com/act/pro/codingplan",
-        "hostname": "cloud.tencent.com"
+        "hostname": "cloud.tencent.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294670308_%E8%85%BE%E8%AE%AF%E4%BA%91.jpg"
       },
       {
         "id": "coding-plans-5",
         "name": "Alibaba Cloud Coding Plan",
         "url": "https://www.aliyun.com/benefit/scene/codingplan",
-        "hostname": "aliyun.com"
+        "hostname": "aliyun.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294613467_%E9%98%BF%E9%87%8C%E4%BA%91.jpg"
       },
       {
         "id": "coding-plans-6",
         "name": "Volcano Engine Coding Plan",
         "url": "https://www.volcengine.com/activity/codingplan",
-        "hostname": "volcengine.com"
+        "hostname": "volcengine.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279137409178_%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9F.webp"
       },
       {
         "id": "coding-plans-7",
         "name": "Baidu Qianfan Coding Plan",
         "url": "https://cloud.baidu.com/product/codingplan.html",
-        "hostname": "cloud.baidu.com"
+        "hostname": "cloud.baidu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202408/1724998228137718_%E7%99%BE%E5%BA%A6GBI.png"
       },
       {
         "id": "coding-plans-8",
         "name": "Step Plan",
         "url": "https://platform.stepfun.com/step-plan",
-        "hostname": "platform.stepfun.com"
+        "hostname": "platform.stepfun.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774250872632066_stepfun.webp"
       }
     ]
   },
@@ -481,67 +554,78 @@
         "id": "maas-platforms-1",
         "name": "Alibaba Cloud",
         "url": "https://bailian.console.aliyun.com/",
-        "hostname": "bailian.console.aliyun.com"
+        "hostname": "bailian.console.aliyun.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294613467_%E9%98%BF%E9%87%8C%E4%BA%91.jpg"
       },
       {
         "id": "maas-platforms-2",
         "name": "Volcano Ark",
         "url": "https://www.volcengine.com/product/ark",
-        "hostname": "volcengine.com"
+        "hostname": "volcengine.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773279137409178_%E7%81%AB%E5%B1%B1%E6%96%B9%E8%88%9F.webp"
       },
       {
         "id": "maas-platforms-3",
         "name": "Baidu Qianfan",
         "url": "https://cloud.baidu.com/product-s/qianfan_home",
-        "hostname": "cloud.baidu.com"
+        "hostname": "cloud.baidu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202408/1724998228137718_%E7%99%BE%E5%BA%A6GBI.png"
       },
       {
         "id": "maas-platforms-4",
         "name": "silicon based flow",
         "url": "https://www.siliconflow.cn/",
-        "hostname": "siliconflow.cn"
+        "hostname": "siliconflow.cn",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773863557988656_siliconflow.webp"
       },
       {
         "id": "maas-platforms-5",
         "name": "Qiniuyun",
         "url": "https://www.qiniu.com/ai/agent",
-        "hostname": "qiniu.com"
+        "hostname": "qiniu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773389137224258_%E4%B8%83%E7%89%9B%E4%BA%91.webp"
       },
       {
         "id": "maas-platforms-6",
         "name": "iFlytek Spark",
         "url": "https://xinghuo.xfyun.cn/maas-home",
-        "hostname": "xinghuo.xfyun.cn"
+        "hostname": "xinghuo.xfyun.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202508/1755505196574944_%E8%AE%AF%E9%A3%9E%E6%98%9F%E7%81%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B.webp"
       },
       {
         "id": "maas-platforms-7",
         "name": "OpenRouter",
         "url": "https://openrouter.ai",
-        "hostname": "openrouter.ai"
+        "hostname": "openrouter.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773389482768615_openrouter.webp"
       },
       {
         "id": "maas-platforms-8",
         "name": "ZenMux",
         "url": "https://zenmux.ai/invite/9ENK8S",
-        "hostname": "zenmux.ai"
+        "hostname": "zenmux.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773389543519623_zenmux.svg"
       },
       {
         "id": "maas-platforms-9",
         "name": "Model123",
         "url": "https://www.model123.ai/",
-        "hostname": "model123.ai"
+        "hostname": "model123.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773992877558467_model123.webp"
       },
       {
         "id": "maas-platforms-10",
         "name": "Huawei Cloud",
         "url": "https://www.huaweicloud.com/ai/token-service.html",
-        "hostname": "huaweicloud.com"
+        "hostname": "huaweicloud.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294754434_%E5%8D%8E%E4%B8%BA%E4%BA%91.png"
       },
       {
         "id": "maas-platforms-11",
         "name": "Kuaishou Wanqing",
         "url": "https://www.streamlake.com/product/wanqing",
-        "hostname": "streamlake.com"
+        "hostname": "streamlake.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773844230744746_wanqing.webp"
       }
     ]
   },
@@ -554,133 +638,155 @@
         "id": "ai-models-1",
         "name": "Kimi",
         "url": "https://platform.moonshot.cn/",
-        "hostname": "platform.moonshot.cn"
+        "hostname": "platform.moonshot.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278888123419_kimilogo.webp"
       },
       {
         "id": "ai-models-2",
         "name": "MiniMax",
         "url": "https://www.minimaxi.com/",
-        "hostname": "minimaxi.com"
+        "hostname": "minimaxi.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773302663477298_minimax.webp"
       },
       {
         "id": "ai-models-3",
         "name": "GLM",
         "url": "https://www.bigmodel.cn/",
-        "hostname": "bigmodel.cn"
+        "hostname": "bigmodel.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773390617568290_bigmodel.webp"
       },
       {
         "id": "ai-models-4",
         "name": "DeepSeek",
         "url": "https://www.deepseek.com/",
-        "hostname": "deepseek.com"
+        "hostname": "deepseek.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773303655390773_deepseek.webp"
       },
       {
         "id": "ai-models-5",
         "name": "Qianwen Qwen",
         "url": "https://www.aliyun.com/product/tongyi",
-        "hostname": "aliyun.com"
+        "hostname": "aliyun.com",
+        "logo": "https://img.amz123.com/image_cloud/202303/1679294613467_%E9%98%BF%E9%87%8C%E4%BA%91.jpg"
       },
       {
         "id": "ai-models-6",
         "name": "Doubao",
         "url": "https://www.doubao.com/chat/",
-        "hostname": "doubao.com"
+        "hostname": "doubao.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773841072739005_doubao.webp"
       },
       {
         "id": "ai-models-7",
         "name": "Claude",
         "url": "https://platform.claude.com/",
-        "hostname": "platform.claude.com"
+        "hostname": "platform.claude.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202407/1721118005719027_Claude.webp"
       },
       {
         "id": "ai-models-8",
         "name": "Gemini",
         "url": "https://aistudio.google.com/",
-        "hostname": "aistudio.google.com"
+        "hostname": "aistudio.google.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773304463226234_gemini.webp"
       },
       {
         "id": "ai-models-9",
         "name": "GPT",
         "url": "https://platform.openai.com/",
-        "hostname": "platform.openai.com"
+        "hostname": "platform.openai.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773381100778523_ChatGPT-Logo.webp"
       },
       {
         "id": "ai-models-10",
         "name": "Grok",
         "url": "https://console.x.ai/",
-        "hostname": "console.x.ai"
+        "hostname": "console.x.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773864418954855_xai.webp"
       },
       {
         "id": "ai-models-11",
         "name": "Llama",
         "url": "https://www.llama.com/",
-        "hostname": "llama.com"
+        "hostname": "llama.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773626305718364_meta.svg"
       },
       {
         "id": "ai-models-12",
         "name": "Mistral",
         "url": "https://mistral.ai/",
-        "hostname": "mistral.ai"
+        "hostname": "mistral.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773625938462204_Mistral.webp"
       },
       {
         "id": "ai-models-13",
         "name": "MiMo",
         "url": "https://mimo.xiaomi.com/zh/",
-        "hostname": "mimo.xiaomi.com"
+        "hostname": "mimo.xiaomi.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773866034487264_xiaomi.webp"
       },
       {
         "id": "ai-models-14",
         "name": "iFlytek Spark",
         "url": "https://xinghuo.xfyun.cn/sparkapi",
-        "hostname": "xinghuo.xfyun.cn"
+        "hostname": "xinghuo.xfyun.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202508/1755505196574944_%E8%AE%AF%E9%A3%9E%E6%98%9F%E7%81%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B.webp"
       },
       {
         "id": "ai-models-15",
         "name": "Tencent Hunyuan",
         "url": "https://cloud.tencent.com/product/tclm",
-        "hostname": "cloud.tencent.com"
+        "hostname": "cloud.tencent.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773306210705526_1721373914279021_%E8%85%BE%E8%AE%AF%E6%B7%B7%E5%85%83%E5%A4%A7%E6%A8%A1%E5%9E%8B.webp"
       },
       {
         "id": "ai-models-16",
         "name": "Baidu Wenxin",
         "url": "https://yiyan.baidu.com/",
-        "hostname": "yiyan.baidu.com"
+        "hostname": "yiyan.baidu.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773309669906093_%E6%96%87%E5%BF%83.webp"
       },
       {
         "id": "ai-models-17",
         "name": "Step stars",
         "url": "https://platform.stepfun.com/",
-        "hostname": "platform.stepfun.com"
+        "hostname": "platform.stepfun.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773624299335798_%E9%98%B6%E8%B7%83ai.webp"
       },
       {
         "id": "ai-models-18",
         "name": "PinchBench",
         "url": "https://pinchbench.com/",
-        "hostname": "pinchbench.com"
+        "hostname": "pinchbench.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773278261965005_%E9%BE%99%E8%99%BE%E6%A8%A1%E5%9E%8B%E6%8E%92%E8%A1%8C%E6%A6%9C.webp"
       },
       {
         "id": "ai-models-19",
         "name": "Artificial Analysis",
         "url": "https://artificialanalysis.ai/",
-        "hostname": "artificialanalysis.ai"
+        "hostname": "artificialanalysis.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773864971469127_artificial_analysis_logo.webp"
       },
       {
         "id": "ai-models-20",
         "name": "Arena.ai",
         "url": "https://arena.ai/leaderboard",
-        "hostname": "arena.ai"
+        "hostname": "arena.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773865496996541_arena.webp"
       },
       {
         "id": "ai-models-21",
         "name": "OpenRouter Rankings",
         "url": "https://openrouter.ai/rankings",
-        "hostname": "openrouter.ai"
+        "hostname": "openrouter.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773892848237111_openrouter.webp"
       },
       {
         "id": "ai-models-22",
         "name": "XSCT Bench",
         "url": "https://xsct.ai/",
-        "hostname": "xsct.ai"
+        "hostname": "xsct.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773838588523352_xsct.webp"
       }
     ]
   },
@@ -693,73 +799,85 @@
         "id": "skills-marketplaces-1",
         "name": "ClawHub",
         "url": "https://clawhub.ai/",
-        "hostname": "clawhub.ai"
+        "hostname": "clawhub.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773301531232644_clawd-logo.webp"
       },
       {
         "id": "skills-marketplaces-2",
         "name": "SkillHub",
         "url": "https://skillhub.tencent.com/",
-        "hostname": "skillhub.tencent.com"
+        "hostname": "skillhub.tencent.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773301939830204_SkillHub.webp"
       },
       {
         "id": "skills-marketplaces-3",
         "name": "Skills.sh",
         "url": "https://skills.sh/",
-        "hostname": "skills.sh"
+        "hostname": "skills.sh",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773301664473260_Skills.sh.webp"
       },
       {
         "id": "skills-marketplaces-4",
         "name": "SkillsMP",
         "url": "https://skillsmp.com/zh",
-        "hostname": "skillsmp.com"
+        "hostname": "skillsmp.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773394585612836_skillsmp.webp"
       },
       {
         "id": "skills-marketplaces-5",
         "name": "Shrimp Review Skill",
         "url": "https://xiaping.coze.site/",
-        "hostname": "xiaping.coze.site"
+        "hostname": "xiaping.coze.site",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632043771243_%E6%B0%B4%E4%BA%A7%E5%B8%82%E5%9C%BA.webp"
       },
       {
         "id": "skills-marketplaces-6",
         "name": "SkillHubChina",
         "url": "https://www.skill-cn.com/",
-        "hostname": "skill-cn.com"
+        "hostname": "skill-cn.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773640367428794_skillhub.webp"
       },
       {
         "id": "skills-marketplaces-7",
         "name": "Agent Skills Hub",
         "url": "https://agentskillshub.top/",
-        "hostname": "agentskillshub.top"
+        "hostname": "agentskillshub.top",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773302307484023_AgentSkillsHub.webp"
       },
       {
         "id": "skills-marketplaces-8",
         "name": "OpenClaw Directory",
         "url": "https://openclawdirectory.co.uk/",
-        "hostname": "openclawdirectory.co.uk"
+        "hostname": "openclawdirectory.co.uk",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773302307484023_OpenClawDirectory.webp"
       },
       {
         "id": "skills-marketplaces-9",
         "name": "OpenClawDir",
         "url": "https://openclawdir.com/",
-        "hostname": "openclawdir.com"
+        "hostname": "openclawdir.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773394473191461_OpenClawDir.svg"
       },
       {
         "id": "skills-marketplaces-10",
         "name": "ClawSkills",
         "url": "https://clawskills.sh/",
-        "hostname": "clawskills.sh"
+        "hostname": "clawskills.sh",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773942533103367_clawskills.webp"
       },
       {
         "id": "skills-marketplaces-11",
         "name": "CryptoSkills",
         "url": "https://cryptoskills.dev/",
-        "hostname": "cryptoskills.dev"
+        "hostname": "cryptoskills.dev",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773628960208307_ODLS.webp"
       },
       {
         "id": "skills-marketplaces-12",
         "name": "CocoLoop",
         "url": "https://hub.cocoloop.cn/",
-        "hostname": "hub.cocoloop.cn"
+        "hostname": "hub.cocoloop.cn",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773889510646815_cocoloop.webp"
       }
     ]
   },
@@ -772,7 +890,8 @@
         "id": "broader-ecosystem-1",
         "name": "Xcrawl",
         "url": "https://xcrawl.com/?keyword=2ozjddoq",
-        "hostname": "xcrawl.com"
+        "hostname": "xcrawl.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774513150950503_xcrawl.webp"
       }
     ]
   },
@@ -785,127 +904,148 @@
         "id": "agent-ecosystem-1",
         "name": "Moltbook",
         "url": "https://www.moltbook.cn/",
-        "hostname": "moltbook.cn"
+        "hostname": "moltbook.cn",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633524008038_moltbook.webp"
       },
       {
         "id": "agent-ecosystem-2",
         "name": "InStreet",
         "url": "https://instreet.coze.site/",
-        "hostname": "instreet.coze.site"
+        "hostname": "instreet.coze.site",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633625354053_instreet.webp"
       },
       {
         "id": "agent-ecosystem-3",
         "name": "shrimp chat",
         "url": "https://clawdchat.ai/",
-        "hostname": "clawdchat.ai"
+        "hostname": "clawdchat.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773757962695199_clawdchat.webp"
       },
       {
         "id": "agent-ecosystem-4",
         "name": "shrimp chat",
         "url": "https://xialiaoai.com/",
-        "hostname": "xialiaoai.com"
+        "hostname": "xialiaoai.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773758187466728_xialiao.webp"
       },
       {
         "id": "agent-ecosystem-5",
         "name": "AgentMail",
         "url": "https://www.agentmail.to/",
-        "hostname": "agentmail.to"
+        "hostname": "agentmail.to",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633710625123_agentmail.webp"
       },
       {
         "id": "agent-ecosystem-6",
         "name": "MailboxKit",
         "url": "https://mailboxkit.com/",
-        "hostname": "mailboxkit.com"
+        "hostname": "mailboxkit.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773639487728090_MailboxKit.webp"
       },
       {
         "id": "agent-ecosystem-7",
         "name": "mails",
         "url": "https://mails.dev/",
-        "hostname": "mails.dev"
+        "hostname": "mails.dev",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773920608302037_mails.webp"
       },
       {
         "id": "agent-ecosystem-8",
         "name": "Souls.zip",
         "url": "https://souls.zip/shop",
-        "hostname": "souls.zip"
+        "hostname": "souls.zip",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773395933390508_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260313175606_278_65.webp"
       },
       {
         "id": "agent-ecosystem-9",
         "name": "OpenClaw Startups",
         "url": "https://trustmrr.com/special-category/openclaw",
-        "hostname": "trustmrr.com"
+        "hostname": "trustmrr.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773631898413054_openclaw.webp"
       },
       {
         "id": "agent-ecosystem-10",
         "name": "Exposure observation board",
         "url": "https://openclaw.allegro.earth/",
-        "hostname": "openclaw.allegro.earth"
+        "hostname": "openclaw.allegro.earth",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "agent-ecosystem-11",
         "name": "Claw Bench Rankings",
         "url": "https://clawbench.net/",
-        "hostname": "clawbench.net"
+        "hostname": "clawbench.net",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773862174057855_clawbench.webp"
       },
       {
         "id": "agent-ecosystem-12",
         "name": "ClawPal",
         "url": "https://clawpal.xyz/",
-        "hostname": "clawpal.xyz"
+        "hostname": "clawpal.xyz",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773304444716159_clawpal.webp"
       },
       {
         "id": "agent-ecosystem-13",
         "name": "ClawWatcher",
         "url": "https://clawwatcher.com/",
-        "hostname": "clawwatcher.com"
+        "hostname": "clawwatcher.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773301261580728_clawwatcher.webp"
       },
       {
         "id": "agent-ecosystem-14",
         "name": "ClawManager",
         "url": "https://clawmanager.ai/",
-        "hostname": "clawmanager.ai"
+        "hostname": "clawmanager.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773631812190565_clawmanager.webp"
       },
       {
         "id": "agent-ecosystem-15",
         "name": "Control Center",
         "url": "https://github.com/TianyiDataScience/openclaw-control-center",
-        "hostname": "github.com"
+        "hostname": "github.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773303159817218_github.svg"
       },
       {
         "id": "agent-ecosystem-16",
         "name": "fish market",
         "url": "https://openclawmp.cc/",
-        "hostname": "openclawmp.cc"
+        "hostname": "openclawmp.cc",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632043771243_%E6%B0%B4%E4%BA%A7%E5%B8%82%E5%9C%BA.webp"
       },
       {
         "id": "agent-ecosystem-17",
         "name": "EdgeOne ClawScan",
         "url": "https://matrix.tencent.com/clawscan/",
-        "hostname": "matrix.tencent.com"
+        "hostname": "matrix.tencent.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773754936164939_aig.webp"
       },
       {
         "id": "agent-ecosystem-18",
         "name": "OpenClaw use cases",
         "url": "https://openclawcases.zeabur.app/",
-        "hostname": "openclawcases.zeabur.app"
+        "hostname": "openclawcases.zeabur.app",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "agent-ecosystem-19",
         "name": "A2H Market",
         "url": "https://a2hmarket.ai/",
-        "hostname": "a2hmarket.ai"
+        "hostname": "a2hmarket.ai",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773839524009029_a2hmarket.webp"
       },
       {
         "id": "agent-ecosystem-20",
         "name": "Reddit section",
         "url": "https://www.reddit.com/r/openclaw/",
-        "hostname": "reddit.com"
+        "hostname": "reddit.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773857330041245_reddit.webp"
       },
       {
         "id": "agent-ecosystem-21",
         "name": "Discord official server",
         "url": "https://discord.gg/openclaw",
-        "hostname": "discord.gg"
+        "hostname": "discord.gg",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773856842452959_discord.webp"
       }
     ]
   },
@@ -918,73 +1058,85 @@
         "id": "agent-payments-1",
         "name": "Claw402",
         "url": "https://claw402.ai/",
-        "hostname": "claw402.ai"
+        "hostname": "claw402.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773395097817103_claw402.webp"
       },
       {
         "id": "agent-payments-2",
         "name": "SkillPay",
         "url": "https://skillpay.me/",
-        "hostname": "skillpay.me"
+        "hostname": "skillpay.me",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773395425670225_skillpay.webp"
       },
       {
         "id": "agent-payments-3",
         "name": "FluxA",
         "url": "https://fluxapay.xyz/",
-        "hostname": "fluxapay.xyz"
+        "hostname": "fluxapay.xyz",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773395551306305_fluxa.webp"
       },
       {
         "id": "agent-payments-4",
         "name": "AgentCard.ai",
         "url": "https://agentcard.ai/",
-        "hostname": "agentcard.ai"
+        "hostname": "agentcard.ai",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632583970517_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260316114111_291_65.webp"
       },
       {
         "id": "agent-payments-5",
         "name": "AgentCard.sh",
         "url": "https://agentcard.sh/",
-        "hostname": "agentcard.sh"
+        "hostname": "agentcard.sh",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632236199577_AgentCard.sh.webp"
       },
       {
         "id": "agent-payments-6",
         "name": "Clawcard.sh",
         "url": "https://www.clawcard.sh/",
-        "hostname": "clawcard.sh"
+        "hostname": "clawcard.sh",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773365352552680_%E6%9B%9D%E5%85%89%E8%A7%82%E5%AF%9F%E6%9D%BF.webp"
       },
       {
         "id": "agent-payments-7",
         "name": "Lobster.cash",
         "url": "https://www.lobster.cash/",
-        "hostname": "lobster.cash"
+        "hostname": "lobster.cash",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773717631823335_Lobster.cash.webp"
       },
       {
         "id": "agent-payments-8",
         "name": "Machines Cash",
         "url": "https://www.machines.cash/",
-        "hostname": "machines.cash"
+        "hostname": "machines.cash",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773717767113036_MachinesCash.webp"
       },
       {
         "id": "agent-payments-9",
         "name": "Gate Pay for AI",
         "url": "https://www.gate.com/zh/gate-for-ai/pay",
-        "hostname": "gate.com"
+        "hostname": "gate.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633028578258_GateClaw.webp"
       },
       {
         "id": "agent-payments-10",
         "name": "Coinbase AgentKit",
         "url": "https://www.coinbase.com/zh-cn/developer-platform/products/agentkit",
-        "hostname": "coinbase.com"
+        "hostname": "coinbase.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773717890649190_coinbaseLogoNavigation-4.svg"
       },
       {
         "id": "agent-payments-11",
         "name": "Tempo Wallet",
         "url": "https://wallet.tempo.xyz/",
-        "hostname": "wallet.tempo.xyz"
+        "hostname": "wallet.tempo.xyz",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773989451833265_tempo.webp"
       },
       {
         "id": "agent-payments-12",
         "name": "ClawVault",
         "url": "https://clawvault.cc/",
-        "hostname": "clawvault.cc"
+        "hostname": "clawvault.cc",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774070118718503_clawvaults.webp"
       }
     ]
   },
@@ -997,43 +1149,50 @@
         "id": "crypto-ecosystem-1",
         "name": "OKX Agent Trade Kit",
         "url": "https://www.okx.com/zh-hans/agent-tradekit",
-        "hostname": "okx.com"
+        "hostname": "okx.com",
+        "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1773760366958870_okx.webp"
       },
       {
         "id": "crypto-ecosystem-2",
         "name": "Binance Skills Hub",
         "url": "https://www.binance.com/zh-CN/skills",
-        "hostname": "binance.com"
+        "hostname": "binance.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633240650952_BinanceSkillsHub.webp"
       },
       {
         "id": "crypto-ecosystem-3",
         "name": "GetClaw",
         "url": "https://www.bitget.com/zh-CN/activity-hub/get-claw",
-        "hostname": "bitget.com"
+        "hostname": "bitget.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632983114293_getclaw.webp"
       },
       {
         "id": "crypto-ecosystem-4",
         "name": "HTX AI Skills",
         "url": "https://www.htx.com/zh-cn/skills",
-        "hostname": "htx.com"
+        "hostname": "htx.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773632797183183_%E7%81%AB%E5%B8%81.webp"
       },
       {
         "id": "crypto-ecosystem-5",
         "name": "GateClaw",
         "url": "https://www.gate.com/zh/gateclaw",
-        "hostname": "gate.com"
+        "hostname": "gate.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633028578258_GateClaw.webp"
       },
       {
         "id": "crypto-ecosystem-6",
         "name": "Bybit AI Hub",
         "url": "https://www.bybit.com/zh-MY/ai",
-        "hostname": "bybit.com"
+        "hostname": "bybit.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633145732706_BybitAIHub.webp"
       },
       {
         "id": "crypto-ecosystem-7",
         "name": "COIN CLAW",
         "url": "https://www.aicoin.com/zh-Hans/coinclaw",
-        "hostname": "aicoin.com"
+        "hostname": "aicoin.com",
+        "logo": "https://img.amz123.com/upload/image_cloud/202603/1773633191988031_COINCLAW.webp"
       }
     ]
   }
