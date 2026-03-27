@@ -1,0 +1,1211 @@
+[
+  {
+    "key": "openclaw-landscape",
+    "category": "OpenClaw Landscape",
+    "sourceCategory": "百虾大战",
+    "summary": "Hosted products, launchers, and community entry points built around OpenClaw.",
+    "items": [
+      {
+        "id": "openclaw-landscape-1",
+        "name": "OpenClaw official website",
+        "sourceName": "OpenClaw 官网",
+        "url": "https://openclaw.ai/",
+        "hostname": "openclaw.ai"
+      },
+      {
+        "id": "openclaw-landscape-2",
+        "name": "Official GitHub",
+        "sourceName": "官方GitHub",
+        "url": "https://github.com/openclaw/openclaw",
+        "hostname": "github.com"
+      },
+      {
+        "id": "openclaw-landscape-3",
+        "name": "Kimi Claw",
+        "sourceName": "Kimi Claw",
+        "url": "https://www.kimi.com/bot",
+        "hostname": "kimi.com"
+      },
+      {
+        "id": "openclaw-landscape-4",
+        "name": "MaxClaw",
+        "sourceName": "MaxClaw",
+        "url": "https://agent.minimaxi.com/max-claw",
+        "hostname": "agent.minimaxi.com"
+      },
+      {
+        "id": "openclaw-landscape-5",
+        "name": "Feishu OpenClaw",
+        "sourceName": "飞书OpenClaw",
+        "url": "https://openclaw.feishu.cn/home",
+        "hostname": "openclaw.feishu.cn"
+      },
+      {
+        "id": "openclaw-landscape-6",
+        "name": "ArkClaw",
+        "sourceName": "ArkClaw",
+        "url": "https://www.volcengine.com/experience/ark?mode=claw",
+        "hostname": "volcengine.com"
+      },
+      {
+        "id": "openclaw-landscape-7",
+        "name": "Button Coze",
+        "sourceName": "扣子Coze",
+        "url": "https://code.coze.cn/home",
+        "hostname": "code.coze.cn"
+      },
+      {
+        "id": "openclaw-landscape-8",
+        "name": "DuClaw",
+        "sourceName": "DuClaw",
+        "url": "https://cloud.baidu.com/product/duclaw.html",
+        "hostname": "cloud.baidu.com"
+      },
+      {
+        "id": "openclaw-landscape-9",
+        "name": "Xiaomi MiMo Claw",
+        "sourceName": "Xiaomi MiMo Claw",
+        "url": "https://aistudio.xiaomimimo.com/",
+        "hostname": "aistudio.xiaomimimo.com"
+      },
+      {
+        "id": "openclaw-landscape-10",
+        "name": "StepClaw",
+        "sourceName": "StepClaw",
+        "url": "https://www.stepfun.com/openclaw",
+        "hostname": "stepfun.com"
+      },
+      {
+        "id": "openclaw-landscape-11",
+        "name": "AstronClaw",
+        "sourceName": "AstronClaw",
+        "url": "https://agent.xfyun.cn/astron-claw",
+        "hostname": "agent.xfyun.cn"
+      },
+      {
+        "id": "openclaw-landscape-12",
+        "name": "Happycapy",
+        "sourceName": "Happycapy",
+        "url": "https://happycapy.ai/",
+        "hostname": "happycapy.ai"
+      },
+      {
+        "id": "openclaw-landscape-13",
+        "name": "Qclaw",
+        "sourceName": "Qclaw",
+        "url": "https://claw.guanjia.qq.com/",
+        "hostname": "claw.guanjia.qq.com"
+      },
+      {
+        "id": "openclaw-landscape-14",
+        "name": "DuMate",
+        "sourceName": "DuMate",
+        "url": "https://cloud.baidu.com/product/dumate.html",
+        "hostname": "cloud.baidu.com"
+      },
+      {
+        "id": "openclaw-landscape-15",
+        "name": "LobsterAI Youdao Lobster",
+        "sourceName": "LobsterAI 有道龙虾",
+        "url": "https://lobsterai.youdao.com/",
+        "hostname": "lobsterai.youdao.com"
+      },
+      {
+        "id": "openclaw-landscape-16",
+        "name": "WorkBuddy",
+        "sourceName": "WorkBuddy",
+        "url": "https://www.codebuddy.cn/work/",
+        "hostname": "codebuddy.cn"
+      },
+      {
+        "id": "openclaw-landscape-17",
+        "name": "AutoClaw",
+        "sourceName": "AutoClaw",
+        "url": "https://autoglm.zhipuai.cn/autoclaw/",
+        "hostname": "autoglm.zhipuai.cn"
+      },
+      {
+        "id": "openclaw-landscape-18",
+        "name": "Wukong",
+        "sourceName": "悟空",
+        "url": "https://www.dingtalk.com/wukong",
+        "hostname": "dingtalk.com"
+      },
+      {
+        "id": "openclaw-landscape-19",
+        "name": "360 safe lobster",
+        "sourceName": "360安全龙虾",
+        "url": "https://claw.360.cn/",
+        "hostname": "claw.360.cn"
+      },
+      {
+        "id": "openclaw-landscape-20",
+        "name": "QoderWork",
+        "sourceName": "QoderWork",
+        "url": "https://qoder.com/qoderwork",
+        "hostname": "qoder.com"
+      },
+      {
+        "id": "openclaw-landscape-21",
+        "name": "Step Desktop Partner",
+        "sourceName": "阶跃桌面伙伴",
+        "url": "https://www.stepfun.com/download",
+        "hostname": "stepfun.com"
+      },
+      {
+        "id": "openclaw-landscape-22",
+        "name": "JVS Claw",
+        "sourceName": "JVS Claw",
+        "url": "https://jvs.wuying.aliyun.com/",
+        "hostname": "jvs.wuying.aliyun.com"
+      },
+      {
+        "id": "openclaw-landscape-23",
+        "name": "EasyClaw",
+        "sourceName": "EasyClaw",
+        "url": "https://easyclaw.com/zh-cn/",
+        "hostname": "easyclaw.com"
+      },
+      {
+        "id": "openclaw-landscape-24",
+        "name": "CoPaw",
+        "sourceName": "CoPaw",
+        "url": "https://copaw.agentscope.io/",
+        "hostname": "copaw.agentscope.io"
+      },
+      {
+        "id": "openclaw-landscape-25",
+        "name": "nexu",
+        "sourceName": "nexu",
+        "url": "https://www.xcrawl.com/zh/?keyword=2ozjddoq",
+        "hostname": "xcrawl.com"
+      },
+      {
+        "id": "openclaw-landscape-26",
+        "name": "Manus",
+        "sourceName": "Manus",
+        "url": "https://manus.im/",
+        "hostname": "manus.im"
+      },
+      {
+        "id": "openclaw-landscape-27",
+        "name": "Cow Horse AI",
+        "sourceName": "牛马 AI",
+        "url": "https://niuma.limyai.com/",
+        "hostname": "niuma.limyai.com"
+      },
+      {
+        "id": "openclaw-landscape-28",
+        "name": "MuleRun",
+        "sourceName": "MuleRun",
+        "url": "https://mulerun.com/",
+        "hostname": "mulerun.com"
+      },
+      {
+        "id": "openclaw-landscape-29",
+        "name": "LobeHub",
+        "sourceName": "LobeHub",
+        "url": "https://lobehub.com/zh",
+        "hostname": "lobehub.com"
+      },
+      {
+        "id": "openclaw-landscape-30",
+        "name": "Tabbit browser",
+        "sourceName": "Tabbit 浏览器",
+        "url": "https://tabbitbrowser.com/",
+        "hostname": "tabbitbrowser.com"
+      },
+      {
+        "id": "openclaw-landscape-31",
+        "name": "Linkfox Claw",
+        "sourceName": "Linkfox Claw",
+        "url": "https://agent.linkfox.com/claw",
+        "hostname": "agent.linkfox.com"
+      },
+      {
+        "id": "openclaw-landscape-32",
+        "name": "PoorClaw poor shrimp",
+        "sourceName": "PoorClaw穷虾",
+        "url": "https://www.poorclaw.com/",
+        "hostname": "poorclaw.com"
+      },
+      {
+        "id": "openclaw-landscape-33",
+        "name": "HiClaw",
+        "sourceName": "HiClaw",
+        "url": "https://higress.ai/hiclaw",
+        "hostname": "higress.ai"
+      },
+      {
+        "id": "openclaw-landscape-34",
+        "name": "KiloClaw",
+        "sourceName": "KiloClaw",
+        "url": "https://kilo.ai/kiloclaw",
+        "hostname": "kilo.ai"
+      },
+      {
+        "id": "openclaw-landscape-35",
+        "name": "NemoClaw",
+        "sourceName": "NemoClaw",
+        "url": "https://www.nvidia.com/en-us/ai/nemoclaw/",
+        "hostname": "nvidia.com"
+      },
+      {
+        "id": "openclaw-landscape-36",
+        "name": "Loomy",
+        "sourceName": "Loomy",
+        "url": "https://loomy.xunfei.cn/",
+        "hostname": "loomy.xunfei.cn"
+      }
+    ]
+  },
+  {
+    "key": "cloud-deployment",
+    "category": "Cloud Deployment",
+    "sourceCategory": "云端部署",
+    "summary": "Cloud providers and one-click deployment offers for running OpenClaw faster.",
+    "items": [
+      {
+        "id": "cloud-deployment-1",
+        "name": "Alibaba Cloud",
+        "sourceName": "阿里云",
+        "url": "https://www.aliyun.com/benefit/scene/moltbot",
+        "hostname": "aliyun.com"
+      },
+      {
+        "id": "cloud-deployment-2",
+        "name": "Tencent Cloud",
+        "sourceName": "腾讯云",
+        "url": "https://cloud.tencent.com/act/pro/openclaw",
+        "hostname": "cloud.tencent.com"
+      },
+      {
+        "id": "cloud-deployment-3",
+        "name": "volcano engine",
+        "sourceName": "火山引擎",
+        "url": "https://www.volcengine.com/activity/clawdbot",
+        "hostname": "volcengine.com"
+      },
+      {
+        "id": "cloud-deployment-4",
+        "name": "Baidu Smart Cloud",
+        "sourceName": "百度智能云",
+        "url": "https://cloud.baidu.com/product/BCC/moltbot.html",
+        "hostname": "cloud.baidu.com"
+      },
+      {
+        "id": "cloud-deployment-5",
+        "name": "Huawei Cloud",
+        "sourceName": "华为云",
+        "url": "https://activity.huaweicloud.com/openclaw.html",
+        "hostname": "activity.huaweicloud.com"
+      },
+      {
+        "id": "cloud-deployment-6",
+        "name": "JD Cloud",
+        "sourceName": "京东云",
+        "url": "https://www.jdcloud.com/cn/pages/openclaw",
+        "hostname": "jdcloud.com"
+      },
+      {
+        "id": "cloud-deployment-7",
+        "name": "National Supercomputing Internet",
+        "sourceName": "国家超算互联网",
+        "url": "https://www.scnet.cn/ui/chatbot/openclaw",
+        "hostname": "scnet.cn"
+      },
+      {
+        "id": "cloud-deployment-8",
+        "name": "Tianyi Cloud",
+        "sourceName": "天翼云",
+        "url": "https://www.ctyun.cn/act/OpenClaw",
+        "hostname": "ctyun.cn"
+      }
+    ]
+  },
+  {
+    "key": "tutorial-collections",
+    "category": "Tutorial Collections",
+    "sourceCategory": "教程合集",
+    "summary": "Guides, handbooks, and walkthrough libraries for learning the ecosystem.",
+    "items": [
+      {
+        "id": "tutorial-collections-1",
+        "name": "Official documentation",
+        "sourceName": "官方文档",
+        "url": "https://docs.openclaw.ai/zh-CN",
+        "hostname": "docs.openclaw.ai"
+      },
+      {
+        "id": "tutorial-collections-2",
+        "name": "OpenClaw Orange Book",
+        "sourceName": "OpenClaw 橙皮书",
+        "url": "https://my.feishu.cn/wiki/H27Iw9ussiaYbokymhncExtjnAh",
+        "hostname": "my.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-3",
+        "name": "Vientiane AI Lab​",
+        "sourceName": "万象 AI 实验室​",
+        "url": "https://yunyinghui.feishu.cn/wiki/Ru7PwG82qiDGo1kGMFZcxqpGnnf",
+        "hostname": "yunyinghui.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-4",
+        "name": "WaytoAGI",
+        "sourceName": "WaytoAGI 之路",
+        "url": "https://waytoagi.feishu.cn/wiki/CCR4wl3upi6dF9kVE5YcAcGcnlU",
+        "hostname": "waytoagi.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-5",
+        "name": "Extraordinary Industry and Research",
+        "sourceName": "非凡产研",
+        "url": "https://uniquecapital.feishu.cn/wiki/Nwwiwh6PNiesZqkWNw7cWegjn2c",
+        "hostname": "uniquecapital.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-6",
+        "name": "OpenClaw Chinese Learning Manual",
+        "sourceName": "OpenClaw 中文学习手册",
+        "url": "https://my.feishu.cn/wiki/NzvOwzHdKiwSe2kPLx0cs1jlncg",
+        "hostname": "my.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-7",
+        "name": "OpenClaw from Beginner to Master",
+        "sourceName": "OpenClaw 从入门到精通",
+        "url": "https://my.feishu.cn/docx/P6zsdsgYco6i4XxLeIccvlpvnQe",
+        "hostname": "my.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-8",
+        "name": "Hello Claw Tutorial",
+        "sourceName": "Hello Claw 教程",
+        "url": "https://datawhalechina.github.io/hello-claw/cn/adopt/intro/",
+        "hostname": "datawhalechina.github.io"
+      },
+      {
+        "id": "tutorial-collections-9",
+        "name": "Awesome Tutorial",
+        "sourceName": "Awesome 教程",
+        "url": "https://awesome.tryopenclaw.asia/",
+        "hostname": "awesome.tryopenclaw.asia"
+      },
+      {
+        "id": "tutorial-collections-10",
+        "name": "Feishu Official Cultivation Guide",
+        "sourceName": "飞书官方修炼指南",
+        "url": "https://larkcommunity.feishu.cn/wiki/GGJPwJ2IfiTynVk2Vy4cZbRvn2f",
+        "hostname": "larkcommunity.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-11",
+        "name": "Ma Xiao’s guide to playing with shrimps",
+        "sourceName": "麻小玩虾指南",
+        "url": "https://t0woxppdywz.feishu.cn/wiki/Oxf0wcTECie8KkkwkIlc6psanNe",
+        "hostname": "t0woxppdywz.feishu.cn"
+      },
+      {
+        "id": "tutorial-collections-12",
+        "name": "Complete collection of Chinese use cases",
+        "sourceName": "中文用例大全",
+        "url": "https://github.com/AlexAnys/awesome-openclaw-usecases-zh",
+        "hostname": "github.com"
+      }
+    ]
+  },
+  {
+    "key": "popular-ai-tools",
+    "category": "Popular AI Tools",
+    "sourceCategory": "常用AI",
+    "summary": "General-purpose AI products frequently used alongside OpenClaw workflows.",
+    "items": [
+      {
+        "id": "popular-ai-tools-1",
+        "name": "Qianwen",
+        "sourceName": "千问",
+        "url": "https://www.qianwen.com/",
+        "hostname": "qianwen.com"
+      },
+      {
+        "id": "popular-ai-tools-2",
+        "name": "bean bag",
+        "sourceName": "豆包",
+        "url": "https://www.doubao.com/",
+        "hostname": "doubao.com"
+      },
+      {
+        "id": "popular-ai-tools-3",
+        "name": "Kimi",
+        "sourceName": "Kimi",
+        "url": "https://www.kimi.com/",
+        "hostname": "kimi.com"
+      },
+      {
+        "id": "popular-ai-tools-4",
+        "name": "Tencent Yuanbao",
+        "sourceName": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/",
+        "hostname": "yuanbao.tencent.com"
+      },
+      {
+        "id": "popular-ai-tools-5",
+        "name": "DeepSeek",
+        "sourceName": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "hostname": "chat.deepseek.com"
+      },
+      {
+        "id": "popular-ai-tools-6",
+        "name": "ChatGPT",
+        "sourceName": "ChatGPT",
+        "url": "https://chat.openai.com",
+        "hostname": "chat.openai.com"
+      },
+      {
+        "id": "popular-ai-tools-7",
+        "name": "Gemini",
+        "sourceName": "Gemini",
+        "url": "https://gemini.google.com/",
+        "hostname": "gemini.google.com"
+      },
+      {
+        "id": "popular-ai-tools-8",
+        "name": "Grok",
+        "sourceName": "Grok",
+        "url": "https://grok.com/",
+        "hostname": "grok.com"
+      },
+      {
+        "id": "popular-ai-tools-9",
+        "name": "Dream AI",
+        "sourceName": "即梦AI",
+        "url": "https://jimeng.jianying.com/ai-tool/home",
+        "hostname": "jimeng.jianying.com"
+      }
+    ]
+  },
+  {
+    "key": "coding-plans",
+    "category": "Coding Plans",
+    "sourceCategory": "Coding Plan",
+    "summary": "Subscription plans and coding bundles tuned for AI-assisted development.",
+    "items": [
+      {
+        "id": "coding-plans-1",
+        "name": "Kimi",
+        "sourceName": "Kimi",
+        "url": "https://www.kimi.com/code",
+        "hostname": "kimi.com"
+      },
+      {
+        "id": "coding-plans-2",
+        "name": "MiniMax Token Plan",
+        "sourceName": "MiniMax Token Plan",
+        "url": "https://platform.minimaxi.com/subscribe/token-plan",
+        "hostname": "platform.minimaxi.com"
+      },
+      {
+        "id": "coding-plans-3",
+        "name": "Coding Plan",
+        "sourceName": "智谱 Coding Plan",
+        "url": "https://bigmodel.cn/glm-coding",
+        "hostname": "bigmodel.cn"
+      },
+      {
+        "id": "coding-plans-4",
+        "name": "Tencent Cloud Coding Plan",
+        "sourceName": "腾讯云 Coding Plan",
+        "url": "https://cloud.tencent.com/act/pro/codingplan",
+        "hostname": "cloud.tencent.com"
+      },
+      {
+        "id": "coding-plans-5",
+        "name": "Alibaba Cloud Coding Plan",
+        "sourceName": "阿里云Coding Plan",
+        "url": "https://www.aliyun.com/benefit/scene/codingplan",
+        "hostname": "aliyun.com"
+      },
+      {
+        "id": "coding-plans-6",
+        "name": "Volcano Engine Coding Plan",
+        "sourceName": "火山引擎Coding Plan",
+        "url": "https://www.volcengine.com/activity/codingplan",
+        "hostname": "volcengine.com"
+      },
+      {
+        "id": "coding-plans-7",
+        "name": "Baidu Qianfan Coding Plan",
+        "sourceName": "百度千帆Coding Plan",
+        "url": "https://cloud.baidu.com/product/codingplan.html",
+        "hostname": "cloud.baidu.com"
+      },
+      {
+        "id": "coding-plans-8",
+        "name": "Step Plan",
+        "sourceName": "Step Plan",
+        "url": "https://platform.stepfun.com/step-plan",
+        "hostname": "platform.stepfun.com"
+      }
+    ]
+  },
+  {
+    "key": "maas-platforms",
+    "category": "MaaS Platforms",
+    "sourceCategory": "Maas平台",
+    "summary": "Model-as-a-service platforms for building, hosting, and calling AI models.",
+    "items": [
+      {
+        "id": "maas-platforms-1",
+        "name": "Alibaba Cloud",
+        "sourceName": "阿里云",
+        "url": "https://bailian.console.aliyun.com/",
+        "hostname": "bailian.console.aliyun.com"
+      },
+      {
+        "id": "maas-platforms-2",
+        "name": "Volcano Ark",
+        "sourceName": "火山方舟",
+        "url": "https://www.volcengine.com/product/ark",
+        "hostname": "volcengine.com"
+      },
+      {
+        "id": "maas-platforms-3",
+        "name": "Baidu Qianfan",
+        "sourceName": "百度千帆",
+        "url": "https://cloud.baidu.com/product-s/qianfan_home",
+        "hostname": "cloud.baidu.com"
+      },
+      {
+        "id": "maas-platforms-4",
+        "name": "silicon based flow",
+        "sourceName": "硅基流动",
+        "url": "https://www.siliconflow.cn/",
+        "hostname": "siliconflow.cn"
+      },
+      {
+        "id": "maas-platforms-5",
+        "name": "Qiniuyun",
+        "sourceName": "七牛云",
+        "url": "https://www.qiniu.com/ai/agent",
+        "hostname": "qiniu.com"
+      },
+      {
+        "id": "maas-platforms-6",
+        "name": "iFlytek Spark",
+        "sourceName": "讯飞星火",
+        "url": "https://xinghuo.xfyun.cn/maas-home",
+        "hostname": "xinghuo.xfyun.cn"
+      },
+      {
+        "id": "maas-platforms-7",
+        "name": "OpenRouter",
+        "sourceName": "OpenRouter",
+        "url": "https://openrouter.ai",
+        "hostname": "openrouter.ai"
+      },
+      {
+        "id": "maas-platforms-8",
+        "name": "ZenMux",
+        "sourceName": "ZenMux",
+        "url": "https://zenmux.ai/invite/9ENK8S",
+        "hostname": "zenmux.ai"
+      },
+      {
+        "id": "maas-platforms-9",
+        "name": "Model123",
+        "sourceName": "Model123",
+        "url": "https://www.model123.ai/",
+        "hostname": "model123.ai"
+      },
+      {
+        "id": "maas-platforms-10",
+        "name": "Huawei Cloud",
+        "sourceName": "华为云",
+        "url": "https://www.huaweicloud.com/ai/token-service.html",
+        "hostname": "huaweicloud.com"
+      },
+      {
+        "id": "maas-platforms-11",
+        "name": "Kuaishou Wanqing",
+        "sourceName": "快手万擎",
+        "url": "https://www.streamlake.com/product/wanqing",
+        "hostname": "streamlake.com"
+      }
+    ]
+  },
+  {
+    "key": "ai-models",
+    "category": "AI Models",
+    "sourceCategory": "AI大模型",
+    "summary": "Foundation model families relevant to agent workflows, coding, and multimodal use cases.",
+    "items": [
+      {
+        "id": "ai-models-1",
+        "name": "Kimi",
+        "sourceName": "Kimi",
+        "url": "https://platform.moonshot.cn/",
+        "hostname": "platform.moonshot.cn"
+      },
+      {
+        "id": "ai-models-2",
+        "name": "MiniMax",
+        "sourceName": "MiniMax",
+        "url": "https://www.minimaxi.com/",
+        "hostname": "minimaxi.com"
+      },
+      {
+        "id": "ai-models-3",
+        "name": "GLM",
+        "sourceName": "智谱GLM",
+        "url": "https://www.bigmodel.cn/",
+        "hostname": "bigmodel.cn"
+      },
+      {
+        "id": "ai-models-4",
+        "name": "DeepSeek",
+        "sourceName": "DeepSeek",
+        "url": "https://www.deepseek.com/",
+        "hostname": "deepseek.com"
+      },
+      {
+        "id": "ai-models-5",
+        "name": "Qianwen Qwen",
+        "sourceName": "千问Qwen",
+        "url": "https://www.aliyun.com/product/tongyi",
+        "hostname": "aliyun.com"
+      },
+      {
+        "id": "ai-models-6",
+        "name": "Doubao",
+        "sourceName": "豆包Doubao",
+        "url": "https://www.doubao.com/chat/",
+        "hostname": "doubao.com"
+      },
+      {
+        "id": "ai-models-7",
+        "name": "Claude",
+        "sourceName": "Claude",
+        "url": "https://platform.claude.com/",
+        "hostname": "platform.claude.com"
+      },
+      {
+        "id": "ai-models-8",
+        "name": "Gemini",
+        "sourceName": "Gemini",
+        "url": "https://aistudio.google.com/",
+        "hostname": "aistudio.google.com"
+      },
+      {
+        "id": "ai-models-9",
+        "name": "GPT",
+        "sourceName": "GPT",
+        "url": "https://platform.openai.com/",
+        "hostname": "platform.openai.com"
+      },
+      {
+        "id": "ai-models-10",
+        "name": "Grok",
+        "sourceName": "Grok",
+        "url": "https://console.x.ai/",
+        "hostname": "console.x.ai"
+      },
+      {
+        "id": "ai-models-11",
+        "name": "Llama",
+        "sourceName": "Llama",
+        "url": "https://www.llama.com/",
+        "hostname": "llama.com"
+      },
+      {
+        "id": "ai-models-12",
+        "name": "Mistral",
+        "sourceName": "Mistral",
+        "url": "https://mistral.ai/",
+        "hostname": "mistral.ai"
+      },
+      {
+        "id": "ai-models-13",
+        "name": "MiMo",
+        "sourceName": "MiMo",
+        "url": "https://mimo.xiaomi.com/zh/",
+        "hostname": "mimo.xiaomi.com"
+      },
+      {
+        "id": "ai-models-14",
+        "name": "iFlytek Spark",
+        "sourceName": "讯飞星火",
+        "url": "https://xinghuo.xfyun.cn/sparkapi",
+        "hostname": "xinghuo.xfyun.cn"
+      },
+      {
+        "id": "ai-models-15",
+        "name": "Tencent Hunyuan",
+        "sourceName": "腾讯混元",
+        "url": "https://cloud.tencent.com/product/tclm",
+        "hostname": "cloud.tencent.com"
+      },
+      {
+        "id": "ai-models-16",
+        "name": "Baidu Wenxin",
+        "sourceName": "百度文心",
+        "url": "https://yiyan.baidu.com/",
+        "hostname": "yiyan.baidu.com"
+      },
+      {
+        "id": "ai-models-17",
+        "name": "Step stars",
+        "sourceName": "阶跃星辰",
+        "url": "https://platform.stepfun.com/",
+        "hostname": "platform.stepfun.com"
+      },
+      {
+        "id": "ai-models-18",
+        "name": "PinchBench",
+        "sourceName": "PinchBench",
+        "url": "https://pinchbench.com/",
+        "hostname": "pinchbench.com"
+      },
+      {
+        "id": "ai-models-19",
+        "name": "Artificial Analysis",
+        "sourceName": "Artificial Analysis",
+        "url": "https://artificialanalysis.ai/",
+        "hostname": "artificialanalysis.ai"
+      },
+      {
+        "id": "ai-models-20",
+        "name": "Arena.ai",
+        "sourceName": "Arena.ai",
+        "url": "https://arena.ai/leaderboard",
+        "hostname": "arena.ai"
+      },
+      {
+        "id": "ai-models-21",
+        "name": "OpenRouter Rankings",
+        "sourceName": "OpenRouter Rankings",
+        "url": "https://openrouter.ai/rankings",
+        "hostname": "openrouter.ai"
+      },
+      {
+        "id": "ai-models-22",
+        "name": "XSCT Bench",
+        "sourceName": "XSCT Bench",
+        "url": "https://xsct.ai/",
+        "hostname": "xsct.ai"
+      }
+    ]
+  },
+  {
+    "key": "skills-marketplaces",
+    "category": "Skills Marketplaces",
+    "sourceCategory": "Skills市场",
+    "summary": "Registries, hubs, and directories for finding installable skills and extensions.",
+    "items": [
+      {
+        "id": "skills-marketplaces-1",
+        "name": "ClawHub",
+        "sourceName": "ClawHub",
+        "url": "https://clawhub.ai/",
+        "hostname": "clawhub.ai"
+      },
+      {
+        "id": "skills-marketplaces-2",
+        "name": "SkillHub",
+        "sourceName": "SkillHub",
+        "url": "https://skillhub.tencent.com/",
+        "hostname": "skillhub.tencent.com"
+      },
+      {
+        "id": "skills-marketplaces-3",
+        "name": "Skills.sh",
+        "sourceName": "Skills.sh",
+        "url": "https://skills.sh/",
+        "hostname": "skills.sh"
+      },
+      {
+        "id": "skills-marketplaces-4",
+        "name": "SkillsMP",
+        "sourceName": "SkillsMP",
+        "url": "https://skillsmp.com/zh",
+        "hostname": "skillsmp.com"
+      },
+      {
+        "id": "skills-marketplaces-5",
+        "name": "Shrimp Review Skill",
+        "sourceName": "虾评Skill",
+        "url": "https://xiaping.coze.site/",
+        "hostname": "xiaping.coze.site"
+      },
+      {
+        "id": "skills-marketplaces-6",
+        "name": "SkillHubChina",
+        "sourceName": "SkillHub中国",
+        "url": "https://www.skill-cn.com/",
+        "hostname": "skill-cn.com"
+      },
+      {
+        "id": "skills-marketplaces-7",
+        "name": "Agent Skills Hub",
+        "sourceName": "Agent Skills Hub",
+        "url": "https://agentskillshub.top/",
+        "hostname": "agentskillshub.top"
+      },
+      {
+        "id": "skills-marketplaces-8",
+        "name": "OpenClaw Directory",
+        "sourceName": "OpenClaw Directory",
+        "url": "https://openclawdirectory.co.uk/",
+        "hostname": "openclawdirectory.co.uk"
+      },
+      {
+        "id": "skills-marketplaces-9",
+        "name": "OpenClawDir",
+        "sourceName": "OpenClawDir",
+        "url": "https://openclawdir.com/",
+        "hostname": "openclawdir.com"
+      },
+      {
+        "id": "skills-marketplaces-10",
+        "name": "ClawSkills",
+        "sourceName": "ClawSkills",
+        "url": "https://clawskills.sh/",
+        "hostname": "clawskills.sh"
+      },
+      {
+        "id": "skills-marketplaces-11",
+        "name": "CryptoSkills",
+        "sourceName": "CryptoSkills",
+        "url": "https://cryptoskills.dev/",
+        "hostname": "cryptoskills.dev"
+      },
+      {
+        "id": "skills-marketplaces-12",
+        "name": "CocoLoop",
+        "sourceName": "CocoLoop",
+        "url": "https://hub.cocoloop.cn/",
+        "hostname": "hub.cocoloop.cn"
+      }
+    ]
+  },
+  {
+    "key": "broader-ecosystem",
+    "category": "Broader Ecosystem",
+    "sourceCategory": "综合生态",
+    "summary": "Adjacent ecosystem tools that extend what agents can discover or automate.",
+    "items": [
+      {
+        "id": "broader-ecosystem-1",
+        "name": "Xcrawl",
+        "sourceName": "Xcrawl",
+        "url": "https://xcrawl.com/?keyword=2ozjddoq",
+        "hostname": "xcrawl.com"
+      }
+    ]
+  },
+  {
+    "key": "agent-ecosystem",
+    "category": "Agent Ecosystem",
+    "sourceCategory": "Agent生态",
+    "summary": "Agent-native products, social networks, and infrastructure services.",
+    "items": [
+      {
+        "id": "agent-ecosystem-1",
+        "name": "Moltbook",
+        "sourceName": "Moltbook",
+        "url": "https://www.moltbook.cn/",
+        "hostname": "moltbook.cn"
+      },
+      {
+        "id": "agent-ecosystem-2",
+        "name": "InStreet",
+        "sourceName": "InStreet",
+        "url": "https://instreet.coze.site/",
+        "hostname": "instreet.coze.site"
+      },
+      {
+        "id": "agent-ecosystem-3",
+        "name": "shrimp chat",
+        "sourceName": "虾聊",
+        "url": "https://clawdchat.ai/",
+        "hostname": "clawdchat.ai"
+      },
+      {
+        "id": "agent-ecosystem-4",
+        "name": "shrimp chat",
+        "sourceName": "虾聊",
+        "url": "https://xialiaoai.com/",
+        "hostname": "xialiaoai.com"
+      },
+      {
+        "id": "agent-ecosystem-5",
+        "name": "AgentMail",
+        "sourceName": "AgentMail",
+        "url": "https://www.agentmail.to/",
+        "hostname": "agentmail.to"
+      },
+      {
+        "id": "agent-ecosystem-6",
+        "name": "MailboxKit",
+        "sourceName": "MailboxKit",
+        "url": "https://mailboxkit.com/",
+        "hostname": "mailboxkit.com"
+      },
+      {
+        "id": "agent-ecosystem-7",
+        "name": "mails",
+        "sourceName": "mails",
+        "url": "https://mails.dev/",
+        "hostname": "mails.dev"
+      },
+      {
+        "id": "agent-ecosystem-8",
+        "name": "Souls.zip",
+        "sourceName": "Souls.zip",
+        "url": "https://souls.zip/shop",
+        "hostname": "souls.zip"
+      },
+      {
+        "id": "agent-ecosystem-9",
+        "name": "OpenClaw Startups",
+        "sourceName": "OpenClaw Startups",
+        "url": "https://trustmrr.com/special-category/openclaw",
+        "hostname": "trustmrr.com"
+      },
+      {
+        "id": "agent-ecosystem-10",
+        "name": "Exposure observation board",
+        "sourceName": "曝光观察板",
+        "url": "https://openclaw.allegro.earth/",
+        "hostname": "openclaw.allegro.earth"
+      },
+      {
+        "id": "agent-ecosystem-11",
+        "name": "Claw Bench Rankings",
+        "sourceName": "Claw Bench 排行榜",
+        "url": "https://clawbench.net/",
+        "hostname": "clawbench.net"
+      },
+      {
+        "id": "agent-ecosystem-12",
+        "name": "ClawPal",
+        "sourceName": "ClawPal",
+        "url": "https://clawpal.xyz/",
+        "hostname": "clawpal.xyz"
+      },
+      {
+        "id": "agent-ecosystem-13",
+        "name": "ClawWatcher",
+        "sourceName": "ClawWatcher",
+        "url": "https://clawwatcher.com/",
+        "hostname": "clawwatcher.com"
+      },
+      {
+        "id": "agent-ecosystem-14",
+        "name": "ClawManager",
+        "sourceName": "ClawManager",
+        "url": "https://clawmanager.ai/",
+        "hostname": "clawmanager.ai"
+      },
+      {
+        "id": "agent-ecosystem-15",
+        "name": "Control Center",
+        "sourceName": "Control Center",
+        "url": "https://github.com/TianyiDataScience/openclaw-control-center",
+        "hostname": "github.com"
+      },
+      {
+        "id": "agent-ecosystem-16",
+        "name": "fish market",
+        "sourceName": "水产市场",
+        "url": "https://openclawmp.cc/",
+        "hostname": "openclawmp.cc"
+      },
+      {
+        "id": "agent-ecosystem-17",
+        "name": "EdgeOne ClawScan",
+        "sourceName": "EdgeOne ClawScan",
+        "url": "https://matrix.tencent.com/clawscan/",
+        "hostname": "matrix.tencent.com"
+      },
+      {
+        "id": "agent-ecosystem-18",
+        "name": "OpenClaw use cases",
+        "sourceName": "OpenClaw 使用案例",
+        "url": "https://openclawcases.zeabur.app/",
+        "hostname": "openclawcases.zeabur.app"
+      },
+      {
+        "id": "agent-ecosystem-19",
+        "name": "A2H Market",
+        "sourceName": "A2H Market",
+        "url": "https://a2hmarket.ai/",
+        "hostname": "a2hmarket.ai"
+      },
+      {
+        "id": "agent-ecosystem-20",
+        "name": "Reddit section",
+        "sourceName": "Reddit板块",
+        "url": "https://www.reddit.com/r/openclaw/",
+        "hostname": "reddit.com"
+      },
+      {
+        "id": "agent-ecosystem-21",
+        "name": "Discord official server",
+        "sourceName": "Discord官方服务器",
+        "url": "https://discord.gg/openclaw",
+        "hostname": "discord.gg"
+      }
+    ]
+  },
+  {
+    "key": "agent-payments",
+    "category": "Agent Payments",
+    "sourceCategory": "Agent支付",
+    "summary": "Wallets, cards, and payment rails built for AI agents and machine commerce.",
+    "items": [
+      {
+        "id": "agent-payments-1",
+        "name": "Claw402",
+        "sourceName": "Claw402",
+        "url": "https://claw402.ai/",
+        "hostname": "claw402.ai"
+      },
+      {
+        "id": "agent-payments-2",
+        "name": "SkillPay",
+        "sourceName": "SkillPay",
+        "url": "https://skillpay.me/",
+        "hostname": "skillpay.me"
+      },
+      {
+        "id": "agent-payments-3",
+        "name": "FluxA",
+        "sourceName": "FluxA",
+        "url": "https://fluxapay.xyz/",
+        "hostname": "fluxapay.xyz"
+      },
+      {
+        "id": "agent-payments-4",
+        "name": "AgentCard.ai",
+        "sourceName": "AgentCard.ai",
+        "url": "https://agentcard.ai/",
+        "hostname": "agentcard.ai"
+      },
+      {
+        "id": "agent-payments-5",
+        "name": "AgentCard.sh",
+        "sourceName": "AgentCard.sh",
+        "url": "https://agentcard.sh/",
+        "hostname": "agentcard.sh"
+      },
+      {
+        "id": "agent-payments-6",
+        "name": "Clawcard.sh",
+        "sourceName": "Clawcard.sh",
+        "url": "https://www.clawcard.sh/",
+        "hostname": "clawcard.sh"
+      },
+      {
+        "id": "agent-payments-7",
+        "name": "Lobster.cash",
+        "sourceName": "Lobster.cash",
+        "url": "https://www.lobster.cash/",
+        "hostname": "lobster.cash"
+      },
+      {
+        "id": "agent-payments-8",
+        "name": "Machines Cash",
+        "sourceName": "Machines Cash",
+        "url": "https://www.machines.cash/",
+        "hostname": "machines.cash"
+      },
+      {
+        "id": "agent-payments-9",
+        "name": "Gate Pay for AI",
+        "sourceName": "Gate Pay for AI",
+        "url": "https://www.gate.com/zh/gate-for-ai/pay",
+        "hostname": "gate.com"
+      },
+      {
+        "id": "agent-payments-10",
+        "name": "Coinbase AgentKit",
+        "sourceName": "Coinbase AgentKit",
+        "url": "https://www.coinbase.com/zh-cn/developer-platform/products/agentkit",
+        "hostname": "coinbase.com"
+      },
+      {
+        "id": "agent-payments-11",
+        "name": "Tempo Wallet",
+        "sourceName": "Tempo Wallet",
+        "url": "https://wallet.tempo.xyz/",
+        "hostname": "wallet.tempo.xyz"
+      },
+      {
+        "id": "agent-payments-12",
+        "name": "ClawVault",
+        "sourceName": "ClawVault",
+        "url": "https://clawvault.cc/",
+        "hostname": "clawvault.cc"
+      }
+    ]
+  },
+  {
+    "key": "crypto-ecosystem",
+    "category": "Crypto Ecosystem",
+    "sourceCategory": "币圈生态",
+    "summary": "Crypto trading, wallet, and Web3 products connected to agent workflows.",
+    "items": [
+      {
+        "id": "crypto-ecosystem-1",
+        "name": "OKX Agent Trade Kit",
+        "sourceName": "OKX Agent Trade Kit",
+        "url": "https://www.okx.com/zh-hans/agent-tradekit",
+        "hostname": "okx.com"
+      },
+      {
+        "id": "crypto-ecosystem-2",
+        "name": "Binance Skills Hub",
+        "sourceName": "Binance Skills Hub",
+        "url": "https://www.binance.com/zh-CN/skills",
+        "hostname": "binance.com"
+      },
+      {
+        "id": "crypto-ecosystem-3",
+        "name": "GetClaw",
+        "sourceName": "GetClaw",
+        "url": "https://www.bitget.com/zh-CN/activity-hub/get-claw",
+        "hostname": "bitget.com"
+      },
+      {
+        "id": "crypto-ecosystem-4",
+        "name": "HTX AI Skills",
+        "sourceName": "HTX AI Skills",
+        "url": "https://www.htx.com/zh-cn/skills",
+        "hostname": "htx.com"
+      },
+      {
+        "id": "crypto-ecosystem-5",
+        "name": "GateClaw",
+        "sourceName": "GateClaw",
+        "url": "https://www.gate.com/zh/gateclaw",
+        "hostname": "gate.com"
+      },
+      {
+        "id": "crypto-ecosystem-6",
+        "name": "Bybit AI Hub",
+        "sourceName": "Bybit AI Hub",
+        "url": "https://www.bybit.com/zh-MY/ai",
+        "hostname": "bybit.com"
+      },
+      {
+        "id": "crypto-ecosystem-7",
+        "name": "COIN CLAW",
+        "sourceName": "COIN CLAW",
+        "url": "https://www.aicoin.com/zh-Hans/coinclaw",
+        "hostname": "aicoin.com"
+      }
+    ]
+  }
+]
