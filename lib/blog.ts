@@ -253,6 +253,52 @@ const readGuidePost = cache(async (slug: string) => {
 export const getBlogPost = readBlogPost
 export const getGuidePost = readGuidePost
 
+export const getRecentBlogPosts = cache(async (limit = 3): Promise<BlogListItem[]> => {
+  if (!supabase) {
+    return []
+  }
+
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select(BLOG_LIST_COLUMNS)
+    .or(NON_GUIDE_FILTER)
+    .order('published_at', { ascending: false })
+    .limit(limit)
+
+  if (error || !data) {
+    if (error) {
+      console.error('Error fetching recent blog posts:', error)
+    }
+
+    return []
+  }
+
+  return data.map(normalizePost)
+})
+
+export const getRecentGuidePosts = cache(async (limit = 3): Promise<BlogListItem[]> => {
+  if (!supabase) {
+    return []
+  }
+
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select(BLOG_LIST_COLUMNS)
+    .eq('category', 'guides')
+    .order('published_at', { ascending: false })
+    .limit(limit)
+
+  if (error || !data) {
+    if (error) {
+      console.error('Error fetching recent guide posts:', error)
+    }
+
+    return []
+  }
+
+  return data.map(normalizePost)
+})
+
 export const getBlogSlugs = cache(async () => {
   if (!supabase) {
     return []

@@ -9,14 +9,14 @@ import { BLOG_PAGE_SIZE, getBlogListData } from '@/lib/blog'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Blog - AI Automation & OpenClaw Insights',
-  description: 'Expert insights on AI automation, OpenClaw skills, developer tools, and modern engineering practices.',
+  title: 'News & Analysis',
+  description: 'Editorial coverage, product analysis, and workflow reporting across AI tools, models, and agent systems.',
   alternates: {
     canonical: '/blog',
   },
   openGraph: {
-    title: 'ClawList Blog - AI Automation Insights',
-    description: 'Expert insights on AI automation, OpenClaw skills, and developer tools.',
+    title: 'ClawList News & Analysis',
+    description: 'Editorial coverage, product analysis, and workflow reporting across AI tools, models, and agent systems.',
     url: 'https://clawlist.io/blog',
   },
 }
@@ -72,17 +72,19 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <Breadcrumb
           items={[
             { label: 'Home', href: '/' },
-            { label: 'Blog' },
+            { label: 'News' },
           ]}
         />
 
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl font-black mb-4 tracking-tighter">
-            BLOG.
+            NEWS &
+            <br />
+            ANALYSIS.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-            Expert insights on AI automation, OpenClaw skills, developer tools, and modern engineering practices.
+            Editorial coverage, product analysis, and workflow reporting across AI tools, models, and agent systems.
           </p>
         </div>
 
@@ -97,7 +99,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               href="/blog"
               className="text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 underline underline-offset-4"
             >
-              View all posts
+              View all coverage
             </Link>
           )}
         </div>
@@ -109,7 +111,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             <p className="text-slate-600 dark:text-slate-400 text-lg">
               {selectedTag
                 ? `No posts found for #${selectedTag}.`
-                : 'No blog posts available yet.'}
+                : 'No coverage published yet.'}
             </p>
           </div>
         ) : (

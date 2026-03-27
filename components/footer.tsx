@@ -6,21 +6,27 @@ export function Footer() {
   return (
     <footer className="border-t bg-neutral-50 dark:bg-neutral-900 py-12 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <h3 className="font-bold mb-4">ClawList.io</h3>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              OpenClaw ecosystem resource hub
+              Global AI directory, newsroom, and workflow reference.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
+            <h4 className="font-semibold mb-4">Discover</h4>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Home</Link></li>
+              <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">News</Link></li>
               <li><Link href="/skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link></li>
-              <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
               <li><Link href="/topics" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Topics</Link></li>
-              <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Blog</Link></li>
               <li><Link href="/apps" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Apps</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Learn</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
               <li><Link href="/recipes" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Recipes</Link></li>
               <li><Link href="/models" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Models</Link></li>
               <li><Link href="/api-marketplace" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">API Market</Link></li>

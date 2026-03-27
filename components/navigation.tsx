@@ -11,17 +11,17 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const links = [
-    { href: '/skills', label: 'Skills' },
+    { href: '/blog', label: 'News' },
     { href: '/guides', label: 'Guides' },
+    { href: '/skills', label: 'Skills' },
     { href: '/topics', label: 'Topics' },
-    { href: '/blog', label: 'Blog' },
   ]
 
   return (
     <nav className="border-b bg-white dark:bg-neutral-950 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold tracking-tight">
             ClawList.io
           </Link>
 

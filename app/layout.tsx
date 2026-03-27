@@ -13,28 +13,28 @@ const adSenseClient = 'ca-pub-2357915943973678'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ClawList — The Skills Marketplace for AI Agents',
-    template: '%s | ClawList',
+    default: 'ClawList.io - Global AI Directory & Newsroom',
+    template: '%s | ClawList.io',
   },
   description:
-    'Discover, share, and install Skills for OpenClaw and other AI agent frameworks. Browse 50+ ready-to-use skills for Claude Code, Manus, and more.',
+    'Track AI tools, models, agents, guides, and industry coverage in one fast, editorially organized hub.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'ClawList — The Skills Marketplace for AI Agents',
+    title: 'ClawList.io - Global AI Directory & Newsroom',
     description:
-      'Discover, share, and install Skills for OpenClaw and other AI agent frameworks.',
+      'Track AI tools, models, agents, guides, and industry coverage in one fast, editorially organized hub.',
     url: siteUrl,
-    siteName: 'ClawList',
+    siteName: 'ClawList.io',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ClawList — The Skills Marketplace for AI Agents',
+    title: 'ClawList.io - Global AI Directory & Newsroom',
     description:
-      'Discover, share, and install Skills for OpenClaw and other AI agent frameworks.',
+      'Track AI tools, models, agents, guides, and industry coverage in one fast, editorially organized hub.',
   },
 }
 
@@ -46,8 +46,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'ClawList',
-    description: 'The Skills Marketplace for AI Agents. Discover, share, and install skills for OpenClaw, Claude Code, and more.',
+    name: 'ClawList.io',
+    description: 'Track AI tools, models, agents, guides, and industry coverage in one fast, editorially organized hub.',
     url: siteUrl,
     potentialAction: {
       '@type': 'SearchAction',
@@ -57,33 +57,6 @@ export default function RootLayout({
       },
       'query-input': 'required name=search_term_string',
     },
-  }
-  const featuredSkillsJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Featured OpenClaw Skills',
-    description: 'Top-rated skills for OpenClaw AI agent framework',
-    numberOfItems: 3,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        url: 'https://clawlist.io/skills/image-gen',
-        name: 'Image Generator',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        url: 'https://clawlist.io/skills/data-scraper',
-        name: 'Data Scraper',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        url: 'https://clawlist.io/skills/github-issues',
-        name: 'GitHub Issues',
-      },
-    ],
   }
 
   return (
@@ -102,10 +75,6 @@ gtag('consent', 'default', {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(featuredSkillsJsonLd) }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
