@@ -5,6 +5,7 @@ import { ContentViewTracker } from '@/components/content-view-tracker'
 import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
 import { TopicHubCta } from '@/components/topic-hub-cta'
+import { assessBlogIndexability } from '@/lib/content-quality'
 import {
   getBlogPost,
   getBlogSlugs,
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.title,
     post.summary || post.content.substring(0, 160),
   )
+  const quality = assessBlogIndexability(post)
   const canonicalPath = post.category === 'guides'
     ? `/guides/${slug}`
     : seo.canonicalPath ?? `/blog/${slug}`
@@ -78,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: seo.description,
       images: [`/api/og/blog?slug=${slug}`],
     },
-    ...(seo.canonicalPath && {
+    ...((seo.canonicalPath || !quality.indexable) && {
       robots: {
         index: false,
         follow: true,

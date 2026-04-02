@@ -1,3 +1,5 @@
+import { assessBlogIndexability, assessSkillIndexability } from '@/lib/content-quality'
+import { resolveBlogSeo } from '@/lib/seo'
 import { supabase } from '@/lib/supabase'
 import { topicHubs } from '@/lib/topic-hubs'
 
@@ -11,11 +13,20 @@ type SitemapEntry = {
 type SitemapSkillRow = {
   slug: string
   created_at?: string | null
+  name?: string | null
+  summary?: string | null
+  description?: string | null
+  install_cmd?: string | null
+  github_url?: string | null
+  permissions?: string[] | null
 }
 
 type SitemapPostRow = {
   slug: string
   category?: string | null
+  title?: string | null
+  summary?: string | null
+  content?: string | null
   published_at?: string | null
   updated_at?: string | null
 }
@@ -26,16 +37,12 @@ export default async function sitemap() {
   // Static pages
   const staticPages = [
     '',
-    '/apps',
     '/guides',
     '/skills',
     '/topics',
     '/blog',
-    '/security',
     '/about',
     '/contact',
-    '/terms',
-    '/privacy',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
@@ -45,11 +52,9 @@ export default async function sitemap() {
         ? 1
         : route === '/skills' || route === '/guides' || route === '/topics' || route === '/blog'
           ? 0.8
-          : route === '/apps' || route === '/security'
-            ? 0.55
-            : route === '/about' || route === '/contact'
-              ? 0.5
-              : 0.3,
+          : route === '/about' || route === '/contact'
+            ? 0.5
+            : 0.3,
   }))
 
   // Dynamic skills
@@ -57,16 +62,18 @@ export default async function sitemap() {
   if (supabase) {
     const { data: skills } = await supabase
       .from('skills')
-      .select('slug, created_at')
+      .select('slug, created_at, name, summary, description, install_cmd, github_url, permissions')
       .order('created_at', { ascending: false })
 
     if (skills) {
-      skillPages = (skills as SitemapSkillRow[]).map((skill) => ({
-        url: `${baseUrl}/skills/${skill.slug}`,
-        lastModified: skill.created_at || new Date().toISOString(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      }))
+      skillPages = (skills as SitemapSkillRow[])
+        .filter((skill) => assessSkillIndexability(skill).indexable)
+        .map((skill) => ({
+          url: `${baseUrl}/skills/${skill.slug}`,
+          lastModified: skill.created_at || new Date().toISOString(),
+          changeFrequency: 'weekly' as const,
+          priority: 0.7,
+        }))
     }
   }
 
@@ -82,12 +89,25 @@ export default async function sitemap() {
   if (supabase) {
     const { data: posts } = await supabase
       .from('blog_posts')
-      .select('slug, category, published_at, updated_at')
+      .select('slug, category, title, summary, content, published_at, updated_at')
       .order('published_at', { ascending: false })
 
     if (posts) {
       blogPages = (posts as SitemapPostRow[])
         .filter((post) => post.category !== 'guides')
+        .filter((post) => {
+          const seo = resolveBlogSeo(
+            post.slug,
+            post.title ?? '',
+            post.summary || post.content || '',
+          )
+
+          if (seo.canonicalPath && seo.canonicalPath !== `/blog/${post.slug}`) {
+            return false
+          }
+
+          return assessBlogIndexability(post).indexable
+        })
         .map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: post.updated_at || post.published_at || new Date().toISOString(),
@@ -97,6 +117,7 @@ export default async function sitemap() {
 
       guidePages = (posts as SitemapPostRow[])
         .filter((post) => post.category === 'guides')
+        .filter((post) => assessBlogIndexability(post).indexable)
         .map((post) => ({
           url: `${baseUrl}/guides/${post.slug}`,
           lastModified: post.updated_at || post.published_at || new Date().toISOString(),

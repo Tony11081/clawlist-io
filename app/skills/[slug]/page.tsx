@@ -6,6 +6,7 @@ import { SocialShareButtons } from '@/components/social-share-buttons'
 import { TrackedExternalLink } from '@/components/tracked-external-link'
 import { Shield, Check } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { assessSkillIndexability } from '@/lib/content-quality'
 import { resolveSkillSeo } from '@/lib/seo'
 import { getSkillIntentModule } from '@/lib/skill-intent'
 import {
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     skill.name,
     skill.summary,
   )
+  const quality = assessSkillIndexability(skill)
 
   return {
     title: seo.title,
@@ -65,6 +67,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: seo.description,
       images: [`/api/og/skill?slug=${slug}`],
     },
+    ...(!quality.indexable && {
+      robots: {
+        index: false,
+        follow: true,
+      },
+    }),
   }
 }
 

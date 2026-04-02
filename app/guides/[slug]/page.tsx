@@ -3,6 +3,7 @@ import { Breadcrumb } from '@/components/breadcrumb'
 import { RelatedContent } from '@/components/related-content'
 import { ContentViewTracker } from '@/components/content-view-tracker'
 import { SocialShareButtons } from '@/components/social-share-buttons'
+import { assessBlogIndexability } from '@/lib/content-quality'
 import {
   getGuidePost,
   getGuideSlugs,
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     guide.title,
     guide.summary || guide.content.substring(0, 160),
   )
+  const quality = assessBlogIndexability(guide)
 
   return {
     title: seo.title,
@@ -52,6 +54,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [guide.author || 'ClawList Team'],
       tags: guide.tags || [],
     },
+    ...(!quality.indexable && {
+      robots: {
+        index: false,
+        follow: true,
+      },
+    }),
   }
 }
 
