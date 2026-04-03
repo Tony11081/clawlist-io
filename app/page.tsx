@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { HomeDirectoryClient } from '@/components/home-directory-client'
-import { getRecentBlogPosts, getRecentGuidePosts } from '@/lib/blog'
+import { getHomepageEditorialPack, getRecentGuidePosts } from '@/lib/blog'
 import {
-  ecosystemDirectorySections,
+  getFeaturedEcosystemItems,
   getEcosystemDirectoryStats,
   getFeaturedEcosystemSections,
 } from '@/lib/ecosystem-directory'
@@ -31,8 +31,9 @@ export const metadata: Metadata = {
 export default async function Home() {
   const { totalCategories, totalResources } = getEcosystemDirectoryStats()
   const featuredSections = getFeaturedEcosystemSections()
+  const directorySpotlights = getFeaturedEcosystemItems(6)
   const [latestPosts, featuredGuides, featuredSkills] = await Promise.all([
-    getRecentBlogPosts(3),
+    getHomepageEditorialPack(),
     getRecentGuidePosts(3),
     getFeaturedSkills(3),
   ])
@@ -57,12 +58,15 @@ export default async function Home() {
         }}
       />
       <HomeDirectoryClient
+        analysisPosts={latestPosts.analysis}
+        directorySpotlights={directorySpotlights}
+        editorsPicks={latestPosts.editorsPicks}
         featuredGuides={featuredGuides}
         featuredSections={featuredSections}
         featuredSkills={featuredSkills}
         featuredTopics={featuredTopics}
-        latestPosts={latestPosts}
-        sections={ecosystemDirectorySections}
+        mostReadPosts={latestPosts.mostRead}
+        topStory={latestPosts.topStory}
         totalCategories={totalCategories}
         totalResources={totalResources}
       />

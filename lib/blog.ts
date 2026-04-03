@@ -15,6 +15,7 @@ export type BlogListItem = {
   author?: string
   published_at: string
   reading_time?: number
+  views?: number
 }
 
 export type BlogDetail = BlogListItem & {
@@ -45,8 +46,15 @@ export type BlogListResult = {
   totalPages: number
 }
 
+export type HomepageEditorialPack = {
+  analysis: BlogListItem[]
+  editorsPicks: BlogListItem[]
+  mostRead: BlogListItem[]
+  topStory: BlogListItem | null
+}
+
 const BLOG_LIST_COLUMNS =
-  'id, slug, title, summary, category, tags, author, published_at, reading_time'
+  'id, slug, title, summary, category, tags, author, published_at, reading_time, views'
 const BLOG_DETAIL_COLUMNS =
   'id, slug, title, summary, content, category, tags, author, published_at, updated_at, views, reading_time'
 const NON_GUIDE_FILTER = 'category.is.null,category.neq.guides'
@@ -82,6 +90,7 @@ function normalizePost(item: RawBlogPost): BlogListItem {
     published_at: item.published_at ?? new Date(0).toISOString(),
     reading_time:
       typeof item.reading_time === 'number' ? item.reading_time : undefined,
+    views: typeof item.views === 'number' ? item.views : undefined,
   }
 }
 
@@ -134,6 +143,55 @@ const STOPWORDS = new Set([
   'with',
   'your',
 ])
+
+const HOMEPAGE_TOP_STORY_SLUGS = [
+  'openclaw-agent-system-prompt-architecture-9-layers',
+  'continuous-planning-and-knowledge-consolidation-with-markdown',
+  'using-linear-as-ai-task-management-hub',
+  'seo-geo-optimization-tips-using-skills-in-2026',
+]
+
+const HOMEPAGE_EDITOR_PICK_SLUGS = [
+  'openclaw-agent-system-prompt-architecture-9-layers',
+  'using-linear-as-ai-task-management-hub',
+  'whatsapp-scheduling-ai-agent-with-google-calendar',
+  'continuous-planning-and-knowledge-consolidation-with-markdown',
+  'engineering-better-ai-agent-prompts-with-software-design-principles',
+]
+
+const HOMEPAGE_ANALYSIS_SLUGS = [
+  'zhipu-s-2025-summary-going-global-with-ai-products',
+  'similarweb-and-semrush-integration-with-ai-tools',
+  'anthropic-21-plugins-saas-threat',
+  'engineering-better-ai-agent-prompts-with-software-design-principles',
+  'codex-monitor-agent-orchestration-demo',
+]
+
+function dedupePosts(posts: BlogListItem[]) {
+  return Array.from(
+    new Map(posts.map((post) => [post.slug, post])).values(),
+  )
+}
+
+function selectPostsBySlug(posts: BlogListItem[], slugs: string[], limit: number, exclude = new Set<string>()) {
+  const postMap = new Map(posts.map((post) => [post.slug, post]))
+  const selected: BlogListItem[] = []
+
+  for (const slug of slugs) {
+    if (selected.length >= limit || exclude.has(slug)) {
+      continue
+    }
+
+    const post = postMap.get(slug)
+
+    if (post) {
+      selected.push(post)
+      exclude.add(slug)
+    }
+  }
+
+  return selected
+}
 
 function tokenize(values: Array<string | undefined | null>) {
   return Array.from(
@@ -276,6 +334,35 @@ export const getRecentBlogPosts = cache(async (limit = 3): Promise<BlogListItem[
   return data.map(normalizePost)
 })
 
+export const getMostReadBlogPosts = cache(async (limit = 4): Promise<BlogListItem[]> => {
+  if (!supabase) {
+    return []
+  }
+
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select(BLOG_LIST_COLUMNS)
+    .or(NON_GUIDE_FILTER)
+    .order('views', { ascending: false, nullsFirst: false })
+    .order('published_at', { ascending: false })
+    .limit(limit)
+
+  if (error || !data) {
+    if (error) {
+      console.error('Error fetching most read blog posts:', error)
+    }
+
+    return []
+  }
+
+  return data.map(normalizePost)
+})
+
+export const getPriorityBlogSlugs = cache(async (limit = 24) => {
+  const posts = await getMostReadBlogPosts(limit)
+  return posts.map((post) => post.slug)
+})
+
 export const getRecentGuidePosts = cache(async (limit = 3): Promise<BlogListItem[]> => {
   if (!supabase) {
     return []
@@ -297,6 +384,81 @@ export const getRecentGuidePosts = cache(async (limit = 3): Promise<BlogListItem
   }
 
   return data.map(normalizePost)
+})
+
+export const getHomepageEditorialPack = cache(async (): Promise<HomepageEditorialPack> => {
+  if (!supabase) {
+    return {
+      analysis: [],
+      editorsPicks: [],
+      mostRead: [],
+      topStory: null,
+    }
+  }
+
+  const [{ data: recentData, error: recentError }, mostRead] = await Promise.all([
+    supabase
+      .from('blog_posts')
+      .select(BLOG_LIST_COLUMNS)
+      .or(NON_GUIDE_FILTER)
+      .order('published_at', { ascending: false })
+      .limit(32),
+    getMostReadBlogPosts(8),
+  ])
+
+  if (recentError) {
+    console.error('Error fetching homepage editorial posts:', recentError)
+  }
+
+  const recentPosts = (recentData ?? []).map(normalizePost)
+  const combinedPosts = dedupePosts([...recentPosts, ...mostRead])
+  const usedSlugs = new Set<string>()
+
+  const topStory = selectPostsBySlug(combinedPosts, HOMEPAGE_TOP_STORY_SLUGS, 1, usedSlugs)[0]
+    ?? recentPosts[0]
+    ?? mostRead[0]
+    ?? null
+
+  if (topStory) {
+    usedSlugs.add(topStory.slug)
+  }
+
+  const editorsPicks = [
+    ...selectPostsBySlug(combinedPosts, HOMEPAGE_EDITOR_PICK_SLUGS, 3, usedSlugs),
+    ...recentPosts.filter((post) => !usedSlugs.has(post.slug)),
+  ].slice(0, 3)
+
+  for (const post of editorsPicks) {
+    usedSlugs.add(post.slug)
+  }
+
+  const analysis = [
+    ...selectPostsBySlug(combinedPosts, HOMEPAGE_ANALYSIS_SLUGS, 3, usedSlugs),
+    ...combinedPosts.filter((post) =>
+      !usedSlugs.has(post.slug)
+      && (post.reading_time ?? 0) >= 6
+      && (post.category ?? '').toLowerCase() !== 'guides'
+    ),
+  ].slice(0, 3)
+
+  for (const post of analysis) {
+    usedSlugs.add(post.slug)
+  }
+
+  const analysisSlugs = new Set(analysis.map((post) => post.slug))
+
+  const visibleMostRead = mostRead
+    .filter((post) => !usedSlugs.has(post.slug))
+    .filter((post) => !analysisSlugs.has(post.slug))
+    .filter((post) => post.slug !== topStory?.slug)
+    .slice(0, 4)
+
+  return {
+    analysis,
+    editorsPicks,
+    mostRead: visibleMostRead,
+    topStory,
+  }
 })
 
 export const getBlogSlugs = cache(async () => {

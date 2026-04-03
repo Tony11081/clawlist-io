@@ -1,15 +1,17 @@
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { CopyButton } from '@/components/copy-button'
 import { Breadcrumb } from '@/components/breadcrumb'
-import { RelatedContent, type RelatedItem } from '@/components/related-content'
+import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
 import { TrackedExternalLink } from '@/components/tracked-external-link'
 import { Shield, Check } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { assessSkillIndexability } from '@/lib/content-quality'
+import { buildPrioritySkillReview, buildSkillEditorialModule } from '@/lib/skill-editorial'
 import { resolveSkillSeo } from '@/lib/seo'
 import { getSkillIntentModule } from '@/lib/skill-intent'
 import {
+  getPrioritySkillSlugs,
   getRelatedSkills,
   getSkillDetail,
   getSkillSlugs,
@@ -91,7 +93,15 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
   )
 
   const pagePath = `/skills/${skill.slug}`
-  const relatedSkills: RelatedItem[] = await getRelatedSkills(skill, 3)
+  const [relatedSkills, prioritySkillSlugs] = await Promise.all([
+    getRelatedSkills(skill, 3),
+    getPrioritySkillSlugs(24),
+  ])
+  const editorial = buildSkillEditorialModule(skill)
+  const isPrioritySkill = prioritySkillSlugs.includes(skill.slug)
+  const priorityReview = isPrioritySkill
+    ? buildPrioritySkillReview(skill, relatedSkills)
+    : null
 
   // Schema.org SoftwareApplication structured data
   const jsonLd = {
@@ -115,11 +125,12 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
     },
   }
   const skillIntent = getSkillIntentModule(skill.slug)
-  const faqJsonLd = skillIntent
+  const faqItems = skillIntent?.faq ?? editorial.faq
+  const faqJsonLd = faqItems.length > 0
     ? {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: skillIntent.faq.map((item) => ({
+        mainEntity: faqItems.map((item) => ({
           '@type': 'Question',
           name: item.question,
           acceptedAnswer: {
@@ -238,6 +249,126 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
           </div>
         )}
 
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+            {editorial.assessment.eyebrow}
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-[#191919]">
+            {editorial.assessment.heading}
+          </h2>
+          <div className="mt-5 space-y-4">
+            {editorial.assessment.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-lg leading-relaxed text-[#666666]">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {editorial.assessment.highlights.map((item) => (
+              <div key={item.label} className="rounded-2xl bg-[#f7f7f7] p-5">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+                  {item.label}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-[#191919]">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {priorityReview && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+              Priority review
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-[#191919]">
+              Why this skill deserves a closer look
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-[#666666]">
+              {priorityReview.whyItMatters}
+            </p>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl bg-[#f7f7f7] p-6">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+                  Best for
+                </p>
+                <p className="mt-3 text-sm leading-6 text-[#191919]">
+                  {priorityReview.bestFor}
+                </p>
+              </div>
+              <div className="rounded-2xl bg-[#f7f7f7] p-6">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-slate-500">
+                  Last reviewed
+                </p>
+                <p className="mt-3 text-sm leading-6 text-[#191919]">
+                  {priorityReview.lastReviewed}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+              <div className="rounded-2xl border border-slate-200 p-6">
+                <h3 className="text-lg font-bold text-[#191919]">Key caveats</h3>
+                <div className="mt-4 space-y-3 text-sm leading-6 text-[#666666]">
+                  {priorityReview.caveats.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="rounded-2xl border border-slate-200 p-6">
+                  <h3 className="text-lg font-bold text-[#191919]">Alternatives</h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {priorityReview.alternatives.length > 0 ? (
+                      priorityReview.alternatives.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-slate-200 px-3 py-1.5 text-sm font-semibold text-[#191919]"
+                        >
+                          {item}
+                        </span>
+                      ))
+                    ) : (
+                      <p className="text-sm leading-6 text-[#666666]">
+                        No close alternatives are published on the current skill record yet.
+                      </p>
+                    )}
+                  </div>
+                </div>
+                {priorityReview.sourceLinks.length > 0 && (
+                  <div className="rounded-2xl border border-slate-200 p-6">
+                    <h3 className="text-lg font-bold text-[#191919]">Source links</h3>
+                    <div className="mt-4 space-y-3">
+                      {priorityReview.sourceLinks.map((link) => (
+                        <TrackedExternalLink
+                          key={link.href}
+                          href={link.href}
+                          className="flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm font-semibold text-[#191919] hover:bg-[#f7f7f7] transition-colors"
+                          analyticsPayload={{
+                            eventType: 'cta_click',
+                            pagePath,
+                            skillId: skill.id,
+                            skillSlug: skill.slug,
+                            metadata: {
+                              cta: 'priority_skill_source_link',
+                              category: skill.category,
+                            },
+                          }}
+                        >
+                          {link.label}
+                        </TrackedExternalLink>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Install Command */}
         {skill.install_cmd && (
           <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm">
@@ -267,6 +398,18 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
           </div>
         )}
 
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Best-fit workflows</h2>
+          <div className="space-y-4">
+            {editorial.workflows.map((workflow) => (
+              <div key={workflow} className="flex items-start gap-4 rounded-2xl bg-[#f7f7f7] p-5">
+                <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" />
+                <p className="text-[#666666] leading-relaxed">{workflow}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Description */}
         {skill.description && (
           <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
@@ -276,6 +419,18 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
             </div>
           </div>
         )}
+
+        <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+          <h2 className="text-2xl font-bold mb-6 text-[#191919]">Rollout checklist</h2>
+          <div className="space-y-4">
+            {editorial.rolloutChecklist.map((item) => (
+              <div key={item} className="flex items-start gap-4 rounded-2xl bg-[#f7f7f7] p-5">
+                <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-slate-900" />
+                <p className="text-[#666666] leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Features */}
         {skill.features && skill.features.length > 0 && (
@@ -288,6 +443,20 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                     {index + 1}
                   </span>
                   <p className="text-[#666666] pt-1 leading-relaxed">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {!skillIntent && (
+          <div className="bg-white rounded-3xl p-8 mb-8 shadow-sm border border-slate-100">
+            <h2 className="text-2xl font-bold mb-6 text-[#191919]">FAQ</h2>
+            <div className="space-y-4">
+              {editorial.faq.map((item) => (
+                <div key={item.question} className="rounded-2xl bg-[#f7f7f7] p-5">
+                  <p className="font-semibold text-[#191919]">{item.question}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#666666]">{item.answer}</p>
                 </div>
               ))}
             </div>

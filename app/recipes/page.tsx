@@ -1,8 +1,22 @@
+import type { Metadata } from 'next'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowRight, Layers, Clock, Shield } from 'lucide-react'
 import { recipes } from '@/lib/catalog'
+
+export const metadata: Metadata = {
+  title: 'Job Recipes',
+  description:
+    'Workflow blueprint drafts that stay outside indexed and monetized inventory while ClawList rebuilds them into deeper guides.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/recipes',
+  },
+}
 
 export default function RecipesPage() {
   const displayRecipes = recipes

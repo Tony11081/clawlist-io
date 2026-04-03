@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: 'Apps & Agents',
   description:
     'A curated board of AI apps and agents ClawList readers keep comparing, organized by workflow fit instead of raw hype.',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: '/apps',
   },
@@ -57,22 +61,15 @@ export default function AppsPage() {
 
         <section className="mb-16">
           <Badge className="mb-5 border-0 bg-slate-200 text-slate-900 dark:bg-[#262626] dark:text-slate-100">
-            Inspired by OpenRouter Apps
+            Editorial comparison workspace
           </Badge>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
             <div>
               <h1 className="text-5xl font-black tracking-tighter mb-4">APPS & AGENTS.</h1>
               <p className="max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-                Inspired by{' '}
-                <a
-                  href="https://openrouter.ai/apps"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-slate-900 dark:hover:text-slate-100"
-                >
-                  OpenRouter&apos;s public apps board
-                </a>
-                , this page organizes the AI products ClawList readers keep comparing when they evaluate OpenClaw workflows. It is an editorial map, not live telemetry.
+                This page stays available as an editorial comparison workspace while ClawList expands
+                deeper reporting and product briefs. It is not treated as a monetized or indexed
+                destination yet.
               </p>
             </div>
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#262626]/20">
@@ -87,10 +84,10 @@ export default function AppsPage() {
                   <Link href="/skills">Browse Skills</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://openrouter.ai/apps" target="_blank" rel="noopener noreferrer">
-                    View OpenRouter
+                  <Link href="/blog">
+                    Read the newsroom
                     <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>

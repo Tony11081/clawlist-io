@@ -1,4 +1,18 @@
+import type { Metadata } from 'next'
 import { Code2, FileText, Bot, BarChart3, Check } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Model Guide',
+  description:
+    'An internal model selection workspace while ClawList develops deeper, source-linked coverage and testing notes.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/models',
+  },
+}
 
 export default function ModelsPage() {
   return (

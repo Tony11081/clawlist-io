@@ -197,3 +197,12 @@ export async function getFeaturedSkills(limit = 3): Promise<SkillListItem[]> {
   const skills = await getSkillsList(limit)
   return skills.slice(0, limit)
 }
+
+export async function getPrioritySkillSlugs(limit = 24) {
+  const skills = await getSkillsList()
+
+  return skills
+    .filter((skill) => Boolean(skill.install_cmd))
+    .slice(0, limit)
+    .map((skill) => skill.slug)
+}

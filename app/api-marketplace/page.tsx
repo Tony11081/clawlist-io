@@ -1,7 +1,21 @@
+import type { Metadata } from 'next'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Check, ExternalLink, ArrowRight, Zap, Shield, Clock } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'API Marketplace',
+  description:
+    'An internal comparison workspace for API and infrastructure providers while ClawList expands fully reported coverage.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/api-marketplace',
+  },
+}
 
 const apiProviders = [
   {

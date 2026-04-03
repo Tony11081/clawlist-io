@@ -5,9 +5,11 @@ import { ContentViewTracker } from '@/components/content-view-tracker'
 import { RelatedContent } from '@/components/related-content'
 import { SocialShareButtons } from '@/components/social-share-buttons'
 import { TopicHubCta } from '@/components/topic-hub-cta'
+import { buildBlogEditorialModule } from '@/lib/blog-editorial'
 import { assessBlogIndexability } from '@/lib/content-quality'
 import {
   getBlogPost,
+  getPriorityBlogSlugs,
   getBlogSlugs,
   getRelatedBlogPosts,
   getRelatedSkillsForPost,
@@ -109,10 +111,15 @@ export default async function BlogPostPage({ params }: Props) {
   const canonicalPath = seo.canonicalPath ?? `/blog/${post.slug}`
   const pagePath = `/blog/${post.slug}`
   const topicHub = getTopicHubByBlogSlug(post.slug)
-  const [relatedPosts, relatedSkills] = await Promise.all([
+  const [relatedPosts, relatedSkills, priorityBlogSlugs] = await Promise.all([
     getRelatedBlogPosts(post, { limit: 3 }),
     getRelatedSkillsForPost(post, 3),
+    getPriorityBlogSlugs(24),
   ])
+  const isPriorityPost = priorityBlogSlugs.includes(post.slug)
+  const editorial = isPriorityPost
+    ? buildBlogEditorialModule(post, relatedSkills, topicHub)
+    : null
 
   // Schema.org Article structured data
   const jsonLd = {
@@ -286,6 +293,54 @@ export default async function BlogPostPage({ params }: Props) {
         ">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
+
+        {editorial && (
+          <div className="mt-12 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+              Editorial context
+            </p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+              Why this article matters
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">
+              {editorial.whyItMatters}
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {editorial.highlights.map((item) => (
+                <div key={item.label} className="rounded-2xl bg-slate-50 p-5 dark:bg-[#191919]">
+                  <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">
+                    {item.label}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 p-5 dark:border-[#303030]">
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">
+                  Best for
+                </p>
+                <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  {editorial.bestFor}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 p-5 dark:border-[#303030]">
+                <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">
+                  Read with caution
+                </p>
+                <div className="mt-3 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                  {editorial.caveats.map((caveat) => (
+                    <p key={caveat}>{caveat}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {topicHub && (
           <TopicHubCta

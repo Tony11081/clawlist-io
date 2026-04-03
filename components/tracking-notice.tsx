@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
 
@@ -14,6 +15,7 @@ import {
   readStoredConsent,
   writeStoredConsent,
 } from '@/lib/consent'
+import { isAdSuppressedPath } from '@/lib/monetization'
 
 interface TrackingNoticeProps {
   adSenseClient: string
@@ -24,9 +26,11 @@ export function TrackingNotice({
   adSenseClient,
   googleTagId,
 }: TrackingNoticeProps) {
+  const pathname = usePathname()
   const [preferences, setPreferences] = useState<ConsentPreferences | null>(null)
   const [visible, setVisible] = useState(false)
   const [manageOpen, setManageOpen] = useState(false)
+  const adsSuppressed = isAdSuppressedPath(pathname)
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -89,7 +93,7 @@ gtag('config', '${googleTagId}', { anonymize_ip: true });`}
         </>
       )}
 
-      {preferences?.advertising && (
+      {preferences?.advertising && !adsSuppressed && (
         <Script
           id="google-adsense"
           async
@@ -158,8 +162,8 @@ gtag('config', '${googleTagId}', { anonymize_ip: true });`}
                     Advertising
                   </span>
                   <span className="block text-sm leading-6 text-slate-600 dark:text-slate-400">
-                    Allows Google AdSense to load and measure ad delivery. Ad personalization follows your
-                    browser and Google settings.
+                    Allows Google AdSense to load and measure ad delivery on monetizable sections of the
+                    site. Ad personalization follows your browser and Google settings.
                   </span>
                 </span>
               </label>

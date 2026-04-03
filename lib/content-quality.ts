@@ -1,3 +1,5 @@
+import { buildSkillEditorialModule } from '@/lib/skill-editorial'
+
 type BlogQualityInput = {
   title?: string | null
   summary?: string | null
@@ -11,6 +13,11 @@ type SkillQualityInput = {
   install_cmd?: string | null
   github_url?: string | null
   permissions?: string[] | null
+  tags?: string[] | null
+  category?: string | null
+  risk_level?: 'low' | 'medium' | 'high' | null
+  slug?: string | null
+  openclaw_version_range?: string | null
 }
 
 type QualityAssessment = {
@@ -75,6 +82,25 @@ export function assessSkillIndexability(skill: SkillQualityInput): QualityAssess
     skill.description,
     ...(skill.permissions ?? []),
   ].join(' ')
+  const editorialText = buildSkillEditorialModule({
+    id: '',
+    name: skill.name ?? '',
+    slug: skill.slug ?? '',
+    summary: skill.summary ?? '',
+    risk_level: skill.risk_level ?? 'low',
+    tags: skill.tags ?? [],
+    upvotes: 0,
+    stars: 0,
+    views: 0,
+    category: skill.category ?? undefined,
+    install_cmd: skill.install_cmd ?? undefined,
+    description: skill.description ?? undefined,
+    permissions: skill.permissions ?? [],
+    github_url: skill.github_url ?? undefined,
+    openclaw_version_range: skill.openclaw_version_range ?? undefined,
+    features: [],
+    use_cases: [],
+  }).indexableText
 
   if (containsUnsupportedLanguage(combined)) {
     reasons.push('unsupported_language')
@@ -86,6 +112,10 @@ export function assessSkillIndexability(skill: SkillQualityInput): QualityAssess
 
   if (countWords(skill.description) < 12) {
     reasons.push('thin_description')
+  }
+
+  if (countWords(`${skill.summary ?? ''} ${skill.description ?? ''} ${editorialText}`) < 220) {
+    reasons.push('thin_detail_page')
   }
 
   if (!String(skill.install_cmd ?? '').trim()) {

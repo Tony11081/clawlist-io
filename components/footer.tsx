@@ -20,16 +20,14 @@ export function Footer() {
               <li><Link href="/blog" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">News</Link></li>
               <li><Link href="/skills" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Skills</Link></li>
               <li><Link href="/topics" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Topics</Link></li>
-              <li><Link href="/apps" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Apps</Link></li>
+              <li><Link href="/directory" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Directory Briefs</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Learn</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/guides" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Guides</Link></li>
-              <li><Link href="/recipes" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Recipes</Link></li>
-              <li><Link href="/models" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Models</Link></li>
-              <li><Link href="/api-marketplace" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">API Market</Link></li>
+              <li><Link href="/about" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Editorial Policy</Link></li>
               <li><Link href="/security" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100">Security</Link></li>
             </ul>
           </div>
