@@ -20,7 +20,7 @@ async function addCoverImageField() {
   console.log('🔧 Adding cover_image field to blog_posts table...\n')
 
   // 直接使用 SQL 查询
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('blog_posts')
     .select('id')
     .limit(1)

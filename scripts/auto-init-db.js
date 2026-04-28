@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 // Auto-initialize Supabase database
 require('dotenv').config({ path: '.env.local' });
@@ -18,7 +19,7 @@ async function autoInit() {
   console.log('🚀 Auto-initializing database...');
   
   // Check if skills table exists
-  const { data: existing, error: checkError } = await supabase
+  const { error: checkError } = await supabase
     .from('skills')
     .select('id')
     .limit(1);
@@ -34,8 +35,6 @@ async function autoInit() {
   // Create a minimal schema using the SQL editor endpoint
   
   const projectRef = supabaseUrl.match(/https:\/\/([^.]+)\.supabase\.co/)[1];
-  const sqlEditorUrl = `https://${projectRef}.supabase.co/rest/v1/rpc/exec_sql`;
-  
   // Try to execute schema via RPC (if enabled)
   const fs = require('fs');
   const path = require('path');

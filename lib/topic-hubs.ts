@@ -13,6 +13,26 @@ export type TopicHubAction = {
   label: string
 }
 
+export type TopicHubEditorialPick = {
+  href: string
+  label: string
+  reason: string
+}
+
+export type TopicHubTimelineEntry = {
+  date: string
+  description: string
+  title: string
+}
+
+export type TopicHubEditorial = {
+  bestFirstRead: TopicHubEditorialPick
+  bestSkillToTry: TopicHubEditorialPick
+  timeline: TopicHubTimelineEntry[]
+  whatChangedThisMonth: string[]
+  whyItMattersNow: string
+}
+
 export type KeywordOwnershipEntry = {
   keyword: string
   note: string
@@ -23,6 +43,7 @@ export type KeywordOwnershipEntry = {
 
 export type TopicHub = {
   description: string
+  editorial: TopicHubEditorial
   eyebrow: string
   highlights: string[]
   linkedPostSlugs: string[]
@@ -49,6 +70,47 @@ export const topicHubs: TopicHub[] = [
       'Use supporting posts for comparisons, implementation notes, and prompt design principles.',
       'Drive readers from architecture theory into installable memory and skills tooling.',
     ],
+    editorial: {
+      whyItMattersNow:
+        'System prompts are becoming product architecture, not background configuration. Teams need to understand how identity, tools, memory, safety, and runtime context work together before they can trust autonomous agents with real tasks.',
+      whatChangedThisMonth: [
+        'The hub now treats the 9-layer OpenClaw breakdown as the canonical page for architecture queries.',
+        'Supporting prompt-design articles are positioned as implementation notes instead of competing explainers.',
+        'Memory and skills tooling are used as the practical next step after readers understand the architecture.',
+      ],
+      bestFirstRead: {
+        href: '/blog/openclaw-agent-system-prompt-architecture-9-layers',
+        label: 'OpenClaw Agent System Prompt Architecture Explained',
+        reason:
+          'Best entry point for readers who need the full layer-by-layer model before comparing implementation patterns.',
+      },
+      bestSkillToTry: {
+        href: '/skills/skills-cli',
+        label: 'Skills CLI',
+        reason:
+          'Turns architecture decisions into reusable, installable skill packages instead of one-off prompt edits.',
+      },
+      timeline: [
+        {
+          date: 'Start here',
+          title: 'Understand the canonical stack',
+          description:
+            'Read the 9-layer OpenClaw architecture page and treat it as the primary reference.',
+        },
+        {
+          date: 'Then',
+          title: 'Compare design principles',
+          description:
+            'Move into prompt engineering and software-design articles to understand tradeoffs.',
+        },
+        {
+          date: 'Next',
+          title: 'Package the workflow',
+          description:
+            'Use Skills CLI or memory tooling to turn the prompt design into a repeatable system.',
+        },
+      ],
+    },
     featuredArticles: [
       {
         href: '/blog/openclaw-agent-system-prompt-architecture-9-layers',
@@ -69,7 +131,8 @@ export const topicHubs: TopicHub[] = [
       {
         href: '/blog/engineering-better-ai-agent-prompts-with-software-design-principles',
         slug: 'engineering-better-ai-agent-prompts-with-software-design-principles',
-        title: 'Engineering Better AI Agent Prompts with Software Design Principles',
+        title:
+          'Engineering Better AI Agent Prompts with Software Design Principles',
         summary:
           'A practical companion piece on designing clearer, more modular prompts for agent systems.',
         type: 'blog',
@@ -106,19 +169,22 @@ export const topicHubs: TopicHub[] = [
         id: 'view_topic_hub',
         label: 'Explore the full architecture hub',
         href: '/topics/system-prompt-architecture',
-        description: 'See the canonical page, supporting articles, and the keyword ownership plan for this cluster.',
+        description:
+          'See the canonical page, supporting articles, and the keyword ownership plan for this cluster.',
       },
       {
         id: 'install_skills_cli',
         label: 'Install Skills CLI',
         href: '/skills/skills-cli',
-        description: 'Turn prompt design decisions into reusable, installable workflows.',
+        description:
+          'Turn prompt design decisions into reusable, installable workflows.',
       },
       {
         id: 'browse_blog_archive',
         label: 'Continue with the blog archive',
         href: '/blog',
-        description: 'Keep reading adjacent workflow and architecture breakdowns from the same search session.',
+        description:
+          'Keep reading adjacent workflow and architecture breakdowns from the same search session.',
       },
     ],
     ownership: [
@@ -131,15 +197,19 @@ export const topicHubs: TopicHub[] = [
       },
       {
         keyword: 'openclaw system prompt architecture',
-        searchIntent: 'Find the high-level architecture and layer responsibilities.',
+        searchIntent:
+          'Find the high-level architecture and layer responsibilities.',
         primaryPath: '/topics/system-prompt-architecture',
-        supportingPaths: ['/blog/openclaw-agent-system-prompt-architecture-9-layers'],
+        supportingPaths: [
+          '/blog/openclaw-agent-system-prompt-architecture-9-layers',
+        ],
         note: 'The hub owns broader cluster intent; the article owns exact architecture breakdown intent.',
       },
       {
         keyword: 'ai agent prompt architecture',
         searchIntent: 'Compare design patterns for complex prompt systems.',
-        primaryPath: '/blog/engineering-better-ai-agent-prompts-with-software-design-principles',
+        primaryPath:
+          '/blog/engineering-better-ai-agent-prompts-with-software-design-principles',
         supportingPaths: ['/topics/system-prompt-architecture'],
         note: 'Use supporting content for methodology, not duplicate architecture titles.',
       },
@@ -165,6 +235,47 @@ export const topicHubs: TopicHub[] = [
       'Link browser and Electron automation tutorials into installable node-adjacent skills.',
       'Use the hub as the connective page for readers comparing control layers and execution environments.',
     ],
+    editorial: {
+      whyItMattersNow:
+        'Autonomous agents become materially more useful when they can reach browsers, devices, and local apps. OpenClaw Nodes give that control layer a concrete shape, which makes this cluster one of the site’s most defensible editorial lanes.',
+      whatChangedThisMonth: [
+        'The node tutorial now anchors the broader browser, Electron, and device automation journey.',
+        'Agent-browser coverage is treated as an execution layer for OpenClaw workflows, not a detached tutorial.',
+        'Skill recommendations emphasize installable control surfaces that readers can test immediately.',
+      ],
+      bestFirstRead: {
+        href: '/blog/openclaw-node-tutorial',
+        label: 'OpenClaw Nodes Tutorial',
+        reason:
+          'Best first stop for understanding how OpenClaw extends agents into phones, Raspberry Pi, browsers, and device workflows.',
+      },
+      bestSkillToTry: {
+        href: '/skills/agent-browser',
+        label: 'agent-browser',
+        reason:
+          'Gives readers a concrete browser and Electron automation path after they understand the node model.',
+      },
+      timeline: [
+        {
+          date: 'Start here',
+          title: 'Learn the node model',
+          description:
+            'Use the OpenClaw Nodes tutorial to understand how agents reach external execution environments.',
+        },
+        {
+          date: 'Then',
+          title: 'Add browser and desktop control',
+          description:
+            'Read the agent-browser and CDP tutorials to connect node concepts to real UI automation.',
+        },
+        {
+          date: 'Next',
+          title: 'Install the execution skill',
+          description:
+            'Try agent-browser or adjacent automation skills to turn the tutorial into a working workflow.',
+        },
+      ],
+    },
     featuredArticles: [
       {
         href: '/blog/openclaw-node-tutorial',
@@ -222,19 +333,22 @@ export const topicHubs: TopicHub[] = [
         id: 'view_nodes_hub',
         label: 'See the OpenClaw Nodes hub',
         href: '/topics/openclaw-nodes',
-        description: 'Jump from the current article into the full device and automation cluster.',
+        description:
+          'Jump from the current article into the full device and automation cluster.',
       },
       {
         id: 'install_agent_browser',
         label: 'Install agent-browser',
         href: '/skills/agent-browser',
-        description: 'Move from the tutorial into a working automation skill for browsers and Electron apps.',
+        description:
+          'Move from the tutorial into a working automation skill for browsers and Electron apps.',
       },
       {
         id: 'browse_skills_library',
         label: 'Browse more automation skills',
         href: '/skills',
-        description: 'Compare adjacent skills before you commit to a specific control stack.',
+        description:
+          'Compare adjacent skills before you commit to a specific control stack.',
       },
     ],
     ownership: [
@@ -257,9 +371,13 @@ export const topicHubs: TopicHub[] = [
       },
       {
         keyword: 'openclaw browser automation',
-        searchIntent: 'Evaluate how OpenClaw handles browser and desktop control.',
+        searchIntent:
+          'Evaluate how OpenClaw handles browser and desktop control.',
         primaryPath: '/topics/openclaw-nodes',
-        supportingPaths: ['/skills/agent-browser', '/blog/openclaw-node-tutorial'],
+        supportingPaths: [
+          '/skills/agent-browser',
+          '/blog/openclaw-node-tutorial',
+        ],
         note: 'The hub should be the broad comparison entry point.',
       },
     ],
@@ -283,6 +401,47 @@ export const topicHubs: TopicHub[] = [
       'Route long-running tasks, task-management, and memory support into one connected journey.',
       'Use skills as the conversion bridge from thought leadership into actual workflow adoption.',
     ],
+    editorial: {
+      whyItMattersNow:
+        'Coding agents are moving from interactive pair-programming into longer-running autonomous work. The important question is no longer only what Claude Code can generate, but how teams route, monitor, remember, and recover its work.',
+      whatChangedThisMonth: [
+        'Autonomy, task hubs, long-running execution, and memory are now organized as one workflow story.',
+        'RTK and memory tooling are treated as operating infrastructure for coding agents, not isolated utilities.',
+        'The hub separates Claude Code-specific search intent from broader multi-agent orchestration intent.',
+      ],
+      bestFirstRead: {
+        href: '/blog/claude-code-ai-can-now-work-independently',
+        label: 'Claude Code Can Now Work Independently',
+        reason:
+          'Best first read for understanding the autonomy shift before going into task management or memory layers.',
+      },
+      bestSkillToTry: {
+        href: '/skills/rtk',
+        label: 'RTK',
+        reason:
+          'A practical first skill for reducing terminal noise and making coding-agent sessions cheaper to run.',
+      },
+      timeline: [
+        {
+          date: 'Start here',
+          title: 'Frame the autonomy shift',
+          description:
+            'Read the independent-work explainer to understand why coding agents are changing operational workflows.',
+        },
+        {
+          date: 'Then',
+          title: 'Add durable task routing',
+          description:
+            'Move into long-running tasks and Linear-as-task-hub coverage to see how work is coordinated.',
+        },
+        {
+          date: 'Next',
+          title: 'Stabilize the tooling layer',
+          description:
+            'Try RTK, memory tooling, or Skills CLI to make autonomous coding sessions easier to operate.',
+        },
+      ],
+    },
     featuredArticles: [
       {
         href: '/blog/claude-code-ai-can-now-work-independently',
@@ -348,39 +507,46 @@ export const topicHubs: TopicHub[] = [
         id: 'view_claude_code_hub',
         label: 'Open the Claude Code hub',
         href: '/topics/claude-code',
-        description: 'See the main cluster page for autonomy, long-running tasks, and workflow management.',
+        description:
+          'See the main cluster page for autonomy, long-running tasks, and workflow management.',
       },
       {
         id: 'install_rtk',
         label: 'Install RTK',
         href: '/skills/rtk',
-        description: 'Cut terminal noise and make Claude Code workflows cheaper to run.',
+        description:
+          'Cut terminal noise and make Claude Code workflows cheaper to run.',
       },
       {
         id: 'browse_guides_archive',
         label: 'Read the guides archive',
         href: '/guides',
-        description: 'Move from news and commentary into more structured setup guidance.',
+        description:
+          'Move from news and commentary into more structured setup guidance.',
       },
     ],
     ownership: [
       {
         keyword: 'claude code autonomous workflow',
-        searchIntent: 'Understand what autonomous Claude Code execution can do.',
+        searchIntent:
+          'Understand what autonomous Claude Code execution can do.',
         primaryPath: '/blog/claude-code-ai-can-now-work-independently',
         supportingPaths: ['/topics/claude-code'],
         note: 'Let the article own the announcement/explainer intent and the hub own broader discovery intent.',
       },
       {
         keyword: 'claude code long-running tasks',
-        searchIntent: 'Find the best path to durable or extended task execution.',
-        primaryPath: '/blog/manus-integration-enables-long-task-capability-in-claude-code',
+        searchIntent:
+          'Find the best path to durable or extended task execution.',
+        primaryPath:
+          '/blog/manus-integration-enables-long-task-capability-in-claude-code',
         supportingPaths: ['/topics/claude-code'],
         note: 'Keep Manus-specific queries on the Manus integration page.',
       },
       {
         keyword: 'claude code task management',
-        searchIntent: 'See how to operationalize Claude Code work across multiple tasks.',
+        searchIntent:
+          'See how to operationalize Claude Code work across multiple tasks.',
         primaryPath: '/blog/using-linear-as-ai-task-management-hub',
         supportingPaths: ['/topics/claude-code'],
         note: 'Task-management intent belongs to the Linear page; don’t reuse that framing elsewhere.',
@@ -389,7 +555,10 @@ export const topicHubs: TopicHub[] = [
         keyword: 'claude code productivity stack',
         searchIntent: 'Compare the broader setup around Claude Code.',
         primaryPath: '/topics/claude-code',
-        supportingPaths: ['/skills/rtk', '/skills/claude-mem-memory-plugin-for-claude-code'],
+        supportingPaths: [
+          '/skills/rtk',
+          '/skills/claude-mem-memory-plugin-for-claude-code',
+        ],
         note: 'The hub owns comparison intent across memory, CLI compression, and workflow design.',
       },
     ],
@@ -415,6 +584,47 @@ export const topicHubs: TopicHub[] = [
       'Send high-intent readers from conceptual articles into installable tools and workflow skills.',
       'Keep workflow comparison queries separate from Claude Code-only ownership.',
     ],
+    editorial: {
+      whyItMattersNow:
+        'The agent market is shifting from single-model demos to orchestration patterns that combine research, planning, execution, review, and distribution. Readers need concrete workflow examples before they can judge which tools matter.',
+      whatChangedThisMonth: [
+        'Codex orchestration, short-video automation, image generation skills, and multi-model workflows now sit in one execution-focused cluster.',
+        'Build stories are used as proof of workflow shape, while skills provide the next action.',
+        'The hub now separates orchestration examples from Claude Code-only productivity coverage.',
+      ],
+      bestFirstRead: {
+        href: '/blog/codex-monitor-agent-orchestration-demo',
+        label: 'Codex Monitor Multi-Agent Orchestration Demo',
+        reason:
+          'Best first read for seeing how orchestration, monitoring, and execution visibility fit together.',
+      },
+      bestSkillToTry: {
+        href: '/skills/claude-flow',
+        label: 'Claude Flow',
+        reason:
+          'A natural next step for readers who want to chain tools and models into repeatable agent workflows.',
+      },
+      timeline: [
+        {
+          date: 'Start here',
+          title: 'Study a visible orchestration loop',
+          description:
+            'Use the Codex Monitor demo to understand how multi-agent execution can be observed and coordinated.',
+        },
+        {
+          date: 'Then',
+          title: 'Compare production workflows',
+          description:
+            'Read the short-video and image-generation build stories to see how orchestration changes by output type.',
+        },
+        {
+          date: 'Next',
+          title: 'Move into installable flow tools',
+          description:
+            'Try Claude Flow, Team Builder, or Union Search depending on the workflow you want to automate first.',
+        },
+      ],
+    },
     featuredArticles: [
       {
         href: '/blog/codex-monitor-agent-orchestration-demo',
@@ -480,46 +690,53 @@ export const topicHubs: TopicHub[] = [
         id: 'view_workflows_hub',
         label: 'See the AI agent workflows hub',
         href: '/topics/ai-agent-workflows',
-        description: 'Open the full cluster page for orchestration demos, workflow examples, and next-step tools.',
+        description:
+          'Open the full cluster page for orchestration demos, workflow examples, and next-step tools.',
       },
       {
         id: 'install_claude_flow',
         label: 'Install Claude Flow',
         href: '/skills/claude-flow',
-        description: 'Turn workflow inspiration into an installable orchestration layer.',
+        description:
+          'Turn workflow inspiration into an installable orchestration layer.',
       },
       {
         id: 'browse_skills_archive',
         label: 'Browse the skills archive',
         href: '/skills',
-        description: 'Compare the tools that best fit your next workflow build.',
+        description:
+          'Compare the tools that best fit your next workflow build.',
       },
     ],
     ownership: [
       {
         keyword: 'agent orchestration demo',
-        searchIntent: 'See a concrete orchestration example with multiple agents.',
+        searchIntent:
+          'See a concrete orchestration example with multiple agents.',
         primaryPath: '/blog/codex-monitor-agent-orchestration-demo',
         supportingPaths: ['/topics/ai-agent-workflows'],
         note: 'The demo page owns concrete orchestration intent.',
       },
       {
         keyword: 'ai short video workflow',
-        searchIntent: 'Find a real automation pipeline for short-form video output.',
+        searchIntent:
+          'Find a real automation pipeline for short-form video output.',
         primaryPath: '/blog/ai-short-video-factory',
         supportingPaths: ['/topics/ai-agent-workflows'],
         note: 'Use this page for workflow execution intent, not a generic hub title.',
       },
       {
         keyword: 'image generation skills for agents',
-        searchIntent: 'Learn how to build reusable image-generation capabilities for agents.',
+        searchIntent:
+          'Learn how to build reusable image-generation capabilities for agents.',
         primaryPath: '/blog/building-image-generation-skills-for-ai-agents',
         supportingPaths: ['/topics/ai-agent-workflows'],
         note: 'Owns build/tutorial intent for visual skill creation.',
       },
       {
         keyword: 'multi-model agent workflow',
-        searchIntent: 'Compare how multiple models collaborate in one workflow.',
+        searchIntent:
+          'Compare how multiple models collaborate in one workflow.',
         primaryPath: '/blog/multi-model-workflow-optimization-with-ccg',
         supportingPaths: ['/topics/ai-agent-workflows'],
         note: 'Keep multi-model comparison intent on the CCG page.',

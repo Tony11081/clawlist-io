@@ -1,6 +1,10 @@
 import { cache } from 'react'
 
 import { fallbackSkills } from '@/lib/catalog'
+import {
+  assessSkillPublishability,
+  normalizeSkillCategory,
+} from '@/lib/skills-publishing'
 import { supabase } from '@/lib/supabase'
 
 export type SkillListItem = {
@@ -27,7 +31,7 @@ export type SkillDetail = SkillListItem & {
 }
 
 const SKILL_LIST_COLUMNS =
-  'id, name, slug, summary, risk_level, tags, upvotes, stars, views, category, install_cmd'
+  'id, name, slug, summary, risk_level, tags, upvotes, stars, views, category, install_cmd, github_url'
 const SKILL_DETAIL_COLUMNS = `${SKILL_LIST_COLUMNS}, description, permissions, github_url, openclaw_version_range`
 
 type RawSkill = {
@@ -79,7 +83,7 @@ function normalizeSkill(item: RawSkill): SkillListItem {
     upvotes: typeof item.upvotes === 'number' ? item.upvotes : 0,
     stars: typeof item.stars === 'number' ? item.stars : 0,
     views: typeof item.views === 'number' ? item.views : 0,
-    category: item.category ?? undefined,
+    category: normalizeSkillCategory(item.category),
     install_cmd: item.install_cmd ?? undefined,
   }
 }
@@ -98,6 +102,7 @@ function normalizeSkillDetail(item: RawSkill): SkillDetail {
 
 function getFallbackSkills(limit?: number) {
   const sorted = [...fallbackSkills]
+    .filter((item) => assessSkillPublishability(item).published)
     .map(normalizeSkill)
     .sort((left, right) => right.upvotes - left.upvotes)
 
@@ -118,7 +123,9 @@ const readSkillsList = cache(async () => {
     return getFallbackSkills()
   }
 
-  return data.map(normalizeSkill)
+  return data
+    .filter((item) => assessSkillPublishability(item as RawSkill).published)
+    .map(normalizeSkill)
 })
 
 export async function getSkillsList(limit?: number): Promise<SkillListItem[]> {
@@ -180,15 +187,19 @@ export async function getRelatedSkills(
       .select(SKILL_LIST_COLUMNS)
       .eq('category', skill.category)
       .neq('slug', skill.slug)
-      .limit(limit)
+      .limit(limit * 6)
 
     if (data && data.length > 0) {
-      return data.map(normalizeSkill)
+      return data
+        .filter((item) => assessSkillPublishability(item as RawSkill).published)
+        .map(normalizeSkill)
+        .slice(0, limit)
     }
   }
 
   return fallbackSkills
     .map(normalizeSkillDetail)
+    .filter((item) => assessSkillPublishability(item).published)
     .filter((item) => item.slug !== skill.slug && item.category === skill.category)
     .slice(0, limit)
 }

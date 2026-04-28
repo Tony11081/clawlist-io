@@ -39,8 +39,8 @@ const sectionMap: Record<string, SectionConfig> = {
   },
   auth: {
     label: 'Account Access',
-    ctaHref: '/auth/login',
-    ctaLabel: 'Open the login page',
+    ctaHref: '/about',
+    ctaLabel: 'Read the editorial policy',
   },
   compare: {
     label: 'Skill Comparison',
@@ -169,7 +169,10 @@ function buildPageTitle(topic: string, section: SectionConfig) {
   return section.label === 'ClawList' ? topic : `${topic} ${section.label}`
 }
 
-export function createGeneratedPageEntry(path: string, sourcePaths: string[] = []): GeneratedPageEntry {
+export function createGeneratedPageEntry(
+  path: string,
+  sourcePaths: string[] = [],
+): GeneratedPageEntry {
   const normalizedPath = normalizeRoutePath(path)
   const segments = normalizedPath.split('/').filter(Boolean)
   const section = inferSection(segments, sourcePaths)

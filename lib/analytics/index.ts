@@ -6,6 +6,7 @@ export const ANALYTICS_EVENT_TYPES = [
   'search',
   'install_copy',
   'content_share',
+  'newsletter_signup',
   'cta_click',
   'recommendation_click',
   'recommendation_impression',

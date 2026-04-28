@@ -17,12 +17,20 @@ const STATE_FILE = join(process.env.HOME, 'clawd/memory/.clawlist-sync-state.jso
 
 // Supabase
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ygnbikloljpjzkxxcoar.supabase.co'
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnbmJpa2xvbGpwanpreHhjb2FyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjQ5OTA5NSwiZXhwIjoyMDg4MDc1MDk1fQ.h6X6UBVjEQjzs0kmJea-xwfOWvCxsbtUkihlAbb2r60'
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!supabaseKey) {
+  console.error('❌ SUPABASE_SERVICE_ROLE_KEY not found')
+  process.exit(1)
+}
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // Kuai API（Claude Haiku 4.5 - 筛选，Claude Sonnet 4.6 - 博客）
 // 如果配额用完，请在 .env.local 设置 KUAI_API_KEY
-const kuaiApiKey = process.env.KUAI_API_KEY || 'sk-ZaIcZLX7px5gq4nq8Y2FT7Gx4xokndLdhgjpln0sXFvwjSPh'
+const kuaiApiKey = process.env.KUAI_API_KEY
+if (!kuaiApiKey) {
+  console.error('❌ KUAI_API_KEY not found')
+  process.exit(1)
+}
 const anthropic = new Anthropic({
   apiKey: kuaiApiKey,
   baseURL: 'https://api.kuai.host'
@@ -164,10 +172,6 @@ async function insertSkill(entry, analysis) {
   const slug = analysis.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
   // 提取 GitHub 仓库信息
-  const repoMatch = analysis.github_url.match(/github\.com\/([^\/]+)\/([^\/\?#]+)/)
-  const githubUser = repoMatch ? repoMatch[1] : null
-  const githubRepo = repoMatch ? repoMatch[2] : null
-
   const { error } = await supabase.from('skills').insert([{
     name: analysis.title,
     slug,
@@ -333,7 +337,7 @@ async function main() {
   }
 
   // 4. 保存状态
-  writeFileSync(STATE_FILE, JSON.stringify(state, null, 2))
+  saveState(state)
 
   console.log('\n' + '='.repeat(50))
   console.log(`📊 本次同步结果:`)

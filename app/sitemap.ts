@@ -1,4 +1,7 @@
-import { assessBlogIndexability, assessSkillIndexability } from '@/lib/content-quality'
+import {
+  assessBlogIndexability,
+  assessSkillIndexability,
+} from '@/lib/content-quality'
 import { resolveBlogSeo } from '@/lib/seo'
 import { supabase } from '@/lib/supabase'
 import { topicHubs } from '@/lib/topic-hubs'
@@ -33,6 +36,7 @@ type SitemapPostRow = {
 
 export default async function sitemap() {
   const baseUrl = 'https://clawlist.io'
+  const staticLastModified = '2026-04-28T00:00:00.000Z'
 
   // Static pages
   const staticPages = [
@@ -41,16 +45,24 @@ export default async function sitemap() {
     '/skills',
     '/topics',
     '/blog',
+    '/briefs',
     '/about',
     '/contact',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'daily' as const,
+    lastModified: staticLastModified,
+    changeFrequency:
+      route === '' || route === '/blog' || route === '/briefs'
+        ? ('daily' as const)
+        : ('weekly' as const),
     priority:
       route === ''
         ? 1
-        : route === '/skills' || route === '/guides' || route === '/topics' || route === '/blog'
+        : route === '/skills' ||
+            route === '/guides' ||
+            route === '/topics' ||
+            route === '/blog' ||
+            route === '/briefs'
           ? 0.8
           : route === '/about' || route === '/contact'
             ? 0.5
@@ -62,7 +74,9 @@ export default async function sitemap() {
   if (supabase) {
     const { data: skills } = await supabase
       .from('skills')
-      .select('slug, created_at, name, summary, description, install_cmd, github_url, permissions')
+      .select(
+        'slug, created_at, name, summary, description, install_cmd, github_url, permissions',
+      )
       .order('created_at', { ascending: false })
 
     if (skills) {
@@ -70,7 +84,7 @@ export default async function sitemap() {
         .filter((skill) => assessSkillIndexability(skill).indexable)
         .map((skill) => ({
           url: `${baseUrl}/skills/${skill.slug}`,
-          lastModified: skill.created_at || new Date().toISOString(),
+          lastModified: skill.created_at || staticLastModified,
           changeFrequency: 'weekly' as const,
           priority: 0.7,
         }))
@@ -82,14 +96,16 @@ export default async function sitemap() {
   let guidePages: SitemapEntry[] = []
   const topicPages: SitemapEntry[] = topicHubs.map((hub) => ({
     url: `${baseUrl}/topics/${hub.slug}`,
-    lastModified: new Date().toISOString(),
+    lastModified: staticLastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.75,
   }))
   if (supabase) {
     const { data: posts } = await supabase
       .from('blog_posts')
-      .select('slug, category, title, summary, content, published_at, updated_at')
+      .select(
+        'slug, category, title, summary, content, published_at, updated_at',
+      )
       .order('published_at', { ascending: false })
 
     if (posts) {
@@ -109,10 +125,11 @@ export default async function sitemap() {
           return assessBlogIndexability(post).indexable
         })
         .map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: post.updated_at || post.published_at || new Date().toISOString(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
+          url: `${baseUrl}/blog/${post.slug}`,
+          lastModified:
+            post.updated_at || post.published_at || staticLastModified,
+          changeFrequency: 'monthly' as const,
+          priority: 0.6,
         }))
 
       guidePages = (posts as SitemapPostRow[])
@@ -120,12 +137,19 @@ export default async function sitemap() {
         .filter((post) => assessBlogIndexability(post).indexable)
         .map((post) => ({
           url: `${baseUrl}/guides/${post.slug}`,
-          lastModified: post.updated_at || post.published_at || new Date().toISOString(),
+          lastModified:
+            post.updated_at || post.published_at || staticLastModified,
           changeFrequency: 'monthly' as const,
           priority: 0.65,
         }))
     }
   }
 
-  return [...staticPages, ...topicPages, ...skillPages, ...blogPages, ...guidePages]
+  return [
+    ...staticPages,
+    ...topicPages,
+    ...skillPages,
+    ...blogPages,
+    ...guidePages,
+  ]
 }

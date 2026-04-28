@@ -14,16 +14,16 @@ import { topicHubs } from '@/lib/topic-hubs'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Global AI Directory & Newsroom',
+  title: 'Autonomous AI Agents, OpenClaw Workflows & Coding Agent News',
   description:
-    'Track AI tools, models, agents, skills, and industry shifts in one editorial homepage built for faster browsing.',
+    'Follow OpenClaw, autonomous AI agents, Claude Code, Codex workflows, and the skills that turn agent coverage into working systems.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'ClawList Global AI Directory & Newsroom',
+    title: 'ClawList Autonomous AI Agent Coverage',
     description:
-      'Track AI tools, models, agents, skills, and industry shifts in one editorial homepage built for faster browsing.',
+      'Follow OpenClaw, autonomous AI agents, Claude Code, Codex workflows, and the skills that turn agent coverage into working systems.',
     url: 'https://clawlist.io',
   },
 }

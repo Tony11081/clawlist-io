@@ -5,16 +5,16 @@ import { getSkillsList } from '@/lib/skills'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Skills Library',
+  title: 'OpenClaw Agent Capability Map',
   description:
-    'Browse OpenClaw skills with working install paths, risk labels, and practical summaries.',
+    'Browse OpenClaw skills by outcome: research, coding, browser automation, content operations, and device control.',
   alternates: {
     canonical: '/skills',
   },
   openGraph: {
-    title: 'ClawList Skills Library',
+    title: 'ClawList OpenClaw Agent Capability Map',
     description:
-      'Browse OpenClaw skills with working install paths, risk labels, and practical summaries.',
+      'Browse OpenClaw skills by outcome: research, coding, browser automation, content operations, and device control.',
     url: 'https://clawlist.io/skills',
   },
 }

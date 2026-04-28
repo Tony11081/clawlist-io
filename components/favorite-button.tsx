@@ -24,6 +24,7 @@ export function FavoriteButton({ skillId, initialFavorited = false, size = 'sm' 
 
   return (
     <Button
+      aria-label={`${favorited ? 'Remove' : 'Save'} ${skillId}`}
       variant={favorited ? 'default' : 'outline'}
       size={size}
       onClick={handleToggle}

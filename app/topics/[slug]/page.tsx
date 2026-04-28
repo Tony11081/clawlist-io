@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarDays,
+  Sparkles,
+  Wrench,
+} from 'lucide-react'
 import { notFound } from 'next/navigation'
 
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { Breadcrumb } from '@/components/breadcrumb'
-import {
-  getTopicHubBySlug,
-  topicHubs,
-} from '@/lib/topic-hubs'
+import { getTopicHubBySlug, topicHubs } from '@/lib/topic-hubs'
 
 type TopicPageProps = {
   params: Promise<{ slug: string }>
@@ -18,7 +21,9 @@ export function generateStaticParams() {
   return topicHubs.map((hub) => ({ slug: hub.slug }))
 }
 
-export async function generateMetadata({ params }: TopicPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: TopicPageProps): Promise<Metadata> {
   const { slug } = await params
   const hub = getTopicHubBySlug(slug)
 
@@ -99,6 +104,95 @@ export default async function TopicHubPage({ params }: TopicPageProps) {
           </div>
         </section>
 
+        <section className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+              Why This Matters Now
+            </p>
+            <p className="mt-4 text-lg leading-8 text-slate-700 dark:text-slate-300">
+              {hub.editorial.whyItMattersNow}
+            </p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              <Link
+                href={hub.editorial.bestFirstRead.href}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-slate-400 dark:border-[#2d2d2d] dark:bg-[#191919]"
+              >
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
+                  <BookOpen className="h-4 w-4" />
+                  Best First Read
+                </div>
+                <h2 className="mt-3 text-xl font-bold text-slate-900 group-hover:underline underline-offset-4 dark:text-slate-100">
+                  {hub.editorial.bestFirstRead.label}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {hub.editorial.bestFirstRead.reason}
+                </p>
+              </Link>
+
+              <Link
+                href={hub.editorial.bestSkillToTry.href}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-slate-400 dark:border-[#2d2d2d] dark:bg-[#191919]"
+              >
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
+                  <Wrench className="h-4 w-4" />
+                  Best Skill To Try
+                </div>
+                <h2 className="mt-3 text-xl font-bold text-slate-900 group-hover:underline underline-offset-4 dark:text-slate-100">
+                  {hub.editorial.bestSkillToTry.label}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {hub.editorial.bestSkillToTry.reason}
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+              <Sparkles className="h-4 w-4" />
+              What Changed This Month
+            </div>
+            <div className="mt-6 space-y-4">
+              {hub.editorial.whatChangedThisMonth.map((change) => (
+                <div
+                  key={change}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-[#2d2d2d] dark:bg-[#191919]"
+                >
+                  <p className="text-sm leading-6 text-slate-700 dark:text-slate-300">
+                    {change}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+            <CalendarDays className="h-4 w-4" />
+            Reader Path
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {hub.editorial.timeline.map((entry) => (
+              <div
+                key={`${entry.date}-${entry.title}`}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-[#2d2d2d] dark:bg-[#191919]"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
+                  {entry.date}
+                </p>
+                <h2 className="mt-3 text-xl font-bold text-slate-900 dark:text-slate-100">
+                  {entry.title}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {entry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-10 grid gap-10 lg:grid-cols-[1.5fr_1fr]">
           <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
             <div className="flex items-center justify-between gap-4">
@@ -169,8 +263,13 @@ export default async function TopicHubPage({ params }: TopicPageProps) {
               </p>
               <div className="mt-5 space-y-4">
                 {hub.ownership.slice(0, 3).map((entry) => (
-                  <div key={entry.keyword} className="rounded-2xl border border-slate-700 bg-white/5 p-4">
-                    <p className="text-sm font-bold text-white">{entry.keyword}</p>
+                  <div
+                    key={entry.keyword}
+                    className="rounded-2xl border border-slate-700 bg-white/5 p-4"
+                  >
+                    <p className="text-sm font-bold text-white">
+                      {entry.keyword}
+                    </p>
                     <p className="mt-2 text-sm leading-6 text-slate-300">
                       Primary page: {entry.primaryPath}
                     </p>

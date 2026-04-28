@@ -1,4 +1,3 @@
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { Shield, Key, Lock, AlertTriangle, ArrowRight, CheckCircle, XCircle } from 'lucide-react'
@@ -77,7 +76,7 @@ export default function SecurityPage() {
               <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
                 <li>• Rotate API keys regularly (every 90 days recommended)</li>
                 <li>• Set usage limits and budget alerts on provider dashboards</li>
-                <li>• Use read-only keys when write access isn't required</li>
+                <li>• Use read-only keys when write access isn&apos;t required</li>
                 <li>• Monitor API usage for unusual patterns</li>
               </ul>
             </div>

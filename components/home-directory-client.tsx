@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Newspaper, Sparkles } from 'lucide-react'
 
 import { EcosystemItemCard } from '@/components/ecosystem-item-card'
+import { WeeklyBriefSignup } from '@/components/weekly-brief-signup'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { BlogListItem } from '@/lib/blog'
@@ -56,66 +58,103 @@ export function HomeDirectoryClient({
   return (
     <div className="min-h-screen bg-[#f7f7f7] dark:bg-[#191919]">
       <main className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-20 lg:py-16">
-        <section className="mb-14 grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
+        <section className="mb-14 grid gap-8 lg:grid-cols-[minmax(0,0.96fr)_minmax(380px,0.64fr)] lg:items-center">
           <div>
             <Badge className="mb-5 border-0 bg-slate-200 text-slate-900 dark:bg-[#262626] dark:text-slate-100">
-              Global AI newsroom and directory
+              Autonomous agent watch
             </Badge>
-            <h1 className="text-5xl font-black tracking-tighter text-slate-900 dark:text-slate-100 lg:text-7xl">
-              READ THE SIGNAL.
+            <h1 className="max-w-4xl text-5xl font-black tracking-tighter text-slate-900 dark:text-slate-100 lg:text-7xl">
+              TRACK THE AGENTS.
               <br />
-              MAP THE STACK.
+              BUILD THE WORKFLOW.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-              ClawList is building an editorial home for AI tools, models, agents, workflows, and
-              industry shifts. The homepage starts with coverage and judgment, then opens into the
-              broader directory when you want the map behind the headlines.
+              ClawList follows the shift from chatbots to autonomous work:
+              OpenClaw, Claude Code, Codex, agent orchestration, and the
+              installable skills that make those systems useful outside a demo.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
-                className="bg-slate-900 text-white hover:opacity-90 dark:bg-slate-100 dark:text-slate-900"
+                className="h-11 rounded-xl bg-slate-900 px-5 text-white hover:opacity-90 dark:bg-slate-100 dark:text-slate-900"
                 asChild
               >
-                <Link href="/blog">Read the latest</Link>
+                <Link href="/blog">
+                  Read agent coverage
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
-              <Button variant="outline" asChild>
-                <Link href="/directory">Open directory briefs</Link>
+              <Button className="h-11 rounded-xl" variant="outline" asChild>
+                <Link href="/skills">Explore workflow skills</Link>
               </Button>
-              <Button variant="outline" asChild>
-                <Link href="/topics">Follow topic hubs</Link>
-              </Button>
+            </div>
+            <div className="mt-8 grid max-w-3xl gap-3 text-sm text-slate-600 dark:text-slate-400 sm:grid-cols-3">
+              <Link
+                className="rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-slate-400 dark:border-[#262626] dark:bg-[#121212]"
+                href="/topics/openclaw-nodes"
+              >
+                <span className="block font-bold text-slate-900 dark:text-slate-100">
+                  OpenClaw hub
+                </span>
+                <span className="mt-1 block leading-6">Nodes, browser control, and automation notes.</span>
+              </Link>
+              <Link
+                className="rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-slate-400 dark:border-[#262626] dark:bg-[#121212]"
+                href="#weekly-brief"
+              >
+                <span className="block font-bold text-slate-900 dark:text-slate-100">
+                  Weekly brief
+                </span>
+                <span className="mt-1 block leading-6">One email for the strongest agent signals.</span>
+              </Link>
+              <Link
+                className="rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-slate-400 dark:border-[#262626] dark:bg-[#121212]"
+                href="/directory"
+              >
+                <span className="block font-bold text-slate-900 dark:text-slate-100">
+                  Directory
+                </span>
+                <span className="mt-1 block leading-6">Reviewed resources behind the coverage.</span>
+              </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
-            <p className="text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
-              Editor&apos;s snapshot
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="rounded-2xl bg-slate-100 p-4 dark:bg-[#262626]/40">
+          <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+            <div className="relative aspect-[16/10] bg-slate-100 dark:bg-[#191919]">
+              <Image
+                alt="OpenClaw resource hub visual"
+                className="object-cover"
+                fill
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                src="/images/hero.png"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/35 to-transparent dark:from-[#121212] dark:via-[#121212]/30" />
+            </div>
+            <div className="grid grid-cols-2 gap-px border-t border-slate-200 bg-slate-200 dark:border-[#262626] dark:bg-[#262626]">
+              <div className="bg-white p-5 dark:bg-[#121212]">
                 <p className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                   {totalResources}
                 </p>
-                <p className="mt-1 text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
-                  Resources tracked
+                <p className="mt-1 text-xs font-mono uppercase tracking-[0.2em] text-slate-500">
+                  Agent resources
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-100 p-4 dark:bg-[#262626]/40">
+              <div className="bg-white p-5 dark:bg-[#121212]">
                 <p className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                   {totalCategories}
                 </p>
-                <p className="mt-1 text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
-                  Sectors covered
+                <p className="mt-1 text-xs font-mono uppercase tracking-[0.2em] text-slate-500">
+                  Workflow sectors
                 </p>
               </div>
             </div>
-            <div className="mt-6 rounded-2xl border border-slate-200 p-4 dark:border-[#303030]">
-              <p className="text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
-                Publishing rule
+            <div className="border-t border-slate-200 p-5 dark:border-[#262626]">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
+                Editorial promise
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Lead with original reporting and analysis, keep directory coverage as reviewed briefs,
-                and push outbound links behind ClawList context instead of using the homepage as a link wall.
+                Market signal first, workflow proof second, and clear paths
+                into tools readers can actually try.
               </p>
             </div>
           </div>
@@ -138,8 +177,12 @@ export function HomeDirectoryClient({
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
                 <span>{formatDate(topStory.published_at)}</span>
-                {topStory.reading_time && <span>{topStory.reading_time} min read</span>}
-                {typeof topStory.views === 'number' && <span>{topStory.views} reads</span>}
+                {topStory.reading_time && (
+                  <span>{topStory.reading_time} min read</span>
+                )}
+                {typeof topStory.views === 'number' && (
+                  <span>{topStory.views} reads</span>
+                )}
               </div>
               <div className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                 Read the story
@@ -173,7 +216,8 @@ export function HomeDirectoryClient({
                     className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-slate-400 dark:border-[#2d2d2d] dark:bg-[#191919]"
                   >
                     <p className="text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
-                      {post.category ?? 'News'} • {formatDate(post.published_at)}
+                      {post.category ?? 'News'} •{' '}
+                      {formatDate(post.published_at)}
                     </p>
                     <h3 className="mt-3 text-lg font-black tracking-tight text-slate-900 dark:text-slate-100">
                       {post.title}
@@ -187,6 +231,8 @@ export function HomeDirectoryClient({
             </div>
           </section>
         )}
+
+        <WeeklyBriefSignup pagePath="/" />
 
         <section className="mb-14 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
@@ -218,7 +264,10 @@ export function HomeDirectoryClient({
                       {post.summary}
                     </p>
                     <p className="mt-3 text-xs font-mono uppercase tracking-[0.2em] text-slate-500">
-                      {typeof post.views === 'number' ? `${post.views} reads` : 'Most read'} • {formatDate(post.published_at)}
+                      {typeof post.views === 'number'
+                        ? `${post.views} reads`
+                        : 'Most read'}{' '}
+                      • {formatDate(post.published_at)}
                     </p>
                   </div>
                 </Link>
@@ -264,10 +313,10 @@ export function HomeDirectoryClient({
             <div className="mb-6 flex items-end justify-between gap-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
-                  Topic hubs
+                  Autonomous Agent Watch
                 </p>
                 <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
-                  Follow the clusters shaping coverage.
+                  Follow the clusters behind agent-native work.
                 </h2>
               </div>
               <Link
@@ -307,7 +356,7 @@ export function HomeDirectoryClient({
                     Featured skills
                   </p>
                   <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
-                    Install-ready picks.
+                    Skills that turn coverage into capability.
                   </h2>
                 </div>
                 <Link
@@ -392,13 +441,13 @@ export function HomeDirectoryClient({
                 Directory briefs
               </p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
-                Start with ClawList context, then open the source.
+                Supporting sources, reviewed in context.
               </h2>
             </div>
             <div className="max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Homepage directory coverage now stays intentionally narrow. The full board lives in the
-              directory workspace so the homepage can behave like a publication front page instead of an
-              outbound link directory.
+              Directory coverage stays intentionally narrow on the homepage. The
+              full workspace supports our agent coverage with reviewed sources,
+              caveats, and alternatives.
             </div>
           </div>
 
@@ -455,8 +504,10 @@ export function HomeDirectoryClient({
                 Source and editorial policy
               </p>
               <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600 dark:text-slate-400">
-                ClawList uses public product and community pages as reporting inputs, then adds its own
-                editorial framing, internal linking, and workflow judgment before sending readers off-site.
+                ClawList uses public product and community pages as reporting
+                inputs, then adds its own agent-workflow framing, internal
+                linking, and operational judgment before sending readers
+                off-site.
               </p>
             </div>
             <div className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
@@ -469,4 +520,3 @@ export function HomeDirectoryClient({
     </div>
   )
 }
-

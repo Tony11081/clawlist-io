@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 // Seed skills data to Supabase
 require('dotenv').config({ path: '.env.local' });
@@ -201,7 +202,7 @@ const skills = [
 async function seedSkills() {
   console.log(`🌱 Seeding ${skills.length} skills...`);
   
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('skills')
     .upsert(skills, { onConflict: 'slug' });
 

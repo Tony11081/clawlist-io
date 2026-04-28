@@ -104,7 +104,7 @@ gtag('config', '${googleTagId}', { anonymize_ip: true });`}
       )}
 
       {visible && preferences && (
-        <aside className="fixed inset-x-4 bottom-4 z-50 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur md:left-auto md:right-6 md:max-w-lg dark:border-[#262626] dark:bg-[#101010]/95">
+        <aside className="fixed inset-x-4 bottom-4 z-50 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur md:inset-x-auto md:left-6 md:max-w-md dark:border-[#262626] dark:bg-[#101010]/95">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">
             Privacy & Cookies
           </p>

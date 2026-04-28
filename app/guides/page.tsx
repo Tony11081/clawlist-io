@@ -12,7 +12,8 @@ export const revalidate = 300
 
 export const metadata: Metadata = {
   title: 'Guides & Tutorials',
-  description: 'A curated collection of deep-dives, architectural overviews, and step-by-step implementations for the OpenClaw ecosystem.',
+  description:
+    'A curated collection of deep-dives, architectural overviews, and step-by-step implementations for the OpenClaw ecosystem.',
   alternates: { canonical: '/guides' },
 }
 
@@ -23,7 +24,9 @@ async function getGuides() {
 
   const { data, error } = await supabase
     .from('blog_posts')
-    .select('*')
+    .select(
+      'id, slug, title, summary, content, cover_image, tags, reading_time, published_at, author',
+    )
     .eq('category', 'guides')
     .order('published_at', { ascending: false })
 
@@ -52,10 +55,12 @@ export default async function GuidesPage() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-5xl font-black mb-4 tracking-tighter">
-            TECHNICAL <br/>RESOURCES.
+            TECHNICAL <br />
+            RESOURCES.
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-            A curated collection of deep-dives, architectural overviews, and step-by-step implementations for the OpenClaw ecosystem.
+            A curated collection of deep-dives, architectural overviews, and
+            step-by-step implementations for the OpenClaw ecosystem.
           </p>
         </div>
 
@@ -64,10 +69,13 @@ export default async function GuidesPage() {
           <div className="py-8">
             <div className="rounded-3xl border border-dashed border-slate-300 dark:border-slate-700 bg-white dark:bg-[#262626]/10 p-8 mb-8">
               <h2 className="text-2xl font-bold mb-3 text-slate-900 dark:text-slate-100">
-                Start with our topic hubs while the next guide batch is publishing.
+                Start with our topic hubs while the next guide batch is
+                publishing.
               </h2>
               <p className="text-slate-600 dark:text-slate-400 max-w-2xl">
-                We could not load the full guide archive right now, so here are the strongest topic clusters to keep you on real, maintained content.
+                We could not load the full guide archive right now, so here are
+                the strongest topic clusters to keep you on real, maintained
+                content.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
@@ -101,7 +109,8 @@ export default async function GuidesPage() {
                 {/* Cover Image */}
                 <div className="w-full md:w-72 h-48 shrink-0 rounded-lg overflow-hidden relative bg-slate-200 dark:bg-slate-700">
                   {(() => {
-                    const coverImage = guide.cover_image || extractFirstImage(guide.content)
+                    const coverImage =
+                      guide.cover_image || extractFirstImage(guide.content)
                     return coverImage ? (
                       <Image
                         src={coverImage}
@@ -122,7 +131,14 @@ export default async function GuidesPage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                          <rect
+                            width="18"
+                            height="18"
+                            x="3"
+                            y="3"
+                            rx="2"
+                            ry="2"
+                          />
                           <circle cx="9" cy="9" r="2" />
                           <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
                         </svg>
@@ -141,7 +157,8 @@ export default async function GuidesPage() {
                       )}
                       <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
                         {guide.reading_time && `${guide.reading_time} MIN READ`}
-                        {guide.published_at && ` • ${new Date(guide.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`}
+                        {guide.published_at &&
+                          ` • ${new Date(guide.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`}
                       </span>
                     </div>
                     <h2 className="text-2xl font-black mb-3 group-hover:underline underline-offset-4 decoration-2">
@@ -156,7 +173,9 @@ export default async function GuidesPage() {
                       {guide.author && (
                         <>
                           <div className="size-6 rounded-full bg-slate-300 dark:bg-slate-700"></div>
-                          <span className="text-xs font-medium">{guide.author}</span>
+                          <span className="text-xs font-medium">
+                            {guide.author}
+                          </span>
                         </>
                       )}
                     </div>
