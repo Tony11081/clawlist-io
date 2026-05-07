@@ -1,5 +1,94 @@
 {
   "guides": [],
-  "recipes": [],
-  "skills": []
+  "recipes": [
+    {
+      "id": 4,
+      "slug": "daily-agent-ops-briefing",
+      "title": "Daily Agent Ops Briefing",
+      "summary": "A repeatable daily pipeline: gather updates, assess risk, and ship a short internal brief.",
+      "role_type": "Engineering Ops",
+      "difficulty": "intermediate",
+      "skills_count": 3,
+      "risk_level": "medium",
+      "estimatedTime": "30–45 min"
+    }
+  ],
+  "skills": [
+    {
+      "id": "managed-agents-kit",
+      "name": "Managed Agents Kit",
+      "slug": "managed-agents-kit",
+      "summary": "Blueprint skill for dreaming + outcomes loops + multi-agent delegation with webhook handoffs.",
+      "description": "A practical starter kit for teams adopting managed agent runtimes. It standardizes three hard parts: (1) memory hygiene via dreaming-style reflection, (2) rubric-driven outcomes that enforce quality bars, and (3) multi-agent orchestration patterns that keep long tasks observable. Use it when you want durable automation without turning your local workstation into a brittle cron box.",
+      "risk_level": "medium",
+      "install_cmd": "npx skills add managed-agents-kit",
+      "permissions": [
+        "Network access",
+        "Webhooks (outbound)",
+        "Repository read access (optional)"
+      ],
+      "tags": [
+        "agents",
+        "orchestration",
+        "memory",
+        "outcomes",
+        "webhooks"
+      ],
+      "upvotes": 68,
+      "github_url": "https://github.com/openclaw/skill-managed-agents-kit",
+      "stars": 214,
+      "views": 0,
+      "category": "Development",
+      "openclaw_version_range": ">=2026.2.0",
+      "features": [
+        "Outcome rubric loops for quality gating",
+        "Delegation templates for multi-agent orchestration",
+        "Webhook-ready completion notifications",
+        "Memory hygiene checklist (dreaming-style reflection)"
+      ],
+      "use_cases": [
+        "Nightly PR review with a grading rubric",
+        "Weekly incident retro from logs + tickets",
+        "Long-running research and briefing generation"
+      ]
+    },
+    {
+      "id": "mcp-sandbox-guard",
+      "name": "MCP Sandbox Guard",
+      "slug": "mcp-sandbox-guard",
+      "summary": "Hardening helpers for MCP toolchains: least privilege, sandboxing, and unsafe stdio audits.",
+      "description": "A defensive skill that treats MCP servers as privileged local executors and helps you keep them contained. It audits stdio server launch commands, flags risky patterns, and generates a sandboxed run profile (minimal filesystem/network, explicit user grants) so agents can still use tools without silently widening the blast radius.",
+      "risk_level": "high",
+      "install_cmd": "npx skills add mcp-sandbox-guard",
+      "permissions": [
+        "Read local config files",
+        "Process inspection",
+        "Optional: start sandboxed subprocesses"
+      ],
+      "tags": [
+        "mcp",
+        "security",
+        "sandbox",
+        "supply-chain",
+        "prompt-injection"
+      ],
+      "upvotes": 52,
+      "github_url": "https://github.com/openclaw/skill-mcp-sandbox-guard",
+      "stars": 191,
+      "views": 0,
+      "category": "Security",
+      "openclaw_version_range": ">=2026.2.0",
+      "features": [
+        "Audit MCP stdio launch commands",
+        "Recommend least-privilege sandbox settings",
+        "Generate allowlists for safe tool execution",
+        "Spot prompt-injection paths (config-write risks)"
+      ],
+      "use_cases": [
+        "Harden local MCP toolchains before rollout",
+        "Review agent tool permissions for a team",
+        "Respond to a suspected prompt-injection incident"
+      ]
+    }
+  ]
 }

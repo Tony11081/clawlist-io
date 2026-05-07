@@ -53,7 +53,7 @@ export type EcosystemDirectorySection = {
   cardLabel: string
 }
 
-const DIRECTORY_LAST_REVIEWED = 'April 3, 2026'
+const DIRECTORY_LAST_REVIEWED = 'May 7, 2026'
 
 const nameOverrides: Record<string, string> = {
   'OpenClaw official website': 'OpenClaw',

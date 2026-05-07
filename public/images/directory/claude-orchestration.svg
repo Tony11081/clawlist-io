@@ -1,0 +1,38 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="28" y1="24" x2="228" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="56" y1="56" x2="208" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93C5FD"/>
+      <stop offset="0.55" stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#C4B5FD"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="20" y="20" width="216" height="216" rx="44" fill="url(#bg)"/>
+  <rect x="20.75" y="20.75" width="214.5" height="214.5" rx="43.25" stroke="#94A3B8" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- orchestration graph -->
+  <g stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 168C96 144 110 130 128 126C146 122 160 108 168 84"/>
+    <path d="M88 168C116 182 140 182 168 172"/>
+    <path d="M168 84C190 106 198 130 196 160"/>
+  </g>
+
+  <g fill="url(#accent)">
+    <circle cx="88" cy="168" r="10"/>
+    <circle cx="168" cy="84" r="10"/>
+    <circle cx="196" cy="160" r="8"/>
+    <circle cx="168" cy="172" r="9"/>
+    <circle cx="128" cy="126" r="7"/>
+  </g>
+
+  <!-- subtle motion rings -->
+  <g stroke="#E2E8F0" stroke-opacity="0.08" stroke-width="2">
+    <path d="M64 120C74 78 112 56 148 64C194 74 214 116 206 156C196 206 140 212 108 198"/>
+    <path d="M74 132C84 96 114 82 144 88C176 94 192 120 186 150C178 186 138 190 118 180"/>
+  </g>
+</svg>
+

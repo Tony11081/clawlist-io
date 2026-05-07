@@ -892,6 +892,48 @@
         "url": "https://xcrawl.com/?keyword=2ozjddoq",
         "hostname": "xcrawl.com",
         "logo": "https://aicdn.zfty.work/space_13/image_cloud/202603/1774513150950503_xcrawl.webp"
+      },
+      {
+        "id": "broader-ecosystem-2",
+        "name": "OpenAI Agents SDK",
+        "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
+        "hostname": "openai.com",
+        "logo": "/images/directory/openai-sandbox.svg"
+      },
+      {
+        "id": "broader-ecosystem-3",
+        "name": "OpenAI Codex CLI (Getting Started)",
+        "url": "https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started",
+        "hostname": "help.openai.com",
+        "logo": "/images/directory/openai-sandbox.svg"
+      },
+      {
+        "id": "broader-ecosystem-4",
+        "name": "Claude Managed Agents (Dreaming + Outcomes)",
+        "url": "https://claude.com/blog/new-in-claude-managed-agents",
+        "hostname": "claude.com",
+        "logo": "/images/directory/claude-orchestration.svg"
+      },
+      {
+        "id": "broader-ecosystem-5",
+        "name": "Claude Code Routines (Scheduled Agents)",
+        "url": "https://code.claude.com/docs/en/web-scheduled-tasks",
+        "hostname": "code.claude.com",
+        "logo": "/images/directory/claude-orchestration.svg"
+      },
+      {
+        "id": "broader-ecosystem-6",
+        "name": "MCP Security Best Practices",
+        "url": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+        "hostname": "modelcontextprotocol.io",
+        "logo": "/images/directory/mcp-protocol.svg"
+      },
+      {
+        "id": "broader-ecosystem-7",
+        "name": "MCP Supply Chain Advisory (OX Security)",
+        "url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-technical-deep-dive/",
+        "hostname": "ox.security",
+        "logo": "/images/directory/shield-sandbox.svg"
       }
     ]
   },

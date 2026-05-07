@@ -591,6 +591,7 @@ export const topicHubs: TopicHub[] = [
         'Codex orchestration, short-video automation, image generation skills, and multi-model workflows now sit in one execution-focused cluster.',
         'Build stories are used as proof of workflow shape, while skills provide the next action.',
         'The hub now separates orchestration examples from Claude Code-only productivity coverage.',
+        'New conversion targets emphasize managed-agent orchestration plus sandbox-first MCP hardening.',
       ],
       bestFirstRead: {
         href: '/blog/codex-monitor-agent-orchestration-demo',
@@ -621,7 +622,7 @@ export const topicHubs: TopicHub[] = [
           date: 'Next',
           title: 'Move into installable flow tools',
           description:
-            'Try Claude Flow, Team Builder, or Union Search depending on the workflow you want to automate first.',
+            'Try Claude Flow for orchestration, Union Search for sourcing, or MCP Sandbox Guard when the workflow depends on local tool execution.',
         },
       ],
     },
@@ -682,6 +683,14 @@ export const topicHubs: TopicHub[] = [
         title: 'Union Search',
         summary:
           'Strong top-of-funnel skill for research, sourcing, and cross-platform discovery workflows.',
+        type: 'skill',
+      },
+      {
+        href: '/skills/mcp-sandbox-guard',
+        slug: 'mcp-sandbox-guard',
+        title: 'MCP Sandbox Guard',
+        summary:
+          'Contain MCP servers with least-privilege defaults and safer tool execution boundaries.',
         type: 'skill',
       },
     ],
