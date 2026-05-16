@@ -11,6 +11,17 @@
       "skills_count": 3,
       "risk_level": "medium",
       "estimatedTime": "30–45 min"
+    },
+    {
+      "id": 5,
+      "slug": "mobile-agent-supervision",
+      "title": "Mobile Agent Supervision",
+      "summary": "Keep long-running coding agents moving from your phone with safe approvals, checkpoints, and an audit trail.",
+      "role_type": "Engineering Ops",
+      "difficulty": "intermediate",
+      "skills_count": 3,
+      "risk_level": "medium",
+      "estimatedTime": "20–30 min"
     }
   ],
   "skills": [
@@ -50,6 +61,44 @@
         "Nightly PR review with a grading rubric",
         "Weekly incident retro from logs + tickets",
         "Long-running research and briefing generation"
+      ]
+    },
+    {
+      "id": "agent-audit-trail",
+      "name": "Agent Audit Trail",
+      "slug": "agent-audit-trail",
+      "summary": "Structured audit logs for agent runs: tool calls, approvals, diffs, and end-of-run summaries.",
+      "description": "An operations-first skill for teams running long-horizon agents. It captures a run-by-run audit trail (inputs, tool invocations, approvals, and produced diffs) and emits a compact end-of-run summary for review. Use it when you need reproducibility, postmortems, and compliance-friendly visibility without relying on the agent’s own narrative.",
+      "risk_level": "medium",
+      "install_cmd": "npx skills add agent-audit-trail",
+      "permissions": [
+        "Read/write local workspace",
+        "Read local tool logs (optional)",
+        "Optional: send traces to an observability backend"
+      ],
+      "tags": [
+        "observability",
+        "logging",
+        "agents",
+        "approvals",
+        "compliance"
+      ],
+      "upvotes": 41,
+      "github_url": "https://github.com/openclaw/skill-agent-audit-trail",
+      "stars": 153,
+      "views": 0,
+      "category": "Operations",
+      "openclaw_version_range": ">=2026.2.0",
+      "features": [
+        "Run IDs + structured tool-call logs",
+        "Approval checkpoint capture (who/what/when)",
+        "Diff summaries for changed files",
+        "Redaction helpers for secrets in logs"
+      ],
+      "use_cases": [
+        "Mobile supervision where approvals happen while distracted",
+        "Auditability for agents operating on production repos",
+        "Incident retros built from agent run logs"
       ]
     },
     {

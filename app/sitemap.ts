@@ -3,6 +3,7 @@ import {
   assessSkillIndexability,
 } from '@/lib/content-quality'
 import { resolveBlogSeo } from '@/lib/seo'
+import { getBriefs } from '@/lib/briefs'
 import { supabase } from '@/lib/supabase'
 import { topicHubs } from '@/lib/topic-hubs'
 
@@ -67,6 +68,13 @@ export default async function sitemap() {
           : route === '/about' || route === '/contact'
             ? 0.5
             : 0.3,
+  }))
+
+  const briefPages: SitemapEntry[] = (await getBriefs()).map((brief) => ({
+    url: `${baseUrl}/briefs/${brief.slug}`,
+    lastModified: brief.published_at || staticLastModified,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
   }))
 
   // Dynamic skills
@@ -147,6 +155,7 @@ export default async function sitemap() {
 
   return [
     ...staticPages,
+    ...briefPages,
     ...topicPages,
     ...skillPages,
     ...blogPages,

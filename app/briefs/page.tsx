@@ -4,6 +4,7 @@ import { ArrowRight, CalendarDays } from 'lucide-react'
 
 import { Breadcrumb } from '@/components/breadcrumb'
 import { getHomepageEditorialPack } from '@/lib/blog'
+import { getBriefs } from '@/lib/briefs'
 import { topicHubs } from '@/lib/topic-hubs'
 
 export const revalidate = 300
@@ -31,6 +32,7 @@ function formatDate(value: string) {
 
 export default async function BriefsPage() {
   const pack = await getHomepageEditorialPack()
+  const briefs = await getBriefs()
   const shareWorthy =
     pack.editorsPicks.length > 0 ? pack.editorsPicks : pack.analysis
 
@@ -54,6 +56,33 @@ export default async function BriefsPage() {
             orchestration, and the skills that make autonomous work operational.
           </p>
         </section>
+
+        {briefs.length > 0 && (
+          <section className="mb-12 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#121212] lg:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+              Daily Ops Briefs (Repo-backed)
+            </p>
+            <div className="mt-5 grid gap-4 lg:grid-cols-3">
+              {briefs.slice(0, 3).map((brief) => (
+                <Link
+                  key={brief.slug}
+                  href={`/briefs/${brief.slug}`}
+                  className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-slate-400 dark:border-[#2d2d2d] dark:bg-[#191919]"
+                >
+                  <h2 className="text-lg font-black tracking-tight text-slate-900 group-hover:underline underline-offset-4 dark:text-slate-100">
+                    {brief.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                    {brief.summary}
+                  </p>
+                  <p className="mt-4 text-[11px] font-mono uppercase tracking-[0.2em] text-slate-500">
+                    {formatDate(brief.published_at)}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="mb-12 grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           {pack.topStory && (
