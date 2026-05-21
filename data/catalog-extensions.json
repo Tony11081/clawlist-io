@@ -138,6 +138,43 @@
         "Review agent tool permissions for a team",
         "Respond to a suspected prompt-injection incident"
       ]
+    },
+    {
+      "id": "mcp-connector-scaffold",
+      "name": "MCP Connector Scaffold",
+      "slug": "mcp-connector-scaffold",
+      "summary": "Turn an API spec into a typed SDK + minimal MCP server with safe defaults and versioning.",
+      "description": "A builder skill for teams turning internal or third-party APIs into reliable agent tools. Provide an OpenAPI (or JSON Schema + endpoint list) and it generates: (1) a typed client SDK, (2) an MCP server exposing a curated tool surface, and (3) a small compatibility test suite + release checklist. Use it to ship connectors that are boring, stable, and reviewable — not bespoke prompt glue.",
+      "risk_level": "medium",
+      "install_cmd": "npx skills add mcp-connector-scaffold",
+      "permissions": [
+        "Read/write local workspace",
+        "Network access (for schema fetch + API smoke tests)",
+        "Optional: publish to a package registry"
+      ],
+      "tags": [
+        "mcp",
+        "connectors",
+        "sdk",
+        "openapi",
+        "orchestration"
+      ],
+      "upvotes": 34,
+      "stars": 0,
+      "views": 0,
+      "category": "Development",
+      "openclaw_version_range": ">=2026.3.0",
+      "features": [
+        "Curated tool surface + input/output schemas",
+        "Generated SDK with retries + timeouts",
+        "Compatibility tests (contract + smoke)",
+        "Changelog scaffolding + version pin recommendations"
+      ],
+      "use_cases": [
+        "Wrap an internal service as a safe agent tool",
+        "Create an MCP toolchain for a vendor API",
+        "Standardize connector quality across teams"
+      ]
     }
   ]
 }
