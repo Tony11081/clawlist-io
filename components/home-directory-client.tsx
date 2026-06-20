@@ -7,6 +7,7 @@ import { WeeklyBriefSignup } from '@/components/weekly-brief-signup'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { BlogListItem } from '@/lib/blog'
+import type { BriefListItem } from '@/lib/briefs'
 import type {
   EcosystemDirectoryItem,
   EcosystemDirectorySection,
@@ -28,6 +29,7 @@ type HomeDirectoryClientProps = {
   featuredSections: EcosystemDirectorySection[]
   featuredSkills: SkillListItem[]
   featuredTopics: FeaturedTopic[]
+  latestBrief: BriefListItem | null
   mostReadPosts: BlogListItem[]
   topStory: BlogListItem | null
   totalCategories: number
@@ -50,6 +52,7 @@ export function HomeDirectoryClient({
   featuredSections,
   featuredSkills,
   featuredTopics,
+  latestBrief,
   mostReadPosts,
   topStory,
   totalCategories,
@@ -233,6 +236,66 @@ export function HomeDirectoryClient({
         )}
 
         <WeeklyBriefSignup pagePath="/" />
+
+        {latestBrief && (
+          <section className="mb-14 grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+            <Link
+              href={`/briefs/${latestBrief.slug}`}
+              className="group rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-slate-400 dark:border-[#262626] dark:bg-[#121212]"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+                Latest brief
+              </p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 lg:text-4xl">
+                {latestBrief.title}
+              </h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">
+                {latestBrief.summary}
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
+                <span>{formatDate(latestBrief.published_at)}</span>
+                {latestBrief.tags.length > 0 && (
+                  <span>{latestBrief.tags.slice(0, 3).join(' • ')}</span>
+                )}
+              </div>
+              <div className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-100">
+                Read the latest ops brief
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#121212]">
+              <div className="mb-5 flex items-end justify-between gap-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+                    Brief archive
+                  </p>
+                  <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+                    Follow the current operator signal.
+                  </h2>
+                </div>
+                <Link
+                  href="/briefs"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100"
+                >
+                  All briefs
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-[#2d2d2d] dark:bg-[#191919]">
+                <p className="text-xs font-mono uppercase tracking-[0.24em] text-slate-500">
+                  Repo-backed editorial feed
+                </p>
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                  ClawList publishes short recurring briefs on Codex, Claude
+                  Code, OpenClaw, MCP, agent orchestration, installable skills,
+                  and practical automation patterns. The homepage now pulls the
+                  newest one directly from the repository.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="mb-14 grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm dark:border-[#262626] dark:bg-[#121212]">

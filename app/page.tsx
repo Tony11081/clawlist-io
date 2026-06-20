@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { AnalyticsTracker } from '@/components/analytics-tracker'
 import { HomeDirectoryClient } from '@/components/home-directory-client'
 import { getHomepageEditorialPack, getRecentGuidePosts } from '@/lib/blog'
+import { getBriefs } from '@/lib/briefs'
 import {
   getFeaturedEcosystemItems,
   getEcosystemDirectoryStats,
@@ -32,11 +33,13 @@ export default async function Home() {
   const { totalCategories, totalResources } = getEcosystemDirectoryStats()
   const featuredSections = getFeaturedEcosystemSections()
   const directorySpotlights = getFeaturedEcosystemItems(6)
-  const [latestPosts, featuredGuides, featuredSkills] = await Promise.all([
+  const [latestPosts, featuredGuides, featuredSkills, briefs] = await Promise.all([
     getHomepageEditorialPack(),
     getRecentGuidePosts(3),
     getFeaturedSkills(3),
+    getBriefs(),
   ])
+  const latestBrief = briefs[0] ?? null
   const featuredTopics = topicHubs.slice(0, 4).map((topic) => ({
     eyebrow: topic.eyebrow,
     slug: topic.slug,
@@ -65,6 +68,7 @@ export default async function Home() {
         featuredSections={featuredSections}
         featuredSkills={featuredSkills}
         featuredTopics={featuredTopics}
+        latestBrief={latestBrief}
         mostReadPosts={latestPosts.mostRead}
         topStory={latestPosts.topStory}
         totalCategories={totalCategories}
