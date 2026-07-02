@@ -1,0 +1,71 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sandboxed agent workspace and skill provenance diagram</title>
+  <desc id="desc">A clean technical composition showing isolated workspaces, verified skills, review artifacts, and deployment flow.</desc>
+  <rect width="1600" height="900" fill="#0b1220"/>
+  <defs>
+    <linearGradient id="panel" x1="184" y1="136" x2="1416" y2="764" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#151a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="383" y1="170" x2="1233" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="softShadow" x="110" y="70" width="1380" height="790" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="50" flood-color="#020617" flood-opacity=".55"/>
+    </filter>
+  </defs>
+  <rect x="160" y="112" width="1280" height="676" rx="34" fill="url(#panel)" stroke="#273246" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="226" y="178" width="1148" height="544" rx="24" fill="#0f172a" stroke="#263244" stroke-width="2"/>
+  <g opacity=".34">
+    <path d="M274 278H1326" stroke="#334155" stroke-width="2"/>
+    <path d="M274 394H1326" stroke="#334155" stroke-width="2"/>
+    <path d="M274 510H1326" stroke="#334155" stroke-width="2"/>
+    <path d="M274 626H1326" stroke="#334155" stroke-width="2"/>
+    <path d="M390 226V674" stroke="#334155" stroke-width="2"/>
+    <path d="M622 226V674" stroke="#334155" stroke-width="2"/>
+    <path d="M854 226V674" stroke="#334155" stroke-width="2"/>
+    <path d="M1086 226V674" stroke="#334155" stroke-width="2"/>
+    <path d="M1210 226V674" stroke="#334155" stroke-width="2"/>
+  </g>
+  <rect x="302" y="294" width="276" height="232" rx="22" fill="#111827" stroke="#3b82f6" stroke-width="3"/>
+  <rect x="658" y="250" width="284" height="320" rx="22" fill="#111827" stroke="#64748b" stroke-width="2"/>
+  <rect x="1022" y="294" width="276" height="232" rx="22" fill="#111827" stroke="#8b5cf6" stroke-width="3"/>
+  <path d="M578 410H658" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M942 410H1022" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M612 410L584 392V428L612 410Z" fill="#38bdf8"/>
+  <path d="M976 410L948 392V428L976 410Z" fill="#8b5cf6"/>
+  <g stroke="#38bdf8" stroke-width="4" stroke-linecap="round">
+    <path d="M364 358H514"/>
+    <path d="M364 408H480"/>
+    <path d="M364 458H530"/>
+  </g>
+  <g stroke="#94a3b8" stroke-width="4" stroke-linecap="round">
+    <path d="M718 328H882"/>
+    <path d="M718 378H842"/>
+    <path d="M718 428H884"/>
+    <path d="M718 478H810"/>
+  </g>
+  <g stroke="#a78bfa" stroke-width="4" stroke-linecap="round">
+    <path d="M1084 358H1234"/>
+    <path d="M1084 408H1202"/>
+    <path d="M1084 458H1250"/>
+  </g>
+  <circle cx="440" cy="602" r="42" fill="#0b1220" stroke="#38bdf8" stroke-width="4"/>
+  <circle cx="800" cy="642" r="42" fill="#0b1220" stroke="#64748b" stroke-width="4"/>
+  <circle cx="1160" cy="602" r="42" fill="#0b1220" stroke="#8b5cf6" stroke-width="4"/>
+  <path d="M421 602L435 616L463 584" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M781 642L795 656L823 624" stroke="#94a3b8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1141 602L1155 616L1183 584" stroke="#a78bfa" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M440 568V526" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M800 600V570" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1160 568V526" stroke="#a78bfa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M440 644C440 684 800 704 800 684V684C800 704 1160 684 1160 644" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  <rect x="332" y="222" width="216" height="26" rx="13" fill="#1e293b"/>
+  <rect x="692" y="190" width="216" height="26" rx="13" fill="#1e293b"/>
+  <rect x="1056" y="222" width="216" height="26" rx="13" fill="#1e293b"/>
+  <rect x="384" y="230" width="112" height="10" rx="5" fill="#38bdf8" opacity=".9"/>
+  <rect x="744" y="198" width="112" height="10" rx="5" fill="#94a3b8" opacity=".9"/>
+  <rect x="1108" y="230" width="112" height="10" rx="5" fill="#a78bfa" opacity=".9"/>
+  <rect x="250" y="744" width="1100" height="6" rx="3" fill="url(#accent)" opacity=".7"/>
+</svg>
