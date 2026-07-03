@@ -1,0 +1,76 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Autonomous agent failure visibility and governed runtime</title>
+  <desc id="desc">A clean technical composition showing agent tasks moving through governed tools, trace controls, runtime isolation, and review artifacts.</desc>
+  <rect width="1600" height="900" fill="#0a1020"/>
+  <defs>
+    <linearGradient id="panel" x1="194" y1="112" x2="1408" y2="792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#171529"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="312" y1="262" x2="1278" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset=".55" stop-color="#64748b"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="shadow" x="90" y="58" width="1420" height="798" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="48" flood-color="#020617" flood-opacity=".58"/>
+    </filter>
+  </defs>
+  <rect x="154" y="102" width="1292" height="696" rx="32" fill="url(#panel)" stroke="#253044" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="218" y="164" width="1164" height="572" rx="24" fill="#0f172a" stroke="#273244" stroke-width="2"/>
+  <g opacity=".26" stroke="#334155" stroke-width="2">
+    <path d="M278 250H1322"/>
+    <path d="M278 352H1322"/>
+    <path d="M278 454H1322"/>
+    <path d="M278 556H1322"/>
+    <path d="M278 658H1322"/>
+    <path d="M380 210V690"/>
+    <path d="M584 210V690"/>
+    <path d="M788 210V690"/>
+    <path d="M992 210V690"/>
+    <path d="M1196 210V690"/>
+  </g>
+  <rect x="294" y="282" width="244" height="204" rx="22" fill="#111827" stroke="#38bdf8" stroke-width="3"/>
+  <rect x="684" y="232" width="232" height="304" rx="22" fill="#111827" stroke="#64748b" stroke-width="3"/>
+  <rect x="1062" y="282" width="244" height="204" rx="22" fill="#111827" stroke="#8b5cf6" stroke-width="3"/>
+  <path d="M538 384C606 384 614 384 684 384" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M916 384C986 384 994 384 1062 384" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M628 350L674 384L628 418" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1006 350L1052 384L1006 418" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#38bdf8" stroke-width="4" stroke-linecap="round">
+    <path d="M346 340H486"/>
+    <path d="M346 386H460"/>
+    <path d="M346 432H500"/>
+  </g>
+  <g stroke="#94a3b8" stroke-width="4" stroke-linecap="round">
+    <path d="M734 306H864"/>
+    <path d="M734 352H838"/>
+    <path d="M734 398H866"/>
+    <path d="M734 444H812"/>
+  </g>
+  <g stroke="#a78bfa" stroke-width="4" stroke-linecap="round">
+    <path d="M1114 340H1254"/>
+    <path d="M1114 386H1228"/>
+    <path d="M1114 432H1268"/>
+  </g>
+  <circle cx="416" cy="596" r="44" fill="#0b1220" stroke="#38bdf8" stroke-width="4"/>
+  <circle cx="800" cy="638" r="44" fill="#0b1220" stroke="#94a3b8" stroke-width="4"/>
+  <circle cx="1184" cy="596" r="44" fill="#0b1220" stroke="#8b5cf6" stroke-width="4"/>
+  <path d="M397 596L411 610L437 582" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M780 638L794 652L821 624" stroke="#94a3b8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1165 596L1179 610L1205 582" stroke="#a78bfa" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 552V486" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M800 594V536" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1184 552V486" stroke="#a78bfa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M416 640C458 700 724 704 800 666C876 704 1142 700 1184 640" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  <rect x="324" y="216" width="184" height="22" rx="11" fill="#1e293b"/>
+  <rect x="708" y="180" width="184" height="22" rx="11" fill="#1e293b"/>
+  <rect x="1092" y="216" width="184" height="22" rx="11" fill="#1e293b"/>
+  <rect x="368" y="223" width="96" height="8" rx="4" fill="#38bdf8"/>
+  <rect x="752" y="187" width="96" height="8" rx="4" fill="#94a3b8"/>
+  <rect x="1136" y="223" width="96" height="8" rx="4" fill="#a78bfa"/>
+  <rect x="270" y="714" width="1060" height="6" rx="3" fill="url(#accent)" opacity=".72"/>
+  <circle cx="270" cy="714" r="8" fill="#38bdf8"/>
+  <circle cx="800" cy="714" r="8" fill="#94a3b8"/>
+  <circle cx="1330" cy="714" r="8" fill="#8b5cf6"/>
+</svg>
