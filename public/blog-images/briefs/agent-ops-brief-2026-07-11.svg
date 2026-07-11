@@ -1,0 +1,50 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Agent repository onboarding map</title>
+  <desc id="desc">A clean technical diagram of a repository map connected to layered instructions, reusable skills, and three model routes.</desc>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <defs>
+    <linearGradient id="panel" x1="128" y1="94" x2="1472" y2="806" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset=".58" stop-color="#111827"/>
+      <stop offset="1" stop-color="#171326"/>
+    </linearGradient>
+    <linearGradient id="route" x1="360" y1="450" x2="1270" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset=".55" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(440 250) rotate(22) scale(620 330)">
+      <stop stop-color="#38bdf8" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="34" y="20" width="1532" height="860" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="34" stdDeviation="52" flood-color="#020617" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".18" stroke="#475569" stroke-width="2">
+    <path d="M190 224H1410"/><path d="M190 450H1410"/><path d="M190 676H1410"/>
+    <path d="M392 154V746"/><path d="M800 154V746"/><path d="M1208 154V746"/>
+  </g>
+  <rect x="190" y="176" width="430" height="548" rx="28" fill="#0c1524" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M258 250H446L510 314V650H258V250Z" fill="#111c2d" stroke="#64748b" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M446 250V314H510" stroke="#64748b" stroke-width="3"/>
+  <path d="M310 356H458M310 408H424M310 460H458M310 512H390" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="548" cy="286" r="18" fill="#38bdf8"/>
+  <circle cx="548" cy="450" r="18" fill="#818cf8"/>
+  <circle cx="548" cy="614" r="18" fill="#a78bfa"/>
+  <path d="M566 286H720M566 450H720M566 614H720" stroke="url(#route)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="720" y="214" width="286" height="144" rx="24" fill="#101827" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M770 264H944M770 308H890" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round"/>
+  <rect x="720" y="378" width="286" height="144" rx="24" fill="#101827" stroke="#818cf8" stroke-width="3"/>
+  <path d="M770 428H944M770 472H868" stroke="#a5b4fc" stroke-width="8" stroke-linecap="round"/>
+  <rect x="720" y="542" width="286" height="144" rx="24" fill="#101827" stroke="#a78bfa" stroke-width="3"/>
+  <path d="M770 592H944M770 636H910" stroke="#c4b5fd" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1006 286H1100M1006 450H1100M1006 614H1100" stroke="url(#route)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="1100" y="198" width="300" height="504" rx="30" fill="#0c1524" stroke="#8b5cf6" stroke-width="3"/>
+  <circle cx="1250" cy="310" r="58" fill="#111827" stroke="#38bdf8" stroke-width="5"/>
+  <circle cx="1250" cy="450" r="78" fill="#111827" stroke="#818cf8" stroke-width="5"/>
+  <circle cx="1250" cy="610" r="96" fill="#111827" stroke="#a78bfa" stroke-width="5"/>
+  <path d="M1218 310H1282M1208 450H1292M1196 610H1304" stroke="url(#route)" stroke-width="9" stroke-linecap="round"/>
+</svg>
