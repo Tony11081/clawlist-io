@@ -1,0 +1,47 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Agent authority provenance</title>
+  <desc id="desc">A clean technical diagram showing trusted policy, approval evidence, and bounded agent capabilities passing through a central authorization gate.</desc>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <defs>
+    <linearGradient id="panel" x1="118" y1="86" x2="1482" y2="814" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/><stop offset=".58" stop-color="#111827"/><stop offset="1" stop-color="#171326"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="282" y1="450" x2="1318" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/><stop offset=".54" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(420 720)">
+      <stop stop-color="#6366f1" stop-opacity=".18"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="30" y="8" width="1540" height="884" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="34" stdDeviation="54" flood-color="#020617" flood-opacity=".68"/>
+    </filter>
+  </defs>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".16" stroke="#64748b" stroke-width="2">
+    <path d="M182 224H1418M182 450H1418M182 676H1418"/><path d="M388 150V750M800 150V750M1212 150V750"/>
+  </g>
+  <rect x="194" y="202" width="328" height="496" rx="28" fill="#0b1524" stroke="#334155" stroke-width="3"/>
+  <circle cx="286" cy="314" r="42" fill="#102235" stroke="#38bdf8" stroke-width="4"/>
+  <path d="M269 314L281 326L305 298" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M354 294H462M354 334H426" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="286" cy="450" r="42" fill="#171b37" stroke="#818cf8" stroke-width="4"/>
+  <path d="M286 426V474M262 450H310" stroke="#a5b4fc" stroke-width="8" stroke-linecap="round"/>
+  <path d="M354 430H462M354 470H414" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="286" cy="586" r="42" fill="#201733" stroke="#a78bfa" stroke-width="4"/>
+  <path d="M267 586H305M286 567V605" stroke="#c4b5fd" stroke-width="8" stroke-linecap="round"/>
+  <path d="M354 566H462M354 606H438" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M522 314H654M522 450H654M522 586H654" stroke="url(#signal)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M800 212L958 274V430C958 540 893 620 800 664C707 620 642 540 642 430V274L800 212Z" fill="#101827" stroke="url(#signal)" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="800" cy="402" r="72" fill="#0b1524" stroke="#818cf8" stroke-width="5"/>
+  <path d="M768 402L790 424L834 378" stroke="url(#signal)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M742 520H858" stroke="#64748b" stroke-width="9" stroke-linecap="round"/>
+  <path d="M958 314H1080M958 450H1080M958 586H1080" stroke="url(#signal)" stroke-width="7" stroke-linecap="round"/>
+  <rect x="1080" y="202" width="326" height="496" rx="28" fill="#0b1524" stroke="#334155" stroke-width="3"/>
+  <rect x="1142" y="270" width="202" height="92" rx="22" fill="#102235" stroke="#38bdf8" stroke-width="4"/>
+  <path d="M1190 316H1296" stroke="#7dd3fc" stroke-width="10" stroke-linecap="round"/>
+  <rect x="1142" y="404" width="202" height="92" rx="22" fill="#171b37" stroke="#818cf8" stroke-width="4"/>
+  <path d="M1190 450H1296" stroke="#a5b4fc" stroke-width="10" stroke-linecap="round"/>
+  <rect x="1142" y="538" width="202" height="92" rx="22" fill="#201733" stroke="#a78bfa" stroke-width="4"/>
+  <path d="M1190 584H1296" stroke="#c4b5fd" stroke-width="10" stroke-linecap="round"/>
+</svg>
