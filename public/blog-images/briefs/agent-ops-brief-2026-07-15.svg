@@ -1,0 +1,27 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Security automation proof loop</title>
+  <desc id="desc">A restrained technical diagram of detection, remediation, verification, and approval connected in a closed loop.</desc>
+  <defs>
+    <linearGradient id="panel" x1="116" y1="80" x2="1484" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".55" stop-color="#111827"/><stop offset="1" stop-color="#17132a"/></linearGradient>
+    <linearGradient id="signal" x1="330" y1="690" x2="1270" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".52" stop-color="#6366f1"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(390 650)"><stop stop-color="#6366f1" stop-opacity=".18"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="30" y="8" width="1540" height="884" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="34" stdDeviation="52" flood-color="#020617" flood-opacity=".72"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".13" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <path d="M482 286C602 174 809 154 959 226" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1116 340C1185 473 1140 633 1015 708" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M874 748C690 786 512 694 462 536" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M459 536L424 565L418 510M959 226L951 180L1002 206M1015 708L1063 706L1039 752" stroke="#a5b4fc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="420" cy="382" r="122" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+  <circle cx="1180" cy="382" r="122" fill="#11152a" stroke="#a78bfa" stroke-width="5"/>
+  <circle cx="800" cy="650" r="122" fill="#101827" stroke="#818cf8" stroke-width="5"/>
+  <path d="M356 382H484M420 318V446" stroke="#7dd3fc" stroke-width="11" stroke-linecap="round"/>
+  <path d="M1121 386L1164 429L1243 347" stroke="#c4b5fd" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M738 648L781 691L867 605" stroke="#a5b4fc" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M800 226L944 280V398C944 498 886 574 800 612C714 574 656 498 656 398V280L800 226Z" fill="#0d1727" stroke="url(#signal)" stroke-width="6"/>
+  <path d="M744 407L786 449L865 370" stroke="url(#signal)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#94a3b8"><circle cx="574" cy="216" r="9"/><circle cx="1060" cy="252" r="9"/><circle cx="1125" cy="595" r="9"/><circle cx="620" cy="725" r="9"/></g>
+</svg>
