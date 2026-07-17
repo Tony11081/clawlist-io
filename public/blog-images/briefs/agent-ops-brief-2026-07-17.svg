@@ -1,0 +1,27 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Portable authority for remote agent sessions</title>
+  <desc id="desc">A clean technical composition showing a session envelope routed between isolated local and cloud workers through a guarded control plane.</desc>
+  <defs>
+    <linearGradient id="panel" x1="110" y1="80" x2="1490" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".58" stop-color="#111827"/><stop offset="1" stop-color="#18142b"/></linearGradient>
+    <linearGradient id="signal" x1="335" y1="450" x2="1265" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".52" stop-color="#6366f1"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 445) rotate(90) scale(360 680)"><stop stop-color="#6366f1" stop-opacity=".18"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="28" y="4" width="1544" height="892" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="34" stdDeviation="52" flood-color="#020617" flood-opacity=".74"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".13" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <path d="M526 450H664M936 450H1074" stroke="url(#signal)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M638 428L664 450L638 472M1048 428L1074 450L1048 472" stroke="#a5b4fc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="278" y="316" width="248" height="268" rx="38" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+  <rect x="1074" y="316" width="248" height="268" rx="38" fill="#11152a" stroke="#a78bfa" stroke-width="5"/>
+  <path d="M337 397H467M337 443H442M337 489H476M1133 397H1263M1133 443H1238M1133 489H1272" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="333" cy="359" r="9" fill="#38bdf8"/><circle cx="1129" cy="359" r="9" fill="#a78bfa"/>
+  <rect x="664" y="260" width="272" height="380" rx="48" fill="#0a1424" stroke="url(#signal)" stroke-width="6"/>
+  <path d="M714 336H886M714 384H856M714 432H886M714 480H830" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M800 520C757 520 730 540 730 571V602H870V571C870 540 843 520 800 520Z" fill="#111c30" stroke="#818cf8" stroke-width="5"/>
+  <path d="M770 520V492C770 450 830 450 830 492V520" stroke="#7dd3fc" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="800" cy="565" r="11" fill="#a5b4fc"/>
+  <path d="M402 630V690H1198V630" stroke="#334155" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="402" cy="630" r="12" fill="#38bdf8"/><circle cx="800" cy="690" r="12" fill="#818cf8"/><circle cx="1198" cy="630" r="12" fill="#a78bfa"/>
+</svg>
