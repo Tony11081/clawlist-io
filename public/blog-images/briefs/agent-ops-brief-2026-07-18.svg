@@ -1,0 +1,41 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Gated admission path for an agent skill</title>
+  <desc id="desc">A clean technical composition showing a skill artifact passing through provenance, verification, and policy gates before reaching an isolated agent runtime.</desc>
+  <defs>
+    <linearGradient id="panel" x1="112" y1="82" x2="1488" y2="818" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".6" stop-color="#111827"/><stop offset="1" stop-color="#17152a"/></linearGradient>
+    <linearGradient id="flow" x1="260" y1="450" x2="1340" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".52" stop-color="#6366f1"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(802 448) rotate(90) scale(355 690)"><stop stop-color="#6366f1" stop-opacity=".18"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="30" y="4" width="1540" height="892" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="34" stdDeviation="52" flood-color="#020617" flood-opacity=".74"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".13" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <path d="M382 450H1218" stroke="#243244" stroke-width="18" stroke-linecap="round"/>
+  <path d="M382 450H1218" stroke="url(#flow)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1188 423L1218 450L1188 477" stroke="#c4b5fd" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M250 354L320 314L390 354V446C390 516 342 559 320 568C298 559 250 516 250 446V354Z" fill="#0b1626" stroke="#38bdf8" stroke-width="5"/>
+  <path d="M286 405H354M286 443H340M286 481H354" stroke="#64748b" stroke-width="9" stroke-linecap="round"/>
+  <g>
+    <rect x="488" y="290" width="158" height="320" rx="34" fill="#0b1524" stroke="#3b82f6" stroke-width="5"/>
+    <circle cx="567" cy="390" r="34" fill="#111d30" stroke="#7dd3fc" stroke-width="5"/>
+    <path d="M548 390L562 404L588 375" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M532 516H602" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="721" y="290" width="158" height="320" rx="34" fill="#0d1527" stroke="#6366f1" stroke-width="5"/>
+    <path d="M800 353L848 381V437C848 484 815 508 800 514C785 508 752 484 752 437V381L800 353Z" fill="#151a35" stroke="#818cf8" stroke-width="5"/>
+    <path d="M781 431L795 445L822 414" stroke="#a5b4fc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M765 552H835" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="954" y="290" width="158" height="320" rx="34" fill="#101529" stroke="#8b5cf6" stroke-width="5"/>
+    <path d="M997 387H1069M997 430H1052M997 473H1069" stroke="#64748b" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="1033" cy="550" r="14" fill="#a78bfa"/>
+  </g>
+  <rect x="1218" y="330" width="142" height="240" rx="38" fill="#12152a" stroke="#a78bfa" stroke-width="5"/>
+  <circle cx="1289" cy="421" r="38" fill="#191932" stroke="#c4b5fd" stroke-width="5"/>
+  <path d="M1265 493H1313" stroke="#64748b" stroke-width="10" stroke-linecap="round"/>
+  <path d="M320 628V684H1289V628" stroke="#334155" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="320" cy="628" r="11" fill="#38bdf8"/><circle cx="567" cy="684" r="11" fill="#60a5fa"/><circle cx="800" cy="684" r="11" fill="#818cf8"/><circle cx="1033" cy="684" r="11" fill="#a78bfa"/><circle cx="1289" cy="628" r="11" fill="#c4b5fd"/>
+</svg>
