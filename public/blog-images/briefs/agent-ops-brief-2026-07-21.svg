@@ -1,0 +1,35 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Security evidence graph</title>
+  <desc id="desc">A clean technical composition showing a canonical security finding connected to source evidence, coverage, proofs, reports, and hardening artifacts.</desc>
+  <defs>
+    <linearGradient id="panel" x1="108" y1="80" x2="1492" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".58" stop-color="#111827"/><stop offset="1" stop-color="#19152c"/></linearGradient>
+    <linearGradient id="core" x1="650" y1="318" x2="950" y2="582" gradientUnits="userSpaceOnUse"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(360 680)"><stop stop-color="#6366f1" stop-opacity=".2"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="28" y="2" width="1544" height="896" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="34" stdDeviation="52" flood-color="#020617" flood-opacity=".76"/></filter>
+    <filter id="glow" x="580" y="248" width="440" height="404" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="28"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".12" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <circle cx="800" cy="450" r="172" fill="#6366f1" fill-opacity=".18" filter="url(#glow)"/>
+  <g stroke-linecap="round">
+    <path d="M650 388L424 270" stroke="#38bdf8" stroke-width="6"/><path d="M650 512L424 630" stroke="#60a5fa" stroke-width="6"/>
+    <path d="M950 388L1176 270" stroke="#8b5cf6" stroke-width="6"/><path d="M950 512L1176 630" stroke="#a78bfa" stroke-width="6"/>
+    <path d="M800 318V210" stroke="#818cf8" stroke-width="6"/><path d="M800 582V690" stroke="#818cf8" stroke-width="6"/>
+  </g>
+  <g fill="#0b1524" stroke-width="5">
+    <rect x="294" y="190" width="260" height="160" rx="28" stroke="#38bdf8"/><rect x="294" y="550" width="260" height="160" rx="28" stroke="#60a5fa"/>
+    <rect x="1046" y="190" width="260" height="160" rx="28" stroke="#8b5cf6"/><rect x="1046" y="550" width="260" height="160" rx="28" stroke="#a78bfa"/>
+    <rect x="690" y="140" width="220" height="140" rx="28" stroke="#818cf8"/><rect x="690" y="620" width="220" height="140" rx="28" stroke="#818cf8"/>
+  </g>
+  <g stroke="#64748b" stroke-width="10" stroke-linecap="round">
+    <path d="M346 240H502M346 275H470M346 310H488"/><path d="M346 600H502M346 635H458M346 670H488"/>
+    <path d="M1098 240H1254M1098 275H1222M1098 310H1240"/><path d="M1098 600H1254M1098 635H1210M1098 670H1240"/>
+    <path d="M738 190H862M738 225H830"/><path d="M738 670H862M738 705H830"/>
+  </g>
+  <rect x="650" y="318" width="300" height="264" rx="44" fill="#0d1527" stroke="url(#core)" stroke-width="7"/>
+  <path d="M800 354L868 393V472C868 536 824 568 800 578C776 568 732 536 732 472V393L800 354Z" fill="url(#core)" fill-opacity=".22" stroke="#a5b4fc" stroke-width="6"/>
+  <path d="M766 458L790 482L838 428" stroke="#c4b5fd" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#e0e7ff"><circle cx="650" cy="388" r="10"/><circle cx="650" cy="512" r="10"/><circle cx="950" cy="388" r="10"/><circle cx="950" cy="512" r="10"/><circle cx="800" cy="318" r="10"/><circle cx="800" cy="582" r="10"/></g>
+</svg>
