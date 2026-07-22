@@ -1,0 +1,35 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Gateway-owned remote agent placement</title>
+  <desc id="desc">A clean technical diagram showing a trusted gateway placing work on an isolated cloud worker while retaining credentials and publication authority.</desc>
+  <defs>
+    <linearGradient id="panel" x1="110" y1="86" x2="1490" y2="814" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".6" stop-color="#111827"/><stop offset="1" stop-color="#1b1630"/></linearGradient>
+    <linearGradient id="gate" x1="612" y1="302" x2="988" y2="598" gradientUnits="userSpaceOnUse"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+    <linearGradient id="flow" x1="493" y1="450" x2="1107" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(355 650)"><stop stop-color="#6366f1" stop-opacity=".2"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="30" y="4" width="1540" height="892" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="32" stdDeviation="50" flood-color="#020617" flood-opacity=".78"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".12" stroke="#64748b" stroke-width="2"><path d="M180 230H1420M180 450H1420M180 670H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <path d="M493 450H622M978 450H1107" stroke="url(#flow)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M584 420L622 450L584 480M1016 420L978 450L1016 480" stroke="#c4b5fd" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <g>
+    <rect x="250" y="278" width="244" height="344" rx="34" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+    <circle cx="372" cy="384" r="62" fill="#0e2740" stroke="#7dd3fc" stroke-width="5"/>
+    <path d="M334 384H410M372 346V422" stroke="#bae6fd" stroke-width="10" stroke-linecap="round"/>
+    <rect x="302" y="498" width="140" height="22" rx="11" fill="#334155"/><rect x="322" y="542" width="100" height="18" rx="9" fill="#1e3a5f"/>
+  </g>
+  <g>
+    <rect x="1106" y="278" width="244" height="344" rx="34" fill="#0b1524" stroke="#8b5cf6" stroke-width="5" stroke-dasharray="16 12"/>
+    <path d="M1162 407C1162 362 1198 326 1243 326C1278 326 1308 348 1319 379C1343 386 1360 408 1360 434C1360 465 1335 490 1304 490H1175C1143 490 1118 465 1118 434C1118 421 1122 410 1129 400" transform="translate(-64 0)" fill="#231b3e" stroke="#c4b5fd" stroke-width="5"/>
+    <rect x="1158" y="518" width="140" height="22" rx="11" fill="#3f3a5f"/><rect x="1178" y="562" width="100" height="18" rx="9" fill="#35265f"/>
+  </g>
+  <rect x="622" y="302" width="356" height="296" rx="48" fill="#0d1527" stroke="url(#gate)" stroke-width="7"/>
+  <path d="M800 344L878 389V480C878 548 830 580 800 592C770 580 722 548 722 480V389L800 344Z" fill="url(#gate)" fill-opacity=".22" stroke="#a5b4fc" stroke-width="6"/>
+  <path d="M770 458H830M770 493H813" stroke="#c4b5fd" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="622" cy="450" r="11" fill="#e0e7ff"/><circle cx="978" cy="450" r="11" fill="#e0e7ff"/>
+  <g fill="#0b1524" stroke="#64748b" stroke-width="4"><rect x="650" y="174" width="132" height="74" rx="20"/><rect x="818" y="174" width="132" height="74" rx="20"/><rect x="650" y="652" width="132" height="74" rx="20"/><rect x="818" y="652" width="132" height="74" rx="20"/></g>
+  <g stroke-linecap="round" stroke-width="8"><path d="M682 211H750" stroke="#38bdf8"/><path d="M850 211H918" stroke="#818cf8"/><path d="M682 689H750" stroke="#60a5fa"/><path d="M850 689H918" stroke="#a78bfa"/></g>
+  <g stroke="#64748b" stroke-width="4" stroke-dasharray="9 10"><path d="M716 248V302"/><path d="M884 248V302"/><path d="M716 598V652"/><path d="M884 598V652"/></g>
+</svg>
