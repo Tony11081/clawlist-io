@@ -1,0 +1,38 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Three-plane agent operations scorecard</title>
+  <desc id="desc">A clean technical composition separating agent adoption, delivery outcomes, and spend into linked evidence planes.</desc>
+  <defs>
+    <linearGradient id="panel" x1="110" y1="86" x2="1490" y2="814" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".62" stop-color="#111827"/><stop offset="1" stop-color="#1c1530"/></linearGradient>
+    <linearGradient id="accent" x1="300" y1="250" x2="1300" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".52" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(380 680)"><stop stop-color="#6366f1" stop-opacity=".2"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="20" y="0" width="1560" height="900" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="32" stdDeviation="50" flood-color="#020617" flood-opacity=".8"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#panel)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#wash)"/>
+  <g opacity=".12" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M390 150V750M800 150V750M1210 150V750"/></g>
+  <path d="M468 450H574M1026 450H1132" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="13 15"/>
+  <g>
+    <rect x="218" y="250" width="250" height="400" rx="34" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+    <circle cx="343" cy="348" r="53" fill="#0e2740" stroke="#7dd3fc" stroke-width="5"/>
+    <circle cx="343" cy="348" r="17" fill="#bae6fd"/>
+    <path d="M343 295V318M343 378V401M290 348H313M373 348H396" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round"/>
+    <rect x="274" y="454" width="138" height="18" rx="9" fill="#334155"/><rect x="274" y="496" width="94" height="18" rx="9" fill="#1e3a5f"/><rect x="274" y="538" width="119" height="18" rx="9" fill="#263c55"/>
+  </g>
+  <g>
+    <rect x="1132" y="250" width="250" height="400" rx="34" fill="#0b1524" stroke="#a78bfa" stroke-width="5"/>
+    <path d="M1200 390V337M1240 390V306M1280 390V350M1320 390V280" stroke="#c4b5fd" stroke-width="20" stroke-linecap="round"/>
+    <path d="M1184 420H1336" stroke="#6d5d8f" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="1257" cy="512" r="48" fill="#251c40" stroke="#c4b5fd" stroke-width="5"/>
+    <path d="M1257 480V544M1232 497H1272C1289 497 1289 521 1272 521H1242C1225 521 1225 545 1242 545H1282" stroke="#ddd6fe" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="574" y="210" width="452" height="480" rx="48" fill="#0d1527" stroke="url(#accent)" stroke-width="7"/>
+    <path d="M684 545L760 465L830 506L936 351" stroke="url(#accent)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="684" cy="545" r="14" fill="#7dd3fc"/><circle cx="760" cy="465" r="14" fill="#93c5fd"/><circle cx="830" cy="506" r="14" fill="#a5b4fc"/><circle cx="936" cy="351" r="14" fill="#c4b5fd"/>
+    <path d="M668 590H950M668 310V590" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+    <rect x="672" y="260" width="86" height="18" rx="9" fill="#38bdf8"/><rect x="782" y="260" width="86" height="18" rx="9" fill="#818cf8"/><rect x="892" y="260" width="58" height="18" rx="9" fill="#a78bfa"/>
+  </g>
+  <g fill="#e0e7ff"><circle cx="574" cy="450" r="11"/><circle cx="1026" cy="450" r="11"/></g>
+  <g stroke="#64748b" stroke-width="4" stroke-dasharray="9 10"><path d="M468 330H536V382H574"/><path d="M468 570H536V518H574"/><path d="M1026 382H1064V330H1132"/><path d="M1026 518H1064V570H1132"/></g>
+</svg>
