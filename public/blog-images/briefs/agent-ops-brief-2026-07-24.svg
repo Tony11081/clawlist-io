@@ -1,0 +1,39 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Intent envelope moving through an agent control plane</title>
+  <desc id="desc">A clean technical composition showing a structured intent artifact passing through policy, routing, execution, and verified effect.</desc>
+  <defs>
+    <linearGradient id="frame" x1="110" y1="90" x2="1490" y2="810" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".58" stop-color="#111827"/><stop offset="1" stop-color="#1d1831"/></linearGradient>
+    <linearGradient id="signal" x1="280" y1="450" x2="1320" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 450) rotate(90) scale(390 650)"><stop stop-color="#6366f1" stop-opacity=".2"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="20" y="0" width="1560" height="900" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="30" stdDeviation="48" flood-color="#020617" flood-opacity=".82"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#frame)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#glow)"/>
+  <g opacity=".13" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M340 150V750M800 150V750M1260 150V750"/></g>
+  <path d="M350 450H1250" stroke="#334155" stroke-width="24" stroke-linecap="round"/>
+  <path d="M350 450H1250" stroke="url(#signal)" stroke-width="8" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <g>
+    <rect x="204" y="298" width="292" height="304" rx="36" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+    <path d="M269 360H431M269 408H400M269 504H431M269 552H372" stroke="#64748b" stroke-width="15" stroke-linecap="round"/>
+    <circle cx="291" cy="456" r="20" fill="#0e7490" stroke="#7dd3fc" stroke-width="5"/>
+    <path d="M282 456L289 463L302 447" stroke="#e0f2fe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="326" y="439" width="105" height="34" rx="17" fill="#153454" stroke="#38bdf8" stroke-width="3"/>
+  </g>
+  <g>
+    <path d="M650 298L800 236L950 298V432C950 533 889 610 800 651C711 610 650 533 650 432V298Z" fill="#10182b" stroke="url(#signal)" stroke-width="7"/>
+    <circle cx="800" cy="389" r="65" fill="#1e1b4b" stroke="#a5b4fc" stroke-width="6"/>
+    <path d="M770 390L791 411L834 364" stroke="#e0e7ff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M734 508H866M758 552H842" stroke="#64748b" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="1104" y="298" width="292" height="304" rx="36" fill="#0b1524" stroke="#a78bfa" stroke-width="5"/>
+    <circle cx="1250" cy="407" r="70" fill="#251c40" stroke="#c4b5fd" stroke-width="6"/>
+    <path d="M1216 408L1240 432L1288 379" stroke="#f3e8ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1176 528H1324M1208 564H1292" stroke="#6d5d8f" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <g fill="#e0e7ff"><circle cx="518" cy="450" r="12"/><circle cx="1082" cy="450" r="12"/></g>
+  <g stroke="#64748b" stroke-width="4" stroke-dasharray="9 11"><path d="M496 352H574V322H650"/><path d="M496 548H574V578H682"/><path d="M918 578H1026V548H1104"/><path d="M950 322H1026V352H1104"/></g>
+  <g fill="#93c5fd"><circle cx="574" cy="322" r="8"/><circle cx="574" cy="578" r="8"/></g>
+  <g fill="#c4b5fd"><circle cx="1026" cy="322" r="8"/><circle cx="1026" cy="548" r="8"/></g>
+</svg>
