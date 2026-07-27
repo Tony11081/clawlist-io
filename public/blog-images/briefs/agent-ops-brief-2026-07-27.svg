@@ -1,0 +1,43 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Auditable agent routing through models and tools</title>
+  <desc id="desc">A clean technical routing plane branches through model and tool policy nodes before converging on a verified result.</desc>
+  <defs>
+    <linearGradient id="frame" x1="120" y1="80" x2="1480" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#0f172a"/><stop offset=".58" stop-color="#111827"/><stop offset="1" stop-color="#1d1831"/></linearGradient>
+    <linearGradient id="route" x1="250" y1="450" x2="1350" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#38bdf8"/><stop offset=".52" stop-color="#818cf8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(820 450) rotate(90) scale(390 690)"><stop stop-color="#6366f1" stop-opacity=".22"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="20" y="0" width="1560" height="900" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="30" stdDeviation="48" flood-color="#020617" flood-opacity=".82"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="#07111d"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#frame)" stroke="#263244" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="108" y="84" width="1384" height="732" rx="32" fill="url(#glow)"/>
+  <g opacity=".13" stroke="#64748b" stroke-width="2"><path d="M180 225H1420M180 450H1420M180 675H1420"/><path d="M340 150V750M800 150V750M1260 150V750"/></g>
+  <path d="M270 450H470L650 290H950L1130 450H1330" stroke="#334155" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M470 450L650 610H950L1130 450" stroke="#334155" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M270 450H470L650 290H950L1130 450H1330" stroke="url(#route)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M470 450L650 610H950L1130 450" stroke="url(#route)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="18 18" opacity=".72"/>
+  <g>
+    <rect x="184" y="354" width="186" height="192" rx="32" fill="#0b1524" stroke="#38bdf8" stroke-width="5"/>
+    <circle cx="277" cy="423" r="30" fill="#0e7490" stroke="#7dd3fc" stroke-width="5"/>
+    <path d="M230 491H324M248 523H306" stroke="#64748b" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="626" y="194" width="348" height="192" rx="34" fill="#10182b" stroke="#818cf8" stroke-width="6"/>
+    <circle cx="721" cy="290" r="49" fill="#1e1b4b" stroke="#a5b4fc" stroke-width="5"/>
+    <path d="M700 290L715 305L744 272" stroke="#e0e7ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M808 260H910M808 300H886M808 340H850" stroke="#64748b" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="626" y="514" width="348" height="192" rx="34" fill="#10182b" stroke="#64748b" stroke-width="5"/>
+    <path d="M684 577H758V643H684V577ZM842 577H916V643H842V577Z" fill="#172554" stroke="#818cf8" stroke-width="4"/>
+    <path d="M758 610H842" stroke="#a5b4fc" stroke-width="9" stroke-dasharray="12 12"/>
+    <circle cx="800" cy="610" r="12" fill="#c4b5fd"/>
+  </g>
+  <g>
+    <rect x="1222" y="354" width="186" height="192" rx="32" fill="#0b1524" stroke="#a78bfa" stroke-width="5"/>
+    <path d="M1265 436L1300 471L1363 400" stroke="#f3e8ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M1265 507H1365" stroke="#6d5d8f" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g fill="#e0e7ff"><circle cx="470" cy="450" r="13"/><circle cx="1130" cy="450" r="13"/></g>
+  <g fill="#93c5fd"><circle cx="650" cy="290" r="10"/><circle cx="650" cy="610" r="10"/></g>
+  <g fill="#c4b5fd"><circle cx="950" cy="290" r="10"/><circle cx="950" cy="610" r="10"/></g>
+</svg>
