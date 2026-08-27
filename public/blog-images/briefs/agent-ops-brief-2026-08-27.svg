@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Portable agent plugin architecture</title>
+  <desc id="desc">A central modular capability core connects to three distinct agent runtime frames.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1480" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.5" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#161426"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="620" y1="320" x2="980" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(800 450) rotate(90) scale(330 500)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1" stop-opacity="0.19"/>
+      <stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#94A3B8" stroke-opacity="0.055"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#020617" flood-opacity="0.7"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <path d="M155 145H420M1180 145h265M155 755H420M1180 755h265" stroke="#CBD5E1" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="800" cy="450" r="282" fill="none" stroke="#818CF8" stroke-opacity="0.08"/>
+  <circle cx="800" cy="450" r="220" fill="none" stroke="#60A5FA" stroke-opacity="0.09" stroke-dasharray="6 14"/>
+
+  <g stroke-linecap="round">
+    <path d="M652 380C555 323 515 278 423 254" stroke="#60A5FA" stroke-opacity="0.16" stroke-width="18" filter="url(#softGlow)"/>
+    <path d="M652 380C555 323 515 278 423 254" stroke="#60A5FA" stroke-opacity="0.72" stroke-width="3"/>
+    <path d="M650 520C540 558 504 638 408 657" stroke="#818CF8" stroke-opacity="0.16" stroke-width="18" filter="url(#softGlow)"/>
+    <path d="M650 520C540 558 504 638 408 657" stroke="#818CF8" stroke-opacity="0.72" stroke-width="3"/>
+    <path d="M948 447C1058 447 1110 447 1197 447" stroke="#A78BFA" stroke-opacity="0.17" stroke-width="18" filter="url(#softGlow)"/>
+    <path d="M948 447C1058 447 1110 447 1197 447" stroke="#A78BFA" stroke-opacity="0.76" stroke-width="3"/>
+  </g>
+
+  <g fill="#111827" stroke="#64748B" stroke-opacity="0.48" filter="url(#shadow)">
+    <rect x="206" y="164" width="220" height="164" rx="22"/>
+    <rect x="194" y="574" width="220" height="164" rx="22"/>
+    <rect x="1194" y="365" width="220" height="164" rx="22"/>
+  </g>
+  <g fill="none" stroke-width="5">
+    <path d="M246 207h80M246 232h124M246 270h58" stroke="#60A5FA" stroke-opacity="0.62"/>
+    <path d="M234 617h124M234 642h76M234 680h138" stroke="#818CF8" stroke-opacity="0.62"/>
+    <path d="M1234 408h68M1234 433h138M1234 471h96" stroke="#A78BFA" stroke-opacity="0.62"/>
+  </g>
+  <g fill="#E2E8F0" fill-opacity="0.7">
+    <circle cx="385" cy="206" r="5"/><circle cx="385" cy="231" r="5"/><circle cx="385" cy="270" r="5"/>
+    <circle cx="373" cy="616" r="5"/><circle cx="373" cy="641" r="5"/><circle cx="373" cy="680" r="5"/>
+    <circle cx="1373" cy="407" r="5"/><circle cx="1373" cy="432" r="5"/><circle cx="1373" cy="471" r="5"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M800 258 957 349v202L800 642 643 551V349Z" fill="#111827" stroke="url(#edge)" stroke-width="4"/>
+    <path d="M800 293 924 365v70L800 507 676 435v-70Z" fill="#172033" stroke="#60A5FA" stroke-opacity="0.72" stroke-width="3"/>
+    <path d="M800 507 924 435v101L800 608 676 536V435Z" fill="#15182B" stroke="#8B5CF6" stroke-opacity="0.7" stroke-width="3"/>
+    <path d="m800 293 124 72-124 72-124-72Z" fill="#1E293B"/>
+    <path d="m800 507 124-72M800 507 676 435M800 507v101" stroke="#C4B5FD" stroke-opacity="0.48" stroke-width="3"/>
+    <circle cx="800" cy="400" r="31" fill="#0F172A" stroke="#60A5FA" stroke-width="3"/>
+    <circle cx="800" cy="400" r="11" fill="#93C5FD"/>
+    <path d="M742 543h116" stroke="#A78BFA" stroke-opacity="0.78" stroke-width="8" stroke-linecap="round"/>
+    <path d="M766 570h68" stroke="#C4B5FD" stroke-opacity="0.5" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g fill="#F8FAFC">
+    <circle cx="423" cy="254" r="7"/><circle cx="408" cy="657" r="7"/><circle cx="1197" cy="447" r="7"/>
+  </g>
+</svg>
