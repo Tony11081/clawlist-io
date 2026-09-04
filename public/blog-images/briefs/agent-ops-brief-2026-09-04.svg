@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Identity-scoped skill library</title>
+  <desc id="desc">Personal and workspace capability modules pass through an identity and approval boundary into a shared agent gateway.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#151827"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6366f1" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="#334155" stroke-width="1" opacity=".2">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600"/>
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+  <ellipse cx="810" cy="455" rx="610" ry="340" fill="url(#glow)" filter="url(#blur)"/>
+  <g fill="#0f172a" stroke="#475569" stroke-width="3">
+    <rect x="180" y="215" width="310" height="190" rx="38"/>
+    <rect x="180" y="495" width="310" height="190" rx="38"/>
+    <rect x="1110" y="310" width="310" height="280" rx="44"/>
+  </g>
+  <g fill="none" stroke="url(#edge)" stroke-width="7" stroke-linecap="round">
+    <path d="M490 310h190"/>
+    <path d="M490 590h190"/>
+    <path d="M920 450h190"/>
+  </g>
+  <g transform="translate(255 264)" fill="none" stroke="#38bdf8" stroke-width="7">
+    <path d="M0 35h38V0h75v35h38v75h-38v35H38v-35H0z"/>
+    <circle cx="75" cy="72" r="24"/>
+  </g>
+  <g transform="translate(255 544)" fill="none" stroke="#8b5cf6" stroke-width="7">
+    <path d="M0 35h38V0h75v35h38v75h-38v35H38v-35H0z"/>
+    <path d="M55 76l15 15 31-36"/>
+  </g>
+  <g>
+    <rect x="650" y="245" width="300" height="410" rx="64" fill="#111827" stroke="url(#edge)" stroke-width="5"/>
+    <circle cx="800" cy="360" r="63" fill="#172033" stroke="#7dd3fc" stroke-width="5"/>
+    <circle cx="800" cy="340" r="22" fill="#94a3b8"/>
+    <path d="M755 397c11-32 35-48 45-48s34 16 45 48" fill="#94a3b8"/>
+    <rect x="710" y="475" width="180" height="94" rx="28" fill="#172033" stroke="#a78bfa" stroke-width="4"/>
+    <path d="M760 521l27 27 57-66" fill="none" stroke="#c4b5fd" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(1175 355)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 58h150M0 140h150" stroke="#475569" stroke-width="5"/>
+    <circle cx="35" cy="58" r="19" fill="#0f172a" stroke="#38bdf8" stroke-width="7"/>
+    <circle cx="115" cy="140" r="19" fill="#0f172a" stroke="#8b5cf6" stroke-width="7"/>
+  </g>
+  <g fill="#cbd5e1">
+    <circle cx="490" cy="310" r="10"/><circle cx="490" cy="590" r="10"/>
+    <circle cx="680" cy="310" r="10"/><circle cx="680" cy="590" r="10"/>
+    <circle cx="920" cy="450" r="10"/><circle cx="1110" cy="450" r="10"/>
+  </g>
+</svg>
