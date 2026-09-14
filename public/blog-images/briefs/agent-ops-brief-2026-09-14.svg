@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Skill promotion pipeline</title>
+  <desc id="desc">A proposed skill moves through review and verification gates into a revisioned deployment ring.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#07111f"/>
+      <stop offset="1" stop-color="#18162a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6366f1" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="55"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="#334155" stroke-width="1" opacity=".18">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600"/>
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+  <ellipse cx="840" cy="450" rx="620" ry="330" fill="url(#glow)" filter="url(#blur)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M280 450h230M650 450h250M1040 450h220" stroke="#475569" stroke-width="8"/>
+    <path d="M470 420l40 30-40 30M860 420l40 30-40 30M1220 420l40 30-40 30" stroke="#64748b" stroke-width="8"/>
+  </g>
+  <g fill="#0f172a" stroke-width="5">
+    <path d="M140 320h240l70 70v190H140z" stroke="#475569"/>
+    <rect x="510" y="285" width="140" height="330" rx="48" stroke="#38bdf8"/>
+    <rect x="900" y="285" width="140" height="330" rx="48" stroke="#8b5cf6"/>
+    <circle cx="1340" cy="450" r="150" stroke="url(#accent)"/>
+    <circle cx="1340" cy="450" r="105" stroke="#475569" stroke-dasharray="10 15"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M200 390h165M200 450h165M200 510h105" stroke="#94a3b8" stroke-width="12"/>
+    <path d="M552 438l22 22 39-50" stroke="#38bdf8" stroke-width="12"/>
+    <path d="M940 402h60M940 450h60M940 498h60" stroke="#a78bfa" stroke-width="10"/>
+    <path d="M1287 450l35 35 73-82" stroke="#c4b5fd" stroke-width="15"/>
+  </g>
+  <g fill="#38bdf8"><circle cx="510" cy="450" r="9"/><circle cx="650" cy="450" r="9"/></g>
+  <g fill="#a78bfa"><circle cx="900" cy="450" r="9"/><circle cx="1040" cy="450" r="9"/></g>
+</svg>
