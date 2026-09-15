@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Review evidence lineage</title>
+  <desc id="desc">Three agent paths converge on a finding, pass through an evidence gate, and resolve against a verified revision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#07111f"/>
+      <stop offset="1" stop-color="#18162a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6366f1" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="58"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g stroke="#334155" stroke-width="1" opacity=".18">
+    <path d="M0 150h1600M0 300h1600M0 450h1600M0 600h1600M0 750h1600"/>
+    <path d="M200 0v900M400 0v900M600 0v900M800 0v900M1000 0v900M1200 0v900M1400 0v900"/>
+  </g>
+  <ellipse cx="830" cy="450" rx="610" ry="320" fill="url(#glow)" filter="url(#blur)"/>
+  <g fill="#0f172a" stroke-width="5">
+    <circle cx="270" cy="260" r="72" stroke="#475569"/>
+    <circle cx="270" cy="450" r="72" stroke="#38bdf8"/>
+    <circle cx="270" cy="640" r="72" stroke="#8b5cf6"/>
+    <path d="M610 305h250l70 145-70 145H610l-70-145z" stroke="url(#accent)"/>
+    <rect x="1070" y="300" width="330" height="300" rx="52" stroke="#64748b"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M342 260C470 260 470 375 570 410M342 450h198M342 640C470 640 470 525 570 490" stroke="#64748b" stroke-width="8"/>
+    <path d="M930 450h140" stroke="#64748b" stroke-width="8"/>
+    <path d="M1030 420l40 30-40 30" stroke="#94a3b8" stroke-width="8"/>
+    <path d="M660 395h150M660 450h115M660 505h150" stroke="#cbd5e1" stroke-width="11"/>
+    <path d="M1155 455l58 58 112-133" stroke="url(#accent)" stroke-width="18"/>
+  </g>
+  <g fill="#38bdf8"><circle cx="270" cy="260" r="13"/><circle cx="270" cy="450" r="13"/></g>
+  <g fill="#a78bfa"><circle cx="270" cy="640" r="13"/><circle cx="930" cy="450" r="10"/></g>
+</svg>
