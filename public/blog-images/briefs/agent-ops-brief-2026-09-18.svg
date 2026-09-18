@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Scoped agent capacity approval</title>
+  <desc id="desc">A central approval gate connects layered budget controls to a time-limited capacity grant and verified agent work.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1480" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.55" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#182135"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#6366f1" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020617" flood-opacity=".55"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900" stroke="#94a3b8" stroke-opacity=".05"/>
+  <ellipse cx="810" cy="445" rx="520" ry="350" fill="url(#glow)" filter="url(#blur)"/>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M356 277C500 277 531 348 635 387" stroke="#60a5fa" stroke-opacity=".62" stroke-width="5"/>
+    <path d="M356 450H618" stroke="#818cf8" stroke-opacity=".68" stroke-width="5"/>
+    <path d="M356 623C500 623 531 552 635 513" stroke="#a78bfa" stroke-opacity=".62" stroke-width="5"/>
+    <path d="M982 450H1196" stroke="url(#accent)" stroke-width="6"/>
+    <path d="M1296 350V279" stroke="#60a5fa" stroke-opacity=".62" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M1296 550V621" stroke="#a78bfa" stroke-opacity=".62" stroke-width="4" stroke-dasharray="10 12"/>
+  </g>
+
+  <g fill="#182235" stroke-width="3" filter="url(#shadow)">
+    <rect x="144" y="207" width="212" height="140" rx="30" stroke="#60a5fa" stroke-opacity=".72"/>
+    <rect x="144" y="380" width="212" height="140" rx="30" stroke="#818cf8" stroke-opacity=".72"/>
+    <rect x="144" y="553" width="212" height="140" rx="30" stroke="#a78bfa" stroke-opacity=".72"/>
+    <rect x="618" y="279" width="364" height="342" rx="54" stroke="url(#accent)"/>
+    <rect x="1196" y="350" width="200" height="200" rx="44" stroke="url(#accent)"/>
+  </g>
+
+  <g fill="none" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M201 277H299M216 253H284M231 229H269"/>
+    <circle cx="250" cy="450" r="42"/><path d="M250 425V475M225 450H275"/>
+    <path d="M205 609H295V655H205Z M225 609V589H275V609"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <circle cx="800" cy="450" r="116" fill="#0f172a" stroke="url(#accent)" stroke-width="6"/>
+    <circle cx="800" cy="450" r="82" fill="none" stroke="#a5b4fc" stroke-opacity=".5" stroke-width="3" stroke-dasharray="9 12"/>
+    <path d="M760 449L789 478L846 416" fill="none" stroke="#e0e7ff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="none" stroke="#dbeafe" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="1296" cy="450" r="61"/>
+    <path d="M1296 412V450L1325 468"/>
+    <path d="M1261 520H1331M1274 539H1318" stroke="#a78bfa"/>
+  </g>
+
+  <g fill="#e2e8f0">
+    <circle cx="356" cy="277" r="8"/><circle cx="356" cy="450" r="8"/><circle cx="356" cy="623" r="8"/>
+    <circle cx="618" cy="450" r="9"/><circle cx="982" cy="450" r="9"/><circle cx="1196" cy="450" r="9"/>
+  </g>
+  <g fill="#94a3b8">
+    <circle cx="84" cy="105" r="4"/><circle cx="1494" cy="101" r="4"/><circle cx="1510" cy="790" r="4"/><circle cx="91" cy="793" r="4"/>
+  </g>
+</svg>
