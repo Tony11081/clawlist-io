@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agent customization evidence pipeline</title>
+  <desc id="desc">Five agent customization signals flow through a measurement lens into a verified outcome receipt.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="50" x2="1490" y2="850" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/><stop offset=".55" stop-color="#111827"/><stop offset="1" stop-color="#1e1b32"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/><stop offset=".55" stop-color="#6366f1"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6366f1" stop-opacity=".3"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="48"/></filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#020617" flood-opacity=".6"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900" stroke="#94a3b8" stroke-opacity=".045"/>
+  <ellipse cx="820" cy="455" rx="550" ry="340" fill="url(#glow)" filter="url(#blur)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M286 230C480 230 510 374 641 410M286 340C480 340 520 400 641 430M286 450H641M286 560C480 560 520 500 641 470M286 670C480 670 510 526 641 490" stroke="#818cf8" stroke-opacity=".52" stroke-width="4"/>
+    <path d="M925 450H1190" stroke="url(#accent)" stroke-width="7"/>
+  </g>
+  <g fill="#162033" stroke-width="3" filter="url(#shadow)">
+    <rect x="126" y="175" width="160" height="110" rx="28" stroke="#38bdf8" stroke-opacity=".7"/>
+    <rect x="126" y="285" width="160" height="110" rx="28" stroke="#60a5fa" stroke-opacity=".7"/>
+    <rect x="126" y="395" width="160" height="110" rx="28" stroke="#818cf8" stroke-opacity=".7"/>
+    <rect x="126" y="505" width="160" height="110" rx="28" stroke="#8b5cf6" stroke-opacity=".7"/>
+    <rect x="126" y="615" width="160" height="110" rx="28" stroke="#a78bfa" stroke-opacity=".7"/>
+    <circle cx="785" cy="450" r="144" stroke="url(#accent)" stroke-width="5"/>
+    <rect x="1190" y="310" width="270" height="280" rx="44" stroke="url(#accent)"/>
+  </g>
+  <g fill="none" stroke="#dbeafe" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M180 230h52M206 204v52"/>
+    <path d="M178 340h56M190 326l32 28M222 326l-32 28"/>
+    <circle cx="206" cy="450" r="25"/><circle cx="206" cy="450" r="8" fill="#818cf8" stroke="none"/>
+    <path d="M178 560h56M186 544v32M206 536v48M226 548v24"/>
+    <path d="M181 670l17 17 36-39"/>
+    <circle cx="785" cy="450" r="86" stroke="#c7d2fe" stroke-opacity=".7"/>
+    <circle cx="785" cy="450" r="32"/>
+    <path d="M785 364v30M785 506v30M699 450h30M841 450h30" stroke="#a5b4fc"/>
+    <path d="M1260 390h130M1260 438h92M1260 486h115" stroke="#cbd5e1"/>
+    <path d="M1260 535l20 20 40-46" stroke="#a78bfa" stroke-width="7"/>
+  </g>
+  <g fill="#e2e8f0"><circle cx="641" cy="410" r="7"/><circle cx="641" cy="430" r="7"/><circle cx="641" cy="450" r="7"/><circle cx="641" cy="470" r="7"/><circle cx="641" cy="490" r="7"/><circle cx="925" cy="450" r="9"/><circle cx="1190" cy="450" r="9"/></g>
+  <g fill="#94a3b8"><circle cx="83" cy="102" r="4"/><circle cx="1505" cy="104" r="4"/><circle cx="1510" cy="795" r="4"/><circle cx="88" cy="796" r="4"/></g>
+</svg>
